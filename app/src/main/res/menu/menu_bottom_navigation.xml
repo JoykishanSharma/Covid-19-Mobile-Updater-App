@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/home"
+        android:title="Home"
+        android:state_checked="true"
+        android:icon="@drawable/home_icon"/>
+
+    <item
+        android:id="@+id/map"
+        android:title="Maps"
+        android:state_checked="true"
+        android:icon="@drawable/map_icon"/>
+
+    <item
+        android:id="@+id/info"
+        android:title="Info"
+        android:state_checked="true"
+        android:icon="@drawable/local_library_icon"/>
+
+    <item
+        android:id="@+id/news"
+        android:title="News"
+        android:state_checked="true"
+        android:icon="@drawable/news_icon"/>
+
+</menu>
