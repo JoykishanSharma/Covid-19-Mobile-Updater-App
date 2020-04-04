@@ -16,4 +16,23 @@
         app:menu="@menu/menu_bottom_navigation"
         android:layout_alignParentBottom="true"/>
 
+    <Button
+        android:id="@+id/button_india"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="India"
+        android:layout_marginTop="100dp"
+        android:textSize="32sp"/>
+
+    <Button
+        android:id="@+id/button_world"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="World"
+        android:layout_below="@id/button_india"
+        android:layout_marginTop="100dp"
+        android:textSize="32sp"/>
+
 </RelativeLayout>

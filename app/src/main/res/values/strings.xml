@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Covid-19 Tracer</string>
+    <string name="india">INDIA</string>
+    <string name="world">WORLD</string>
 </resources>
