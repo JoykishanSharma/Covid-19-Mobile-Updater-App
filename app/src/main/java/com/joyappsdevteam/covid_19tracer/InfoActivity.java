@@ -1,8 +1,10 @@
 package com.joyappsdevteam.covid_19tracer;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -46,5 +48,13 @@ public class InfoActivity extends AppCompatActivity {
                 return false;
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        finish();
+        startActivity(new Intent(InfoActivity.this,HomeActivity.class));
+        overridePendingTransition(0,0);
+
     }
 }

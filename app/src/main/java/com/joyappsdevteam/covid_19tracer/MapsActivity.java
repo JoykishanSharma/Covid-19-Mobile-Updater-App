@@ -79,4 +79,12 @@ public class MapsActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onBackPressed() {
+        finish();
+        startActivity(new Intent(MapsActivity.this,HomeActivity.class));
+        overridePendingTransition(0,0);
+
+    }
+
 }
