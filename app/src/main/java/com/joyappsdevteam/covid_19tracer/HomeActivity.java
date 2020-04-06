@@ -3,6 +3,7 @@ package com.joyappsdevteam.covid_19tracer;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -10,12 +11,15 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.MenuItem;
+import android.view.View;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class HomeActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
     private Handler mWaitHandler = new Handler();
+    private CardView feelingGoodCardView, feelingBadCardView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +28,8 @@ public class HomeActivity extends AppCompatActivity {
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.home);
+        feelingGoodCardView = findViewById(R.id.feeling_good);
+        feelingBadCardView = findViewById(R.id.feeling_bad);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -48,6 +54,20 @@ public class HomeActivity extends AppCompatActivity {
                         return true;
                 }
                 return false;
+            }
+        });
+
+        feelingGoodCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this,FeelingGoodActivity.class));
+            }
+        });
+
+        feelingBadCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this,FeelingBadActivity.class));
             }
         });
     }

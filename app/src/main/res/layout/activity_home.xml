@@ -4,284 +4,161 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/brown"
-    tools:context=".HomeActivity">
+    android:background="@drawable/bgapp"
+    tools:context=".InfoActivity">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <LinearLayout
+            <RelativeLayout
+                android:layout_marginTop="32dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content">
 
                 <TextView
+                    android:id="@+id/txt_hello"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_bold"
-                    android:text="Dashboard"
+                    android:text="Hello!"
                     android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    android:textSize="28sp"/>
 
-                <View
-                    android:layout_width="40dp"
-                    android:layout_height="6dp"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="8dp"
+                <TextView
+                    android:id="@+id/text_username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_hello"
+                    android:layout_marginTop="3dp"
+                    android:text="Your Name"
+                    android:textColor="#52BAFF"
+                    android:textSize="18sp" />
 
-                    android:background="@drawable/bg_view">
 
-                </View>
 
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_regular"
-                android:text="this vacation time for you discription."
-                android:textColor="#E1DFDF"
-                android:textSize="18sp" />
-
+            </RelativeLayout>
 
             <com.google.android.material.circularreveal.cardview.CircularRevealCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
-                android:clickable="true"
-                android:focusable="true"
+                android:clickable="false"
+                android:focusable="false"
                 app:cardElevation="6dp"
-                app:strokeColor="#FF5722"
+                app:strokeColor="#2196F3"
                 app:strokeWidth="1dp"
-                app:cardBackgroundColor="#8BC34A"
                 app:cardCornerRadius="12dp"
                 android:layout_margin="12dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
                     android:orientation="vertical"
                     android:padding="16dp">
 
-                    <LinearLayout
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/roboto_mediumitalic"
-                            android:text="Good Morning"
-                            android:textColor="#ffff"
-                            android:textSize="18sp" />
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="28dp"
-                                android:layout_alignParentEnd="true"
-                                android:src="@drawable/cloud" />
-
-                        </RelativeLayout>
-
-
-                    </LinearLayout>
+                        android:fontFamily="@font/roboto_bold"
+                        android:gravity="center"
+                        android:text="How are you feeling at this moment?"
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:textSize="22sp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center"
+                        android:layout_marginBottom="12dp"
                         android:orientation="horizontal">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/roboto_medium"
-                            android:text="Android Developer"
-                            android:textColor="#ffff"
-                            android:textSize="24sp" />
+                        <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                            android:id="@+id/feeling_good"
+                            android:layout_width="106dp"
+                            android:layout_height="50dp"
+                            android:layout_marginEnd="24dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:paddingStart="28dp"
+                            android:paddingTop="14dp"
+                            android:paddingEnd="28dp"
+                            android:paddingBottom="14dp"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="6dp">
 
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginEnd="8dp"
+                                android:gravity="center">
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentEnd="true"
-                                android:fontFamily="@font/roboto_medium"
-                                android:text="21 C"
-                                android:textColor="#ffff"
-                                android:textSize="18sp" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/roboto_bold"
+                                    android:text="@string/good"
+                                    android:textColor="@android:color/holo_green_dark"
+                                    android:textSize="18sp" />
 
-                        </RelativeLayout>
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:src="@drawable/ic_mood_black_24dp" />
 
+                            </LinearLayout>
 
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="40dp"
-                        android:orientation="horizontal">
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Sun"
-                                android:textColor="#ffff" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/roboto_medium"
-                                android:text="20 C"
-                                android:textColor="#ffff"
-                                android:textSize="18sp" />
+                        </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
 
 
-                        </LinearLayout>
+                        <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                            android:id="@+id/feeling_bad"
+                            android:layout_width="106dp"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="24dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:paddingStart="28dp"
+                            android:paddingTop="14dp"
+                            android:paddingEnd="28dp"
+                            android:paddingBottom="14dp"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="6dp">
 
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:orientation="vertical">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginEnd="8dp"
+                                android:gravity="center">
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Mon"
-                                android:textColor="#ffff" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/roboto_bold"
+                                    android:text="@string/bad"
+                                    android:textColor="@android:color/holo_red_light"
+                                    android:textSize="18sp" />
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/roboto_medium"
-                                android:text="20 C"
-                                android:textColor="#ffff"
-                                android:textSize="18sp" />
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:src="@drawable/ic_mood_bad_black_24dp" />
 
+                            </LinearLayout>
 
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Tue"
-                                android:textColor="#ffff" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/roboto_medium"
-                                android:text="20 C"
-                                android:textColor="#ffff"
-                                android:textSize="18sp" />
-
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Wed"
-                                android:textColor="#ffff" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/roboto_medium"
-                                android:text="20 C"
-                                android:textColor="#ffff"
-                                android:textSize="18sp" />
-
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Thu"
-                                android:textColor="#ffff" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/roboto_medium"
-                                android:text="20 C"
-                                android:textColor="#ffff"
-                                android:textSize="18sp" />
-
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Fri"
-                                android:textColor="#ffff" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/roboto_medium"
-                                android:text="20 C"
-                                android:textColor="#ffff"
-                                android:textSize="18sp" />
-
-
-                        </LinearLayout>
-
+                        </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
 
                     </LinearLayout>
 
@@ -290,31 +167,28 @@
 
             </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
 
+    <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:clickable="false"
+        android:focusable="false"
+        app:cardElevation="6dp"
+        app:strokeColor="#2196F3"
+        app:strokeWidth="1dp"
+        app:cardCornerRadius="12dp"
+        android:layout_margin="12dp">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="14dp"
-                android:orientation="horizontal">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:fontFamily="@font/roboto_medium"
-                    android:text="start new vacation"
-                    android:textColor="#5E5E5E"
-                    android:textSize="18sp" />
+    </LinearLayout>
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="8dp"
-                    android:background="#7a8b8b8b" />
-
-            </LinearLayout>
-
+    </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
 
             <GridLayout
                 android:alignmentMode="alignMargins"
@@ -332,6 +206,8 @@
                     android:clickable="true"
                     android:focusable="true"
                     app:cardElevation="6dp"
+                    app:strokeColor="#2196F3"
+                    app:strokeWidth="1dp"
                     app:cardCornerRadius="12dp"
                     android:layout_margin="12dp">
 
@@ -365,6 +241,8 @@
                     android:layout_rowWeight="1"
                     app:cardElevation="6dp"
                     android:clickable="true"
+                    app:strokeColor="#2196F3"
+                    app:strokeWidth="1dp"
                     app:cardCornerRadius="12dp"
                     android:layout_margin="12dp"
                     android:focusable="true">
@@ -379,143 +257,8 @@
                         <ImageView
                             android:layout_width="80dp"
                             android:layout_height="80dp"
-                            android:src="@drawable/bookmark"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Calender"
-                            android:textSize="18sp"
-                            android:textColor="#6f6f6f"
-                            android:layout_marginTop="12dp"/>
-                    </LinearLayout>
-
-                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
-
-                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
-                    android:clickable="true"
-                    android:focusable="true"
-                    app:cardElevation="6dp"
-                    app:cardCornerRadius="12dp"
-                    android:layout_margin="12dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:padding="16dp"
-                        android:gravity="center">
-
-                        <ImageView
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
-                            android:src="@drawable/bookmark"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Calender"
-                            android:textSize="18sp"
-                            android:textColor="#6f6f6f"
-                            android:layout_marginTop="12dp"/>
-                    </LinearLayout>
-
-                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
-
-                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
-                    app:cardElevation="6dp"
-                    android:clickable="true"
-                    app:cardCornerRadius="12dp"
-                    android:layout_margin="12dp"
-                    android:focusable="true">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:padding="16dp"
-                        android:gravity="center">
-
-                        <ImageView
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
-                            android:src="@drawable/bookmark"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Calender"
-                            android:textSize="18sp"
-                            android:textColor="#6f6f6f"
-                            android:layout_marginTop="12dp"/>
-                    </LinearLayout>
-
-                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
-
-                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
-                    android:clickable="true"
-                    android:focusable="true"
-                    app:cardElevation="6dp"
-                    app:cardCornerRadius="12dp"
-                    android:layout_margin="12dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:padding="16dp"
-                        android:gravity="center">
-
-                        <ImageView
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
-                            android:src="@drawable/bookmark"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Calender"
-                            android:textSize="18sp"
-                            android:textColor="#6f6f6f"
-                            android:layout_marginTop="12dp"/>
-                    </LinearLayout>
-
-                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
-
-                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
-                    app:cardElevation="6dp"
-                    android:clickable="true"
-                    app:cardCornerRadius="12dp"
-                    android:layout_margin="12dp"
-                    android:focusable="true">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:padding="16dp"
-                        android:gravity="center">
-
-                        <ImageView
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
-                            android:src="@drawable/bookmark"/>
+                            android:src="@drawable/bookmark"
+                            android:contentDescription="TODO" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -530,18 +273,18 @@
 
             </GridLayout>
 
-
         </LinearLayout>
-    </ScrollView>
+
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:id="@+id/bottom_navigation"
         android:background="@drawable/navigation_back"
-        app:itemIconTint="@drawable/selector"
         app:itemTextColor="@drawable/selector"
-        app:menu="@menu/menu_bottom_navigation" />
+        app:itemIconTint="@drawable/selector"
+        app:menu="@menu/menu_bottom_navigation"
+        android:layout_alignParentBottom="true"/>
 
 </RelativeLayout>

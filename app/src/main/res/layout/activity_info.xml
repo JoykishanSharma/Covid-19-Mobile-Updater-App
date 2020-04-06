@@ -25,29 +25,95 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/txtdashboard"
+                    android:id="@+id/txt_hello"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="My Dashboard"
+                    android:text="Hello!"
                     android:textColor="#FFFFFF"
-                    android:textSize="22sp"/>
+                    android:textSize="24sp"/>
 
                 <TextView
-                    android:layout_below="@+id/txtdashboard"
+                    android:id="@+id/text_username"
+                    android:layout_below="@+id/txt_hello"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="12 Items"
+                    android:text="Your Name"
                     android:layout_marginTop="6dp"
                     android:textColor="#52BAFF"
-                    android:textSize="14sp"/>
+                    android:textSize="16sp"/>
 
-                <ImageView
-                    android:layout_alignParentEnd="true"
-                    android:layout_width="62dp"
-                    android:layout_height="62dp"
-                    android:src="@mipmap/ic_launcher"/>
+
 
             </RelativeLayout>
+
+            <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardElevation="6dp"
+                app:strokeColor="#FFFFFF"
+                app:strokeWidth="1dp"
+                app:cardCornerRadius="12dp"
+                android:layout_margin="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/card_gradient"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="How are you feeling at this moment?"
+                        android:gravity="center"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textSize="28sp"
+                        android:textColor="@android:color/white"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center">
+
+                        <Button
+                            android:id="@+id/feeling_good"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="GOOD"
+                            android:background="@drawable/button_transparent_round"
+                            android:fontFamily="@font/roboto_bold"
+                            android:paddingTop="14dp"
+                            android:paddingBottom="14dp"
+                            android:paddingStart="28dp"
+                            android:paddingEnd="28dp"
+                            android:textColor="@android:color/holo_green_light"/>
+
+                        <Button
+                            android:id="@+id/feeling_bad"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Bad"
+                            android:background="@drawable/button_transparent_round"
+                            android:fontFamily="@font/roboto_bold"
+                            android:paddingTop="14dp"
+                            android:paddingBottom="14dp"
+                            android:paddingStart="28dp"
+                            android:paddingEnd="28dp"
+                            android:textColor="@android:color/holo_green_light"/>
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+            </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
 
             <GridLayout
                 android:alignmentMode="alignMargins"
