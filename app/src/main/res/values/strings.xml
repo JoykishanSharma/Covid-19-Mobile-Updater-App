@@ -4,4 +4,23 @@
     <string name="world">WORLD</string>
     <string name="bad">BAD</string>
     <string name="good">GOOD</string>
+    <string name="hello">Hello!</string>
+    <string name="your_name">Your Name</string>
+    <string name="how_are_you_feeling_at_this_moment">How are you feeling at this moment?</string>
+    <string name="update_cases">Update Cases</string>
+    <string name="see_details">see details</string>
+    <string name="last_updated_06_march_2020">Last updated 06 March 2020</string>
+    <string name="_0000">0</string>
+    <string name="west_bengal">WEST BENGAL</string>
+    <string name="_000">0</string>
+    <string name="confirmed">Confirmed</string>
+    <string name="recovered">Recovered</string>
+    <string name="dead">Dead</string>
+    <string name="calender">Calender</string>
+    <string name="todo">TODO</string>
+    <string name="_1075_1800_112_545_011_23978076">1075 / 1800-112-545 / 011-23978076</string>
+    <string name="helpline_numbers">Helpline numbers :</string>
+    <string name="call_now">Call Now</string>
+    <string name="symptoms">Symptom</string>
+    <string name="prevention">Prevention</string>
 </resources>
