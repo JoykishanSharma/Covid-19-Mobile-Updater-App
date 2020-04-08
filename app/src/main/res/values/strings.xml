@@ -2,8 +2,8 @@
     <string name="app_name">Covid-19 Tracer</string>
     <string name="india">INDIA</string>
     <string name="world">WORLD</string>
-    <string name="bad">BAD</string>
-    <string name="good">GOOD</string>
+    <string name="bad">BAD&#160;</string>
+    <string name="good">GOOD&#160;</string>
     <string name="hello">Hello!</string>
     <string name="your_name">Your Name</string>
     <string name="how_are_you_feeling_at_this_moment">How are you feeling at this moment?</string>
@@ -18,9 +18,16 @@
     <string name="dead">Dead</string>
     <string name="calender">Calender</string>
     <string name="todo">TODO</string>
-    <string name="_1075_1800_112_545_011_23978076">1075 / 1800-112-545 / 011-23978076</string>
+    <string name="_1075_1800_112_545_011_23978076">+91-11-23978076</string>
     <string name="helpline_numbers">Helpline numbers :</string>
     <string name="call_now">Call Now</string>
-    <string name="symptoms">Symptom</string>
+    <string name="symptoms">Symptoms</string>
     <string name="prevention">Prevention</string>
+    <string name="helpful_text_quoted">\" This will pass too. Enjoy your time at home and spend quality time with your family! Things will be normal soon. \"</string>
+    <string name="more_helpline_no"><u>See more...</u></string>
+    <string name="stay_upto_date_with_latest_news_on_covid_19">Stay upto date with latest news on Covid-19</string>
+    <string name="everything_you_need_to_know_about_covid_19">Everything you need to know about Covid-19</string>
+    <string name="covid_19_realtime_spreading_in_map_view">Covid-19 Realtime Spreading in Map View</string>
+    <string name="hospitals">Hospitals</string>
+    <string name="report">Report</string>
 </resources>

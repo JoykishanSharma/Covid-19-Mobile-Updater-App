@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -19,7 +20,8 @@ public class HomeActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
     private Handler mWaitHandler = new Handler();
-    private CardView feelingGoodCardView, feelingBadCardView;
+    private CardView feelingGoodCardView, feelingBadCardView, homeToMapCardView,homeToInfoCardView,homeToNewsCardView;
+    private ImageView settings_image,phoneCall_image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,9 @@ public class HomeActivity extends AppCompatActivity {
         bottomNavigationView.setSelectedItemId(R.id.home);
         feelingGoodCardView = findViewById(R.id.feeling_good);
         feelingBadCardView = findViewById(R.id.feeling_bad);
+        homeToMapCardView = findViewById(R.id.home_to_map_cardview);
+        homeToInfoCardView = findViewById(R.id.home_to_info_cardview);
+        homeToNewsCardView = findViewById(R.id.home_to_news_cardview);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -68,6 +73,27 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(HomeActivity.this,FeelingBadActivity.class));
+            }
+        });
+
+        homeToMapCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this,MapsActivity.class));
+            }
+        });
+
+        homeToInfoCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this,InfoActivity.class));
+            }
+        });
+
+        homeToNewsCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this,NewsActivity.class));
             }
         });
     }
