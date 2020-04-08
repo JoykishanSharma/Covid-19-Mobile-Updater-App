@@ -1,5 +1,6 @@
 package com.joyappsdevteam.covid_19tracer;
 
+import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ public class WebViewWorldActivity extends FragmentActivity {
 
     private WebView webView;
 
+    @SuppressLint("SetJavaScriptEnabled")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

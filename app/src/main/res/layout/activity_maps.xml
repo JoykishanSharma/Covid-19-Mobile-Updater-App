@@ -6,33 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".MapsActivity">
 
+    <WebView
+        android:id="@+id/india_webView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="90dp"
         android:id="@+id/bottom_navigation"
-        android:background="@drawable/navigation_back"
+        android:background="@drawable/navigationbar"
         app:itemTextColor="@drawable/selector"
         app:itemIconTint="@drawable/selector"
         app:menu="@menu/menu_bottom_navigation"
         android:layout_alignParentBottom="true"/>
-
-    <Button
-        android:id="@+id/button_india"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="India"
-        android:layout_marginTop="100dp"
-        android:textSize="32sp"/>
-
-    <Button
-        android:id="@+id/button_world"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="World"
-        android:layout_below="@id/button_india"
-        android:layout_marginTop="100dp"
-        android:textSize="32sp"/>
 
 </RelativeLayout>
