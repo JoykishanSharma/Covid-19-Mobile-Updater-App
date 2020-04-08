@@ -34,7 +34,6 @@ public class MapsActivity extends AppCompatActivity {
         webView = findViewById(R.id.india_webView);
 
         progressBar = ProgressDialog.show(MapsActivity.this, "Showing Covid-19 India Report", "Loading...");
-        final AlertDialog alertDialog = new AlertDialog.Builder(this).create();
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
