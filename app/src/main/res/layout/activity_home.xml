@@ -472,11 +472,12 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
-                            android:text="@string/_1075_1800_112_545_011_23978076"
+                            android:text="@string/_011_23978076"
                             android:textSize="14sp"
                             android:textStyle="bold" />
 
                         <TextView
+                            android:id="@+id/more_helpline_nos"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="end"
@@ -488,6 +489,7 @@
                     </LinearLayout>
 
                     <TextView
+                        android:id="@+id/call_helpline_no"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
@@ -514,6 +516,7 @@
                 android:rowCount="2">
 
                 <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                    android:id="@+id/all_symptoms"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_rowWeight="1"
@@ -540,6 +543,7 @@
                 </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
 
                 <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                    android:id="@+id/all_preventions"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_rowWeight="1"
@@ -567,6 +571,7 @@
                 </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
 
                 <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                    android:id="@+id/all_nearby_covid19_hospital"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_rowWeight="1"
@@ -593,6 +598,7 @@
                 </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
 
                 <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                    android:id="@+id/report_patient"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_rowWeight="1"

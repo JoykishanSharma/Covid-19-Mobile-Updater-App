@@ -13,6 +13,7 @@ import android.os.Handler;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -20,8 +21,10 @@ public class HomeActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
     private Handler mWaitHandler = new Handler();
-    private CardView homeToMapCardView,homeToInfoCardView,homeToNewsCardView;
-    private ImageView settings_image,phoneCall_image;
+    private CardView homeToMapCardView,homeToInfoCardView,homeToNewsCardView,
+            all_symptoms,all_preventions,all_nearby_covid19_hospital,report_patient;
+    private ImageView settings_image;
+    private TextView see_detail_map,more_helpline_nos,call_helpline_no,helpful_text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +36,15 @@ public class HomeActivity extends AppCompatActivity {
         homeToMapCardView = findViewById(R.id.home_to_map_cardview);
         homeToInfoCardView = findViewById(R.id.home_to_info_cardview);
         homeToNewsCardView = findViewById(R.id.home_to_news_cardview);
+        see_detail_map = findViewById(R.id.see_detail_map);
+        more_helpline_nos = findViewById(R.id.more_helpline_nos);
+        call_helpline_no = findViewById(R.id.call_helpline_no);
+        helpful_text = findViewById(R.id.helpful_text);
+        all_symptoms = findViewById(R.id.all_symptoms);
+        all_preventions = findViewById(R.id.all_preventions);
+        all_nearby_covid19_hospital = findViewById(R.id.all_nearby_covid19_hospital);
+        report_patient = findViewById(R.id.report_patient);
+        settings_image = findViewById(R.id.settings);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -64,6 +76,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(HomeActivity.this,MapsActivity.class));
+                overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
             }
         });
 
@@ -71,6 +84,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(HomeActivity.this,InfoActivity.class));
+                overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
             }
         });
 
@@ -78,6 +92,79 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(HomeActivity.this,NewsActivity.class));
+                overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+            }
+        });
+
+        see_detail_map.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this,MapsActivity.class));
+                overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+            }
+        });
+
+        more_helpline_nos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Nearest Police Station number with address and all necessary contact list
+                //List of Helpline numbers of all start
+                //with direct call phone
+            }
+        });
+
+        call_helpline_no.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //show dialogAlert for confirming the call
+                //Direct call from App
+            }
+        });
+
+        all_symptoms.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //open Symptoms Activity
+                //add subActivities if needed
+                //with images and videos
+            }
+        });
+
+        all_preventions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //open Prevention Activity
+                //add subActivities if needed
+                //with images and videos
+            }
+        });
+
+        all_nearby_covid19_hospital.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //List All nearby Covid19 hospital, clinics, helps,
+                //Try to add map if possible
+            }
+        });
+
+        report_patient.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Report new Suspicious cases in your locality,
+                //share location for the suspect
+                //full history, everything in last 20days -- meetups, party, reunions, pets, everything
+            }
+        });
+
+        settings_image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //open settings activity
+                //terms and conditions
+                //privacy policies
+                //dark mode if possible
+                //contributions and attributes to sites and links
+                //about us
             }
         });
     }

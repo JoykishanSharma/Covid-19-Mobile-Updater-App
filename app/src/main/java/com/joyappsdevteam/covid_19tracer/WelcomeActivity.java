@@ -30,7 +30,9 @@ public class WelcomeActivity extends AppCompatActivity {
 
                     //Go to next page i.e, start the next activity.
                     SharedPreferences sharedPreferences = getSharedPreferences("logged_in", MODE_PRIVATE);
-                    boolean logged_in = sharedPreferences.getBoolean("is_logged", false);
+                    boolean logged_in = sharedPreferences.getBoolean("is_logged", true);
+
+                    //change the logged_in default value to "false" to world normally
 
                     if (logged_in){
                         Intent intent = new Intent(WelcomeActivity.this,HomeActivity.class);
@@ -38,7 +40,7 @@ public class WelcomeActivity extends AppCompatActivity {
                         overridePendingTransition(R.anim.custom_slide_in_right,R.anim.custom_slide_out_left);
                     }
                     else {
-                        Intent intent = new Intent(WelcomeActivity.this,HomeActivity.class);
+                        Intent intent = new Intent(WelcomeActivity.this,PhoneVerificationActivity.class);
                         startActivity(intent);
                         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                     }
@@ -49,7 +51,7 @@ public class WelcomeActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
             }
-        }, 5000);  // Give a 3 seconds delay.
+        }, 2000);  // Give a 2 seconds delay.
     }
 
     @Override

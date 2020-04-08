@@ -18,7 +18,7 @@
     <string name="dead">Dead</string>
     <string name="calender">Calender</string>
     <string name="todo">TODO</string>
-    <string name="_1075_1800_112_545_011_23978076">01123978076</string>
+    <string name="_011_23978076">+91–11–2397–8076</string>
     <string name="helpline_numbers">Helpline numbers :</string>
     <string name="call_now">Call Now</string>
     <string name="symptoms">Symptoms</string>
@@ -30,4 +30,8 @@
     <string name="covid_19_realtime_spreading_in_map_view">Covid-19 Realtime Spreading in Map View</string>
     <string name="hospitals">Hospitals</string>
     <string name="report">Report</string>
+    <string name="why_do_we_need_these"><u>Why do we need these?</u></string>
+    <string name="submit">Submit</string>
+    <string name="enter_mobile_number">&#160;Enter Mobile Number</string>
+    <string name="full_name">&#160;Full Name</string>
 </resources>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_view"
+    tools:context=".PhoneVerificationActivity">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="120dp"
+        android:layout_height="150dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:contentDescription="@string/todo"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <EditText
+        android:id="@+id/reg_name"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_above="@+id/reg_mobile_no"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="24dp"
+        android:autofillHints=""
+        android:background="#11000000"
+        android:drawableStart="@drawable/ic_person_black_24dp"
+        android:ems="10"
+        android:hint="@string/full_name"
+        android:inputType="textPersonName"
+        android:maxLength="30"
+        android:textColor="#fafafa"
+        android:textColorHint="#BEBDBDBD"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/reg_mobile_no"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_alignStart="@+id/reg_name"
+        android:layout_alignBottom="@+id/submit_cardView"
+        android:layout_marginBottom="130dp"
+        android:autofillHints=""
+        android:background="#11000000"
+        android:drawableStart="@drawable/ic_phone_black_24dp"
+        android:ems="10"
+        android:hint="@string/enter_mobile_number"
+        android:inputType="phone"
+        android:maxLength="10"
+        android:textColor="#fafafa"
+        android:textColorHint="#BEBDBDBD" />
+
+
+    <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+        android:id="@+id/submit_cardView"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/why_need_data"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="31dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardBackgroundColor="#572FB3"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="6dp">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/submit"
+            android:textColor="#fff"
+            android:textSize="18sp" />
+
+    </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+    <TextView
+        android:id="@+id/why_need_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:text="@string/why_do_we_need_these"
+        android:textColor="#fafafa" />
+
+    <!--<LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/imageView"
+        android:id="@+id/linearLayout"
+        android:visibility="invisible">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/twitter"
+            android:contentDescription="@string/todo" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            app:srcCompat="@drawable/instagram"
+            android:contentDescription="@string/todo" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            app:srcCompat="@drawable/facebook"
+            android:contentDescription="@string/todo" />
+    </LinearLayout>-->
+
+</RelativeLayout>
