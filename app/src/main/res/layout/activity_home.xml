@@ -15,40 +15,39 @@
         android:paddingEnd="18dp"
         android:paddingBottom="12dp">
 
-        <RelativeLayout
+        <LinearLayout
             android:id="@+id/txt_hello"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
                 android:text="@string/hello"
                 android:textColor="#FFFFFF"
-                android:layout_toStartOf="@id/settings"
                 android:textSize="24sp" />
 
-            <ImageView
-                android:id="@+id/settings"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_alignParentEnd="true"
-                android:layout_gravity="end"
-                android:layout_marginEnd="16dp"
-                android:src="@drawable/settings_icon"
-                android:contentDescription="@string/todo" />
+            <TextView
+                android:id="@+id/text_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/your_name"
+                android:textColor="#94D4FF"
+                android:textSize="18sp" />
 
-        </RelativeLayout>
+        </LinearLayout>
 
-        <TextView
-            android:id="@+id/text_username"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/txt_hello"
-            android:text="@string/your_name"
-            android:textColor="#52BAFF"
-            android:textSize="18sp" />
+        <ImageView
+            android:id="@+id/settings"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="end"
+            android:layout_marginEnd="16dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/settings_icon"
+            android:contentDescription="@string/todo" />
 
     </RelativeLayout>
 
@@ -61,7 +60,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingBottom="32dp">
 
 
            <!--<com.google.android.material.circularreveal.cardview.CircularRevealCardView
@@ -154,7 +154,6 @@
 
                     </LinearLayout>
 
-
                 </LinearLayout>
 
             </com.google.android.material.circularreveal.cardview.CircularRevealCardView>-->
@@ -186,7 +185,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/roboto_bold"
                             android:text="@string/update_cases"
-                            android:textColor="#171717"
+                            android:textColor="#ff23729a"
                             android:textSize="20sp" />
 
                         <TextView
@@ -205,7 +204,7 @@
                         android:layout_marginTop="8dp"
                         android:fontFamily="@font/roboto_bold"
                         android:text="@string/india"
-                        android:textColor="@android:color/holo_blue_dark"
+                        android:textColor="@android:color/holo_purple"
                         android:textSize="18sp" />
 
                     <TextView
@@ -327,7 +326,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_bold"
                         android:text="@string/west_bengal"
-                        android:textColor="@android:color/holo_blue_dark"
+                        android:textColor="@android:color/holo_purple"
                         android:textSize="18sp" />
 
                     <TextView
@@ -456,18 +455,19 @@
 
                     <LinearLayout
                         android:id="@+id/helpline_num"
-                        android:layout_width="240dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginEnd="20dp"
                         android:layout_gravity="center_vertical"
                         android:orientation="vertical">
 
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/roboto_bold"
                             android:gravity="start"
                             android:text="@string/helpline_numbers"
-                            android:textColor="@android:color/black"
+                            android:textColor="#ff23729a"
                             android:textSize="20sp" />
 
                         <TextView
@@ -493,12 +493,12 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
-                        android:layout_marginEnd="8dp"
+                        android:layout_marginEnd="16dp"
                         android:drawableTop="@drawable/ic_call_black_24dp"
                         android:gravity="center_horizontal"
                         android:text="@string/call_now"
-                        android:layout_toEndOf="@id/helpline_num"
                         android:textColor="#008EFF"
+                        android:layout_toEndOf="@id/helpline_num"
                         android:textSize="16sp" />
 
                 </RelativeLayout>
@@ -533,8 +533,9 @@
                             android:fontFamily="@font/roboto_bold"
                             android:text="@string/symptoms"
                             android:layout_gravity="center"
+                            android:padding="16dp"
                             android:drawableTop="@drawable/symptom_cardview"
-                            android:textColor="#000000"
+                            android:textColor="#ff23729a"
                             android:textSize="16sp" />
 
                 </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
@@ -557,7 +558,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/roboto_bold"
                             android:text="@string/prevention"
-                            android:textColor="#1B1A1A"
+                            android:textColor="#ff23729a"
                             android:textSize="16sp"
                             android:padding="16dp"
                             android:layout_gravity="center"
@@ -587,7 +588,7 @@
                             android:drawableTop="@drawable/hospital_cardview"
                             android:fontFamily="@font/roboto_bold"
                             android:text="@string/hospitals"
-                            android:textColor="#000000"
+                            android:textColor="#ff23729a"
                             android:textSize="16sp" />
 
                 </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
@@ -612,7 +613,7 @@
                             android:fontFamily="@font/roboto_bold"
                             android:text="@string/report"
                             android:layout_gravity="center"
-                            android:textColor="#1B1A1A"
+                            android:textColor="#ff23729a"
                             android:textSize="16sp"
                             android:drawableTop="@drawable/report_cardview"/>
 
@@ -648,7 +649,7 @@
                         android:fontFamily="@font/roboto_bold"
                         android:gravity="start|center_vertical"
                         android:text="@string/covid_19_realtime_spreading_in_map_view"
-                        android:textColor="@android:color/black"
+                        android:textColor="#ff23729a"
                         android:textSize="15sp" />
 
                     <ImageView
@@ -695,7 +696,7 @@
                         android:fontFamily="@font/roboto_bold"
                         android:gravity="start|center_vertical"
                         android:text="@string/everything_you_need_to_know_about_covid_19"
-                        android:textColor="@android:color/black"
+                        android:textColor="#ff23729a"
                         android:textSize="15sp" />
 
                     <ImageView
@@ -742,7 +743,7 @@
                         android:fontFamily="@font/roboto_bold"
                         android:gravity="start|center_vertical"
                         android:text="@string/stay_upto_date_with_latest_news_on_covid_19"
-                        android:textColor="@android:color/black"
+                        android:textColor="#ff23729a"
                         android:textSize="15sp" />
 
                     <ImageView
@@ -765,13 +766,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginStart="30dp"
+                android:paddingStart="30dp"
+                android:background="#4E535353"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
                 android:layout_marginTop="30dp"
-                android:layout_marginEnd="30dp"
+                android:paddingEnd="30dp"
                 android:layout_marginBottom="30dp"
                 android:gravity="center"
                 android:text="@string/helpful_text_quoted"
-                android:textColor="#D82260"
+                android:textColor="@color/colorPrimaryDark"
                 android:textSize="15sp"
                 android:textStyle="bold|italic" />
 
