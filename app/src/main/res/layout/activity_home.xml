@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bgapp"
+    android:background="@drawable/bg_view"
     tools:context=".InfoActivity">
 
     <RelativeLayout
@@ -23,18 +23,21 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
                 android:text="@string/hello"
                 android:textColor="#FFFFFF"
+                android:layout_toStartOf="@id/settings"
                 android:textSize="24sp" />
 
             <ImageView
                 android:id="@+id/settings"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_gravity="end"
-                android:src="@drawable/settings_icon"
                 android:layout_alignParentEnd="true"
-                android:layout_marginEnd="16dp" />
+                android:layout_gravity="end"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/settings_icon"
+                android:contentDescription="@string/todo" />
 
         </RelativeLayout>
 
@@ -60,793 +63,717 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <LinearLayout
+
+           <!--<com.google.android.material.circularreveal.cardview.CircularRevealCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="100dp"
-                android:orientation="vertical">
+                android:layout_margin="12dp"
+                android:clickable="false"
+                android:focusable="false"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp"
+                app:strokeColor="#2196F3"
+                app:strokeWidth="1dp">
 
-                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_rowWeight="1"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="12dp"
-                    android:clickable="false"
-                    android:focusable="false"
-                    app:cardCornerRadius="12dp"
-                    app:cardElevation="6dp"
-                    app:strokeColor="#2196F3"
-                    app:strokeWidth="1dp">
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_bold"
+                        android:gravity="center"
+                        android:text="@string/how_are_you_feeling_at_this_moment"
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:textSize="19sp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="16dp">
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="12dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
 
-                        <TextView
-                            android:layout_width="match_parent"
+                        <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                            android:id="@+id/feeling_good"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/roboto_bold"
-                            android:gravity="center"
-                            android:text="@string/how_are_you_feeling_at_this_moment"
-                            android:textColor="@android:color/holo_blue_dark"
-                            android:textSize="19sp" />
+                            android:layout_marginEnd="24dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="6dp">
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="60dp"
-                            android:layout_marginTop="16dp"
-                            android:layout_marginBottom="12dp"
-                            android:gravity="center"
-                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:drawableEnd="@drawable/ic_mood_black_24dp"
+                                android:fontFamily="@font/roboto_bold"
+                                android:gravity="center_vertical"
+                                android:paddingStart="20dp"
+                                android:paddingTop="16dp"
+                                android:paddingEnd="20dp"
+                                android:paddingBottom="16dp"
+                                android:text="@string/good"
+                                android:textColor="@android:color/holo_green_dark"
+                                android:textSize="16sp" />
 
-                            <com.google.android.material.circularreveal.cardview.CircularRevealCardView
-                                android:id="@+id/feeling_good"
-                                android:layout_width="106dp"
-                                android:layout_height="50dp"
-                                android:layout_marginEnd="24dp"
-                                android:clickable="true"
-                                android:focusable="true"
-                                android:paddingStart="28dp"
-                                android:paddingTop="14dp"
-                                android:paddingEnd="28dp"
-                                android:paddingBottom="14dp"
-                                app:cardCornerRadius="12dp"
-                                app:cardElevation="6dp">
+                        </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
 
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:drawableEnd="@drawable/ic_mood_black_24dp"
-                                    android:fontFamily="@font/roboto_bold"
-                                    android:text="@string/good"
-                                    android:gravity="center_vertical"
-                                    android:textColor="@android:color/holo_green_dark"
-                                    android:textSize="16sp" />
+                        <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                            android:id="@+id/feeling_bad"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="24dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="6dp">
 
-                            </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:drawableEnd="@drawable/ic_mood_bad_black_24dp"
+                                android:fontFamily="@font/roboto_bold"
+                                android:gravity="center_vertical"
+                                android:paddingStart="20dp"
+                                android:paddingTop="16dp"
+                                android:paddingEnd="20dp"
+                                android:paddingBottom="16dp"
+                                android:text="@string/bad"
+                                android:textColor="@android:color/holo_red_light"
+                                android:textSize="16sp" />
 
-                            <com.google.android.material.circularreveal.cardview.CircularRevealCardView
-                                android:id="@+id/feeling_bad"
-                                android:layout_width="106dp"
-                                android:layout_height="50dp"
-                                android:layout_marginStart="24dp"
-                                android:clickable="true"
-                                android:focusable="true"
-                                android:paddingStart="28dp"
-                                android:paddingTop="14dp"
-                                android:paddingEnd="28dp"
-                                android:paddingBottom="14dp"
-                                app:cardCornerRadius="12dp"
-                                app:cardElevation="6dp">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:drawableEnd="@drawable/ic_mood_bad_black_24dp"
-                                    android:fontFamily="@font/roboto_bold"
-                                    android:text="@string/bad"
-                                    android:gravity="center_vertical"
-                                    android:textColor="@android:color/holo_red_light"
-                                    android:textSize="16sp" />
-
-                            </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
-
-                        </LinearLayout>
-
+                        </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
 
                     </LinearLayout>
 
-                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
 
-                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                </LinearLayout>
+
+            </com.google.android.material.circularreveal.cardview.CircularRevealCardView>-->
+
+            <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:clickable="false"
+                android:focusable="false"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp"
+                app:strokeColor="#2196F3"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_rowWeight="1"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="12dp"
-                    android:clickable="false"
-                    android:focusable="false"
-                    app:cardCornerRadius="12dp"
-                    app:cardElevation="6dp"
-                    app:strokeColor="#2196F3"
-                    app:strokeWidth="1dp">
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="16dp">
+                        android:orientation="horizontal">
 
-                        <LinearLayout
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_bold"
+                            android:text="@string/update_cases"
+                            android:textColor="#171717"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/see_detail_map"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:gravity="end"
+                            android:text="@string/see_details"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="@string/india"
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/last_update_india_textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:text="@string/last_updated_06_march_2020"
+                        android:textSize="12sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/confirm_cases_india"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/_0000"
+                                android:textColor="@android:color/holo_red_light"
+                                android:textSize="24sp" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/roboto_bold"
-                                android:text="@string/update_cases"
-                                android:textColor="#171717"
-                                android:textSize="20sp" />
-
-                            <TextView
-                                android:id="@+id/see_detail_map"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="end"
-                                android:text="@string/see_details"
-                                android:textSize="12sp" />
-
-                        </LinearLayout>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:fontFamily="@font/roboto_bold"
-                            android:text="@string/india"
-                            android:textColor="@android:color/holo_blue_dark"
-                            android:textSize="18sp" />
-
-                        <TextView
-                            android:id="@+id/last_update_india_textView"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="12dp"
-                            android:text="@string/last_updated_06_march_2020"
-                            android:textSize="12sp" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
-                            android:gravity="center_horizontal"
-                            android:orientation="horizontal">
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:gravity="center_horizontal"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:id="@+id/confirm_cases_india"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="@string/_0000"
-                                    android:textColor="@android:color/holo_red_light"
-                                    android:textSize="24sp" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/roboto_bold"
-                                    android:text="@string/confirmed"
-                                    android:textColor="@android:color/holo_red_light"
-                                    android:textSize="14sp" />
-
-                            </LinearLayout>
-
-                            <View
-                                android:layout_width="1dp"
-                                android:layout_height="match_parent"
-                                android:layout_marginTop="8dp"
-                                android:layout_marginBottom="8dp"
-                                android:background="@android:color/darker_gray" />
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:gravity="center_horizontal"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:id="@+id/recover_cases_india"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="@string/_0000"
-                                    android:textColor="@android:color/holo_green_light"
-                                    android:textSize="24sp" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/roboto_bold"
-                                    android:text="@string/recovered"
-                                    android:textColor="@android:color/holo_green_light"
-                                    android:textSize="14sp" />
-
-                            </LinearLayout>
-
-                            <View
-                                android:layout_width="1dp"
-                                android:layout_height="match_parent"
-                                android:layout_marginTop="8dp"
-                                android:layout_marginBottom="8dp"
-                                android:background="@android:color/darker_gray" />
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:gravity="center_horizontal"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:id="@+id/dead_cases_india"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="@string/_0000"
-                                    android:textSize="24sp" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/roboto_bold"
-                                    android:text="@string/dead"
-                                    android:textSize="14sp" />
-
-                            </LinearLayout>
-
+                                android:text="@string/confirmed"
+                                android:textColor="@android:color/holo_red_light"
+                                android:textSize="14sp" />
 
                         </LinearLayout>
 
                         <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:layout_marginStart="8dp"
-                            android:layout_marginTop="16dp"
-                            android:layout_marginEnd="8dp"
-                            android:layout_marginBottom="16dp"
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
                             android:background="@android:color/darker_gray" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/recover_cases_india"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/_0000"
+                                android:textColor="@android:color/holo_green_light"
+                                android:textSize="24sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_bold"
+                                android:text="@string/recovered"
+                                android:textColor="@android:color/holo_green_light"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:background="@android:color/darker_gray" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/dead_cases_india"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/_0000"
+                                android:textSize="24sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_bold"
+                                android:text="@string/dead"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@android:color/darker_gray" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="@string/west_bengal"
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/last_update_state_textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:text="@string/last_updated_06_march_2020"
+                        android:textSize="12sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/_000"
+                                android:textColor="@android:color/holo_red_light"
+                                android:textSize="24sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_bold"
+                                android:text="@string/confirmed"
+                                android:textColor="@android:color/holo_red_light"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:background="@android:color/darker_gray" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/_000"
+                                android:textColor="@android:color/holo_green_light"
+                                android:textSize="24sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_bold"
+                                android:text="@string/recovered"
+                                android:textColor="@android:color/holo_green_light"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:background="@android:color/darker_gray" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="16dp"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/_000"
+                                android:textSize="24sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_bold"
+                                android:text="@string/dead"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+            <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:clickable="false"
+                android:focusable="false"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp"
+                app:strokeColor="#2196F3"
+                app:strokeWidth="1dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:id="@+id/helpline_num"
+                        android:layout_width="240dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_bold"
+                            android:gravity="start"
+                            android:text="@string/helpline_numbers"
+                            android:textColor="@android:color/black"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="@string/_1075_1800_112_545_011_23978076"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            android:paddingTop="8dp"
+                            android:text="@string/more_helpline_no"
+                            android:textSize="13sp" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="8dp"
+                        android:drawableTop="@drawable/ic_call_black_24dp"
+                        android:gravity="center_horizontal"
+                        android:text="@string/call_now"
+                        android:layout_toEndOf="@id/helpline_num"
+                        android:textColor="#008EFF"
+                        android:textSize="16sp" />
+
+                </RelativeLayout>
+
+
+            </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:alignmentMode="alignMargins"
+                android:columnCount="2"
+                android:columnOrderPreserved="false"
+                android:rowCount="2">
+
+                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="12dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp"
+                    app:strokeColor="#2196F3"
+                    app:strokeWidth="1dp">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/roboto_bold"
-                            android:text="@string/west_bengal"
-                            android:textColor="@android:color/holo_blue_dark"
-                            android:textSize="18sp" />
-
-                        <TextView
-                            android:id="@+id/last_update_state_textView"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="12dp"
-                            android:text="@string/last_updated_06_march_2020"
-                            android:textSize="12sp" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
-                            android:gravity="center_horizontal"
-                            android:orientation="horizontal">
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:gravity="center_horizontal"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="@string/_000"
-                                    android:textColor="@android:color/holo_red_light"
-                                    android:textSize="24sp" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/roboto_bold"
-                                    android:text="@string/confirmed"
-                                    android:textColor="@android:color/holo_red_light"
-                                    android:textSize="14sp" />
-
-                            </LinearLayout>
-
-                            <View
-                                android:layout_width="1dp"
-                                android:layout_height="match_parent"
-                                android:layout_marginTop="8dp"
-                                android:layout_marginBottom="8dp"
-                                android:background="@android:color/darker_gray" />
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:gravity="center_horizontal"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="@string/_000"
-                                    android:textColor="@android:color/holo_green_light"
-                                    android:textSize="24sp" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/roboto_bold"
-                                    android:text="@string/recovered"
-                                    android:textColor="@android:color/holo_green_light"
-                                    android:textSize="14sp" />
-
-                            </LinearLayout>
-
-                            <View
-                                android:layout_width="1dp"
-                                android:layout_height="match_parent"
-                                android:layout_marginTop="8dp"
-                                android:layout_marginBottom="8dp"
-                                android:background="@android:color/darker_gray" />
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="16dp"
-                                android:layout_weight="1"
-                                android:gravity="center_horizontal"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="@string/_000"
-                                    android:textSize="24sp" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/roboto_bold"
-                                    android:text="@string/dead"
-                                    android:textSize="14sp" />
-
-                            </LinearLayout>
-
-
-                        </LinearLayout>
-
-                    </LinearLayout>
+                            android:text="@string/symptoms"
+                            android:layout_gravity="center"
+                            android:drawableTop="@drawable/symptom_cardview"
+                            android:textColor="#000000"
+                            android:textSize="16sp" />
 
                 </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="12dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp"
+                    app:strokeColor="#2196F3"
+                    app:strokeWidth="1dp">
 
-                    <com.google.android.material.circularreveal.cardview.CircularRevealCardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="12dp"
-                        android:clickable="false"
-                        android:focusable="false"
-                        app:cardCornerRadius="12dp"
-                        app:cardElevation="6dp"
-                        app:strokeColor="#2196F3"
-                        app:strokeWidth="1dp">
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
+                        <TextView
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:padding="16dp">
-
-                            <LinearLayout
-                                android:id="@+id/helpline_num"
-                                android:layout_width="240dp"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/roboto_bold"
-                                    android:gravity="start"
-                                    android:text="@string/helpline_numbers"
-                                    android:textColor="@android:color/black"
-                                    android:textSize="20sp" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="4dp"
-                                    android:text="@string/_1075_1800_112_545_011_23978076"
-                                    android:textSize="14sp"
-                                    android:textStyle="bold" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:gravity="end"
-                                    android:paddingTop="8dp"
-                                    android:text="@string/more_helpline_no"
-                                    android:textSize="13sp"/>
-
-                            </LinearLayout>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentEnd="true"
-                                android:layout_centerVertical="true"
-                                android:layout_marginEnd="8dp"
-                                android:drawableTop="@drawable/ic_call_black_24dp"
-                                android:gravity="center_horizontal"
-                                android:text="@string/call_now"
-                                android:textColor="#008EFF"
-                                android:textSize="16sp" />
-
-                        </RelativeLayout>
+                            android:fontFamily="@font/roboto_bold"
+                            android:text="@string/prevention"
+                            android:textColor="#1B1A1A"
+                            android:textSize="16sp"
+                            android:padding="16dp"
+                            android:layout_gravity="center"
+                            android:drawableTop="@drawable/prevention_cardview"/>
 
 
-                    </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
 
-                </LinearLayout>
+                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="12dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp"
+                    app:strokeColor="#2196F3"
+                    app:strokeWidth="1dp">
 
-                <GridLayout
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="16dp"
+                            android:layout_gravity="center"
+                            android:drawableTop="@drawable/hospital_cardview"
+                            android:fontFamily="@font/roboto_bold"
+                            android:text="@string/hospitals"
+                            android:textColor="#000000"
+                            android:textSize="16sp" />
+
+                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="12dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp"
+                    app:strokeColor="#2196F3"
+                    app:strokeWidth="1dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="16dp"
+                            android:fontFamily="@font/roboto_bold"
+                            android:text="@string/report"
+                            android:layout_gravity="center"
+                            android:textColor="#1B1A1A"
+                            android:textSize="16sp"
+                            android:drawableTop="@drawable/report_cardview"/>
+
+                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+            </GridLayout>
+
+            <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                android:id="@+id/home_to_map_cardview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp"
+                app:strokeColor="#2196F3"
+                app:strokeWidth="1dp">
+
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:alignmentMode="alignMargins"
-                    android:columnCount="2"
-                    android:columnOrderPreserved="false"
-                    android:rowCount="2">
+                    android:orientation="horizontal"
+                    android:padding="16dp">
 
-                    <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_rowWeight="1"
-                        android:layout_columnWeight="1"
-                        android:layout_margin="12dp"
-                        android:clickable="true"
-                        android:focusable="true"
-                        app:cardCornerRadius="12dp"
-                        app:cardElevation="6dp"
-                        app:strokeColor="#2196F3"
-                        app:strokeWidth="1dp">
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="16dp"
+                        android:layout_toStartOf="@+id/map_image"
+                        android:fontFamily="@font/roboto_bold"
+                        android:gravity="start|center_vertical"
+                        android:text="@string/covid_19_realtime_spreading_in_map_view"
+                        android:textColor="@android:color/black"
+                        android:textSize="15sp" />
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:padding="16dp">
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="end"
-                                android:src="@drawable/symptom_cardview" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
-                                android:text="@string/symptoms"
-                                android:textColor="#000000"
-                                android:textSize="16sp"
-                                android:fontFamily="@font/roboto_bold"/>
-                        </LinearLayout>
-
-                    </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
-
-                    <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                    <ImageView
+                        android:id="@+id/map_image"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_rowWeight="1"
-                        android:layout_columnWeight="1"
-                        android:layout_margin="12dp"
-                        android:clickable="true"
-                        android:focusable="true"
-                        app:cardCornerRadius="12dp"
-                        app:cardElevation="6dp"
-                        app:strokeColor="#2196F3"
-                        app:strokeWidth="1dp">
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="8dp"
+                        android:gravity="center_horizontal"
+                        android:src="@drawable/world_cardview"
+                        android:contentDescription="@string/todo" />
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:padding="16dp">
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="end"
-                                android:src="@drawable/prevention_cardview" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
-                                android:text="@string/prevention"
-                                android:textColor="#1B1A1A"
-                                android:textSize="16sp"
-                                android:fontFamily="@font/roboto_bold"/>
-                        </LinearLayout>
-
-                    </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
-
-                    <com.google.android.material.circularreveal.cardview.CircularRevealCardView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_rowWeight="1"
-                        android:layout_columnWeight="1"
-                        android:layout_margin="12dp"
-                        android:clickable="true"
-                        android:focusable="true"
-                        app:cardCornerRadius="12dp"
-                        app:cardElevation="6dp"
-                        app:strokeColor="#2196F3"
-                        app:strokeWidth="1dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:padding="16dp">
-
-                            <ImageView
-                                android:layout_width="60dp"
-                                android:layout_height="50dp"
-                                android:layout_gravity="end"
-                                android:src="@drawable/hospital_cardview" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
-                                android:text="@string/hospitals"
-                                android:textColor="#000000"
-                                android:textSize="16sp"
-                                android:fontFamily="@font/roboto_bold"/>
-                        </LinearLayout>
-
-                    </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
-
-                    <com.google.android.material.circularreveal.cardview.CircularRevealCardView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_rowWeight="1"
-                        android:layout_columnWeight="1"
-                        android:layout_margin="12dp"
-                        android:clickable="true"
-                        android:focusable="true"
-                        app:cardCornerRadius="12dp"
-                        app:cardElevation="6dp"
-                        app:strokeColor="#2196F3"
-                        app:strokeWidth="1dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:padding="16dp">
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="end"
-                                android:src="@drawable/report_cardview" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
-                                android:text="@string/report"
-                                android:textColor="#1B1A1A"
-                                android:textSize="16sp"
-                                android:fontFamily="@font/roboto_bold"/>
-                        </LinearLayout>
-
-                    </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
-
-                </GridLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <com.google.android.material.circularreveal.cardview.CircularRevealCardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="12dp"
-                        android:clickable="true"
-                        android:focusable="true"
-                        app:cardCornerRadius="12dp"
-                        app:cardElevation="6dp"
-                        app:strokeColor="#2196F3"
-                        app:strokeWidth="1dp"
-                        android:id="@+id/home_to_map_cardview">
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:padding="16dp">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/roboto_bold"
-                                android:gravity="start|center_vertical"
-                                android:text="@string/covid_19_realtime_spreading_in_map_view"
-                                android:textColor="@android:color/black"
-                                android:textSize="15sp"
-                                android:layout_centerVertical="true"
-                                android:layout_alignParentStart="true"
-                                android:layout_toStartOf="@+id/map_image"
-                                android:layout_marginEnd="16dp"/>
-
-                            <ImageView
-                                android:id="@+id/map_image"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentEnd="true"
-                                android:layout_centerVertical="true"
-                                android:layout_marginEnd="8dp"
-                                android:src="@drawable/world_cardview"
-                                android:gravity="center_horizontal" />
-
-                        </RelativeLayout>
+                </RelativeLayout>
 
 
-                    </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+            </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
 
-                </LinearLayout>
+            <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                android:id="@+id/home_to_info_cardview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp"
+                app:strokeColor="#2196F3"
+                app:strokeWidth="1dp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <com.google.android.material.circularreveal.cardview.CircularRevealCardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="12dp"
-                        android:clickable="true"
-                        android:focusable="true"
-                        app:cardCornerRadius="12dp"
-                        app:cardElevation="6dp"
-                        app:strokeColor="#2196F3"
-                        app:strokeWidth="1dp"
-                        android:id="@+id/home_to_info_cardview">
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:padding="16dp">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/roboto_bold"
-                                android:gravity="start|center_vertical"
-                                android:text="@string/everything_you_need_to_know_about_covid_19"
-                                android:textColor="@android:color/black"
-                                android:textSize="15sp"
-                                android:layout_centerVertical="true"
-                                android:layout_alignParentStart="true"
-                                android:layout_toStartOf="@+id/info_image"
-                                android:layout_marginEnd="16dp"/>
-
-                            <ImageView
-                                android:id="@+id/info_image"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentEnd="true"
-                                android:layout_centerVertical="true"
-                                android:layout_marginEnd="8dp"
-                                android:src="@drawable/info_cardview"
-                                android:gravity="center_horizontal" />
-
-                        </RelativeLayout>
-
-
-                    </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <com.google.android.material.circularreveal.cardview.CircularRevealCardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="12dp"
-                        android:clickable="true"
-                        android:focusable="true"
-                        app:cardCornerRadius="12dp"
-                        app:cardElevation="6dp"
-                        app:strokeColor="#2196F3"
-                        app:strokeWidth="1dp"
-                        android:id="@+id/home_to_news_cardview">
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:padding="16dp">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/roboto_bold"
-                                android:gravity="start|center_vertical"
-                                android:text="@string/stay_upto_date_with_latest_news_on_covid_19"
-                                android:textColor="@android:color/black"
-                                android:textSize="15sp"
-                                android:layout_centerVertical="true"
-                                android:layout_alignParentStart="true"
-                                android:layout_toStartOf="@+id/news_image"
-                                android:layout_marginEnd="16dp"/>
-
-                            <ImageView
-                                android:id="@+id/news_image"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentEnd="true"
-                                android:layout_centerVertical="true"
-                                android:layout_marginEnd="8dp"
-                                android:src="@drawable/news_cardview"
-                                android:gravity="center_horizontal" />
-
-                        </RelativeLayout>
-
-
-                    </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
-
-                </LinearLayout>
-
-                <TextView
-                    android:id="@+id/helpful_text"
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:gravity="center"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginBottom="30dp"
-                    android:textSize="15sp"
-                    android:textColor="#D82260"
-                    android:textStyle="bold|italic"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginEnd="30dp"
-                    android:text="@string/helpful_text_quoted"/>
+                    android:orientation="horizontal"
+                    android:padding="16dp">
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="16dp"
+                        android:layout_toStartOf="@+id/info_image"
+                        android:fontFamily="@font/roboto_bold"
+                        android:gravity="start|center_vertical"
+                        android:text="@string/everything_you_need_to_know_about_covid_19"
+                        android:textColor="@android:color/black"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:id="@+id/info_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="8dp"
+                        android:gravity="center_horizontal"
+                        android:src="@drawable/info_cardview"
+                        android:contentDescription="@string/todo" />
+
+                </RelativeLayout>
+
+
+            </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+            <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                android:id="@+id/home_to_news_cardview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp"
+                app:strokeColor="#2196F3"
+                app:strokeWidth="1dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="16dp"
+                        android:layout_toStartOf="@+id/news_image"
+                        android:fontFamily="@font/roboto_bold"
+                        android:gravity="start|center_vertical"
+                        android:text="@string/stay_upto_date_with_latest_news_on_covid_19"
+                        android:textColor="@android:color/black"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:id="@+id/news_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="8dp"
+                        android:gravity="center_horizontal"
+                        android:src="@drawable/news_cardview"
+                        android:contentDescription="@string/todo" />
+
+                </RelativeLayout>
+
+            </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+            <TextView
+                android:id="@+id/helpful_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="30dp"
+                android:gravity="center"
+                android:text="@string/helpful_text_quoted"
+                android:textColor="#D82260"
+                android:textSize="15sp"
+                android:textStyle="bold|italic" />
 
         </LinearLayout>
 

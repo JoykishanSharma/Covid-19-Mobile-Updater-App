@@ -20,7 +20,7 @@ public class HomeActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
     private Handler mWaitHandler = new Handler();
-    private CardView feelingGoodCardView, feelingBadCardView, homeToMapCardView,homeToInfoCardView,homeToNewsCardView;
+    private CardView homeToMapCardView,homeToInfoCardView,homeToNewsCardView;
     private ImageView settings_image,phoneCall_image;
 
     @Override
@@ -30,8 +30,6 @@ public class HomeActivity extends AppCompatActivity {
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.home);
-        feelingGoodCardView = findViewById(R.id.feeling_good);
-        feelingBadCardView = findViewById(R.id.feeling_bad);
         homeToMapCardView = findViewById(R.id.home_to_map_cardview);
         homeToInfoCardView = findViewById(R.id.home_to_info_cardview);
         homeToNewsCardView = findViewById(R.id.home_to_news_cardview);
@@ -59,20 +57,6 @@ public class HomeActivity extends AppCompatActivity {
                         return true;
                 }
                 return false;
-            }
-        });
-
-        feelingGoodCardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(HomeActivity.this,FeelingGoodActivity.class));
-            }
-        });
-
-        feelingBadCardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(HomeActivity.this,FeelingBadActivity.class));
             }
         });
 
