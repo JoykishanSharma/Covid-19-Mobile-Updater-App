@@ -41,7 +41,7 @@ public class MapsActivity extends AppCompatActivity {
                 switch (item.getItemId()){
                     case R.id.home:
                         startActivity(new Intent(getApplicationContext(),HomeActivity.class));
-                        overridePendingTransition(0,0);
+                        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                         return true;
 
                     case R.id.map:
@@ -49,12 +49,12 @@ public class MapsActivity extends AppCompatActivity {
 
                     case R.id.info:
                         startActivity(new Intent(getApplicationContext(),InfoActivity.class));
-                        overridePendingTransition(0,0);
+                        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                         return true;
 
                     case R.id.news:
                         startActivity(new Intent(getApplicationContext(),NewsActivity.class));
-                        overridePendingTransition(0,0);
+                        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                         return true;
                 }
                 return false;
@@ -99,7 +99,7 @@ public class MapsActivity extends AppCompatActivity {
     public void onBackPressed() {
         finish();
         startActivity(new Intent(MapsActivity.this,HomeActivity.class));
-        overridePendingTransition(0,0);
+        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
 
     }
 

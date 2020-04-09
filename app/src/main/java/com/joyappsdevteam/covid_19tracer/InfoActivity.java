@@ -1,14 +1,10 @@
 package com.joyappsdevteam.covid_19tracer;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class InfoActivity extends AppCompatActivity {
@@ -29,12 +25,12 @@ public class InfoActivity extends AppCompatActivity {
                 switch (item.getItemId()){
                     case R.id.home:
                         startActivity(new Intent(getApplicationContext(),HomeActivity.class));
-                        overridePendingTransition(0,0);
+                        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                         return true;
 
                     case R.id.map:
                         startActivity(new Intent(getApplicationContext(),MapsActivity.class));
-                        overridePendingTransition(0,0);
+                        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                         return true;
 
                     case R.id.info:
@@ -42,7 +38,7 @@ public class InfoActivity extends AppCompatActivity {
 
                     case R.id.news:
                         startActivity(new Intent(getApplicationContext(),NewsActivity.class));
-                        overridePendingTransition(0,0);
+                        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                         return true;
                 }
                 return false;
@@ -54,7 +50,7 @@ public class InfoActivity extends AppCompatActivity {
     public void onBackPressed() {
         finish();
         startActivity(new Intent(InfoActivity.this,HomeActivity.class));
-        overridePendingTransition(0,0);
+        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
 
     }
 }

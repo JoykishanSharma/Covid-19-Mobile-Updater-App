@@ -27,17 +27,17 @@ public class NewsActivity extends AppCompatActivity {
                 switch (item.getItemId()){
                     case R.id.home:
                         startActivity(new Intent(getApplicationContext(),HomeActivity.class));
-                        overridePendingTransition(0,0);
+                        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                         return true;
 
                     case R.id.map:
                         startActivity(new Intent(getApplicationContext(),MapsActivity.class));
-                        overridePendingTransition(0,0);
+                        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                         return true;
 
                     case R.id.info:
                         startActivity(new Intent(getApplicationContext(),InfoActivity.class));
-                        overridePendingTransition(0,0);
+                        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                         return true;
 
                     case R.id.news:
@@ -52,7 +52,7 @@ public class NewsActivity extends AppCompatActivity {
     public void onBackPressed() {
         finish();
         startActivity(new Intent(NewsActivity.this,HomeActivity.class));
-        overridePendingTransition(0,0);
+        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
 
     }
 }

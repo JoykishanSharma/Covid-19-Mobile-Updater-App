@@ -93,17 +93,17 @@ public class HomeActivity extends AppCompatActivity {
 
                     case R.id.map:
                         startActivity(new Intent(getApplicationContext(),MapsActivity.class));
-                        overridePendingTransition(0,0);
+                        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                         return true;
 
                     case R.id.info:
                         startActivity(new Intent(getApplicationContext(),InfoActivity.class));
-                        overridePendingTransition(0,0);
+                        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                         return true;
 
                     case R.id.news:
                         startActivity(new Intent(getApplicationContext(),NewsActivity.class));
-                        overridePendingTransition(0,0);
+                        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                         return true;
                 }
                 return false;
