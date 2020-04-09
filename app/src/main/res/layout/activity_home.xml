@@ -292,7 +292,7 @@
                             android:orientation="vertical">
 
                             <TextView
-                                android:id="@+id/dead_cases_india"
+                                android:id="@+id/death_cases_india"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/_0000"
@@ -320,10 +320,11 @@
                         android:background="@android:color/darker_gray" />
 
                     <TextView
+                        android:id="@+id/your_state_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_bold"
-                        android:text="@string/west_bengal"
+                        android:text="@string/your_state"
                         android:textColor="@android:color/holo_purple"
                         android:textSize="18sp" />
 
@@ -350,6 +351,7 @@
                             android:orientation="vertical">
 
                             <TextView
+                                android:id="@+id/confirm_cases_state_level"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/_000"
@@ -381,6 +383,7 @@
                             android:orientation="vertical">
 
                             <TextView
+                                android:id="@+id/recover_cases_state_level"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/_000"
@@ -413,6 +416,7 @@
                             android:orientation="vertical">
 
                             <TextView
+                                android:id="@+id/death_cases_state_level"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/_000"

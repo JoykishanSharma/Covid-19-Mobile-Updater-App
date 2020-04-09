@@ -7,15 +7,32 @@ import androidx.cardview.widget.CardView;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.location.Address;
+import android.location.Geocoder;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.InputFilter;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.List;
+import java.util.Locale;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -24,7 +41,11 @@ public class HomeActivity extends AppCompatActivity {
     private CardView homeToMapCardView,homeToInfoCardView,homeToNewsCardView,
             all_symptoms,all_preventions,all_nearby_covid19_hospital,report_patient;
     private ImageView settings_image;
-    private TextView see_detail_map,more_helpline_nos,call_helpline_no,helpful_text;
+    private TextView see_detail_map,more_helpline_nos,call_helpline_no,helpful_text,
+            confirm_cases_india,recover_cases_india,death_cases_india,last_update_india_textView,
+            confirm_cases_state_level,recover_cases_state_level,death_cases_state_level,last_update_state_level,your_state_name;
+    private RequestQueue requestQueue;
+    private String userCurrentState;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +66,22 @@ public class HomeActivity extends AppCompatActivity {
         all_nearby_covid19_hospital = findViewById(R.id.all_nearby_covid19_hospital);
         report_patient = findViewById(R.id.report_patient);
         settings_image = findViewById(R.id.settings);
+        confirm_cases_india = findViewById(R.id.confirm_cases_india);
+        recover_cases_india = findViewById(R.id.recover_cases_india);
+        death_cases_india = findViewById(R.id.death_cases_india);
+        last_update_india_textView = findViewById(R.id.last_update_india_textView);
+        confirm_cases_state_level = findViewById(R.id.confirm_cases_state_level);
+        recover_cases_state_level = findViewById(R.id.recover_cases_state_level);
+        death_cases_state_level = findViewById(R.id.death_cases_state_level);
+        last_update_state_level = findViewById(R.id.last_update_state_textView);
+        your_state_name = findViewById(R.id.your_state_name);
+
+        requestQueue = Volley.newRequestQueue(this);
+
+        //Testing purpose
+        userCurrentState = "West Bengal";
+
+        parseJsonData(userCurrentState);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -167,6 +204,52 @@ public class HomeActivity extends AppCompatActivity {
                 //about us
             }
         });
+    }
+
+    private void parseJsonData(final String currentState) {
+        String url = "https://api.covid19india.org/data.json";
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                try {
+                    JSONArray jsonArray = response.getJSONArray("statewise");
+
+                    for (int i = 0; i < jsonArray.length(); i++){
+                        JSONObject indianState = jsonArray.getJSONObject(i);
+
+                        String state = indianState.getString("state");
+                        String lastUpdatedTime = indianState.getString("lastupdatedtime");
+                        String confirmedCases = indianState.getString("confirmed");
+                        String recoveredCases = indianState.getString("recovered");
+                        String deathCases = indianState.getString("deaths");
+
+                        if (state.equals("Total")){
+                            last_update_india_textView.setText("Last Update : " + lastUpdatedTime);
+                            confirm_cases_india.setText(confirmedCases);
+                            recover_cases_india.setText(recoveredCases);
+                            death_cases_india.setText(deathCases);
+                        }
+
+                        if (state.equals(currentState)){
+                            your_state_name.setText(currentState.toUpperCase());
+                            last_update_state_level.setText("Last Update : " + lastUpdatedTime);
+                            confirm_cases_state_level.setText(confirmedCases);
+                            recover_cases_state_level.setText(recoveredCases);
+                            death_cases_state_level.setText(deathCases);
+                        }
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
+            }
+        });
+
+        requestQueue.add(request);
     }
 
     @Override
