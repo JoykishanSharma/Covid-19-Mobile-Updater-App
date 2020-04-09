@@ -148,6 +148,9 @@ public class HomeActivity extends AppCompatActivity {
                 //Nearest Police Station number with address and all necessary contact list
                 //List of Helpline numbers of all start
                 //with direct call phone
+
+                startActivity(new Intent(HomeActivity.this,HelplineNumberActivity.class));
+                overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
             }
         });
 

@@ -34,4 +34,7 @@
     <string name="submit">Submit</string>
     <string name="enter_mobile_number">&#160;Enter Mobile Number</string>
     <string name="full_name">&#160;Full Name</string>
+    <string name="other_states">Other States</string>
+    <string name="emergency_helpline_numbers">Emergency Helpline Numbers</string>
+    <string name="_1800313444222">1800313444222</string>
 </resources>
