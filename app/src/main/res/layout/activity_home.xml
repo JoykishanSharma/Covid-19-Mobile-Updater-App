@@ -459,7 +459,8 @@
                         android:id="@+id/helpline_num"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="20dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@id/call_helpline_no"
                         android:layout_gravity="center_vertical"
                         android:orientation="vertical">
 
@@ -496,14 +497,14 @@
                         android:id="@+id/call_helpline_no"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
+                        android:layout_gravity="end"
                         android:layout_centerVertical="true"
+                        android:layout_alignParentEnd="true"
                         android:layout_marginEnd="16dp"
                         android:drawableTop="@drawable/ic_call_black_24dp"
-                        android:gravity="center_horizontal"
+                        android:gravity="center"
                         android:text="@string/call_now"
                         android:textColor="#008EFF"
-                        android:layout_toEndOf="@id/helpline_num"
                         android:textSize="14sp" />
 
                 </RelativeLayout>

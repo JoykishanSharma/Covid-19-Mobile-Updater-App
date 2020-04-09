@@ -23,7 +23,6 @@
         <activity android:name=".MapsActivity" />
         <activity android:name=".HomeActivity"/>
         <activity android:name=".WebViewWorldActivity" />
-        <activity android:name=".WebViewIndiaActivity" />
         <activity android:name=".WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -76,6 +76,7 @@ public class HomeActivity extends AppCompatActivity {
         last_update_state_level = findViewById(R.id.last_update_state_textView);
         your_state_name = findViewById(R.id.your_state_name);
 
+
         requestQueue = Volley.newRequestQueue(this);
 
         //Testing purpose
@@ -112,7 +113,7 @@ public class HomeActivity extends AppCompatActivity {
         homeToMapCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(HomeActivity.this,MapsActivity.class));
+                startActivity(new Intent(HomeActivity.this,WebViewWorldActivity.class));
                 overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
             }
         });
