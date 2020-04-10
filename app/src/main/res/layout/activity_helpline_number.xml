@@ -45,7 +45,6 @@
                 <com.google.android.material.circularreveal.cardview.CircularRevealCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
                     android:clickable="false"
                     android:focusable="false"
                     app:cardCornerRadius="12dp"
@@ -145,7 +144,7 @@
                 <com.google.android.material.circularreveal.cardview.CircularRevealCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
+                    android:layout_marginBottom="12dp"
                     android:clickable="false"
                     android:focusable="false"
                     app:cardCornerRadius="12dp"
@@ -203,7 +202,8 @@
                 <com.google.android.material.circularreveal.cardview.CircularRevealCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
+                   android:layout_marginTop="12dp"
+android:layout_marginBottom="12dp"
                     android:clickable="false"
                     android:focusable="false"
                     app:cardCornerRadius="12dp"
@@ -261,7 +261,8 @@
                 <com.google.android.material.circularreveal.cardview.CircularRevealCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
+                   android:layout_marginTop="12dp"
+android:layout_marginBottom="12dp"
                     android:clickable="false"
                     android:focusable="false"
                     app:cardCornerRadius="12dp"
@@ -319,7 +320,8 @@
                 <com.google.android.material.circularreveal.cardview.CircularRevealCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
+                   android:layout_marginTop="12dp"
+android:layout_marginBottom="12dp"
                     android:clickable="false"
                     android:focusable="false"
                     app:cardCornerRadius="12dp"
@@ -377,7 +379,8 @@
                 <com.google.android.material.circularreveal.cardview.CircularRevealCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
+                   android:layout_marginTop="12dp"
+android:layout_marginBottom="12dp"
                     android:clickable="false"
                     android:focusable="false"
                     app:cardCornerRadius="12dp"
@@ -435,7 +438,8 @@
                 <com.google.android.material.circularreveal.cardview.CircularRevealCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
+                   android:layout_marginTop="12dp"
+android:layout_marginBottom="12dp"
                     android:clickable="false"
                     android:focusable="false"
                     app:cardCornerRadius="12dp"
@@ -493,7 +497,8 @@
                 <com.google.android.material.circularreveal.cardview.CircularRevealCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
+                   android:layout_marginTop="12dp"
+android:layout_marginBottom="12dp"
                     android:clickable="false"
                     android:focusable="false"
                     app:cardCornerRadius="12dp"
@@ -551,7 +556,8 @@
                 <com.google.android.material.circularreveal.cardview.CircularRevealCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
+                   android:layout_marginTop="12dp"
+android:layout_marginBottom="12dp"
                     android:clickable="false"
                     android:focusable="false"
                     app:cardCornerRadius="12dp"
@@ -609,7 +615,8 @@
                 <com.google.android.material.circularreveal.cardview.CircularRevealCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
+                   android:layout_marginTop="12dp"
+android:layout_marginBottom="12dp"
                     android:clickable="false"
                     android:focusable="false"
                     app:cardCornerRadius="12dp"
@@ -667,7 +674,8 @@
                 <com.google.android.material.circularreveal.cardview.CircularRevealCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
+                   android:layout_marginTop="12dp"
+android:layout_marginBottom="12dp"
                     android:clickable="false"
                     android:focusable="false"
                     app:cardCornerRadius="12dp"
@@ -725,7 +733,8 @@
                 <com.google.android.material.circularreveal.cardview.CircularRevealCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
+                   android:layout_marginTop="12dp"
+android:layout_marginBottom="12dp"
                     android:clickable="false"
                     android:focusable="false"
                     app:cardCornerRadius="12dp"
@@ -783,7 +792,8 @@
                 <com.google.android.material.circularreveal.cardview.CircularRevealCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
+                   android:layout_marginTop="12dp"
+android:layout_marginBottom="12dp"
                     android:clickable="false"
                     android:focusable="false"
                     app:cardCornerRadius="12dp"
@@ -841,7 +851,8 @@
                 <com.google.android.material.circularreveal.cardview.CircularRevealCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
+                   android:layout_marginTop="12dp"
+android:layout_marginBottom="12dp"
                     android:clickable="false"
                     android:focusable="false"
                     app:cardCornerRadius="12dp"
@@ -899,7 +910,8 @@
                 <com.google.android.material.circularreveal.cardview.CircularRevealCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
+                   android:layout_marginTop="12dp"
+android:layout_marginBottom="12dp"
                     android:clickable="false"
                     android:focusable="false"
                     app:cardCornerRadius="12dp"
@@ -957,7 +969,8 @@
                 <com.google.android.material.circularreveal.cardview.CircularRevealCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
+                   android:layout_marginTop="12dp"
+android:layout_marginBottom="12dp"
                     android:clickable="false"
                     android:focusable="false"
                     app:cardCornerRadius="12dp"
@@ -1056,7 +1069,8 @@
                 <com.google.android.material.circularreveal.cardview.CircularRevealCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
+                   android:layout_marginTop="12dp"
+android:layout_marginBottom="12dp"
                     android:clickable="false"
                     android:focusable="false"
                     app:cardCornerRadius="12dp"
@@ -1114,7 +1128,8 @@
                 <com.google.android.material.circularreveal.cardview.CircularRevealCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
+                   android:layout_marginTop="12dp"
+android:layout_marginBottom="12dp"
                     android:clickable="false"
                     android:focusable="false"
                     app:cardCornerRadius="12dp"
@@ -1172,7 +1187,8 @@
                 <com.google.android.material.circularreveal.cardview.CircularRevealCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
+                   android:layout_marginTop="12dp"
+android:layout_marginBottom="12dp"
                     android:clickable="false"
                     android:focusable="false"
                     app:cardCornerRadius="12dp"
@@ -1230,7 +1246,8 @@
                 <com.google.android.material.circularreveal.cardview.CircularRevealCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
+                   android:layout_marginTop="12dp"
+android:layout_marginBottom="12dp"
                     android:clickable="false"
                     android:focusable="false"
                     app:cardCornerRadius="12dp"
@@ -1288,7 +1305,8 @@
                 <com.google.android.material.circularreveal.cardview.CircularRevealCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
+                   android:layout_marginTop="12dp"
+android:layout_marginBottom="12dp"
                     android:clickable="false"
                     android:focusable="false"
                     app:cardCornerRadius="12dp"
@@ -1374,7 +1392,8 @@
                 <com.google.android.material.circularreveal.cardview.CircularRevealCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
+                   android:layout_marginTop="12dp"
+android:layout_marginBottom="12dp"
                     android:clickable="false"
                     android:focusable="false"
                     app:cardCornerRadius="12dp"

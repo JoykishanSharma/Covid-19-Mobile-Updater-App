@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_view"
+    tools:context=".SymptomsActivity">
+
+    <LinearLayout
+        android:id="@+id/symptoms_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp">
+
+        <ImageView
+            android:id="@+id/back_arrow3"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="start"
+            android:src="@drawable/arrow_left_black_24dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Symptoms"
+            android:layout_marginEnd="40dp"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal"
+            android:textSize="22sp"
+            android:fontFamily="@font/roboto_bold"
+            android:textColor="#FFFF"/>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/symptoms_title">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:orientation="vertical">
+
+            <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:focusable="false"
+                app:cardCornerRadius="12dp"
+                app:cardBackgroundColor="#FF3700B3">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    >
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_gravity="start"
+                        android:src="@drawable/coronavirus" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#fafafa"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="16dp"
+                        android:textSize="14sp"
+                        android:text="The symptoms may appear 2-14 days after exposure"
+                        android:gravity="center"
+                        android:textStyle="italic|bold"/>
+
+                </LinearLayout>
+
+            </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Main Symptoms"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:textSize="18sp"
+                android:fontFamily="@font/roboto_bold"
+                android:textColor="#FAFAFA"/>
+
+            <!--<com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                android:id="@+id/all_symptoms_video"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:focusable="false"
+                app:cardCornerRadius="12dp"
+
+                app:cardBackgroundColor="#FF3700B3">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    >
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:src="@mipmap/ic_launcher"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#fafafa"
+                        android:layout_gravity="center"
+                        android:textSize="14sp"
+                        android:layout_marginTop="16dp"
+                        android:text="The symptoms may appear 2-14 days after exposure"
+                        android:gravity="center"
+                        android:textStyle="italic|bold"/>
+
+                </LinearLayout>
+
+            </com.google.android.material.circularreveal.cardview.CircularRevealCardView>-->
+
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:alignmentMode="alignMargins"
+                android:columnCount="2"
+                android:layout_marginTop="16dp"
+                android:rowCount="2">
+
+                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                    android:id="@+id/symptoms_fever"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp"
+                    app:strokeWidth="1dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                       android:padding="16dp">
+
+                        <TextView
+                            android:id="@+id/fever_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Fever"
+                            android:textSize="16sp"
+                            android:textColor="#008EFF"
+                            android:layout_marginBottom="8dp"/>
+
+                        <TextView
+                            android:id="@+id/fever_short_des"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:layout_below="@id/fever_title"
+                            android:textSize="12sp"
+                            android:text="@string/fever_des"
+                            android:textColor="#8A8989" />
+
+                        <ImageView
+                            android:id="@+id/fever_image"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:src="@drawable/fever_image"
+                            android:layout_below="@id/fever_short_des"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true" />
+
+
+                    </RelativeLayout>
+
+                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                    android:id="@+id/symptoms_DryCough"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp"
+                    app:strokeWidth="1dp"
+                    android:layout_gravity="bottom">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <TextView
+                            android:id="@+id/cough_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="DryCough"
+                            android:textSize="16sp"
+                            android:textColor="#008EFF"
+                            android:layout_marginBottom="8dp"/>
+
+                        <TextView
+                            android:id="@+id/cough_short_des"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:textSize="12sp"
+                            android:layout_below="@id/cough_title"
+                            android:text="@string/cough_des"
+                            android:textColor="#8A8989" />
+
+                        <ImageView
+                            android:id="@+id/cough_image"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_below="@id/cough_short_des"
+                            android:src="@drawable/cough_image"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="8dp"/>
+
+
+                    </RelativeLayout>
+
+                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                    android:id="@+id/symptoms_shortnessOfBreath"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp"
+                    app:strokeWidth="1dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <TextView
+                            android:id="@+id/shortnessOfBreath_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/shortness_of_breath"
+                            android:textSize="16sp"
+                            android:textColor="#008EFF"
+                            android:layout_marginBottom="8dp"/>
+
+                        <TextView
+                            android:id="@+id/shortnessOfBreath_short_des"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:textSize="12sp"
+                            android:layout_below="@+id/shortnessOfBreath_title"
+                            android:text="@string/shortnessOfBreath_des"
+                            android:textColor="#8A8989" />
+
+                        <ImageView
+                            android:id="@+id/shortnessOfBreath_image"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:src="@drawable/shortness_of_breath_image"
+                            android:layout_below="@id/shortnessOfBreath_short_des"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true" />
+
+                    </RelativeLayout>
+
+                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                    android:id="@+id/symptoms_achesAndPains"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp"
+                    app:strokeWidth="1dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <TextView
+                            android:id="@+id/achesAndPains_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Aches and pains"
+                            android:textSize="16sp"
+                            android:textColor="#008EFF"
+                            android:layout_marginBottom="8dp"/>
+
+                        <TextView
+                            android:id="@+id/achesAndPains_short_des"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:textSize="12sp"
+                            android:layout_below="@+id/achesAndPains_title"
+                            android:text="@string/achesAndPains_des"
+                            android:textColor="#8A8989" />
+
+                        <ImageView
+                            android:id="@+id/achesAndPains_image"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_below="@+id/achesAndPains_short_des"
+                            android:src="@drawable/ache_and_pain_image"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true" />
+
+                    </RelativeLayout>
+
+                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+            </GridLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Other Symptoms"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:textSize="18sp"
+                android:fontFamily="@font/roboto_bold"
+                android:textColor="#FAFAFA"/>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:alignmentMode="alignMargins"
+                android:columnCount="2"
+                android:layout_marginTop="16dp"
+                android:rowCount="2">
+
+                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                    android:id="@+id/symptoms_fever"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp"
+                    app:strokeWidth="1dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:id="@+id/fever_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Fever"
+                            android:textSize="16sp"
+                            android:textColor="#008EFF"
+                            android:layout_marginBottom="8dp"/>
+
+                        <TextView
+                            android:id="@+id/fever_short_des"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:layout_below="@id/fever_title"
+                            android:textSize="12sp"
+                            android:text="@string/fever_des"
+                            android:textColor="#8A8989" />
+
+                        <ImageView
+                            android:id="@+id/fever_image"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:src="@drawable/fever_image"
+                            android:layout_below="@id/fever_short_des"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true" />
+
+
+                    </RelativeLayout>
+
+                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                    android:id="@+id/symptoms_DryCough"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp"
+                    app:strokeWidth="1dp"
+                    android:layout_gravity="bottom">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <TextView
+                            android:id="@+id/cough_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="DryCough"
+                            android:textSize="16sp"
+                            android:textColor="#008EFF"
+                            android:layout_marginBottom="8dp"/>
+
+                        <TextView
+                            android:id="@+id/cough_short_des"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:textSize="12sp"
+                            android:layout_below="@id/cough_title"
+                            android:text="@string/cough_des"
+                            android:textColor="#8A8989" />
+
+                        <ImageView
+                            android:id="@+id/cough_image"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_below="@id/cough_short_des"
+                            android:src="@drawable/cough_image"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="8dp"/>
+
+
+                    </RelativeLayout>
+
+                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                    android:id="@+id/symptoms_shortnessOfBreath"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp"
+                    app:strokeWidth="1dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <TextView
+                            android:id="@+id/shortnessOfBreath_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/shortness_of_breath"
+                            android:textSize="16sp"
+                            android:textColor="#008EFF"
+                            android:layout_marginBottom="8dp"/>
+
+                        <TextView
+                            android:id="@+id/shortnessOfBreath_short_des"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:textSize="12sp"
+                            android:layout_below="@+id/shortnessOfBreath_title"
+                            android:text="@string/shortnessOfBreath_des"
+                            android:textColor="#8A8989" />
+
+                        <ImageView
+                            android:id="@+id/shortnessOfBreath_image"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:src="@drawable/shortness_of_breath_image"
+                            android:layout_below="@id/shortnessOfBreath_short_des"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true" />
+
+                    </RelativeLayout>
+
+                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                    android:id="@+id/symptoms_achesAndPains"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp"
+                    app:strokeWidth="1dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <TextView
+                            android:id="@+id/achesAndPains_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Aches and pains"
+                            android:textSize="16sp"
+                            android:textColor="#008EFF"
+                            android:layout_marginBottom="8dp"/>
+
+                        <TextView
+                            android:id="@+id/achesAndPains_short_des"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:textSize="12sp"
+                            android:layout_below="@+id/achesAndPains_title"
+                            android:text="@string/achesAndPains_des"
+                            android:textColor="#8A8989" />
+
+                        <ImageView
+                            android:id="@+id/achesAndPains_image"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_below="@+id/achesAndPains_short_des"
+                            android:src="@drawable/ache_and_pain_image"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true" />
+
+                    </RelativeLayout>
+
+                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+            </GridLayout>
+
+            
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

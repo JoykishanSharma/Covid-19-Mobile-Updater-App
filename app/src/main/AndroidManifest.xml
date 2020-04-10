@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".HelplineNumberActivity"/>
+        <activity android:name=".SymptomsActivity"></activity>
+        <activity android:name=".HelplineNumberActivity" />
         <activity android:name=".FeelingBadActivity" />
         <activity android:name=".FeelingGoodActivity" />
         <activity android:name=".NewsActivity" />

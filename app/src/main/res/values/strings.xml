@@ -37,4 +37,9 @@
     <string name="other_states">Other States</string>
     <string name="emergency_helpline_numbers">Emergency Helpline Numbers</string>
     <string name="_1800313444222">1800313444222</string>
+    <string name="fever_des">Fever is when a human\'s body temperature goes above the normal range of  36.5 – 37.5°C or 97.7 – 99.5°F.</string>
+    <string name="cough_des">A sudden, forceful hacking sound to release air and clear an irritation in the throat or airway.</string>
+    <string name="shortnessOfBreath_des">Shortness of breath is an uncomfortable condition that makes it difficult to fully get air into your lungs.</string>
+    <string name="achesAndPains_des">Body aches are a common symptom of many conditions. Aches can also be caused by your everyday life, especially if you stand, walk, or exercise for long periods of time</string>
+    <string name="shortness_of_breath">Shortness \nof breath</string>
 </resources>
