@@ -40,6 +40,31 @@
     <string name="fever_des">Fever is when a human\'s body temperature goes above the normal range of  36.5 – 37.5°C or 97.7 – 99.5°F.</string>
     <string name="cough_des">A sudden, forceful hacking sound to release air and clear an irritation in the throat or airway.</string>
     <string name="shortnessOfBreath_des">Shortness of breath is an uncomfortable condition that makes it difficult to fully get air into your lungs.</string>
-    <string name="achesAndPains_des">Body aches are a common symptom of many conditions. Aches can also be caused by your everyday life, especially if you stand, walk, or exercise for long periods of time</string>
+    <string name="achesAndPains_des">Body aches are a common symptom of many conditions. Aches can also be caused by your everyday life, especially if you stand,
+        walk, or exercise for long periods of time</string>
+    <string name="headache_des">A painful sensation in any part of the head, ranging from sharp to dull, that may occur with other symptoms.</string>
+    <string name="sore_throat_des">Pain or irritation in the throat that can occur with or without swallowing, often accompanies infections, such as a cold or flu.</string>
+    <string name="diarrhea_des">Loose, watery bowel movements that may occur frequently and with a sense of urgency.</string>
     <string name="shortness_of_breath">Shortness \nof breath</string>
+
+    <string name="fever_data_overview">Fever is also known as hyperthermia, pyrexia, or elevated temperature. It describes a body temperature that’s higher than normal.
+        Fever can affect children and adults. \n\nA short-term increase in body temperature can help your body fight off illness. However, a severe fever can be a symptom of
+        a serious condition that requires immediate medical attention.</string>
+    <string name="fever_data_what_to_look">Recognizing a fever can enable you to get treatment and proper monitoring for it. Normal body temperature is typically around 98.6°F
+        (37°C). However, the normal body temperature for each person can vary slightly.Normal body temperature may also fluctuate depending on the time of day. It tends to be
+        lower in the morning and higher in the late afternoon and evening. \n\nIn general, a baby has a fever when their body temperature exceeds 100.4°F (38°C).
+        A child has a fever when their temperature exceeds 99.5°F (37.5°C). An adult has a fever when their temperature exceeds 99–99.5°F (37.2–37.5°C).</string>
+    <string name="fever_data_what_to_see_a_doctor">A mild fever can typically be treated at home. In some cases, however, a fever can be a symptom of a serious medical
+        condition that requires prompt treatment. \n\nYou should take your infant to a doctor if they’re:
+        \n\n\t\t•	younger than 3 months old and have a temperature exceeding 100.4°F (38°C)
+        \n\n\t\t•	between 3 and 6 months old, have a temperature over 102°F (38.9°C), and seem unusually irritable, lethargic, or uncomfortable
+        \n\n\t\t•	between 6 and 24 months old and have a temperature higher than 102°F (38.9°C) that lasts longer than one day
+        \n\n\tYou should take your child to see a doctor if they:
+        \n\n\t\t•	have a body temperature exceeding 102.2°F (39°C)
+        \n\n\t\t•	have had a fever for more than three days
+        \n\n\t\t•	make poor eye contact with you
+        \n\n\t\t•	seem restless or irritable
+        \n\n\t\t•	have recently had one or more immunizations
+        \n\n\t\t•	have a serious medical illness or a compromised immune system
+</string>
 </resources>
