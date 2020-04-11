@@ -47,14 +47,17 @@
     <string name="diarrhea_des">Loose, watery bowel movements that may occur frequently and with a sense of urgency.</string>
     <string name="shortness_of_breath">Shortness \nof breath</string>
 
+    <!--Fever Symptoms in Detail-->
+    <string name="fever_symptom_name">Fever</string>
     <string name="fever_data_overview">Fever is also known as hyperthermia, pyrexia, or elevated temperature. It describes a body temperature that’s higher than normal.
         Fever can affect children and adults. \n\nA short-term increase in body temperature can help your body fight off illness. However, a severe fever can be a symptom of
         a serious condition that requires immediate medical attention.</string>
-    <string name="fever_data_what_to_look">Recognizing a fever can enable you to get treatment and proper monitoring for it. Normal body temperature is typically around 98.6°F
-        (37°C). However, the normal body temperature for each person can vary slightly.Normal body temperature may also fluctuate depending on the time of day. It tends to be
-        lower in the morning and higher in the late afternoon and evening. \n\nIn general, a baby has a fever when their body temperature exceeds 100.4°F (38°C).
-        A child has a fever when their temperature exceeds 99.5°F (37.5°C). An adult has a fever when their temperature exceeds 99–99.5°F (37.2–37.5°C).</string>
-    <string name="fever_data_what_to_see_a_doctor">A mild fever can typically be treated at home. In some cases, however, a fever can be a symptom of a serious medical
+    <string name="fever_data_what_to_look">Fever is one of the common symptom of Coronavius cases. Recognizing a fever can enable you to get treatment and proper monitoring
+        for it. Normal body temperature is typically around 98.6°F (37°C). However, the normal body temperature for each person can vary slightly.Normal body temperature
+        may also fluctuate depending on the time of day. It tends to be lower in the morning and higher in the late afternoon and evening. \n\nIn general, a baby has a
+        fever when their body temperature exceeds 100.4°F (38°C). A child has a fever when their temperature exceeds 99.5°F (37.5°C). An adult has a fever when their
+        temperature exceeds 99–99.5°F (37.2–37.5°C).</string>
+    <string name="fever_data_when_to_see_a_doctor">A mild fever can typically be treated at home. In some cases, however, a fever can be a symptom of a serious medical
         condition that requires prompt treatment. \n\nYou should take your infant to a doctor if they’re:
         \n\n\t\t•	younger than 3 months old and have a temperature exceeding 100.4°F (38°C)
         \n\n\t\t•	between 3 and 6 months old, have a temperature over 102°F (38.9°C), and seem unusually irritable, lethargic, or uncomfortable
@@ -65,6 +68,137 @@
         \n\n\t\t•	make poor eye contact with you
         \n\n\t\t•	seem restless or irritable
         \n\n\t\t•	have recently had one or more immunizations
-        \n\n\t\t•	have a serious medical illness or a compromised immune system
-</string>
+        \n\n\t\t•	have a serious medical illness or a compromised immune system</string>
+
+    <!--Dry Cough Symptoms in Detail-->
+    <string name="dry_cough_symptom_name">Dry Cough</string>
+    <string name="dry_cough_data_overview">Coughing is a common reflex action that clears your throat of mucus or foreign irritants.
+        While everyone coughs to clear their throat from time to time, a number of conditions can cause more frequent coughing.
+        \n\n\tBasically, a dry cough is one where no mucus or phlegm is produced with the cough. Conversely, a wet cough is one filled with mucus or
+        phlegm where someone can actually feel the mucus move in their bronchi or throat, mucus expectorates or leaves the chest with each (wet) cough.</string>
+    <string name="dry_cough_data_what_to_look">Dry Cough is one of the common symptom of Coronavius cases. A cough that lasts for less than three weeks is an acute cough.
+        Most episodes of coughing will clear up or at least significantly improve within two weeks. \n\n\tIf your cough lasts between three and eight weeks, improving by the
+        end of that period, it’s considered a sub acute cough. A persistent cough that lasts more than eight weeks is a chronic cough. The most
+        common cause of a cough is a respiratory tract infection, such as a cold or flu.\n\n\tRespiratory tract infections are usually caused
+        by a virus and may last from a few days to a week. Infections caused by the flu may take a little longer to clear up and can sometimes
+        require antibiotics.</string>
+    <string name="dry_cough_data_when_to_see_a_doctor">You should see a doctor if you cough up blood or have a “barking” cough. You should also
+        contact them if your cough hasn’t improved with a few days, as this could indicate something more serious like in the case coronavirus.
+        This apply to for all age people, i.e. small child to elderly people. </string>
+
+    <!--Shortness of Breath Symptoms in Detail-->
+    <string name="shortness_of_breath_symptom_name">Shortness of Breath</string>
+    <string name="shortness_of_breath_data_overview">Shortness of breath - aka, dyspnea or breathlessness - is a group of subjective sensations that suggest our
+        respiratory system is not functioning well.\n\n\tThose sensations usually feel like an increased work or effort to breathe, chest tightness, and air hunger
+        or "the feeling of not getting enough oxygen.</string>
+    <string name="shortness_of_breath_data_what_to_look">Shortness of breath is one of the common symptom of Coronavius cases. It is thought to be due to the development of
+        pneumonia, an inflammation of the lungs linked to a coronavirus infection. The shortness of breath occurs when oxygen in the lungs doesn\'t make its way to the
+        blood as a result of the viral attack.\n\n\tWhen blood carbon dioxide levels rise, a person\'s breathing rate can increase, which can lead to the sensation of
+        difficulty breathing. Too much acid in the blood from an infection can also lead to the feeling of breathlessness.</string>
+    <string name="shortness_of_breath_data_when_to_see_a_doctor">For some diagnosed with COVID-19, shortness of breath is a more severe symptom, and can be treated
+        in a hospital setting with supplemental oxygen. The extra oxygen helps increase the amount of oxygen in a patient\'s blood. In rare cases, pressurized oxygen
+        through a mechanical ventilator is needed to force the oxygen through severely inflamed lungs into the blood stream.\n\n\tOverall, if you\'re worried you\'re
+        experiencing shortness of breath possibly related to COVID-19, the first thing to do is try to calm down (easier said than done)—that\'s because, again,
+        shortness of breath is a common symptom of anxiety. In that moment, take stock of how your body is feeling and looking overall: anxiety can also make your
+        heart race, palms sweat, and pupils dilate.</string>
+
+    <!--Aches and pains Symptoms in Detail-->
+    <string name="aches_and_pains_symptom_name">Aches and pains</string>
+    <string name="aches_and_pains_data_overview">Fatigue is a term used to describe an overall feeling of tiredness or lack of energy. It isn\’t the same as simply
+        feeling drowsy or sleepy. When you\’re fatigued, you have no motivation and no energy. Being sleepy may be a symptom of fatigue, but it\’s not the same thing.
+        \n\n\tFatigue is a common symptom of many medical conditions that range in severity from mild to serious</string>
+    <string name="aches_and_pains_data_what_to_look">Sometime, Aches and pains is one of the symptom of Coronavius cases. Muscle fatigue is a symptom that decreases
+        your muscles\' ability to perform over time. It can be associated with a state of exhaustion, often following strenuous activity or exercise. When you experience
+        fatigue, the force behind your muscles\' movements decrease, causing you to feel weaker.\n\n\tTiredness, Fatigue, Body aches, muscle pain, if you experience
+        this type of symptoms for more than 1-2 days, please consult your doctor immediately, this could be the early sign of Covid-19 or Coronavirus.</string>
+    <string name="aches_and_pains_data_when_to_see_a_doctor">You should make an appointment with your doctor if you\’re feeling fatigued and you:
+        \n\n\t•	can\’t think of anything that might account for your fatigue
+        \n\n\t•	have a higher-than-normal body temperature
+        \n\n\t•	have experienced unexplained weight loss
+        \n\n\t•	feel very sensitive to colder temperatures
+        \n\n\t•	regularly have trouble falling or staying asleep
+        \n\n\t•	believe you may be depressed
+        \n\nIf you\’ve made efforts to address the most common lifestyle causes, such as lack of rest, poor eating habits, and stress, without success, and your fatigue
+        has continued for two weeks or more, make an appointment with your doctor.\n\nIn some cases, your fatigue might be caused by a serious medical condition.
+        Go to the hospital immediately if you experience fatigue along with any of the following symptoms:
+        \n\n\t•	rectal bleeding
+        \n\n\t•	vomiting blood
+        \n\n\t•	severe headache
+        \n\n\t•	pain in your chest area
+        \n\n\t•	feelings of faintness
+        \n\n\t•	irregular heartbeat
+        \n\n\t•	shortness of breath
+        \n\n\t•	severe pain in your abdominal, back, or pelvic region</string>
+
+    <!--Headache Symptoms in Detail-->
+    <string name="headache_symptom_name">Headache</string>
+    <string name="headache_data_overview">A headache is a very common condition that causes pain and discomfort in the head, scalp, or neck. It\’s estimated that 7 in 10
+        people have at least one headache each year.\n\n\tA headache isn\'t a common symptom of the virus, but about 14% of people infected with coronavirus have
+        experienced it</string>
+    <string name="headache_data_what_to_look">Sometime, headache is one of the symptom of Coronavius cases. A headache can be caused by many factors related to the
+        coronavirus, such as the physical discomfort of constant coughing and a stuffy sinus. \n\n\tEven frequent nose blowing can cause a headache, a lack of sleep,
+        not eating properly, and failing to stay hydrated can also lead to headache. </string>
+    <string name="headache_data_when_to_see_a_doctor">Headaches can sometimes be mild, but in many cases, they can cause severe pain that makes it difficult to concentrate
+        at work and perform other daily activities. Luckily, most headaches can be managed with medication and lifestyle changes. \n\n\tHowever, if you have COVID-19 or
+        suspect you might have it, and you\'re in any doubt about which pain relief meds to take for headache, ask your doctor to be on the safe side.\n\n\tBeyond that,
+        try to eat plenty of nutritious foods, keep your fluid intake up, and getas much rest as possible.</string>
+
+    <!--Running Nose Symptoms in Detail-->
+    <string name="running_nose_symptom_name">Running Nose</string>
+    <string name="running_nose_data_overview">Stuffy nose is a term often used to refer to obstruction to the flow of air in and out of the nose, while runny nose refers
+        to a discharge (fluid) coming from the nasal passages. This is often a watery, clear liquid but may be thicker and viscous. Both stuffy and runny nose are associated
+        with inflammation and swelling (congestion) of the inner lining of the nasal passages and sinuses.</string>
+    <string name="running_nose_data_what_to_look">Running nose is one of the rare symptom of Coronavius cases, A stuffy or congested nose occurs when the tissues lining it
+        become swollen. The swelling is due to inflamed blood vessels. The problem may also include nasal discharge or \"runny nose\". If excess mucus runs down the back of
+        your throat (postnasal drip), it may cause a cough or sore throat. \n\n\tIt common happens because of common cold, Nasal congestion, also called a stuffy nose,
+        is often a symptom of another health problem such as a sinus infection.</string>
+    <string name="running_nose_data_when_to_see_a_doctor">If a person feels congestion or experiences a runny nose these could be early symptoms of a possible COVID-19
+        infection. If you have any of these symptoms in your nose with a new and persistent cough or fever, it\’s integral to monitor these symptoms and to self-isolate.
+        \n\n\tAlso inform your doctor if it lasts longer than one week, it\’s a symptom of an underlying health issue or may be covid-19.</string>
+
+    <!--Sore Throat Symptoms in Detail-->
+    <string name="sore_throat_symptom_name">Sore Throat</string>
+    <string name="sore_throat_data_overview">A sore throat is a painful, dry, or scratchy feeling in the throat. Pain in the throat is one of the most common symptoms.
+        It accounts for more than 13 million visits to doctor\’s offices each year. \n\n\tSore throat can have causes that aren\'t due to underlying disease. Examples
+        include overuse of voice, a burn from hot food, very dry mouth or sleeping with the mouth open. \n\n\tMost sore throats are caused by infections, or by environmental
+        factors like dry air. Although a sore throat can be uncomfortable, it\’ll usually go away on its own.</string>
+    <string name="sore_throat_data_what_to_look">The symptoms of a sore throat can vary depending on what caused it. A sore throat can feel:
+        \n\n\t•	scratchy
+        \n\n\t•	burning
+        \n\n\t•	raw
+        \n\n\t•	dry
+        \n\n\t•	tender
+        \n\n\t•	irritated
+        \n\nIt may hurt more when you swallow or talk. Your throat or tonsils might also look red. Sometimes, white patches or areas of pus will form on the tonsils.
+        These white patches are more common in strep throat than in a sore throat caused by a virus. Along with the sore throat, you can have symptoms like:
+        \n\n\t•	nasal congestion
+        \n\n\t•	runny nose
+        \n\n\t•	sneezing
+        \n\n\t•	cough
+        \n\n\t•	fever
+        \n\n\t•	chills
+        \n\n\t•	swollen glands in the neck
+        \n\n\t•	hoarse voice
+        \n\n\t•	body aches
+        \n\n\t•	headache
+        \n\n\t•	trouble swallowing
+        \n\n\t•	appetite loss</string>
+    <string name="sore_throat_data_when_to_see_a_doctor">If you have symptoms of coronavirus, even if they are mild, you must stay at home. Do not visit a hospital or pharmacy.
+        get in contact with your doctor or call helpline Number. \n\n\tIf you live in the same household, or have been in contact, with someone who has symptoms, you must
+        also self-isolate. You should self-isolate for a period of 14 days, as this is how long it can take to display symptoms of coronavirus. \n\n\tReport your doctor
+        time to time.</string>
+
+    <!--Diarrhea Symptoms in Detail-->
+    <string name="diarrhea_symptom_name">Diarrhea</string>
+    <string name="diarrhea_data_overview">While we are focused on cough and fever as the initial signs of COVID-19, it’s also important to be aware that abdominal pain,
+        vomiting and diarrhea could precede respiratory symptoms in some people. New Study Says Digestive Issues May Be Common With Coronavirus.</string>
+    <string name="diarrhea_data_what_to_look">The digestive problems are common overall and don\'t necessarily mean that a person has COVID-19. But if Diarrhea continuous
+    more than 5-6 days, contact your doctor for diagnosis.</string>
+    <string name="diarrhea_data_when_to_see_a_doctor">Sick immediate help if you experience any of these symptoms for more than 5-6 days. The digestive symptoms tended to
+        seek health care later than those with respiratory symptoms, an average of 16 days from the start of their symptoms, compared with 11 days for those with respiratory
+        symptoms, the study found. \n\n\tThose with digestive symptoms also took longer to clear the virus from their body (test negative for COVID-19), taking about 41 days
+        on average, compared with 33 days for those with respiratory symptoms only.\n\n\tCall helpline Number if you need help. Otherwise stay home, stay safe. </string>
+
+
+
 </resources>

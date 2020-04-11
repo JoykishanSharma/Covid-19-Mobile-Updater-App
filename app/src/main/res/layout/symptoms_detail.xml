@@ -21,7 +21,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:layout_gravity="center_horizontal"
-            android:text="Fever"
+            android:text="@string/fever_symptom_name"
             android:textColor="#E91E63"
             android:textSize="22sp" />
 
@@ -60,7 +60,7 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/fever_symptom_detail_image"
+                android:id="@+id/symptom_detail_large_image"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_centerHorizontal="true"
@@ -73,7 +73,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_bold"
             android:gravity="start"
-            android:layout_below="@id/fever_symptom_detail_image"
+            android:layout_below="@id/symptom_detail_large_image"
             android:justificationMode="inter_word"
             android:text="@string/fever_data_overview"
             android:textColor="#3F51B5"
@@ -125,7 +125,7 @@
                 android:gravity="start"
                 android:layout_below="@id/symptom_when_to_see_a_doctor_title"
                 android:justificationMode="inter_word"
-                android:text="@string/fever_data_what_to_see_a_doctor"
+                android:text="@string/fever_data_when_to_see_a_doctor"
                 android:textColor="#3F51B5"
                 android:textSize="14sp"
                 android:layout_marginBottom="16dp"/>

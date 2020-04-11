@@ -386,7 +386,7 @@
                             android:id="@+id/achesAndPains_title"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Aches and pains"
+                            android:text="@string/aches_and_pains_symptom_name"
                             android:textSize="16sp"
                             android:textColor="#008EFF"
                             android:layout_marginBottom="8dp"/>
@@ -516,7 +516,7 @@
                             android:id="@+id/running_nose_title"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Running nose"
+                            android:text="Running Nose"
                             android:textSize="16sp"
                             android:textColor="#008EFF"
                             android:layout_marginBottom="8dp"/>
@@ -570,7 +570,7 @@
                             android:id="@+id/sore_throat_title"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Sore throat"
+                            android:text="Sore Throat"
                             android:textSize="16sp"
                             android:textColor="#008EFF"
                             android:layout_marginBottom="8dp"/>
