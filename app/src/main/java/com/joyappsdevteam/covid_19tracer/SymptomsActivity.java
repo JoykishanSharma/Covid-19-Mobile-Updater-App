@@ -1,6 +1,7 @@
 package com.joyappsdevteam.covid_19tracer;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -27,6 +28,13 @@ public class SymptomsActivity extends AppCompatActivity implements View.OnClickL
 
         back_arrow = findViewById(R.id.back_arrow3);
         cardViewReferencing();
+
+        back_arrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
     }
 

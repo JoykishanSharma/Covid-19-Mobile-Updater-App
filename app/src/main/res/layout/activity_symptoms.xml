@@ -53,7 +53,8 @@
                 android:clickable="false"
                 android:focusable="false"
                 app:cardCornerRadius="12dp"
-                app:cardElevation="6dp">
+                app:cardElevation="6dp"
+                android:visibility="gone">
 
                 <LinearLayout
                     android:layout_width="match_parent"

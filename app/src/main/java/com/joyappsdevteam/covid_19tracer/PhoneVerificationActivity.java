@@ -9,11 +9,14 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.InputFilter;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,9 +31,11 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class PhoneVerificationActivity extends AppCompatActivity {
 
-    private EditText reg_name_editText, reg_mobile_no_editText;
-    private CardView reg_submit;
-    private TextView whyNeedData;
+    private EditText reg_mobile_no_editText;
+    private TextView resend_otp,send_otp_text,textView;
+    private LinearLayout resend_otp_linearLayout;
+    private CardView reg_send_otp;
+    private Boolean firstTime = true;
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
     @Override
@@ -38,47 +43,70 @@ public class PhoneVerificationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.phone_verify_activity);
 
-        reg_name_editText = findViewById(R.id.reg_name);
-        reg_mobile_no_editText = findViewById(R.id.reg_mobile_no);
-        reg_submit = findViewById(R.id.submit_cardView);
-        whyNeedData = findViewById(R.id.why_need_data);
+        //Hide Keyboard
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
+        reg_mobile_no_editText = findViewById(R.id.reg_phone);
+        reg_send_otp = findViewById(R.id.send_otp_cardView);
+        resend_otp = findViewById(R.id.resend_otp);
+        send_otp_text = findViewById(R.id.send_otp_text);
+        resend_otp_linearLayout = findViewById(R.id.resend_otp_linearLayout);
+        textView = findViewById(R.id.textView);
 
         mAuth = FirebaseAuth.getInstance();
 
-        whyNeedData.setOnClickListener(new View.OnClickListener() {
+        reg_send_otp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //terms and condition activity here
-            }
-        });
-
-        reg_submit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String reg_name = reg_name_editText.getText().toString().trim();
                 String reg_mobile_no = reg_mobile_no_editText.getText().toString().trim();
 
-                if (TextUtils.isEmpty(reg_name)) {
-                    reg_name_editText.setError("Email Address is Empty");
-                } else if (TextUtils.isEmpty(reg_mobile_no)) {
-                    reg_mobile_no_editText.setError("Password is Empty");
+               if (TextUtils.isEmpty(reg_mobile_no)) {
+                    reg_mobile_no_editText.setError("This can't be Empty");
                 } else {
                     if (isConnected()) {
                         //ask permission -- Internet -- User Location -- Phone Call --
                         //check registration and send OTP
                         //custom enter OTP activity
+                        if (firstTime){
+                            send_otp_text.setText("Enter OTP sent to " + "+91" + reg_mobile_no);
+                            firstTime = false;
+                        }
+
+                        reg_mobile_no_editText.setText("");
+                        reg_mobile_no_editText.setHint(" * * * * * ");
+                        reg_mobile_no_editText.setFilters(new InputFilter[] {new InputFilter.LengthFilter(6)});
+                        resend_otp_linearLayout.setVisibility(View.VISIBLE);
+
+                        if (textView.getText().equals("VERIFY")){
+                            Toast.makeText(PhoneVerificationActivity.this, "Successful", Toast.LENGTH_SHORT).show();
+                        }
+
+                        textView.setText("VERIFY");
+
+
                         //also fetch current state he is living in
                         //Register
                         //registerAccount(reg_name,reg_mobile_no);
                         //Store user phone no, Name, state to database via Firebase
 
                         //For Now
-                        startActivity(new Intent(PhoneVerificationActivity.this,HomeActivity.class));
+                        //startActivity(new Intent(PhoneVerificationActivity.this,HomeActivity.class));
                     } else {
                         Toast.makeText(PhoneVerificationActivity.this, "No Internet Connection", Toast.LENGTH_SHORT).show();
                     }
                 }
+            }
+        });
+
+        resend_otp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                send_otp_text.setText("We will send you a One Time Password on this mobile number");
+                reg_mobile_no_editText.setText("");
+                reg_mobile_no_editText.setFilters(new InputFilter[] {new InputFilter.LengthFilter(10)});
+                reg_mobile_no_editText.setHint("Enter Mobile Number");
+                resend_otp_linearLayout.setVisibility(View.INVISIBLE);
+                textView.setText("Generate OTP");
             }
         });
     }

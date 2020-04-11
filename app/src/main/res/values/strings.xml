@@ -47,6 +47,7 @@
     <string name="diarrhea_des">Loose, watery bowel movements that may occur frequently and with a sense of urgency.</string>
     <string name="shortness_of_breath">Shortness \nof breath</string>
 
+
     <!--Fever Symptoms in Detail-->
     <string name="fever_symptom_name">Fever</string>
     <string name="fever_data_overview">Fever is also known as hyperthermia, pyrexia, or elevated temperature. It describes a body temperature that’s higher than normal.

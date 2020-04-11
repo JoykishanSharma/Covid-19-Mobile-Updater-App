@@ -385,7 +385,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
-                            android:text="@string/_011_23978076"
+                            android:text="011_23978076"
                             android:textSize="14sp"
                             android:textStyle="bold" />
 
@@ -426,11 +426,11 @@
                 android:alignmentMode="alignMargins"
                 android:columnCount="2"
                 android:columnOrderPreserved="false"
-                android:rowCount="2">
+                android:rowCount="1">
 
                 <com.google.android.material.circularreveal.cardview.CircularRevealCardView
                     android:id="@+id/all_symptoms"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
@@ -441,23 +441,41 @@
                     app:cardElevation="6dp"
                     app:strokeColor="#2196F3"
                     app:strokeWidth="1dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/symptom_cardview_image"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:src="@drawable/virus"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_alignParentEnd="true"
+                            android:contentDescription="@string/todo" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/roboto_bold"
                             android:text="@string/symptoms"
+                            android:layout_below="@id/symptom_cardview_image"
                             android:layout_gravity="center"
                             android:padding="16dp"
-                            android:drawableTop="@drawable/symptom_cardview"
                             android:textColor="#ff23729a"
                             android:textSize="16sp" />
+
+                    </RelativeLayout>
+
+
 
                 </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
 
                 <com.google.android.material.circularreveal.cardview.CircularRevealCardView
                     android:id="@+id/all_preventions"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
@@ -468,24 +486,40 @@
                     app:cardElevation="6dp"
                     app:strokeColor="#2196F3"
                     app:strokeWidth="1dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/prevention_cardview_image"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:src="@drawable/shield"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_alignParentEnd="true"
+                            android:contentDescription="@string/todo" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/roboto_bold"
                             android:text="@string/prevention"
-                            android:textColor="#ff23729a"
-                            android:textSize="16sp"
-                            android:padding="16dp"
+                            android:layout_below="@id/prevention_cardview_image"
                             android:layout_gravity="center"
-                            android:drawableTop="@drawable/prevention_cardview"/>
+                            android:padding="16dp"
+                            android:textColor="#ff23729a"
+                            android:textSize="16sp" />
+
+                    </RelativeLayout>
 
 
                 </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
 
-                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                <!--<com.google.android.material.circularreveal.cardview.CircularRevealCardView
                     android:id="@+id/all_nearby_covid19_hospital"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
@@ -497,22 +531,38 @@
                     app:strokeColor="#2196F3"
                     app:strokeWidth="1dp">
 
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/hospital_cardview_image"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:src="@drawable/hospital"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_alignParentEnd="true"
+                            android:contentDescription="@string/todo" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:padding="16dp"
-                            android:layout_gravity="center"
-                            android:drawableTop="@drawable/hospital_cardview"
                             android:fontFamily="@font/roboto_bold"
                             android:text="@string/hospitals"
+                            android:layout_below="@id/hospital_cardview_image"
+                            android:layout_gravity="center"
+                            android:padding="16dp"
                             android:textColor="#ff23729a"
                             android:textSize="16sp" />
+
+                    </RelativeLayout>
 
                 </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
 
                 <com.google.android.material.circularreveal.cardview.CircularRevealCardView
                     android:id="@+id/report_patient"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
@@ -524,18 +574,34 @@
                     app:strokeColor="#2196F3"
                     app:strokeWidth="1dp">
 
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/report_cardview_image"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:src="@drawable/sick"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_alignParentEnd="true"
+                            android:contentDescription="@string/todo" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:padding="16dp"
                             android:fontFamily="@font/roboto_bold"
                             android:text="@string/report"
+                            android:layout_below="@id/report_cardview_image"
                             android:layout_gravity="center"
+                            android:padding="16dp"
                             android:textColor="#ff23729a"
-                            android:textSize="16sp"
-                            android:drawableTop="@drawable/report_cardview"/>
+                            android:textSize="16sp" />
 
-                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+                    </RelativeLayout>
+
+                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>-->
 
             </GridLayout>
 
@@ -572,13 +638,13 @@
 
                     <ImageView
                         android:id="@+id/map_image"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
                         android:layout_marginEnd="8dp"
                         android:gravity="center_horizontal"
-                        android:src="@drawable/world_cardview"
+                        android:src="@drawable/spread"
                         android:contentDescription="@string/todo" />
 
                 </RelativeLayout>
@@ -619,13 +685,13 @@
 
                     <ImageView
                         android:id="@+id/info_image"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
                         android:layout_marginEnd="8dp"
                         android:gravity="center_horizontal"
-                        android:src="@drawable/info_cardview"
+                        android:src="@drawable/man"
                         android:contentDescription="@string/todo" />
 
                 </RelativeLayout>
@@ -666,13 +732,13 @@
 
                     <ImageView
                         android:id="@+id/news_image"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
                         android:layout_marginEnd="8dp"
                         android:gravity="center_horizontal"
-                        android:src="@drawable/news_cardview"
+                        android:src="@drawable/news"
                         android:contentDescription="@string/todo" />
 
                 </RelativeLayout>

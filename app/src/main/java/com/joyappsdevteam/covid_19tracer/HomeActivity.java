@@ -39,7 +39,7 @@ public class HomeActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     private Handler mWaitHandler = new Handler();
     private CardView homeToMapCardView,homeToInfoCardView,homeToNewsCardView,
-            all_symptoms,all_preventions,all_nearby_covid19_hospital,report_patient;
+            all_symptoms,all_preventions;
     private ImageView settings_image;
     private TextView see_detail_map,more_helpline_nos,call_helpline_no,helpful_text,
             confirm_cases_india,recover_cases_india,death_cases_india,last_update_india_textView,
@@ -63,8 +63,6 @@ public class HomeActivity extends AppCompatActivity {
         helpful_text = findViewById(R.id.helpful_text);
         all_symptoms = findViewById(R.id.all_symptoms);
         all_preventions = findViewById(R.id.all_preventions);
-        all_nearby_covid19_hospital = findViewById(R.id.all_nearby_covid19_hospital);
-        report_patient = findViewById(R.id.report_patient);
         settings_image = findViewById(R.id.settings);
         confirm_cases_india = findViewById(R.id.confirm_cases_india);
         recover_cases_india = findViewById(R.id.recover_cases_india);
@@ -179,23 +177,6 @@ public class HomeActivity extends AppCompatActivity {
                 //open Prevention Activity
                 //add subActivities if needed
                 //with images and videos
-            }
-        });
-
-        all_nearby_covid19_hospital.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //List All nearby Covid19 hospital, clinics, helps,
-                //Try to add map if possible
-            }
-        });
-
-        report_patient.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Report new Suspicious cases in your locality,
-                //share location for the suspect
-                //full history, everything in last 20days -- meetups, party, reunions, pets, everything
             }
         });
 

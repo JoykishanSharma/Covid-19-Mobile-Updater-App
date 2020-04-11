@@ -30,7 +30,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
                     //Go to next page i.e, start the next activity.
                     SharedPreferences sharedPreferences = getSharedPreferences("logged_in", MODE_PRIVATE);
-                    boolean logged_in = sharedPreferences.getBoolean("is_logged", true);
+                    boolean logged_in = sharedPreferences.getBoolean("is_logged", false);
 
                     //change the logged_in default value to "false" to world normally
 
