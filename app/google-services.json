@@ -1,34 +1,42 @@
 {
   "project_info": {
-    "project_number": "102468060863",
-    "firebase_url": "https://covid-19-tracer-app.firebaseio.com",
-    "project_id": "covid-19-tracer-app",
-    "storage_bucket": "covid-19-tracer-app.appspot.com"
+    "project_number": "772163949757",
+    "firebase_url": "https://covid-19-tracer-f990b.firebaseio.com",
+    "project_id": "covid-19-tracer-f990b",
+    "storage_bucket": "covid-19-tracer-f990b.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:102468060863:android:937f6d31efa9fcc722280a",
+        "mobilesdk_app_id": "1:772163949757:android:35a3007ca4cacc4ce713d4",
         "android_client_info": {
           "package_name": "com.joyappsdevteam.covid_19tracer"
         }
       },
       "oauth_client": [
         {
-          "client_id": "102468060863-4kghmeqrbb49sta2e537r1eaucv3qmnd.apps.googleusercontent.com",
+          "client_id": "772163949757-kcmcevkvc47t9mf2pp82sfc70afllsc1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.joyappsdevteam.covid_19tracer",
+            "certificate_hash": "7ea3c89aba69ed507962e19489d415d1e33b65cc"
+          }
+        },
+        {
+          "client_id": "772163949757-7k2tku8ocbpjjgqovr6tj05gk3ut1trn.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyB_Ed8_rCPsVO3Tq-RSMkEhbOSUP3Dk40s"
+          "current_key": "AIzaSyA9DlNUt7anX2O-gkXcp31EaWd6sPjS3ps"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "102468060863-4kghmeqrbb49sta2e537r1eaucv3qmnd.apps.googleusercontent.com",
+              "client_id": "772163949757-7k2tku8ocbpjjgqovr6tj05gk3ut1trn.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

@@ -19,6 +19,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,8 +27,15 @@ import androidx.cardview.widget.CardView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.gms.tasks.TaskExecutors;
+import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.PhoneAuthCredential;
+import com.google.firebase.auth.PhoneAuthProvider;
+
+import java.util.Objects;
+import java.util.concurrent.TimeUnit;
 
 public class PhoneVerificationActivity extends AppCompatActivity {
 
@@ -36,7 +44,7 @@ public class PhoneVerificationActivity extends AppCompatActivity {
     private LinearLayout resend_otp_linearLayout;
     private CardView reg_send_otp;
     private Boolean firstTime = true;
-    private FirebaseAuth mAuth = FirebaseAuth.getInstance();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,15 +61,15 @@ public class PhoneVerificationActivity extends AppCompatActivity {
         resend_otp_linearLayout = findViewById(R.id.resend_otp_linearLayout);
         textView = findViewById(R.id.textView);
 
-        mAuth = FirebaseAuth.getInstance();
+
 
         reg_send_otp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String reg_mobile_no = reg_mobile_no_editText.getText().toString().trim();
 
-               if (TextUtils.isEmpty(reg_mobile_no)) {
-                    reg_mobile_no_editText.setError("This can't be Empty");
+               if (TextUtils.isEmpty(reg_mobile_no) || reg_mobile_no.length() < 10) {
+                    reg_mobile_no_editText.setError("Valid Number is required");
                 } else {
                     if (isConnected()) {
                         //ask permission -- Internet -- User Location -- Phone Call --
@@ -77,8 +85,14 @@ public class PhoneVerificationActivity extends AppCompatActivity {
                         reg_mobile_no_editText.setFilters(new InputFilter[] {new InputFilter.LengthFilter(6)});
                         resend_otp_linearLayout.setVisibility(View.VISIBLE);
 
+                        if (textView.getText().equals("Generate OTP")){
+
+                        }
+
+
                         if (textView.getText().equals("VERIFY")){
                             Toast.makeText(PhoneVerificationActivity.this, "Successful", Toast.LENGTH_SHORT).show();
+
                         }
 
                         textView.setText("VERIFY");
@@ -126,9 +140,6 @@ public class PhoneVerificationActivity extends AppCompatActivity {
             return false;
     }
 
-    private void registerAccount(String email, String password){
-        //phone Verification via Firebase
-    }
 
     private void savedLoginState(){
         SharedPreferences sp = getSharedPreferences("logged_in", MODE_PRIVATE);
