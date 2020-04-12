@@ -41,13 +41,13 @@
 
             <EditText
                 android:id="@+id/reg_name"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/otp_verify_title"
                 android:layout_centerHorizontal="true"
-                android:layout_marginStart="36dp"
+                android:layout_marginStart="14dp"
                 android:layout_marginTop="40dp"
-                android:layout_marginEnd="36dp"
+                android:layout_marginEnd="14dp"
                 android:layout_marginBottom="16dp"
                 android:autofillHints=""
                 android:drawableStart="@drawable/ic_person_black_24dp"
@@ -55,7 +55,7 @@
                 android:gravity="center_horizontal"
                 android:hint="Full name"
                 android:inputType="textPersonName"
-                android:maxLength="10"
+                android:maxLength="30"
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
                 android:textColor="#fafafa"
@@ -65,20 +65,20 @@
 
             <EditText
                 android:id="@+id/reg_email"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/reg_name"
                 android:layout_centerHorizontal="true"
-                android:layout_marginStart="36dp"
-                android:layout_marginEnd="36dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginEnd="14dp"
                 android:layout_marginBottom="16dp"
                 android:autofillHints=""
                 android:drawableStart="@drawable/ic_email_black_24dp"
                 android:ems="12"
                 android:gravity="center_horizontal"
-                android:hint="email address"
+                android:hint="Email address"
                 android:inputType="textEmailAddress"
-                android:maxLength="10"
+                android:maxLength="30"
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
                 android:textColor="#fafafa"
@@ -97,7 +97,6 @@
                 android:layout_marginBottom="36dp"
                 android:gravity="start"
                 android:paddingStart="16dp"
-
                 android:paddingEnd="16dp" />
 
             <com.google.android.material.circularreveal.cardview.CircularRevealCardView

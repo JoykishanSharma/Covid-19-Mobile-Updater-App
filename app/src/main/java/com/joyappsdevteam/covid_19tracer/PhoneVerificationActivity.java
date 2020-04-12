@@ -202,7 +202,7 @@ public class PhoneVerificationActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            savedVerifyState();
+                            savedVerifyState(userPhoneNumber);
                             progress_circular.setVisibility(View.INVISIBLE);
                             startActivity(new Intent(PhoneVerificationActivity.this, TakeUsernameAndLocationActivity.class));
                         } else {
@@ -230,10 +230,11 @@ public class PhoneVerificationActivity extends AppCompatActivity {
     }
 
 
-    private void savedVerifyState() {
+    private void savedVerifyState(String UserNumber) {
         SharedPreferences sp = getSharedPreferences("phoneVerified", MODE_PRIVATE);
         SharedPreferences.Editor et = sp.edit();
         et.putBoolean("phoneVerifiedComplete", true);
+        et.putString("mobile_no",UserNumber);
         et.apply();
     }
 

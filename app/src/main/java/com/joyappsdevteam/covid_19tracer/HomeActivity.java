@@ -14,6 +14,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.InputFilter;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -32,8 +33,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.List;
-import java.util.Locale;
+
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -80,15 +80,7 @@ public class HomeActivity extends AppCompatActivity {
         requestQueue = Volley.newRequestQueue(this);
 
 
-        SharedPreferences sp = getSharedPreferences("UserDetails", MODE_PRIVATE);
-        String username = sp.getString("username", null);
-        String currentLocation = sp.getString("location", null);
-
-        if (username.equals(null)) username = "Your Name";
-        if (currentLocation.equals(null)) currentLocation = "Your State";
-
-        text_username.setText(username);
-        parseJsonData(currentLocation);
+        updateData();
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -192,11 +184,9 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                //testing
-                //startActivity(new Intent(HomeActivity.this,TakeUsernameAndLocationActivity.class));
-
-
                 //open settings activity
+                startActivity(new Intent(HomeActivity.this,SettingsActivity.class));
+
                 //terms and conditions
                 //privacy policies
                 //dark mode if possible
@@ -252,9 +242,22 @@ public class HomeActivity extends AppCompatActivity {
         requestQueue.add(request);
     }
 
+    private void updateData(){
+        SharedPreferences sp = getSharedPreferences("UserDetails", MODE_PRIVATE);
+        String username = sp.getString("username", null);
+        String currentLocation = sp.getString("location", null);
+
+        if (username.equals(null)) username = "Your Name";
+        if (currentLocation.equals(null)) currentLocation = "Your State";
+
+        text_username.setText(toTitleCase(username));
+        parseJsonData(currentLocation);
+    }
+
     @Override
     protected void onStart() {
         super.onStart();
+        updateData();
         bottomNavigationView.setSelectedItemId(R.id.home);
     }
 
@@ -293,6 +296,31 @@ public class HomeActivity extends AppCompatActivity {
 
         //Remove all the callbacks otherwise navigation will execute even after activity is killed or closed.
         mWaitHandler.removeCallbacksAndMessages(null);
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        updateData();
+
+    }
+
+    public static String toTitleCase(String input) {
+        StringBuilder titleCase = new StringBuilder(input.length());
+        boolean nextTitleCase = true;
+
+        for (char c : input.toCharArray()) {
+            if (Character.isSpaceChar(c)) {
+                nextTitleCase = true;
+            } else if (nextTitleCase) {
+                c = Character.toTitleCase(c);
+                nextTitleCase = false;
+            }
+
+            titleCase.append(c);
+        }
+
+        return titleCase.toString();
     }
 
 }
