@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
@@ -39,12 +40,40 @@ import java.util.concurrent.TimeUnit;
 
 public class PhoneVerificationActivity extends AppCompatActivity {
 
-    private EditText reg_mobile_no_editText;
-    private TextView resend_otp,send_otp_text,textView;
+    String verificationCodeBySystem;
+    private EditText reg_mobile_no_editText, otp_verification_EditText;
+    private TextView resend_otp, send_otp_text, textView;
     private LinearLayout resend_otp_linearLayout;
-    private CardView reg_send_otp;
-    private Boolean firstTime = true;
+    private CardView reg_send_otp, verify_otp_cardView;
+    private Boolean verificationError = false;
+    private ProgressBar progress_circular;
+    private String userPhoneNumber;
 
+    private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallBack
+            = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+        @Override
+        public void onCodeSent(@NonNull String s, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
+            super.onCodeSent(s, forceResendingToken);
+
+            verificationCodeBySystem = s;
+        }
+
+        @Override
+        public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
+
+            String code = phoneAuthCredential.getSmsCode();
+            if (code != null) {
+
+                verifyCode(code);
+            }
+        }
+
+        @Override
+        public void onVerificationFailed(@NonNull FirebaseException e) {
+            verificationError = true;
+            Toast.makeText(PhoneVerificationActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +89,9 @@ public class PhoneVerificationActivity extends AppCompatActivity {
         send_otp_text = findViewById(R.id.send_otp_text);
         resend_otp_linearLayout = findViewById(R.id.resend_otp_linearLayout);
         textView = findViewById(R.id.textView);
-
+        progress_circular = findViewById(R.id.progress_circular);
+        otp_verification_EditText = findViewById(R.id.otp_verification);
+        verify_otp_cardView = findViewById(R.id.verify_otp_cardView);
 
 
         reg_send_otp.setOnClickListener(new View.OnClickListener() {
@@ -68,35 +99,31 @@ public class PhoneVerificationActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String reg_mobile_no = reg_mobile_no_editText.getText().toString().trim();
 
-               if (TextUtils.isEmpty(reg_mobile_no) || reg_mobile_no.length() < 10) {
+                if (TextUtils.isEmpty(reg_mobile_no) || reg_mobile_no.length() < 10) {
                     reg_mobile_no_editText.setError("Valid Number is required");
                 } else {
                     if (isConnected()) {
                         //ask permission -- Internet -- User Location -- Phone Call --
                         //check registration and send OTP
                         //custom enter OTP activity
-                        if (firstTime){
-                            send_otp_text.setText("Enter OTP sent to " + "+91" + reg_mobile_no);
-                            firstTime = false;
+
+                        progress_circular.setVisibility(View.VISIBLE);
+                        sendVerificationCode(reg_mobile_no);
+
+                        if (!verificationError) {
+
+                            send_otp_text.setText("Enter the OTP code sent at +91" + reg_mobile_no);
+
+                            reg_mobile_no_editText.setVisibility(View.INVISIBLE);
+                            otp_verification_EditText.setVisibility(View.VISIBLE);
+
+                            reg_send_otp.setVisibility(View.INVISIBLE);
+                            verify_otp_cardView.setVisibility(View.VISIBLE);
+
+                            resend_otp_linearLayout.setVisibility(View.VISIBLE);
+
+                            userPhoneNumber = reg_mobile_no;
                         }
-
-                        reg_mobile_no_editText.setText("");
-                        reg_mobile_no_editText.setHint(" * * * * * ");
-                        reg_mobile_no_editText.setFilters(new InputFilter[] {new InputFilter.LengthFilter(6)});
-                        resend_otp_linearLayout.setVisibility(View.VISIBLE);
-
-                        if (textView.getText().equals("Generate OTP")){
-
-                        }
-
-
-                        if (textView.getText().equals("VERIFY")){
-                            Toast.makeText(PhoneVerificationActivity.this, "Successful", Toast.LENGTH_SHORT).show();
-
-                        }
-
-                        textView.setText("VERIFY");
-
 
                         //also fetch current state he is living in
                         //Register
@@ -112,17 +139,79 @@ public class PhoneVerificationActivity extends AppCompatActivity {
             }
         });
 
+        verify_otp_cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String verificationCodeByUser = otp_verification_EditText.getText().toString().trim();
+                progress_circular.setVisibility(View.VISIBLE);
+
+                if (TextUtils.isEmpty(verificationCodeByUser) || verificationCodeByUser.length() < 6) {
+                    reg_mobile_no_editText.setError("Valid Number is required");
+                } else {
+                    if (isConnected()) {
+                        verifyCode(verificationCodeByUser);
+                    } else
+                        Toast.makeText(PhoneVerificationActivity.this, "No Internet Connection", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
         resend_otp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 send_otp_text.setText("We will send you a One Time Password on this mobile number");
-                reg_mobile_no_editText.setText("");
-                reg_mobile_no_editText.setFilters(new InputFilter[] {new InputFilter.LengthFilter(10)});
-                reg_mobile_no_editText.setHint("Enter Mobile Number");
+
+                reg_mobile_no_editText.setVisibility(View.VISIBLE);
+                otp_verification_EditText.setVisibility(View.INVISIBLE);
+
+                reg_send_otp.setVisibility(View.VISIBLE);
+                verify_otp_cardView.setVisibility(View.INVISIBLE);
+
                 resend_otp_linearLayout.setVisibility(View.INVISIBLE);
-                textView.setText("Generate OTP");
+
+                progress_circular.setVisibility(View.INVISIBLE);
+
+
             }
         });
+    }
+
+    private void sendVerificationCode(String reg_mobile_no) {
+
+        PhoneAuthProvider.getInstance().verifyPhoneNumber(
+                "+91" + reg_mobile_no,
+                60,
+                TimeUnit.SECONDS,
+                TaskExecutors.MAIN_THREAD,
+                mCallBack);
+    }
+
+    private void verifyCode(String codeByUser) {
+
+        PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationCodeBySystem, codeByUser);
+        signInTheUserByCredentials(credential);
+        otp_verification_EditText.setText("******");
+
+    }
+
+    private void signInTheUserByCredentials(PhoneAuthCredential credential) {
+
+        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+        firebaseAuth.signInWithCredential(credential)
+                .addOnCompleteListener(PhoneVerificationActivity.this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            savedVerifyState();
+                            progress_circular.setVisibility(View.INVISIBLE);
+                            startActivity(new Intent(PhoneVerificationActivity.this, TakeUsernameAndLocationActivity.class));
+                        } else {
+                            verificationError = true;
+                            Toast.makeText(PhoneVerificationActivity.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
+
     }
 
     private boolean isConnected() {
@@ -141,10 +230,10 @@ public class PhoneVerificationActivity extends AppCompatActivity {
     }
 
 
-    private void savedLoginState(){
-        SharedPreferences sp = getSharedPreferences("logged_in", MODE_PRIVATE);
+    private void savedVerifyState() {
+        SharedPreferences sp = getSharedPreferences("phoneVerified", MODE_PRIVATE);
         SharedPreferences.Editor et = sp.edit();
-        et.putBoolean("is_logged", true);
+        et.putBoolean("phoneVerifiedComplete", true);
         et.apply();
     }
 

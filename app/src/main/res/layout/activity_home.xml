@@ -385,7 +385,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
-                            android:text="011_23978076"
+                            android:text="011-23978076"
                             android:textSize="14sp"
                             android:textStyle="bold" />
 
@@ -770,7 +770,7 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
-        android:layout_height="90dp"
+        android:layout_height="70dp"
         android:layout_alignParentBottom="true"
         android:background="@drawable/navigationbar"
         app:itemIconTint="@drawable/selector"

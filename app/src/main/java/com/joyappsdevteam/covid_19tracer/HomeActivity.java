@@ -183,6 +183,11 @@ public class HomeActivity extends AppCompatActivity {
         settings_image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                //testing
+                //startActivity(new Intent(HomeActivity.this,TakeUsernameAndLocationActivity.class));
+
+
                 //open settings activity
                 //terms and conditions
                 //privacy policies

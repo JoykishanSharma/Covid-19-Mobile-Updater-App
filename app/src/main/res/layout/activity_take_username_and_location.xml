@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_view"
+    android:padding="16dp"
+    tools:context=".TakeUsernameAndLocationActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/credential_image" />
+
+            <TextView
+                android:id="@+id/otp_verify_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imageView1"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="center_horizontal"
+                android:text="Hey there! What's your name?"
+                android:textColor="#FAFAFA"
+                android:textSize="24sp" />
+
+
+            <EditText
+                android:id="@+id/reg_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/otp_verify_title"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="36dp"
+                android:layout_marginBottom="16dp"
+                android:autofillHints=""
+                android:drawableStart="@drawable/ic_person_black_24dp"
+                android:ems="12"
+                android:gravity="center_horizontal"
+                android:hint="Full name"
+                android:inputType="textPersonName"
+                android:maxLength="10"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textColor="#fafafa"
+                android:textColorHint="#BECCCBCB"
+                android:textSize="20sp"
+                android:visibility="visible" />
+
+            <EditText
+                android:id="@+id/reg_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/reg_name"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="36dp"
+                android:layout_marginEnd="36dp"
+                android:layout_marginBottom="16dp"
+                android:autofillHints=""
+                android:drawableStart="@drawable/ic_email_black_24dp"
+                android:ems="12"
+                android:gravity="center_horizontal"
+                android:hint="email address"
+                android:inputType="textEmailAddress"
+                android:maxLength="10"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textColor="#fafafa"
+                android:textColorHint="#BECCCBCB"
+                android:textSize="20sp"
+                android:visibility="visible" />
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@id/reg_email"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="36dp"
+                android:layout_marginEnd="36dp"
+                android:layout_marginBottom="36dp"
+                android:gravity="start"
+                android:paddingStart="16dp"
+
+                android:paddingEnd="16dp" />
+
+            <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                android:id="@+id/lets_go_cardView"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="60dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardBackgroundColor="#DA4679"
+                app:cardCornerRadius="25dp"
+                app:cardElevation="6dp"
+                android:layout_below="@id/spinner">
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="Let's Go"
+                    android:textColor="#fff"
+                    android:textSize="18sp" />
+
+            </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

@@ -29,13 +29,20 @@ public class WelcomeActivity extends AppCompatActivity {
                 try {
 
                     //Go to next page i.e, start the next activity.
-                    SharedPreferences sharedPreferences = getSharedPreferences("logged_in", MODE_PRIVATE);
-                    boolean logged_in = sharedPreferences.getBoolean("is_logged", false);
+                    SharedPreferences sharedPreferences = getSharedPreferences("phoneVerified", MODE_PRIVATE);
+                    boolean isPhoneVerificationComplete = sharedPreferences.getBoolean("phoneVerifiedComplete", false);
 
-                    //change the logged_in default value to "false" to world normally
+                    //Go to next page i.e, start the next activity.
+                    SharedPreferences sharedPref = getSharedPreferences("UserDetails", MODE_PRIVATE);
+                    boolean IsUserDetailsSaved = sharedPref.getBoolean("user_details", false);
 
-                    if (logged_in){
+                    if (isPhoneVerificationComplete && IsUserDetailsSaved){
                         Intent intent = new Intent(WelcomeActivity.this,HomeActivity.class);
+                        startActivity(intent);
+                        overridePendingTransition(R.anim.custom_slide_in_right,R.anim.custom_slide_out_left);
+                    }
+                    else if(isPhoneVerificationComplete && !IsUserDetailsSaved){
+                        Intent intent = new Intent(WelcomeActivity.this,TakeUsernameAndLocationActivity.class);
                         startActivity(intent);
                         overridePendingTransition(R.anim.custom_slide_in_right,R.anim.custom_slide_out_left);
                     }

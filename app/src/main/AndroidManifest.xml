@@ -6,7 +6,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.READ_SMS" />
 
     <application
         android:allowBackup="true"
@@ -15,7 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SymptomsActivity"></activity>
+        <activity android:name=".TakeUsernameAndLocationActivity"/>
+        <activity android:name=".SymptomsActivity" />
         <activity android:name=".HelplineNumberActivity" />
         <activity android:name=".FeelingBadActivity" />
         <activity android:name=".FeelingGoodActivity" />

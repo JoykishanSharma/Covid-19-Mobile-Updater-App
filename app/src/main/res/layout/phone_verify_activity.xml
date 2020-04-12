@@ -51,6 +51,7 @@
         android:fontFamily="@font/roboto_bold"
         android:textColor="#D8D7D7"/>
 
+
     <EditText
         android:id="@+id/reg_phone"
         android:layout_width="wrap_content"
@@ -65,12 +66,36 @@
         android:layout_marginStart="36dp"
         android:layout_marginEnd="36dp"
         android:gravity="center_horizontal"
-        android:hint="Enter Mobile Number"
+        android:hint="  Enter Mobile Number"
         android:inputType="phone"
         android:maxLength="10"
         android:textColor="#fafafa"
+        android:visibility="visible"
+        android:drawableStart="@drawable/indian_flags"
         android:textColorHint="#BECCCBCB"
         android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/otp_verification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/send_otp_text"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="24dp"
+            android:autofillHints=""
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginEnd="36dp"
+            android:gravity="center_horizontal"
+            android:hint=" * * * * * * "
+            android:inputType="phone"
+            android:maxLength="6"
+            android:textColor="#fafafa"
+            android:visibility="invisible"
+            android:textColorHint="#BECCCBCB"
+            android:textSize="20sp" />
 
         <LinearLayout
             android:id="@+id/resend_otp_linearLayout"
@@ -103,6 +128,15 @@
 
         </LinearLayout>
 
+        <ProgressBar
+            android:id="@+id/progress_circular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="4dp"
+            android:visibility="invisible"/>
+
     <com.google.android.material.circularreveal.cardview.CircularRevealCardView
         android:id="@+id/send_otp_cardView"
         android:layout_width="300dp"
@@ -114,6 +148,7 @@
         app:cardBackgroundColor="#536DFE"
         app:cardCornerRadius="25dp"
         app:cardElevation="6dp"
+        android:visibility="visible"
         android:layout_below="@id/resend_otp_linearLayout">
 
         <TextView
@@ -128,6 +163,33 @@
             android:textSize="18sp" />
 
     </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+        <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+            android:id="@+id/verify_otp_cardView"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="60dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardBackgroundColor="#536DFE"
+            app:cardCornerRadius="25dp"
+            app:cardElevation="6dp"
+            android:visibility="invisible"
+            android:layout_below="@id/resend_otp_linearLayout">
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:fontFamily="@font/roboto_bold"
+                android:text="VERIFY"
+                android:textColor="#fff"
+                android:textSize="18sp" />
+
+        </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
 
     <!--<TextView
         android:id="@+id/why_need_data"
