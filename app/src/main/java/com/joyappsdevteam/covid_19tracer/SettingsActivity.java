@@ -7,6 +7,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.view.WindowManager;
@@ -18,20 +19,47 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatSpinner;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class SettingsActivity extends AppCompatActivity {
 
+    UserDetails userDetails;
     private ImageView backButton;
-    private EditText newName,newEmail;
+    private EditText newName, newEmail;
     private AppCompatSpinner spinner;
     private String newLocation_settings;
     private TextView mobileNumberSettings;
     private Button saveChanges;
+    private String mobileNo;
+
+    public static String toTitleCase(String input) {
+        StringBuilder titleCase = new StringBuilder(input.length());
+        boolean nextTitleCase = true;
+
+        for (char c : input.toCharArray()) {
+            if (Character.isSpaceChar(c)) {
+                nextTitleCase = true;
+            } else if (nextTitleCase) {
+                c = Character.toTitleCase(c);
+                nextTitleCase = false;
+            }
+
+            titleCase.append(c);
+        }
+
+        return titleCase.toString();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,11 +78,11 @@ public class SettingsActivity extends AppCompatActivity {
 
         SharedPreferences sharedPref = getSharedPreferences("UserDetails", MODE_PRIVATE);
         String oldName = sharedPref.getString("username", null);
-        String oldEmail = sharedPref.getString("emailAddress",null);
-        String oldLocation = sharedPref.getString("location",null);
+        String oldEmail = sharedPref.getString("emailAddress", null);
+        String oldLocation = sharedPref.getString("location", null);
 
         SharedPreferences sharedPreferences = getSharedPreferences("phoneVerified", MODE_PRIVATE);
-        String mobileNo = sharedPreferences.getString("mobile_no",null);
+        mobileNo = sharedPreferences.getString("mobile_no", null);
 
         assert oldName != null;
         newName.setText(toTitleCase(oldName));
@@ -62,7 +90,7 @@ public class SettingsActivity extends AppCompatActivity {
         mobileNumberSettings.setText("+91-" + mobileNo + "  ");
 
         List<String> categories = new ArrayList<>();
-        categories.add(0,"Select your state");
+        categories.add(0, "Select your state");
         categories.add("Andhra Pradesh");
         categories.add("Arunachal Pradesh");
         categories.add("Assam");
@@ -102,7 +130,7 @@ public class SettingsActivity extends AppCompatActivity {
         categories.add("Puducherry");
 
         //Style and populate spinner
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(this,R.layout.spinner_item,categories);
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(this, R.layout.spinner_item, categories);
 
         //Dropdown layout style
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -115,14 +143,7 @@ public class SettingsActivity extends AppCompatActivity {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if (parent.getItemAtPosition(position).equals("Select your state")){
-                    //do nothing
-                }else {
-                    //on selecting a spinner item
                     newLocation_settings = parent.getItemAtPosition(position).toString();
-
-                    //show selected spinner item
-                }
             }
 
             @Override
@@ -148,11 +169,11 @@ public class SettingsActivity extends AppCompatActivity {
                     newName.setError("empty");
                 } else if (TextUtils.isEmpty(newEmailToSave) || !Patterns.EMAIL_ADDRESS.matcher(newEmailToSave).matches()) {
                     newEmail.setError("Invalid Email Address");
-                }else if (newLocation_settings.equals("Select your state")) {
-                    Toast.makeText(SettingsActivity.this,"Select your location",Toast.LENGTH_SHORT).show();
+                } else if (newLocation_settings.equals("Select your state")) {
+                    Toast.makeText(SettingsActivity.this, "Select your location", Toast.LENGTH_SHORT).show();
                 } else {
                     if (isConnected()) {
-                        savedUserDetailsNew(newNameToSave,newEmailToSave,newLocation_settings);
+                        savedUserDetailsNew(newNameToSave, newEmailToSave, newLocation_settings);
                         Toast.makeText(getApplicationContext(), "Changes Saved", Toast.LENGTH_SHORT).show();
                     } else
                         Toast.makeText(SettingsActivity.this, "No Internet Connection", Toast.LENGTH_SHORT).show();
@@ -161,7 +182,7 @@ public class SettingsActivity extends AppCompatActivity {
         });
     }
 
-    private void savedUserDetailsNew(String name,String email,String location) {
+    private void savedUserDetailsNew(String name, String email, String location) {
         SharedPreferences sp = getSharedPreferences("UserDetails", MODE_PRIVATE);
         SharedPreferences.Editor et = sp.edit();
         et.putBoolean("user_details", true);
@@ -169,6 +190,29 @@ public class SettingsActivity extends AppCompatActivity {
         et.putString("emailAddress", email);
         et.putString("location", location);
         et.apply();
+
+        //creating UserDetails Object
+        userDetails = new UserDetails();
+        userDetails.setName(name);
+        userDetails.setEmail(email);
+        userDetails.setLocation(location);
+        userDetails.setMobile(mobileNo);
+
+        // storing data to firebase database
+        final DatabaseReference availReff = FirebaseDatabase.getInstance().getReference().child("UserDetails");
+        availReff.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                availReff.push().setValue(userDetails);
+                Log.i("data Saved to ", "Firebase Database");
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                //Do nothing
+            }
+        });
     }
 
     private boolean isConnected() {
@@ -184,23 +228,5 @@ public class SettingsActivity extends AppCompatActivity {
             return (mobile != null && mobile.isConnectedOrConnecting()) || (wifi != null && wifi.isConnectedOrConnecting());
         } else
             return false;
-    }
-
-    public static String toTitleCase(String input) {
-        StringBuilder titleCase = new StringBuilder(input.length());
-        boolean nextTitleCase = true;
-
-        for (char c : input.toCharArray()) {
-            if (Character.isSpaceChar(c)) {
-                nextTitleCase = true;
-            } else if (nextTitleCase) {
-                c = Character.toTitleCase(c);
-                nextTitleCase = false;
-            }
-
-            titleCase.append(c);
-        }
-
-        return titleCase.toString();
     }
 }

@@ -11,7 +11,7 @@
         android:id="@+id/map"
         android:title="Maps"
         android:state_checked="true"
-        android:icon="@drawable/map_icon"/>
+        android:icon="@drawable/ic_location_on_black_24dp"/>
 
     <item
         android:id="@+id/info"

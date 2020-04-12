@@ -10,6 +10,7 @@ import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.view.WindowManager;
@@ -18,12 +19,20 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatSpinner;
 import androidx.cardview.widget.CardView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class TakeUsernameAndLocationActivity extends AppCompatActivity {
 
@@ -31,6 +40,7 @@ public class TakeUsernameAndLocationActivity extends AppCompatActivity {
     private EditText regName,regEmail;
     private CardView lets_go_cardView;
     private String selectedItem;
+    UserDetails userDetails;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,14 +108,7 @@ public class TakeUsernameAndLocationActivity extends AppCompatActivity {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if (parent.getItemAtPosition(position).equals("Select your state")){
-                    //do nothing
-                }else {
-                    //on selecting a spinner item
                     selectedItem = parent.getItemAtPosition(position).toString();
-
-                    //show selected spinner item
-                }
             }
 
             @Override
@@ -153,7 +156,11 @@ public class TakeUsernameAndLocationActivity extends AppCompatActivity {
             return false;
     }
 
-    private void savedUserDetail(String name,String email,String location) {
+    private void savedUserDetail(String name, String email, String location) {
+
+        SharedPreferences sharedPreferences = getSharedPreferences("phoneVerified", MODE_PRIVATE);
+        final String mobileNo = sharedPreferences.getString("mobile_no",null);
+
         SharedPreferences sp = getSharedPreferences("UserDetails", MODE_PRIVATE);
         SharedPreferences.Editor et = sp.edit();
         et.putBoolean("user_details", true);
@@ -161,6 +168,27 @@ public class TakeUsernameAndLocationActivity extends AppCompatActivity {
         et.putString("emailAddress",email);
         et.putString("location",location);
         et.apply();
+
+        //creating UserDetails Object
+        userDetails = new UserDetails();
+        userDetails.setName(name);
+        userDetails.setEmail(email);
+        userDetails.setLocation(location);
+        userDetails.setMobile(mobileNo);
+
+        // storing data to firebase database
+        final DatabaseReference availReff = FirebaseDatabase.getInstance().getReference().child("UserDetails");
+        availReff.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                 availReff.push().setValue(userDetails);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                //Do nothing
+            }
+        });
     }
 
     @Override
