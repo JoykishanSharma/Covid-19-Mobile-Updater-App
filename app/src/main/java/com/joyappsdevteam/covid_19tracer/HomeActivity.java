@@ -7,6 +7,7 @@ import androidx.cardview.widget.CardView;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Build;
@@ -43,7 +44,7 @@ public class HomeActivity extends AppCompatActivity {
     private ImageView settings_image;
     private TextView see_detail_map,more_helpline_nos,call_helpline_no,helpful_text,
             confirm_cases_india,recover_cases_india,death_cases_india,last_update_india_textView,
-            confirm_cases_state_level,recover_cases_state_level,death_cases_state_level,last_update_state_level,your_state_name;
+            confirm_cases_state_level,recover_cases_state_level,death_cases_state_level,last_update_state_level,your_state_name,text_username;
     private RequestQueue requestQueue;
     private String userCurrentState;
 
@@ -73,14 +74,21 @@ public class HomeActivity extends AppCompatActivity {
         death_cases_state_level = findViewById(R.id.death_cases_state_level);
         last_update_state_level = findViewById(R.id.last_update_state_textView);
         your_state_name = findViewById(R.id.your_state_name);
+        text_username = findViewById(R.id.text_username);
 
 
         requestQueue = Volley.newRequestQueue(this);
 
-        //Testing purpose
-        userCurrentState = "West Bengal";
 
-        parseJsonData(userCurrentState);
+        SharedPreferences sp = getSharedPreferences("UserDetails", MODE_PRIVATE);
+        String username = sp.getString("username", null);
+        String currentLocation = sp.getString("location", null);
+
+        if (username.equals(null)) username = "Your Name";
+        if (currentLocation.equals(null)) currentLocation = "Your State";
+
+        text_username.setText(username);
+        parseJsonData(currentLocation);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override

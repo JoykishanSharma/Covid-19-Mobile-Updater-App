@@ -128,7 +128,7 @@ public class TakeUsernameAndLocationActivity extends AppCompatActivity {
                     Toast.makeText(TakeUsernameAndLocationActivity.this,"Select your location",Toast.LENGTH_SHORT).show();
                 } else {
                     if (isConnected()) {
-                        savedUserDetail();
+                        savedUserDetail(userName,userEmail,selectedItem);
                         startActivity(new Intent(TakeUsernameAndLocationActivity.this,HomeActivity.class));
                     } else
                         Toast.makeText(TakeUsernameAndLocationActivity.this, "No Internet Connection", Toast.LENGTH_SHORT).show();
@@ -153,10 +153,13 @@ public class TakeUsernameAndLocationActivity extends AppCompatActivity {
             return false;
     }
 
-    private void savedUserDetail() {
+    private void savedUserDetail(String name,String email,String location) {
         SharedPreferences sp = getSharedPreferences("UserDetails", MODE_PRIVATE);
         SharedPreferences.Editor et = sp.edit();
         et.putBoolean("user_details", true);
+        et.putString("username",name);
+        et.putString("emailAddress",email);
+        et.putString("location",location);
         et.apply();
     }
 
