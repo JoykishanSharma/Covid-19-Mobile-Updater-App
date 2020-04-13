@@ -175,6 +175,8 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //open Prevention Activity
+                startActivity(new Intent(HomeActivity.this,PreventionActivity.class));
+                overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                 //add subActivities if needed
                 //with images and videos
             }

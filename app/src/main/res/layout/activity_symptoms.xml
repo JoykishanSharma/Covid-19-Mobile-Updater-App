@@ -190,15 +190,12 @@
                 android:fontFamily="@font/roboto_bold"
                 android:textColor="#FAFAFA"/>
 
-
-
-
             <GridLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:alignmentMode="alignMargins"
                 android:columnCount="2"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:rowCount="2">
 
                 <com.google.android.material.circularreveal.cardview.CircularRevealCardView
@@ -218,7 +215,6 @@
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="vertical"
                        android:padding="16dp">
 
                         <TextView
