@@ -80,7 +80,7 @@
                         android:gravity="center"
                         android:text="@string/prevention_des_text"
                         android:textColor="#FFFFFF"
-                        android:textSize="16sp"
+                        android:textSize="14sp"
                         android:textStyle="italic|bold" />
 
 
@@ -134,7 +134,7 @@
                             android:gravity="start"
                             android:text="Wash your hands frequently"
                             android:textColor="#1F36B8"
-                            android:textSize="14sp" />
+                            android:textSize="16sp" />
 
 
                         <TextView
@@ -143,8 +143,7 @@
                             android:gravity="start"
                             android:text="@string/handwashing_text_prevention_cardview"
                             android:textColor="#8A8989"
-                            android:textSize="12sp"
-                            android:textStyle="italic|bold" />
+                            android:textSize="12sp" />
 
 
                     </LinearLayout>
@@ -184,7 +183,7 @@
                             android:gravity="start"
                             android:text="Take social distancing seriously"
                             android:textColor="#1F36B8"
-                            android:textSize="14sp" />
+                            android:textSize="16sp" />
 
 
                         <TextView
@@ -193,8 +192,7 @@
                             android:gravity="start"
                             android:text="@string/social_distancing_text_prevention_cardview"
                             android:textColor="#8A8989"
-                            android:textSize="12sp"
-                            android:textStyle="italic|bold" />
+                            android:textSize="12sp" />
 
 
                     </LinearLayout>
@@ -250,7 +248,7 @@
                             android:gravity="start"
                             android:text="Cover your mouth and nose when you cough and sneeze"
                             android:textColor="#1F36B8"
-                            android:textSize="14sp" />
+                            android:textSize="16sp" />
 
 
                         <TextView
@@ -259,8 +257,7 @@
                             android:gravity="start"
                             android:text="@string/cough_and_sneeze_text_prevention_cardview"
                             android:textColor="#8A8989"
-                            android:textSize="12sp"
-                            android:textStyle="italic|bold" />
+                            android:textSize="12sp" />
 
 
                     </LinearLayout>
@@ -300,7 +297,7 @@
                             android:gravity="start"
                             android:text="Wear facemask when getting into crowded place"
                             android:textColor="#1F36B8"
-                            android:textSize="14sp" />
+                            android:textSize="16sp" />
 
 
                         <TextView
@@ -309,8 +306,7 @@
                             android:gravity="start"
                             android:text="@string/wear_facemask_text_prevention_cardview"
                             android:textColor="#8A8989"
-                            android:textSize="12sp"
-                            android:textStyle="italic|bold" />
+                            android:textSize="12sp" />
 
 
                     </LinearLayout>
@@ -320,6 +316,7 @@
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
                         android:layout_gravity="end"
                         android:contentDescription="@string/todo"
                         android:src="@drawable/wear_a_facemask_if_you_are_sick" />
@@ -346,6 +343,7 @@
                     <ImageView
                         android:layout_width="70dp"
                         android:layout_height="70dp"
+                        android:layout_gravity="center_vertical"
                         android:contentDescription="@string/todo"
                         android:src="@drawable/dont_touch_your_face" />
 
@@ -363,7 +361,7 @@
                             android:gravity="start"
                             android:text="Avoid touching your face"
                             android:textColor="#1F36B8"
-                            android:textSize="14sp" />
+                            android:textSize="16sp" />
 
 
                         <TextView
@@ -372,8 +370,7 @@
                             android:gravity="start"
                             android:text="@string/dont_touch_face_text_prevention_cardview"
                             android:textColor="#8A8989"
-                            android:textSize="12sp"
-                            android:textStyle="italic|bold" />
+                            android:textSize="12sp" />
 
 
                     </LinearLayout>
@@ -413,7 +410,7 @@
                             android:gravity="start"
                             android:text="Stay Home, Stay Safe"
                             android:textColor="#1F36B8"
-                            android:textSize="14sp" />
+                            android:textSize="16sp" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -421,8 +418,7 @@
                             android:gravity="start"
                             android:text="@string/stay_at_home_text_prevention_cardview"
                             android:textColor="#8A8989"
-                            android:textSize="12sp"
-                            android:textStyle="italic|bold" />
+                            android:textSize="12sp" />
 
                     </LinearLayout>
 
@@ -431,6 +427,7 @@
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
                         android:layout_gravity="end"
                         android:contentDescription="@string/todo"
                         android:src="@drawable/stay_at_home" />
@@ -457,6 +454,7 @@
                     <ImageView
                         android:layout_width="70dp"
                         android:layout_height="70dp"
+                        android:layout_gravity="center_vertical"
                         android:contentDescription="@string/todo"
                         android:src="@drawable/clean_and_disinfect" />
 
@@ -474,7 +472,7 @@
                             android:gravity="start"
                             android:text="Clean and disinfect"
                             android:textColor="#1F36B8"
-                            android:textSize="14sp" />
+                            android:textSize="16sp" />
 
 
                         <TextView
@@ -483,8 +481,7 @@
                             android:gravity="start"
                             android:text="@string/clean_and_disinfect_text_prevention_cardview"
                             android:textColor="#8A8989"
-                            android:textSize="12sp"
-                            android:textStyle="italic|bold" />
+                            android:textSize="12sp" />
 
 
                     </LinearLayout>
@@ -524,7 +521,7 @@
                             android:gravity="start"
                             android:text="Stay hygiene, eat healthy"
                             android:textColor="#1F36B8"
-                            android:textSize="14sp" />
+                            android:textSize="16sp" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -532,8 +529,7 @@
                             android:gravity="start"
                             android:text="@string/eat_healthy_text_prevention_cardview"
                             android:textColor="#8A8989"
-                            android:textSize="12sp"
-                            android:textStyle="italic|bold" />
+                            android:textSize="12sp" />
 
                     </LinearLayout>
 
@@ -542,6 +538,7 @@
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
                         android:layout_gravity="end"
                         android:contentDescription="@string/todo"
                         android:src="@drawable/eat_healthy" />
@@ -568,6 +565,7 @@
                     <ImageView
                         android:layout_width="70dp"
                         android:layout_height="70dp"
+                        android:layout_gravity="center_vertical"
                         android:contentDescription="@string/todo"
                         android:src="@drawable/do_some_exercise" />
 
@@ -585,7 +583,7 @@
                             android:gravity="start"
                             android:text="Do Some Exercise"
                             android:textColor="#1F36B8"
-                            android:textSize="14sp" />
+                            android:textSize="16sp" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -593,8 +591,7 @@
                             android:gravity="start"
                             android:text="@string/do_some_exercise_text_prevention_cardview"
                             android:textColor="#8A8989"
-                            android:textSize="12sp"
-                            android:textStyle="italic|bold" />
+                            android:textSize="12sp" />
 
                     </LinearLayout>
 
