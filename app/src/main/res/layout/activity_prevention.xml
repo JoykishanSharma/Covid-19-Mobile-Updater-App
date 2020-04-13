@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_view"
+    tools:context=".SymptomsActivity">
+
+    <LinearLayout
+        android:id="@+id/symptoms_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp">
+
+        <ImageView
+            android:id="@+id/back_arrow5"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="start"
+            android:src="@drawable/arrow_left_black_24dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Preventions"
+            android:layout_marginEnd="40dp"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal"
+            android:textSize="22sp"
+            android:fontFamily="@font/roboto_bold"
+            android:textColor="#FFFF"/>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/symptoms_title">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:orientation="vertical">
+
+            <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:focusable="false"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_regular"
+                        android:gravity="center"
+                        android:text="@string/how_are_you_feeling_at_this_moment"
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:textSize="17sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="12dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                            android:id="@+id/feeling_good"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="24dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="2dp"
+                            app:strokeColor="@android:color/holo_green_light"
+                            app:strokeWidth="1dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:drawableEnd="@drawable/ic_mood_black_24dp"
+                                android:fontFamily="@font/roboto_bold"
+                                android:gravity="center_vertical"
+                                android:paddingStart="20dp"
+                                android:paddingTop="16dp"
+                                android:paddingEnd="20dp"
+                                android:paddingBottom="16dp"
+                                android:text="@string/good"
+                                android:textColor="@android:color/holo_green_dark"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+                        <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                            android:id="@+id/feeling_bad"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="24dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="2dp"
+                            app:strokeColor="@android:color/holo_red_light"
+                            app:strokeWidth="1dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:drawableEnd="@drawable/ic_mood_bad_black_24dp"
+                                android:fontFamily="@font/roboto_bold"
+                                android:gravity="center_vertical"
+                                android:paddingStart="20dp"
+                                android:paddingTop="16dp"
+                                android:paddingEnd="20dp"
+                                android:paddingBottom="16dp"
+                                android:text="@string/bad"
+                                android:textColor="@android:color/holo_red_light"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+            <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:focusable="false"
+                app:cardCornerRadius="12dp"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="#FF3700B3">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    >
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_gravity="start"
+                        android:src="@drawable/coronavirus" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#fafafa"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="16dp"
+                        android:textSize="14sp"
+                        android:text="The symptoms may appear 2-14 days after exposure"
+                        android:gravity="center"
+                        android:textStyle="italic|bold"/>
+
+                </LinearLayout>
+
+            </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Main Symptoms"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:textSize="18sp"
+                android:fontFamily="@font/roboto_bold"
+                android:textColor="#FAFAFA"/>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
