@@ -3,26 +3,17 @@ package com.joyappsdevteam.covid_19tracer;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
-
 import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import java.lang.ref.SoftReference;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 public class HelplineNumberActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Map<String, List<String>> stateName;
     TextView andhra_pradesh,arunachal_pradesh,assam,call_104_states,haryana,kerala,maharashtra,
             manipur,meghalaya,mizoram,nagaland,odisha,rajasthan,tamil_nadu,tripura,uttar_pradesh,
             west_bengal_no1,west_bengal_no2,andaman_and_nicobar_islands,chandigarh,call_104_union_territory
@@ -33,15 +24,7 @@ public class HelplineNumberActivity extends AppCompatActivity implements View.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_helpline_number);
 
-        stateName = new HashMap<>();
-
-        addAllStateNamesAndNumbersToTheList();
-
         callNowCardViewReferencing();
-
-        Log.i("StateWise data", String.valueOf(stateName));
-        Log.i("bihar", String.valueOf(stateName.get("Bihar / Chhattisgarh / Goa / Gujarat / Himachal Pradesh / " +
-                "Jharkhand / Karnataka / Madhya Pradesh / Punjab / Sikkim / Telangana / Uttarakhand")));
     }
 
     private void callNowCardViewReferencing(){
@@ -101,153 +84,115 @@ public class HelplineNumberActivity extends AppCompatActivity implements View.On
     public void onClick(View v) {
         switch (v.getId()) {
 
-            case R.id.andhra_pradesh:
+            case R.id.national_helpline_01:
+                directCall("01123978046");
+                break;
 
+            case R.id.national_helpline_02:
+                directCall("1075");
+                break;
+
+            case R.id.andhra_pradesh:
+                directCall("08662410978");
                 break;
 
             case R.id.arunachal_pradesh:
-
+                directCall("09436055743");
                 break;
 
             case R.id.assam:
-
+                directCall("06913347770");
                 break;
 
             case R.id.call_104_states:
 
+            case R.id.call_104_union_territory:
+                directCall("104");
                 break;
 
             case R.id.haryana:
-
+                directCall("08558893911");
                 break;
 
             case R.id.kerala:
-
+                directCall("04712552056");
                 break;
 
             case R.id.maharashtra:
-
+                directCall("02026127394");
                 break;
 
             case R.id.manipur:
-
+                directCall("03852411668");
                 break;
 
             case R.id.meghalaya:
-
+                directCall("108");
                 break;
 
             case R.id.mizoram:
-
+                directCall("102");
                 break;
 
             case R.id.nagaland:
-
+                directCall("07005539653");
                 break;
 
             case R.id.odisha:
-
+                directCall("09439994859");
                 break;
 
             case R.id.rajasthan:
-
+                directCall("01412225624");
                 break;
 
             case R.id.tamil_nadu:
-
+                directCall("04429510500");
                 break;
 
             case R.id.tripura:
-
+                directCall("03812315879");
                 break;
 
             case R.id.uttar_pradesh:
-
+                directCall("18001805145");
                 break;
 
             case R.id.west_bengal_no1:
-
+                directCall("1800313444222");
                 break;
 
             case R.id.west_bengal_no2:
-
+                directCall("03323412600");
                 break;
 
             case R.id.andaman_and_nicobar_islands:
-
+                directCall("03192232102");
                 break;
 
             case R.id.chandigarh:
-
-                break;
-
-            case R.id.call_104_union_territory:
-
+                directCall("09779558282");
                 break;
 
             case R.id.delhi:
-
+                directCall("01122307145");
                 break;
 
             case R.id.jammu_and_kashmir_no1:
-
+                directCall("01912520982");
                 break;
 
             case R.id.jammu_and_kashmir_no2:
-
+                directCall("01942440283");
                 break;
 
             case R.id.ladakh:
-
+                directCall("01982256462");
                 break;
 
             default:
                 break;
         }
-    }
-
-    private void addAllStateNamesAndNumbersToTheList() {
-
-        addStateAndNumbersToTheList("Andhra Pradesh","08662410978");
-        addStateAndNumbersToTheList("Arunachal Pradesh","09436055743");
-        addStateAndNumbersToTheList("Assam","06913347770");
-        addStateAndNumbersToTheList("Bihar / Chhattisgarh / Goa / Gujarat / Himachal Pradesh / " +
-                "Jharkhand / Karnataka / Madhya Pradesh / Punjab / Sikkim / Telangana / Uttarakhand","104");
-        addStateAndNumbersToTheList("Haryana","08558893911");
-        addStateAndNumbersToTheList("Kerala","04712552056");
-        addStateAndNumbersToTheList("Maharashtra","02026127394");
-        addStateAndNumbersToTheList("Manipur","03852411668");
-        addStateAndNumbersToTheList("Meghalaya","108");
-        addStateAndNumbersToTheList("Mizoram","102");
-        addStateAndNumbersToTheList("Nagaland","07005539653");
-        addStateAndNumbersToTheList("Odisha","09439994859");
-        addStateAndNumbersToTheList("Rajasthan","01412225624");
-        addStateAndNumbersToTheList("Tamil Nadu","04429510500");
-        addStateAndNumbersToTheList("Tripura","03812315879");
-        addStateAndNumbersToTheList("Uttar Pradesh","18001805145");
-        addStateAndNumbersToTheList("West Bengal","1800313444222","03323412600");
-
-        //Union Territory
-        addStateAndNumbersToTheList("Andaman and Nicobar Islands","03192232102");
-        addStateAndNumbersToTheList("Chandigarh","09779558282");
-        addStateAndNumbersToTheList("Dadra and Nagar Haveli / Daman and Diu / Lakshadweep / Puducherry","104");
-        addStateAndNumbersToTheList("Delhi","01122307145");
-        addStateAndNumbersToTheList("Jammu and Kashmir","01912520982", "01942440283");
-        addStateAndNumbersToTheList("Ladakh","01982256462");
-
-    }
-
-    private void addStateAndNumbersToTheList(String state, String number1, String number2){
-        List<String> numbers = new ArrayList<>();
-        numbers.add(number1);
-        numbers.add(number2);
-        stateName.put(state, numbers);
-    }
-
-    private void addStateAndNumbersToTheList(String state, String number1){
-        List<String> numbers = new ArrayList<>();
-        numbers.add(number1);
-        stateName.put(state, numbers);
     }
 
     private void directCall(final String number){
@@ -276,6 +221,5 @@ public class HelplineNumberActivity extends AppCompatActivity implements View.On
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .show();
     }
-
 
 }

@@ -214,6 +214,7 @@
                 android:layout_marginBottom="36dp">
 
                 <TextView
+                    android:id="@+id/aboutUs"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textColor="#FAFAFA"
@@ -224,6 +225,18 @@
                     android:text="ABOUT US"/>
 
                 <TextView
+                    android:id="@+id/attributes"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="#FAFAFA"
+                    android:layout_weight="1"
+                    android:padding="8dp"
+                    android:textSize="12sp"
+                    android:gravity="center"
+                    android:text="Attributes"/>
+
+                <TextView
+                    android:id="@+id/privacy_policy"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textColor="#FAFAFA"
@@ -234,6 +247,7 @@
                     android:text="PRIVACY POLICY"/>
 
                 <TextView
+                    android:id="@+id/terms_and_conditions"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="#FAFAFA"

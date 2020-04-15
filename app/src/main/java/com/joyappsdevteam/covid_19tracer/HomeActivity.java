@@ -19,6 +19,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -42,9 +43,10 @@ public class HomeActivity extends AppCompatActivity {
     private ImageView settings_image;
     private TextView see_detail_map, more_helpline_nos, call_helpline_no, helpful_text,
             confirm_cases_india, recover_cases_india, death_cases_india, last_update_india_textView,
-            confirm_cases_state_level, recover_cases_state_level, death_cases_state_level, last_update_state_level, your_state_name, text_username;
+            confirm_cases_state_level, recover_cases_state_level, death_cases_state_level, last_update_state_level,
+            your_state_name, text_username,state_helpline_text,state_helpline_number;
     private RequestQueue requestQueue;
-    private String userCurrentState;
+    private String currentUserStateHelpline;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +75,9 @@ public class HomeActivity extends AppCompatActivity {
         last_update_state_level = findViewById(R.id.last_update_state_textView);
         your_state_name = findViewById(R.id.your_state_name);
         text_username = findViewById(R.id.text_username);
+        state_helpline_text = findViewById(R.id.state_helpline_text);
+        state_helpline_number = findViewById(R.id.state_helpline_number);
+
 
         requestQueue = Volley.newRequestQueue(this);
 
@@ -103,6 +108,8 @@ public class HomeActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+
 
         homeToMapCardView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -151,33 +158,35 @@ public class HomeActivity extends AppCompatActivity {
         call_helpline_no.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //show dialogAlert for confirming the call
-                new AlertDialog.Builder(HomeActivity.this)
-                        .setTitle("Direct Call")
-                        .setMessage("Are you sure you want to call this number?")
-                        .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                // Continue with call operation
-                                Intent callIntent = new Intent(Intent.ACTION_CALL);
-                                callIntent.setData(Uri.parse("tel:08240449665"));
-                                if (ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                                    // TODO: Consider calling
-                                    //    ActivityCompat#requestPermissions
-                                    // here to request the missing permissions, and then overriding
-                                    //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                                    //                                          int[] grantResults)
-                                    // to handle the case where the user grants the permission. See the documentation
-                                    // for ActivityCompat#requestPermissions for more details.
-                                    return;
+                if (currentUserStateHelpline.equals("")){
+                    Toast.makeText(HomeActivity.this,"Couldn't find helpline.\nPLease Refresh!",Toast.LENGTH_SHORT).show();
+                }else {
+                    //show dialogAlert for confirming the call
+                    new AlertDialog.Builder(HomeActivity.this)
+                            .setTitle("Direct Call")
+                            .setMessage("Are you sure you want to call this number?")
+                            .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    // Continue with call operation
+                                    Intent callIntent = new Intent(Intent.ACTION_CALL);
+                                    callIntent.setData(Uri.parse("tel:" + currentUserStateHelpline));
+                                    if (ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                                        // TODO: Consider calling
+                                        //    ActivityCompat#requestPermissions
+                                        // here to request the missing permissions, and then overriding
+                                        //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                                        //                                          int[] grantResults)
+                                        // to handle the case where the user grants the permission. See the documentation
+                                        // for ActivityCompat#requestPermissions for more details.
+                                        return;
+                                    }
+                                    startActivity(callIntent);
                                 }
-                                startActivity(callIntent);
-                            }
-                        })
-                        .setNegativeButton(android.R.string.no, null)
-                        .setIcon(android.R.drawable.ic_dialog_alert)
-                        .show();
-
-                //Direct call from App
+                            })
+                            .setNegativeButton(android.R.string.no, null)
+                            .setIcon(android.R.drawable.ic_dialog_alert)
+                            .show();
+                }
             }
         });
 
@@ -187,8 +196,6 @@ public class HomeActivity extends AppCompatActivity {
                 //open Symptoms Activity
                 startActivity(new Intent(HomeActivity.this,SymptomsActivity.class));
                 overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
-                //add subActivities if needed
-                //with images and videos
             }
         });
 
@@ -198,8 +205,6 @@ public class HomeActivity extends AppCompatActivity {
                 //open Prevention Activity
                 startActivity(new Intent(HomeActivity.this,PreventionActivity.class));
                 overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
-                //add subActivities if needed
-                //with images and videos
             }
         });
 
@@ -216,6 +221,14 @@ public class HomeActivity extends AppCompatActivity {
                 //about us
             }
         });
+
+        helpful_text.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
     }
 
     private void parseJsonData(final String currentState) {
@@ -273,7 +286,143 @@ public class HomeActivity extends AppCompatActivity {
         if (currentLocation.equals(null)) currentLocation = "Your State";
 
         text_username.setText(toTitleCase(username));
+        state_helpline_text.setText(currentLocation + " helpline");
+        showStateHelplineNumber(currentLocation);
         parseJsonData(currentLocation);
+    }
+
+    private void showStateHelplineNumber(String stateName){
+        switch (stateName) {
+
+            case "Andhra Pradesh":
+                currentUserStateHelpline = "08662410978";
+                state_helpline_number.setText(currentUserStateHelpline);
+                break;
+
+            case "Arunachal Pradesh":
+                currentUserStateHelpline = "09436055743";
+                state_helpline_number.setText(currentUserStateHelpline);
+                break;
+
+            case "Assam":
+                currentUserStateHelpline = "06913347770";
+                state_helpline_number.setText(currentUserStateHelpline);
+                break;
+
+            case "Bihar":
+            case "Gujarat ":
+            case "Goa":
+            case "Himachal Pradesh":
+            case "Jharkhand":
+            case "Karnataka":
+            case "Madhya Pradesh":
+            case "Punjab":
+            case "Sikkim":
+            case "Telangana":
+            case "Uttarakhand":
+            case "Dadra and Nagar Haveli":
+            case "Daman and Diu":
+            case "Lakshadweep":
+            case "Puducherry":
+            case "Chhattisgarh":
+                currentUserStateHelpline = "104";
+                state_helpline_number.setText(currentUserStateHelpline);
+                break;
+
+            case "Haryana":
+                currentUserStateHelpline = "08558893911";
+                state_helpline_number.setText(currentUserStateHelpline);
+                break;
+
+            case "Kerala":
+                currentUserStateHelpline = "04712552056";
+                state_helpline_number.setText(currentUserStateHelpline);
+                break;
+
+            case "Maharashtra":
+                currentUserStateHelpline = "02026127394";
+                state_helpline_number.setText(currentUserStateHelpline);
+                break;
+
+            case "Manipur":
+                currentUserStateHelpline = "03852411668";
+                state_helpline_number.setText(currentUserStateHelpline);
+                break;
+
+            case "Meghalaya":
+                currentUserStateHelpline = "108";
+                state_helpline_number.setText(currentUserStateHelpline);
+                break;
+
+            case "Mizoram":
+                currentUserStateHelpline = "102";
+                state_helpline_number.setText(currentUserStateHelpline);
+                break;
+
+            case "Nagaland":
+                currentUserStateHelpline = "07005539653";
+                state_helpline_number.setText(currentUserStateHelpline);
+                break;
+
+            case "Odisha":
+                currentUserStateHelpline = "09439994859";
+                state_helpline_number.setText(currentUserStateHelpline);
+                break;
+
+            case "Rajasthan":
+                currentUserStateHelpline = "01412225624";
+                state_helpline_number.setText(currentUserStateHelpline);
+                break;
+
+            case "Tamil Nadu":
+                currentUserStateHelpline = "04429510500";
+                state_helpline_number.setText(currentUserStateHelpline);
+                break;
+
+            case "Tripura":
+                currentUserStateHelpline = "03812315879";
+                state_helpline_number.setText(currentUserStateHelpline);
+                break;
+
+            case "Uttar Pradesh":
+                currentUserStateHelpline = "18001805145";
+                state_helpline_number.setText(currentUserStateHelpline);
+                break;
+
+            case "West Bengal":
+                currentUserStateHelpline = "1800313444222";
+                state_helpline_number.setText(currentUserStateHelpline);
+                break;
+
+            case "Andaman and Nicobar Islands":
+                currentUserStateHelpline = "03192232102";
+                state_helpline_number.setText(currentUserStateHelpline);
+                break;
+
+            case "Chandigarh":
+                currentUserStateHelpline = "09779558282";
+                state_helpline_number.setText(currentUserStateHelpline);
+                break;
+
+            case "Delhi":
+                currentUserStateHelpline = "01122307145";
+                state_helpline_number.setText(currentUserStateHelpline);
+                break;
+
+            case "Jammu and Kashmir":
+                currentUserStateHelpline = "01912520982";
+                state_helpline_number.setText(currentUserStateHelpline);
+                break;
+
+            case "Ladakh":
+                currentUserStateHelpline = "01982256462";
+                state_helpline_number.setText(currentUserStateHelpline);
+                break;
+
+            default:
+                currentUserStateHelpline = "";
+                break;
+        }
     }
 
     @Override

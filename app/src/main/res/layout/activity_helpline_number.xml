@@ -63,7 +63,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="16dp"
                             android:fontFamily="@font/roboto_bold"
-                            android:text="@string/your_state"
+                            android:text="National helpline"
                             android:textColor="@android:color/holo_purple"
                             android:textSize="19sp" />
 
@@ -77,11 +77,11 @@
                                 android:layout_centerVertical="true"
                                 android:layout_gravity="start|center_vertical"
                                 android:fontFamily="@font/roboto_regular"
-                                android:text="@string/_1800313444222"
+                                android:text="01123978046"
                                 android:textSize="17sp" />
 
                             <TextView
-                                android:id="@+id/call_00"
+                                android:id="@+id/national_helpline_01"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
@@ -105,11 +105,11 @@
                                 android:layout_centerVertical="true"
                                 android:layout_gravity="start|center_vertical"
                                 android:fontFamily="@font/roboto_regular"
-                                android:text="03323412600"
+                                android:text="1075"
                                 android:textSize="17sp" />
 
                             <TextView
-                                android:id="@+id/call_01"
+                                android:id="@+id/national_helpline_02"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
