@@ -55,7 +55,6 @@ public class TakeUsernameAndLocationActivity extends AppCompatActivity {
         regEmail = findViewById(R.id.reg_email);
         lets_go_cardView = findViewById(R.id.lets_go_cardView);
 
-
         List<String> categories = new ArrayList<>();
         categories.add(0,"Select your state");
         categories.add("Andhra Pradesh");
@@ -113,7 +112,7 @@ public class TakeUsernameAndLocationActivity extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
+                //Do nothing
             }
         });
 
@@ -151,7 +150,7 @@ public class TakeUsernameAndLocationActivity extends AppCompatActivity {
             android.net.NetworkInfo wifi = cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
             android.net.NetworkInfo mobile = cm.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
 
-            return (mobile != null && mobile.isConnectedOrConnecting()) || (wifi != null && wifi.isConnectedOrConnecting());
+            return (mobile != null && mobile.isConnectedOrConnecting()) || (wifi != null && wifi.isConnectedOrConnecting()); // is equal true
         } else
             return false;
     }

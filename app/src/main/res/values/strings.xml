@@ -47,14 +47,12 @@
     <string name="diarrhea_des">Loose, watery bowel movements that may occur frequently and with a sense of urgency.</string>
     <string name="shortness_of_breath">Shortness \nof breath</string>
     <string name="prevention_des_text">As they say, \"Prevention is BETTER than CURE\" \n\nStay Home, Stay Safe!</string>
-    <string name="handwashing_text_prevention_cardview">Use warm water and soap and rub your hands for at least 20 seconds.
-        Work the lather to your wrists, between your fingers, and under your fingernails.</string>
-    <string name="social_distancing_text_prevention_cardview">Stay home and work remotely when possible.
-        If you must go out for necessities, keep a distance of 6 feet from other people. </string>
-    <string name="cough_and_sneeze_text_prevention_cardview">Use a tissue or sneeze into your elbow to keep your
-        hands as clean as possible. Wash your hands carefully after you sneeze or cough, regardless.</string>
+    <string name="handwashing_text_prevention_cardview">Wash and rub your hands properly with soup (or sanitizer) and warm water for at least 20 seconds.</string>
+    <string name="social_distancing_text_prevention_cardview">Stay home and work remotely.
+        If you must go out for necessities, keep 6 feet distance from others. </string>
+    <string name="cough_and_sneeze_text_prevention_cardview">Use a tissue or sneeze into your elbow. Wash your hands carefully after you sneeze or cough.</string>
     <string name="wear_facemask_text_prevention_cardview">Everyone should wear a cloth face cover when they have to go out in public,
-        for example to the grocery store or to pick up other necessities.</string>
+        for necessities.</string>
     <string name="dont_touch_face_text_prevention_cardview">SARS-CoV-2 can live on hard surfaces for up to 72 hours.
         You can get the virus on your hands if you touch a surface like a doorknob, gas pump handle, or your cell phone.</string>
     <string name="stay_at_home_text_prevention_cardview">Please Stay home and stay safe, it buys a little time for our
@@ -65,7 +63,6 @@
         handwashing is especially critical in reducing the COVID-19 spread and should be done often.</string>
     <string name="do_some_exercise_text_prevention_cardview">WHO recommends 150 minutes of moderate-intensity or 75 minutes of vigorous-intensity
         physical activity per week. These can still be achieved even at home, with no equipment and with limited space.</string>
-
 
 
     <!--Fever Symptoms in Detail-->
@@ -221,5 +218,131 @@
         on average, compared with 33 days for those with respiratory symptoms only.\n\n\tCall helpline Number if you need help. Otherwise stay home, stay safe. </string>
     <string name="profile">\nPROFILE</string>
 
+    <!--Wash Hand Prevention in Detail-->
+    <string name="wash_hand_prevention_name">Wash your hands frequently</string>
+    <string name="wash_hand_prevention_data">Washing your hands can protect you and your loved ones. Use warm water and soap and rub your hands for at least 20 seconds.
+        Work the lather to your wrists, between your fingers, and under your fingernails.</string>
+    <string name="wash_hand_prevention_details_topic1">How Coronavirus spreads?</string>
+    <string name="wash_hand_prevention_details_ans1">\t• Touching your eyes, nose, and mouth with unwashed hands
+        \n\n\t• Preparing or eat food and drinks with unwashed hands
+        \n\n\t• Touching a contaminated surface or objects
+        \n\n\t• Blowing your nose, cough, or sneeze into hands and then touching other people’s hands or common objects</string>
+    <string name="wash_hand_prevention_details_topic2">Key Times to Wash Hands</string>
+    <string name="wash_hand_prevention_details_ans2">\t• Before, during, and after preparing food
+        \n\n\t• Before eating food
+        \n\n\t• Before and after caring for someone at home who is sick with vomiting or diarrhea
+        \n\n\t• Before and after treating a cut or wound
+        \n\n\t• After using the toilet
+        \n\n\t• After changing diapers or cleaning up a child who has used the toilet
+        \n\n\t• After blowing your nose, coughing, or sneezing
+        \n\n\t• After touching an animal, animal feed, or animal waste
+        \n\n\t• After handling pet food or pet treats
+        \n\n\t• After touching garbage</string>
+    <string name="wash_hand_prevention_details_topic3">Five Steps to Wash Your Hands the Right Way</string>
+    <string name="wash_hand_prevention_details_ans3">\t\t• Wet your hands with clean, running water (warm or cold), turn off the tap, and apply soap.
+        \n\n\t• Lather your hands by rubbing them together with the soap. Lather the backs of your hands,
+        between your fingers, and under your nails.
+        \n\n\t• Scrub your hands for at least 20 seconds. Need a timer? Hum the “Happy Birthday” song from beginning to end twice.
+        \n\n\t• Rinse your hands well under clean, running water.
+        \n\n\t• Dry your hands using a clean towel or air dry them.</string>
+
+    <!--Social Distancing Prevention in Detail-->
+    <string name="social_distancing_prevention_name">Take social distancing seriously</string>
+    <string name="social_distancing_prevention_data">Social distancing, also called “physical distancing,” means keeping space between
+        yourself and other people outside of your home. To practice social or physical distancing: Stay at least 6 feet (2 meters) from other
+        people. Do not gather in groups. Stay out of crowded places and avoid mass gatherings</string>
+    <string name="social_distancing_prevention_details_topic1">Why practice social distancing?</string>
+    <string name="social_distancing_prevention_details_ans1">COVID-19 spreads mainly among people who are in close contact (within about
+        6 feet) for a prolonged period. Spread happens when an infected person coughs, sneezes, or talks, and droplets from their mouth
+        or nose are launched into the air and land in the mouths or noses of people nearby. The droplets can also be inhaled into the
+        lungs. Recent studies indicate that people who are infected but do not have symptoms likely also play a role in the spread of
+        COVID-19.</string>
+    <string name="social_distancing_prevention_details_topic2">Tips for social distancing</string>
+    <string name="social_distancing_prevention_details_ans2">\t\t• If you need to shop for food or medicine at the grocery store or pharmacy,
+        stay at least 6 feet away from others.
+        \n\n\t• Use mail-order for medications, if possible.
+        \n\n\t• Consider a grocery delivery service.
+        \n\n\t• Cover your mouth and nose with a cloth face cover when around others, including when you have to go out in public,
+        for example to the grocery store.
+        \n\n\t• Stay at least 6 feet between yourself and others, even when you wear a face covering.
+        \n\n\t• Avoid large and small gatherings in private places and public spaces, such a friend’s house, parks, restaurants,
+        shops, or any other place.
+        \n\n\t• Work from home when possible.
+        \n\n\t• If possible, avoid using any kind of public transportation, ridesharing, or taxis.
+        \n\n\t• If you are a student or parent, talk to your school about options for digital/distance learning.</string>
+    <string name="social_distancing_prevention_details_topic3"></string>
+    <string name="social_distancing_prevention_details_ans3"></string>
+
+    <!--Cover your mouth Prevention in Detail-->
+    <string name="cover_your_mouth_prevention_name">Cover your mouth and nose when you cough and sneeze</string>
+    <string name="cover_your_mouth_prevention_data">Sneezing or coughing with no hands won\’t just embarrass your parents,
+        it\’ll likely shoot germs over 10 feet to other surfaces, where they can live for weeks until someone comes in contact
+        with them. It makes you rethink touching those elevator buttons or picking up magazines in a waiting room.Sneezes and
+        coughs spread all kinds of germs, and it’s best to cover them the correct way to prevent spreading illness.</string>
+    <string name="cover_your_mouth_prevention_details_topic1">To help stop the spread</string>
+    <string name="cover_your_mouth_prevention_details_ans1">\t\t• Cover your mouth and nose with a tissue when you cough or sneeze.
+        \n\n\t• Put your used tissue in a waste basket.
+        \n\n\t• If you don’t have a tissue, cough or sneeze into your upper sleeve, not your hands. Although it isn\’t the best way to
+        keep germs from traveling, some experts suggest it is better than using your hands</string>
+    <string name="cover_your_mouth_prevention_details_topic2">If you feel like you got symptoms</string>
+    <string name="cover_your_mouth_prevention_details_ans2">\t\t• Wear clean facemask
+        \n\n\t• Self-Isolate yourself
+        \n\n\t• Call your doctor or call helpline number
+        \n\n\t• avoid touching stuffs around you
+        \n\n\t• clean your hand frequently</string>
+    <string name="cover_your_mouth_prevention_details_topic3"></string>
+    <string name="cover_your_mouth_prevention_details_ans3"></string>
+
+    <!--Wear Facemask Prevention in Detail-->
+    <string name="wear_facemask_prevention_name">Wear facemask when getting into crowded place</string>
+    <string name="wear_facemask_prevention_data">People should wear nonsurgical cloth face coverings when they go out in public during the
+        COVID-19 pandemic. Headlines of the new coronavirus creeping its way across the globe is a good reminder that the
+        best way to protect our communities from widespread transmission of illness is to practice good basic hygiene every day</string>
+    <string name="wear_facemask_prevention_details_topic1">How to Wear a Cloth Face Covering</string>
+    <string name="wear_facemask_prevention_details_ans1">Cloth face coverings should—
+        \n\n\t• fit snugly but comfortably against the side of the face
+        \n\n\t• be secured with ties or ear loops
+        \n\n\t• include multiple layers of fabric
+        \n\n\t• allow for breathing without restriction
+        \n\n\t• be able to be laundered and machine dried without damage or change to shape</string>
+    <string name="wear_facemask_prevention_details_topic2">If you feel like you got symptoms</string>
+    <string name="wear_facemask_prevention_details_ans2">\t\t• Wear clean facemask
+        \n\n\t• Self-Isolate yourself
+        \n\n\t• Call your doctor or call helpline number
+        \n\n\t• avoid touching stuffs around you
+        \n\n\t• clean your hand frequently</string>
+    <string name="wear_facemask_prevention_details_topic3">Points to Remember while wearing mask</string>
+    <string name="wear_facemask_prevention_details_ans3">\t\t• Cloth face coverings should not be placed on young children under age 2,
+        anyone who has trouble breathing, or is unconscious, incapacitated or otherwise unable to remove the mask without assistance.
+        \n\n\t• The cloth face coverings recommended are not surgical masks or N-95 respirators.  Those are critical supplies that must
+        continue to be reserved for healthcare workers and other medical first responders
+        \n\n\t• If you can\'t affprt to buy a decent face mask, then you can also make your own face mask at home with minimum requirements.
+     Go online and watch video on \"how to make your own fask mask for Covid-19\", that should help.</string>
+
+    <!--Avoid touching your face Prevention in Detail-->
+    <string name="avoid_touching_face_prevention_name">Avoid touching your face</string>
+    <string name="avoid_touching_face_prevention_data">People should wear nonsurgical cloth face coverings when they go out in public during the
+        COVID-19 pandemic. Headlines of the new coronavirus creeping its way across the globe is a good reminder that the
+        best way to protect our communities from widespread transmission of illness is to practice good basic hygiene every day</string>
+    <string name="avoid_touching_face_prevention_details_topic1">How to Wear a Cloth Face Covering</string>
+    <string name="avoid_touching_face_prevention_details_ans1">Cloth face coverings should—
+        \n\n\t• fit snugly but comfortably against the side of the face
+        \n\n\t• be secured with ties or ear loops
+        \n\n\t• include multiple layers of fabric
+        \n\n\t• allow for breathing without restriction
+        \n\n\t• be able to be laundered and machine dried without damage or change to shape</string>
+    <string name="avoid_touching_face_prevention_details_topic2">If you feel like you got symptoms</string>
+    <string name="avoid_touching_face_prevention_details_ans2">\t\t• Wear clean facemask
+        \n\n\t• Self-Isolate yourself
+        \n\n\t• Call your doctor or call helpline number
+        \n\n\t• avoid touching stuffs around you
+        \n\n\t• clean your hand frequently</string>
+    <string name="avoid_touching_face_prevention_details_topic3">Points to Remember while wearing mask</string>
+    <string name="avoid_touching_face_prevention_details_ans3">\t\t• Cloth face coverings should not be placed on young children under age 2,
+        anyone who has trouble breathing, or is unconscious, incapacitated or otherwise unable to remove the mask without assistance.
+        \n\n\t• The cloth face coverings recommended are not surgical masks or N-95 respirators.  Those are critical supplies that must
+        continue to be reserved for healthcare workers and other medical first responders
+        \n\n\t• If you can\'t affprt to buy a decent face mask, then you can also make your own face mask at home with minimum requirements.
+     Go online and watch video on \"how to make your own fask mask for Covid-19\", that should help.</string>
 
 </resources>

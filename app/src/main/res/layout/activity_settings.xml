@@ -8,7 +8,7 @@
     tools:context=".SymptomsActivity">
 
     <LinearLayout
-        android:id="@+id/symptoms_title"
+        android:id="@+id/settings_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -41,12 +41,12 @@
         android:layout_height="1dp"
         android:background="#FFFFFF"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/symptoms_title"/>
+        android:layout_below="@id/settings_title"/>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/symptoms_title">
+        android:layout_below="@+id/settings_title">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -157,8 +157,6 @@
 
             </LinearLayout>
 
-
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -247,11 +245,8 @@
 
             </LinearLayout>
 
-
-
         </LinearLayout>
 
     </ScrollView>
-
 
 </RelativeLayout>

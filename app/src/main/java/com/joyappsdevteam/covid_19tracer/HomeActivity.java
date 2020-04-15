@@ -4,23 +4,16 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
-
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.location.Address;
-import android.location.Geocoder;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.text.InputFilter;
-import android.text.TextUtils;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -28,15 +21,13 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-
-
 public class HomeActivity extends AppCompatActivity {
 
+    //Global Variables reference
     BottomNavigationView bottomNavigationView;
     private Handler mWaitHandler = new Handler();
     private CardView homeToMapCardView,homeToInfoCardView,homeToNewsCardView,
@@ -52,6 +43,7 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.home);
@@ -76,9 +68,7 @@ public class HomeActivity extends AppCompatActivity {
         your_state_name = findViewById(R.id.your_state_name);
         text_username = findViewById(R.id.text_username);
 
-
         requestQueue = Volley.newRequestQueue(this);
-
 
         updateData();
 
@@ -185,7 +175,6 @@ public class HomeActivity extends AppCompatActivity {
         settings_image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 //open settings activity
                 startActivity(new Intent(HomeActivity.this,SettingsActivity.class));
 

@@ -651,7 +651,6 @@
                 </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
 
             </GridLayout>
-
             
         </LinearLayout>
     </ScrollView>
