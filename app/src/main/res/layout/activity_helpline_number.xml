@@ -180,7 +180,7 @@
                                 android:textSize="17sp" />
 
                             <TextView
-                                android:id="@+id/call_02"
+                                android:id="@+id/andhra_pradesh"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
@@ -239,7 +239,7 @@ android:layout_marginBottom="12dp"
                                 android:textSize="17sp" />
 
                             <TextView
-                                android:id="@+id/call_03"
+                                android:id="@+id/arunachal_pradesh"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
@@ -298,7 +298,7 @@ android:layout_marginBottom="12dp"
                                 android:textSize="17sp" />
 
                             <TextView
-                                android:id="@+id/call_04"
+                                android:id="@+id/assam"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
@@ -339,7 +339,7 @@ android:layout_marginBottom="12dp"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="16dp"
                             android:fontFamily="@font/roboto_bold"
-                            android:text="Bihar / Chhattisgarh / Goa / Gujarat / Himachal Pradesh / Jharkhand / Karnataka / Madhya Pradesh / Sikkim / Telangana / Uttarakhand"
+                            android:text="@string/_104"
                             android:textColor="@android:color/holo_purple"
                             android:textSize="19sp" />
 
@@ -357,7 +357,7 @@ android:layout_marginBottom="12dp"
                                 android:textSize="17sp" />
 
                             <TextView
-                                android:id="@+id/call_05"
+                                android:id="@+id/call_104_states"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
@@ -416,7 +416,7 @@ android:layout_marginBottom="12dp"
                                 android:textSize="17sp" />
 
                             <TextView
-                                android:id="@+id/call_06"
+                                android:id="@+id/haryana"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
@@ -475,7 +475,7 @@ android:layout_marginBottom="12dp"
                                 android:textSize="17sp" />
 
                             <TextView
-                                android:id="@+id/call_07"
+                                android:id="@+id/kerala"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
@@ -534,7 +534,7 @@ android:layout_marginBottom="12dp"
                                 android:textSize="17sp" />
 
                             <TextView
-                                android:id="@+id/call_08"
+                                android:id="@+id/maharashtra"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
@@ -556,8 +556,8 @@ android:layout_marginBottom="12dp"
                 <com.google.android.material.circularreveal.cardview.CircularRevealCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                   android:layout_marginTop="12dp"
-android:layout_marginBottom="12dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
                     android:clickable="false"
                     android:focusable="false"
                     app:cardCornerRadius="12dp"
@@ -593,7 +593,7 @@ android:layout_marginBottom="12dp"
                                 android:textSize="17sp" />
 
                             <TextView
-                                android:id="@+id/call_09"
+                                android:id="@+id/manipur"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
@@ -615,8 +615,8 @@ android:layout_marginBottom="12dp"
                 <com.google.android.material.circularreveal.cardview.CircularRevealCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                   android:layout_marginTop="12dp"
-android:layout_marginBottom="12dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
                     android:clickable="false"
                     android:focusable="false"
                     app:cardCornerRadius="12dp"
@@ -634,7 +634,7 @@ android:layout_marginBottom="12dp"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="16dp"
                             android:fontFamily="@font/roboto_bold"
-                            android:text="Nagaland"
+                            android:text="Meghalaya"
                             android:textColor="@android:color/holo_purple"
                             android:textSize="19sp" />
 
@@ -648,11 +648,11 @@ android:layout_marginBottom="12dp"
                                 android:layout_centerVertical="true"
                                 android:layout_gravity="start|center_vertical"
                                 android:fontFamily="@font/roboto_regular"
-                                android:text="7005539653"
+                                android:text="108"
                                 android:textSize="17sp" />
 
                             <TextView
-                                android:id="@+id/call_10"
+                                android:id="@+id/meghalaya"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
@@ -674,8 +674,8 @@ android:layout_marginBottom="12dp"
                 <com.google.android.material.circularreveal.cardview.CircularRevealCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                   android:layout_marginTop="12dp"
-android:layout_marginBottom="12dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
                     android:clickable="false"
                     android:focusable="false"
                     app:cardCornerRadius="12dp"
@@ -693,7 +693,7 @@ android:layout_marginBottom="12dp"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="16dp"
                             android:fontFamily="@font/roboto_bold"
-                            android:text="Odisha"
+                            android:text="Mizoram"
                             android:textColor="@android:color/holo_purple"
                             android:textSize="19sp" />
 
@@ -707,11 +707,11 @@ android:layout_marginBottom="12dp"
                                 android:layout_centerVertical="true"
                                 android:layout_gravity="start|center_vertical"
                                 android:fontFamily="@font/roboto_regular"
-                                android:text="9439994859"
+                                android:text="102"
                                 android:textSize="17sp" />
 
                             <TextView
-                                android:id="@+id/call_11"
+                                android:id="@+id/mizoram"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
@@ -752,7 +752,7 @@ android:layout_marginBottom="12dp"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="16dp"
                             android:fontFamily="@font/roboto_bold"
-                            android:text="Rajasthan"
+                            android:text="Nagaland"
                             android:textColor="@android:color/holo_purple"
                             android:textSize="19sp" />
 
@@ -766,11 +766,11 @@ android:layout_marginBottom="12dp"
                                 android:layout_centerVertical="true"
                                 android:layout_gravity="start|center_vertical"
                                 android:fontFamily="@font/roboto_regular"
-                                android:text="0141-2225624"
+                                android:text="7005539653"
                                 android:textSize="17sp" />
 
                             <TextView
-                                android:id="@+id/call_12"
+                                android:id="@+id/nagaland"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
@@ -793,7 +793,7 @@ android:layout_marginBottom="12dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                    android:layout_marginTop="12dp"
-android:layout_marginBottom="12dp"
+                    android:layout_marginBottom="12dp"
                     android:clickable="false"
                     android:focusable="false"
                     app:cardCornerRadius="12dp"
@@ -811,7 +811,7 @@ android:layout_marginBottom="12dp"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="16dp"
                             android:fontFamily="@font/roboto_bold"
-                            android:text="Tamil Nadu"
+                            android:text="Odisha"
                             android:textColor="@android:color/holo_purple"
                             android:textSize="19sp" />
 
@@ -825,70 +825,11 @@ android:layout_marginBottom="12dp"
                                 android:layout_centerVertical="true"
                                 android:layout_gravity="start|center_vertical"
                                 android:fontFamily="@font/roboto_regular"
-                                android:text="044-29510500"
+                                android:text="9439994859"
                                 android:textSize="17sp" />
 
                             <TextView
-                                android:id="@+id/call_13"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentEnd="true"
-                                android:layout_centerVertical="true"
-                                android:layout_gravity="end"
-                                android:gravity="center"
-                                android:padding="8dp"
-                                android:text="@string/call_now"
-                                android:textColor="#008EFF"
-                                android:textSize="18sp" />
-
-                        </RelativeLayout>
-
-                    </LinearLayout>
-
-                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
-
-                <!-- call_14 -->
-                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                   android:layout_marginTop="12dp"
-android:layout_marginBottom="12dp"
-                    android:clickable="false"
-                    android:focusable="false"
-                    app:cardCornerRadius="12dp"
-                    app:cardElevation="6dp"
-                    app:strokeWidth="1dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="16dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="16dp"
-                            android:fontFamily="@font/roboto_bold"
-                            android:text="Tripura"
-                            android:textColor="@android:color/holo_purple"
-                            android:textSize="19sp" />
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerVertical="true"
-                                android:layout_gravity="start|center_vertical"
-                                android:fontFamily="@font/roboto_regular"
-                                android:text="0381-2315879"
-                                android:textSize="17sp" />
-
-                            <TextView
-                                android:id="@+id/call_14"
+                                android:id="@+id/odisha"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
@@ -929,6 +870,183 @@ android:layout_marginBottom="12dp"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="16dp"
                             android:fontFamily="@font/roboto_bold"
+                            android:text="Rajasthan"
+                            android:textColor="@android:color/holo_purple"
+                            android:textSize="19sp" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="start|center_vertical"
+                                android:fontFamily="@font/roboto_regular"
+                                android:text="0141-2225624"
+                                android:textSize="17sp" />
+
+                            <TextView
+                                android:id="@+id/rajasthan"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="end"
+                                android:gravity="center"
+                                android:padding="8dp"
+                                android:text="@string/call_now"
+                                android:textColor="#008EFF"
+                                android:textSize="18sp" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+                <!-- call_16 -->
+                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                   android:layout_marginTop="12dp"
+android:layout_marginBottom="12dp"
+                    android:clickable="false"
+                    android:focusable="false"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="16dp"
+                            android:fontFamily="@font/roboto_bold"
+                            android:text="Tamil Nadu"
+                            android:textColor="@android:color/holo_purple"
+                            android:textSize="19sp" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="start|center_vertical"
+                                android:fontFamily="@font/roboto_regular"
+                                android:text="044-29510500"
+                                android:textSize="17sp" />
+
+                            <TextView
+                                android:id="@+id/tamil_nadu"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="end"
+                                android:gravity="center"
+                                android:padding="8dp"
+                                android:text="@string/call_now"
+                                android:textColor="#008EFF"
+                                android:textSize="18sp" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+                <!-- call_17 -->
+                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                   android:layout_marginTop="12dp"
+android:layout_marginBottom="12dp"
+                    android:clickable="false"
+                    android:focusable="false"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="16dp"
+                            android:fontFamily="@font/roboto_bold"
+                            android:text="Tripura"
+                            android:textColor="@android:color/holo_purple"
+                            android:textSize="19sp" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="start|center_vertical"
+                                android:fontFamily="@font/roboto_regular"
+                                android:text="0381-2315879"
+                                android:textSize="17sp" />
+
+                            <TextView
+                                android:id="@+id/tripura"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="end"
+                                android:gravity="center"
+                                android:padding="8dp"
+                                android:text="@string/call_now"
+                                android:textColor="#008EFF"
+                                android:textSize="18sp" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+                <!-- call_18 -->
+                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:clickable="false"
+                    android:focusable="false"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="16dp"
+                            android:fontFamily="@font/roboto_bold"
                             android:text="Uttar Pradesh"
                             android:textColor="@android:color/holo_purple"
                             android:textSize="19sp" />
@@ -947,7 +1065,7 @@ android:layout_marginBottom="12dp"
                                 android:textSize="17sp" />
 
                             <TextView
-                                android:id="@+id/call_15"
+                                android:id="@+id/uttar_pradesh"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
@@ -965,12 +1083,12 @@ android:layout_marginBottom="12dp"
 
                 </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
 
-                <!-- call_16 call_17 -->
+                <!-- call_19 call_20 -->
                 <com.google.android.material.circularreveal.cardview.CircularRevealCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                   android:layout_marginTop="12dp"
-android:layout_marginBottom="12dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
                     android:clickable="false"
                     android:focusable="false"
                     app:cardCornerRadius="12dp"
@@ -1006,7 +1124,7 @@ android:layout_marginBottom="12dp"
                                 android:textSize="17sp" />
 
                             <TextView
-                                android:id="@+id/call_16"
+                                android:id="@+id/west_bengal_no1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
@@ -1034,7 +1152,7 @@ android:layout_marginBottom="12dp"
                                 android:textSize="18sp" />
 
                             <TextView
-                                android:id="@+id/call_17"
+                                android:id="@+id/west_bengal_no2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
@@ -1065,7 +1183,7 @@ android:layout_marginBottom="12dp"
                     android:textColor="#FFFFFF"
                     android:textSize="15sp" />
 
-                <!-- call_18 -->
+                <!-- call_21 -->
                 <com.google.android.material.circularreveal.cardview.CircularRevealCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -1106,7 +1224,7 @@ android:layout_marginBottom="12dp"
                                 android:textSize="17sp" />
 
                             <TextView
-                                android:id="@+id/call_18"
+                                android:id="@+id/andaman_and_nicobar_islands"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
@@ -1124,7 +1242,7 @@ android:layout_marginBottom="12dp"
 
                 </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
 
-                <!-- call_19 -->
+                <!-- call_22 -->
                 <com.google.android.material.circularreveal.cardview.CircularRevealCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -1165,7 +1283,7 @@ android:layout_marginBottom="12dp"
                                 android:textSize="17sp" />
 
                             <TextView
-                                android:id="@+id/call_19"
+                                android:id="@+id/chandigarh"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
@@ -1183,7 +1301,7 @@ android:layout_marginBottom="12dp"
 
                 </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
 
-                <!-- call_20 -->
+                <!-- call_23 -->
                 <com.google.android.material.circularreveal.cardview.CircularRevealCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -1206,7 +1324,7 @@ android:layout_marginBottom="12dp"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="16dp"
                             android:fontFamily="@font/roboto_bold"
-                            android:text="Dadra and Nagar Haveli and Daman &amp; Diu / Lakshadweep / Puducherry"
+                            android:text="Dadra and Nagar Haveli / Daman &amp; Diu / Lakshadweep / Puducherry"
                             android:textColor="@android:color/holo_purple"
                             android:textSize="19sp" />
 
@@ -1224,153 +1342,7 @@ android:layout_marginBottom="12dp"
                                 android:textSize="17sp" />
 
                             <TextView
-                                android:id="@+id/call_20"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentEnd="true"
-                                android:layout_centerVertical="true"
-                                android:layout_gravity="end"
-                                android:gravity="center"
-                                android:padding="8dp"
-                                android:text="@string/call_now"
-                                android:textColor="#008EFF"
-                                android:textSize="18sp" />
-
-                        </RelativeLayout>
-
-                    </LinearLayout>
-
-                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
-
-                <!-- call_21 -->
-                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                   android:layout_marginTop="12dp"
-android:layout_marginBottom="12dp"
-                    android:clickable="false"
-                    android:focusable="false"
-                    app:cardCornerRadius="12dp"
-                    app:cardElevation="6dp"
-                    app:strokeWidth="1dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="16dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="16dp"
-                            android:fontFamily="@font/roboto_bold"
-                            android:text="Delhi"
-                            android:textColor="@android:color/holo_purple"
-                            android:textSize="19sp" />
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerVertical="true"
-                                android:layout_gravity="start|center_vertical"
-                                android:fontFamily="@font/roboto_regular"
-                                android:text="011-22307145"
-                                android:textSize="17sp" />
-
-                            <TextView
-                                android:id="@+id/call_21"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentEnd="true"
-                                android:layout_centerVertical="true"
-                                android:layout_gravity="end"
-                                android:gravity="center"
-                                android:padding="8dp"
-                                android:text="@string/call_now"
-                                android:textColor="#008EFF"
-                                android:textSize="18sp" />
-
-                        </RelativeLayout>
-
-                    </LinearLayout>
-
-                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
-
-                <!-- call_22 call_23 -->
-                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                   android:layout_marginTop="12dp"
-android:layout_marginBottom="12dp"
-                    android:clickable="false"
-                    android:focusable="false"
-                    app:cardCornerRadius="12dp"
-                    app:cardElevation="6dp"
-                    app:strokeWidth="1dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="16dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="16dp"
-                            android:fontFamily="@font/roboto_bold"
-                            android:text="Jammu &amp; Kashmir"
-                            android:textColor="@android:color/holo_purple"
-                            android:textSize="19sp" />
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerVertical="true"
-                                android:layout_gravity="start|center_vertical"
-                                android:fontFamily="@font/roboto_regular"
-                                android:text="01912520982"
-                                android:textSize="17sp" />
-
-                            <TextView
-                                android:id="@+id/call_22"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentEnd="true"
-                                android:layout_centerVertical="true"
-                                android:layout_gravity="end"
-                                android:gravity="center"
-                                android:padding="8dp"
-                                android:text="@string/call_now"
-                                android:textColor="#008EFF"
-                                android:textSize="18sp" />
-
-                        </RelativeLayout>
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerVertical="true"
-                                android:layout_gravity="start|center_vertical"
-                                android:fontFamily="@font/roboto_regular"
-                                android:text="0194-2440283"
-                                android:textSize="17sp" />
-
-                            <TextView
-                                android:id="@+id/call_23"
+                                android:id="@+id/call_104_union_territory"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
@@ -1411,6 +1383,152 @@ android:layout_marginBottom="12dp"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="16dp"
                             android:fontFamily="@font/roboto_bold"
+                            android:text="Delhi"
+                            android:textColor="@android:color/holo_purple"
+                            android:textSize="19sp" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="start|center_vertical"
+                                android:fontFamily="@font/roboto_regular"
+                                android:text="011-22307145"
+                                android:textSize="17sp" />
+
+                            <TextView
+                                android:id="@+id/delhi"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="end"
+                                android:gravity="center"
+                                android:padding="8dp"
+                                android:text="@string/call_now"
+                                android:textColor="#008EFF"
+                                android:textSize="18sp" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+                <!-- call_25 call_26 -->
+                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                   android:layout_marginTop="12dp"
+android:layout_marginBottom="12dp"
+                    android:clickable="false"
+                    android:focusable="false"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="16dp"
+                            android:fontFamily="@font/roboto_bold"
+                            android:text="Jammu &amp; Kashmir"
+                            android:textColor="@android:color/holo_purple"
+                            android:textSize="19sp" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="start|center_vertical"
+                                android:fontFamily="@font/roboto_regular"
+                                android:text="01912520982"
+                                android:textSize="17sp" />
+
+                            <TextView
+                                android:id="@+id/jammu_and_kashmir_no1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="end"
+                                android:gravity="center"
+                                android:padding="8dp"
+                                android:text="@string/call_now"
+                                android:textColor="#008EFF"
+                                android:textSize="18sp" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="start|center_vertical"
+                                android:fontFamily="@font/roboto_regular"
+                                android:text="0194-2440283"
+                                android:textSize="17sp" />
+
+                            <TextView
+                                android:id="@+id/jammu_and_kashmir_no2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="end"
+                                android:gravity="center"
+                                android:padding="8dp"
+                                android:text="@string/call_now"
+                                android:textColor="#008EFF"
+                                android:textSize="18sp" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+                <!-- call_27 -->
+                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                   android:layout_marginTop="12dp"
+android:layout_marginBottom="12dp"
+                    android:clickable="false"
+                    android:focusable="false"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="16dp"
+                            android:fontFamily="@font/roboto_bold"
                             android:text="Ladakh"
                             android:textColor="@android:color/holo_purple"
                             android:textSize="19sp" />
@@ -1429,7 +1547,7 @@ android:layout_marginBottom="12dp"
                                 android:textSize="17sp" />
 
                             <TextView
-                                android:id="@+id/call_24"
+                                android:id="@+id/ladakh"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
@@ -1446,7 +1564,6 @@ android:layout_marginBottom="12dp"
                     </LinearLayout>
 
                 </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
-
 
             </LinearLayout>
 

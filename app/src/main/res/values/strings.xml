@@ -64,7 +64,6 @@
     <string name="do_some_exercise_text_prevention_cardview">WHO recommends 150 minutes of moderate-intensity or 75 minutes of vigorous-intensity
         physical activity per week. These can still be achieved even at home, with no equipment and with limited space.</string>
 
-
     <!--Fever Symptoms in Detail-->
     <string name="fever_symptom_name">Fever</string>
     <string name="fever_data_overview">Fever is also known as hyperthermia, pyrexia, or elevated temperature. It describes a body temperature that’s higher than normal.
@@ -442,5 +441,6 @@
         techniques and washing your hands when you return home. That\’s your front line of prevention,</string>
     <string name="clean_and_disinfect_prevention_details_topic3"> </string>
     <string name="clean_and_disinfect_prevention_details_ans3"> </string>
+    <string name="_104">Bihar / Chhattisgarh / Goa / Gujarat / Himachal Pradesh / Jharkhand / Karnataka / Madhya Pradesh / Punjab / Sikkim / Telangana / Uttarakhand</string>
 
 </resources>

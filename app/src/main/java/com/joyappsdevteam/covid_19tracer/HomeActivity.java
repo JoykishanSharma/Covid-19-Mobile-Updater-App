@@ -4,9 +4,14 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.core.app.ActivityCompat;
+
+import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -14,6 +19,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -21,6 +27,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -30,12 +37,12 @@ public class HomeActivity extends AppCompatActivity {
     //Global Variables reference
     BottomNavigationView bottomNavigationView;
     private Handler mWaitHandler = new Handler();
-    private CardView homeToMapCardView,homeToInfoCardView,homeToNewsCardView,
-            all_symptoms,all_preventions;
+    private CardView homeToMapCardView, homeToInfoCardView, homeToNewsCardView,
+            all_symptoms, all_preventions;
     private ImageView settings_image;
-    private TextView see_detail_map,more_helpline_nos,call_helpline_no,helpful_text,
-            confirm_cases_india,recover_cases_india,death_cases_india,last_update_india_textView,
-            confirm_cases_state_level,recover_cases_state_level,death_cases_state_level,last_update_state_level,your_state_name,text_username;
+    private TextView see_detail_map, more_helpline_nos, call_helpline_no, helpful_text,
+            confirm_cases_india, recover_cases_india, death_cases_india, last_update_india_textView,
+            confirm_cases_state_level, recover_cases_state_level, death_cases_state_level, last_update_state_level, your_state_name, text_username;
     private RequestQueue requestQueue;
     private String userCurrentState;
 
@@ -43,7 +50,6 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.home);
@@ -75,23 +81,23 @@ public class HomeActivity extends AppCompatActivity {
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()){
+                switch (item.getItemId()) {
                     case R.id.home:
                         return true;
 
                     case R.id.map:
-                        startActivity(new Intent(getApplicationContext(),MapsActivity.class));
-                        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+                        startActivity(new Intent(getApplicationContext(), MapsActivity.class));
+                        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                         return true;
 
                     case R.id.info:
-                        startActivity(new Intent(getApplicationContext(),InfoActivity.class));
-                        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+                        startActivity(new Intent(getApplicationContext(), InfoActivity.class));
+                        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                         return true;
 
                     case R.id.news:
-                        startActivity(new Intent(getApplicationContext(),NewsActivity.class));
-                        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+                        startActivity(new Intent(getApplicationContext(), NewsActivity.class));
+                        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                         return true;
                 }
                 return false;
@@ -101,32 +107,32 @@ public class HomeActivity extends AppCompatActivity {
         homeToMapCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(HomeActivity.this,WebViewWorldActivity.class));
-                overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+                startActivity(new Intent(HomeActivity.this, WebViewWorldActivity.class));
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             }
         });
 
         homeToInfoCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(HomeActivity.this,InfoActivity.class));
-                overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+                startActivity(new Intent(HomeActivity.this, InfoActivity.class));
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             }
         });
 
         homeToNewsCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(HomeActivity.this,NewsActivity.class));
-                overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+                startActivity(new Intent(HomeActivity.this, NewsActivity.class));
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             }
         });
 
         see_detail_map.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(HomeActivity.this,MapsActivity.class));
-                overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+                startActivity(new Intent(HomeActivity.this, MapsActivity.class));
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             }
         });
 
@@ -137,8 +143,8 @@ public class HomeActivity extends AppCompatActivity {
                 //List of Helpline numbers of all start
                 //with direct call phone
 
-                startActivity(new Intent(HomeActivity.this,HelplineNumberActivity.class));
-                overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+                startActivity(new Intent(HomeActivity.this, HelplineNumberActivity.class));
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             }
         });
 
@@ -146,6 +152,31 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //show dialogAlert for confirming the call
+                new AlertDialog.Builder(HomeActivity.this)
+                        .setTitle("Direct Call")
+                        .setMessage("Are you sure you want to call this number?")
+                        .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                // Continue with call operation
+                                Intent callIntent = new Intent(Intent.ACTION_CALL);
+                                callIntent.setData(Uri.parse("tel:08240449665"));
+                                if (ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                                    // TODO: Consider calling
+                                    //    ActivityCompat#requestPermissions
+                                    // here to request the missing permissions, and then overriding
+                                    //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                                    //                                          int[] grantResults)
+                                    // to handle the case where the user grants the permission. See the documentation
+                                    // for ActivityCompat#requestPermissions for more details.
+                                    return;
+                                }
+                                startActivity(callIntent);
+                            }
+                        })
+                        .setNegativeButton(android.R.string.no, null)
+                        .setIcon(android.R.drawable.ic_dialog_alert)
+                        .show();
+
                 //Direct call from App
             }
         });
