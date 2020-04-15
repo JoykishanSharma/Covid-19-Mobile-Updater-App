@@ -209,7 +209,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
-                android:padding="8dp"
                 android:layout_marginTop="36dp"
                 android:layout_marginBottom="36dp">
 
@@ -233,7 +232,7 @@
                     android:padding="8dp"
                     android:textSize="12sp"
                     android:gravity="center"
-                    android:text="Attributes"/>
+                    android:text="ATTRIBUTES"/>
 
                 <TextView
                     android:id="@+id/privacy_policy"

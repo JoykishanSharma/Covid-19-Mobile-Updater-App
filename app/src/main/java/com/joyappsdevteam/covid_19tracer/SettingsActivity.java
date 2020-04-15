@@ -39,7 +39,7 @@ public class SettingsActivity extends AppCompatActivity {
     private EditText newName, newEmail;
     private AppCompatSpinner spinner;
     private String newLocation_settings;
-    private TextView mobileNumberSettings;
+    private TextView mobileNumberSettings,aboutUs,attributes,privacy_policy,terms_and_conditions;
     private Button saveChanges;
     private String mobileNo;
 
@@ -75,6 +75,10 @@ public class SettingsActivity extends AppCompatActivity {
         spinner = findViewById(R.id.settings_spinner);
         mobileNumberSettings = findViewById(R.id.mobile_number_settings);
         saveChanges = findViewById(R.id.save_changes);
+        aboutUs = findViewById(R.id.aboutUs);
+        attributes = findViewById(R.id.attributes);
+        privacy_policy = findViewById(R.id.privacy_policy);
+        terms_and_conditions = findViewById(R.id.terms_and_conditions);
 
         SharedPreferences sharedPref = getSharedPreferences("UserDetails", MODE_PRIVATE);
         String oldName = sharedPref.getString("username", null);
@@ -178,6 +182,34 @@ public class SettingsActivity extends AppCompatActivity {
                     } else
                         Toast.makeText(SettingsActivity.this, "No Internet Connection", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+
+        aboutUs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SettingsActivity.this,AboutUsActivity.class));
+            }
+        });
+
+        attributes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        privacy_policy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        terms_and_conditions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
         });
     }

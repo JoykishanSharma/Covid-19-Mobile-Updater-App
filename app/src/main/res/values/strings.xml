@@ -54,15 +54,17 @@
     <string name="wear_facemask_text_prevention_cardview">Everyone should wear a cloth face cover when they have to go out in public,
         for necessities.</string>
     <string name="dont_touch_face_text_prevention_cardview">Coronavirus can live on hard surfaces for up to 72 hours.
-        You can get the virus on your hands if you touch a surface like a doorknob, gas pump handle, or your cell phone.</string>
+        You can get the virus on your hands if you touch those surfaces</string>
     <string name="stay_at_home_text_prevention_cardview">Please Stay home and stay safe, it buys a little time for our
-        researchers to find cure to this problem. \nRemember that some people without symptoms may be able to spread virus.</string>
+        scientists and researchers to find cure to this problem.</string>
     <string name="clean_and_disinfect_text_prevention_cardview">Clean and disinfect daily. This includes tables, doorknobs, light switches,
-        countertops, handles, desks, phones, keyboards, toilets, faucets, and even sinks.</string>
-    <string name="eat_healthy_text_prevention_cardview">Practicing home food safety and good personal hygiene are always important,
-        handwashing is especially critical in reducing the COVID-19 spread and should be done often.</string>
+        handles, desks, phones, keyboards, toilets, faucets, and even sinks.</string>
+    <string name="eat_healthy_text_prevention_cardview">Practicing food safety and good personal hygiene are always important,
+        handwashing is especial in reducing the COVID-19 spread.</string>
     <string name="do_some_exercise_text_prevention_cardview">WHO recommends 150 minutes of moderate-intensity or 75 minutes of vigorous-intensity
-        physical activity per week. These can still be achieved even at home, with no equipment and with limited space.</string>
+        physical activity per week at home, with no equipment.</string>
+    <string name="mail_developer">Email Address \-\-> <u>joyappsdevteam@gmail.com</u></string>
+    <string name="about_us_down">\n\nDesign and Develop By \nArindam Saha\nAtul Ranjan\nJoykishan Sharma</string>
 
     <!--Fever Symptoms in Detail-->
     <string name="fever_symptom_name">Fever</string>
@@ -442,5 +444,7 @@
     <string name="clean_and_disinfect_prevention_details_topic3"> </string>
     <string name="clean_and_disinfect_prevention_details_ans3"> </string>
     <string name="_104">Bihar / Chhattisgarh / Goa / Gujarat / Himachal Pradesh / Jharkhand / Karnataka / Madhya Pradesh / Punjab / Sikkim / Telangana / Uttarakhand</string>
+    <string name="about_us_text">Thank you very much for downloading this App. If you have any Suggestion or Query, Feel free to mail us. You can mail us at</string>
+    <string name="team_name">Joy Apps Developers Team</string>
 
 </resources>

@@ -29,13 +29,10 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="60dp"/>
 
-    <TextView
+    <ProgressBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Loading... Please Wait..."
         android:layout_below="@id/welcome_text"
-        android:textColor="#fafafa"
-        android:textSize="18sp"
         android:gravity="center_horizontal"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="140dp"/>
