@@ -53,7 +53,7 @@
     <string name="cough_and_sneeze_text_prevention_cardview">Use a tissue or sneeze into your elbow. Wash your hands carefully after you sneeze or cough.</string>
     <string name="wear_facemask_text_prevention_cardview">Everyone should wear a cloth face cover when they have to go out in public,
         for necessities.</string>
-    <string name="dont_touch_face_text_prevention_cardview">SARS-CoV-2 can live on hard surfaces for up to 72 hours.
+    <string name="dont_touch_face_text_prevention_cardview">Coronavirus can live on hard surfaces for up to 72 hours.
         You can get the virus on your hands if you touch a surface like a doorknob, gas pump handle, or your cell phone.</string>
     <string name="stay_at_home_text_prevention_cardview">Please Stay home and stay safe, it buys a little time for our
         researchers to find cure to this problem. \nRemember that some people without symptoms may be able to spread virus.</string>
@@ -270,8 +270,8 @@
         \n\n\t• Work from home when possible.
         \n\n\t• If possible, avoid using any kind of public transportation, ridesharing, or taxis.
         \n\n\t• If you are a student or parent, talk to your school about options for digital/distance learning.</string>
-    <string name="social_distancing_prevention_details_topic3"></string>
-    <string name="social_distancing_prevention_details_ans3"></string>
+    <string name="social_distancing_prevention_details_topic3"> </string>
+    <string name="social_distancing_prevention_details_ans3"> </string>
 
     <!--Cover your mouth Prevention in Detail-->
     <string name="cover_your_mouth_prevention_name">Cover your mouth and nose when you cough and sneeze</string>
@@ -290,8 +290,8 @@
         \n\n\t• Call your doctor or call helpline number
         \n\n\t• avoid touching stuffs around you
         \n\n\t• clean your hand frequently</string>
-    <string name="cover_your_mouth_prevention_details_topic3"></string>
-    <string name="cover_your_mouth_prevention_details_ans3"></string>
+    <string name="cover_your_mouth_prevention_details_topic3"> </string>
+    <string name="cover_your_mouth_prevention_details_ans3"> </string>
 
     <!--Wear Facemask Prevention in Detail-->
     <string name="wear_facemask_prevention_name">Wear facemask when getting into crowded place</string>
@@ -321,28 +321,126 @@
 
     <!--Avoid touching your face Prevention in Detail-->
     <string name="avoid_touching_face_prevention_name">Avoid touching your face</string>
-    <string name="avoid_touching_face_prevention_data">People should wear nonsurgical cloth face coverings when they go out in public during the
-        COVID-19 pandemic. Headlines of the new coronavirus creeping its way across the globe is a good reminder that the
-        best way to protect our communities from widespread transmission of illness is to practice good basic hygiene every day</string>
-    <string name="avoid_touching_face_prevention_details_topic1">How to Wear a Cloth Face Covering</string>
-    <string name="avoid_touching_face_prevention_details_ans1">Cloth face coverings should—
-        \n\n\t• fit snugly but comfortably against the side of the face
-        \n\n\t• be secured with ties or ear loops
-        \n\n\t• include multiple layers of fabric
-        \n\n\t• allow for breathing without restriction
-        \n\n\t• be able to be laundered and machine dried without damage or change to shape</string>
-    <string name="avoid_touching_face_prevention_details_topic2">If you feel like you got symptoms</string>
-    <string name="avoid_touching_face_prevention_details_ans2">\t\t• Wear clean facemask
-        \n\n\t• Self-Isolate yourself
-        \n\n\t• Call your doctor or call helpline number
-        \n\n\t• avoid touching stuffs around you
-        \n\n\t• clean your hand frequently</string>
-    <string name="avoid_touching_face_prevention_details_topic3">Points to Remember while wearing mask</string>
-    <string name="avoid_touching_face_prevention_details_ans3">\t\t• Cloth face coverings should not be placed on young children under age 2,
-        anyone who has trouble breathing, or is unconscious, incapacitated or otherwise unable to remove the mask without assistance.
-        \n\n\t• The cloth face coverings recommended are not surgical masks or N-95 respirators.  Those are critical supplies that must
-        continue to be reserved for healthcare workers and other medical first responders
-        \n\n\t• If you can\'t affprt to buy a decent face mask, then you can also make your own face mask at home with minimum requirements.
-     Go online and watch video on \"how to make your own fask mask for Covid-19\", that should help.</string>
+    <string name="avoid_touching_face_prevention_data">Humans have a rather unusual habit we don\’t share with many other animals, and,
+        unfortunately, it makes us particularly susceptible during certain disease outbreaks – we keep touching our faces.</string>
+    <string name="avoid_touching_face_prevention_details_topic1">How virus spreads when you touch your face?</string>
+    <string name="avoid_touching_face_prevention_details_ans1">\t\t• Your eyes, nose, and mouth are the easiest paths for a virus like
+        \n\n\t• SARS-CoV-2 to enter the body.
+        \n\n\t• All it takes is touching these areas with your hands after you’ve come in contact with the
+        disease on a surface you touched.
+        \n\n\t• No matter how frequently you wash your hands, it’s not often enough to prevent passing an infection into your system.
+        \n\n\t• The best preventive measure is to avoid touching your face as much as possible.</string>
+    <string name="avoid_touching_face_prevention_details_topic2">How to break this habit of touching face?</string>
+    <string name="avoid_touching_face_prevention_details_ans2">Experts say that using some simple methods will help you break
+        this habit. These include using scented hand soap or sanitizer to increase awareness of where your hands are and keeping
+        your hands in your lap during meetings.</string>
+    <string name="avoid_touching_face_prevention_details_topic3"> </string>
+    <string name="avoid_touching_face_prevention_details_ans3"> </string>
+
+    <!--Stay Home, Stay Safe Prevention in Detail-->
+    <string name="stay_home_stay_safe_prevention_name">Stay Home, Stay Safe</string>
+    <string name="stay_home_stay_safe_prevention_data">Governments around the world are encouraging people to stay at home to protect
+        health services and save lives. People can only leave their homes to buy food, medicine.They\'re allowed to travel, but only
+        to and from work if they cannot do their jobs from home. Staying at home to keep people safe can be a difficult concept to
+        grasp, especially when you are feeling fit and healthy yourself.</string>
+    <string name="stay_home_stay_safe_prevention_details_topic1">Why staying at home helps others?</string>
+    <string name="stay_home_stay_safe_prevention_details_ans1">It can help in many ways, few of them are given below :
+        \n\n\t• Deduces the chances of catching and spreading the virus.
+        \n\n\t• It is very hard to know if you have Covid-19 positive in the early stages, so why not stop going out and halt the spreading.
+        \n\n\t• Currently we don\'t have vaccine for this virus so we need to stay at home to minimum its spread.
+        \n\n\t• If you get infect because of your carelessness, it\'s going to affect your whole family.
+        \n\n\t• Staying home gives the researcher little time to find a vaccine for this deadly virus.help them by staying home.</string>
+    <string name="stay_home_stay_safe_prevention_details_topic2">How to escape boredom when staying at home? </string>
+    <string name="stay_home_stay_safe_prevention_details_ans2">There is lots of things to do when you feel bored, you just need to look for it.
+        Few are given below :
+        \n\n\t• Figure out what you really want to do.
+        \n\n\t• Nuke procrastination.
+        \n\n\t• Spend Quality time with your family. Trust me, they always need it.
+        \n\n\t• Learn something new.
+        \n\n\t• Meditate.
+        \n\n\t• And many more, list is never ending.</string>
+    <string name="stay_home_stay_safe_prevention_details_topic3"> </string>
+    <string name="stay_home_stay_safe_prevention_details_ans3"> </string>
+
+    <!--Do Some Exercise Prevention in Detail-->
+    <string name="do_some_exercise_prevention_name">Do Some Exercise</string>
+    <string name="do_some_exercise_prevention_data">The COVID-19 pandemic has pushed many of us to self-isolate and practice social
+        distancing, but this should not prevent us from staying active. Exercising at home and maintaining (or developing) an active
+        lifestyle is an important part of keeping both your body and your mind healthy.</string>
+    <string name="do_some_exercise_prevention_details_topic1">Indoor Exercises for Small Spaces</string>
+    <string name="do_some_exercise_prevention_details_ans1">When we don’t have access to a gym with all its space and equipment, we
+        have to improvise. Fortunately, thanks to the internet, it is now easier than ever to work out at home using resources you can
+        find for free online.
+        \n\n\t• Yoga
+        \n\n\t• Pilates
+        \n\n\t• Weight Lifting
+        \n\n\t• Steps
+        \n\n\t• Jump Rope</string>
+    <string name="do_some_exercise_prevention_details_topic2">Why Exercise at all?</string>
+    <string name="do_some_exercise_prevention_details_ans2">Keeping yourself active not only benefits you physically, but it is also
+        incredibly important for keeping a healthy mental state. As quarantine times are extended across country and the rest of the
+        world, it can be extremely mentally taxing for individuals who are used to daily socialisation. Suddenly being cut off from
+        in-person social interactions, combined with being stuck inside all day and inactive is a recipe for lack of motivation and
+        even depression.
+        \n\nGetting fresh air, eating healthily, and exercising will help you tremendously until the quarantine is
+         lifted.</string>
+    <string name="do_some_exercise_prevention_details_topic3"> </string>
+    <string name="do_some_exercise_prevention_details_ans3"> </string>
+
+    <!--Stay hygiene, eat healthy Prevention in Detail-->
+    <string name="stay_hygiene_eat_healthy_prevention_name">Stay hygiene, eat healthy</string>
+    <string name="stay_hygiene_eat_healthy_prevention_data">Good nutrition is crucial for health, particularly in
+        times when the immune system might need to fight back. Limited access to fresh foods may compromise opportunities to continue
+        eating a healthy and varied diet. It can also potentially lead to an increased consumption of highly processed foods, which tend
+        to be high in fats, sugars and salt. Nonetheless, even with few and limited ingredients, one can continue eating a diet that
+        supports good health.</string>
+    <string name="stay_hygiene_eat_healthy_prevention_details_topic1">Tips to keep healthy</string>
+    <string name="stay_hygiene_eat_healthy_prevention_details_ans1">Whether you are in quarantine or self-isolation due to COVID-19,
+        you will inevitably be spending more time at home. Following general healthy living advice are the best recommendation for
+        staying healthy during quarantine or self-isolation.
+        \n\n\t• Eat a balanced and varied diet
+        \n\n\t• Establish a routine and practice mindful eating
+        \n\n\t• Keep hydrated
+        \n\n\t• Practice safe food hygiene
+        \n\n\t• Stay active at home
+        \n\n\t• Get enough quality sleep
+        \n\n\t• Get information from trustworthy sources</string>
+    <string name="stay_hygiene_eat_healthy_prevention_details_topic2">Eat right food during this quarantine</string>
+    <string name="stay_hygiene_eat_healthy_prevention_details_ans2">Note that these are just for your immune system boosting.Don\'t
+        misunderstand these by thinking that these are the cure ingredients for covid-19.
+        \n\n\t• Citrus fruits
+        \n\n\t• Turmeric
+        \n\n\t• Garlic
+        \n\n\t• Ginger
+        \n\n\t• Spinach
+        \n\n\t• Yoghurt
+        \n\n\t• Green Tea
+        \n\n\t• Papaya
+        \n\n\t• Almonds</string>
+    <string name="stay_hygiene_eat_healthy_prevention_details_topic3"> </string>
+    <string name="stay_hygiene_eat_healthy_prevention_details_ans3"> </string>
+
+    <!-- Clean and disinfect Prevention in Detail-->
+    <string name="clean_and_disinfect_prevention_name">Clean and disinfect</string>
+    <string name="clean_and_disinfect_prevention_data">In the era of disinfectant wipes and sprays flying off shelves because of the
+        novel coronavirus, which causes the potentially severe respiratory disease, COVID-19, we\’re all a little obsessed with cleaning.
+        The virus can hang out on surfaces for hours to days so keep clean those areas and surface which used and touched frequently.</string>
+    <string name="clean_and_disinfect_prevention_details_topic1">Few areas were you should keep clean</string>
+    <string name="clean_and_disinfect_prevention_details_ans1">Note that these areas and places may vary from home to home, so it is up to you to
+        identify frequently places.
+        \n\n\t• Tables (this includes your kitchen table and counter)
+        \n\n\t• Hard-backed chairs (for instance, kitchen chairs around the table you eat dinner on)
+        \n\n\t• Doorknobs
+        \n\n\t• Light switches
+        \n\n\t• Handles (eg. refrigerator handle, handles on drawers)
+        \n\n\t• The sink in the kitchen and bathroom.
+        \n\n\t• TV Remotes</string>
+    <string name="clean_and_disinfect_prevention_details_topic2">How Often to Disinfect Your Home</string>
+    <string name="clean_and_disinfect_prevention_details_ans2">Repeat this disinfecting routine on frequently touched surfaces daily,
+        or more often if someone in your household is sick; the virus can survive for 16 hours on plastic surfaces.
+        \n\nRemember that, keeping your kitchen surfaces as clean and home disinfected is secondary to practicing isolation
+        techniques and washing your hands when you return home. That\’s your front line of prevention,</string>
+    <string name="clean_and_disinfect_prevention_details_topic3"> </string>
+    <string name="clean_and_disinfect_prevention_details_ans3"> </string>
 
 </resources>

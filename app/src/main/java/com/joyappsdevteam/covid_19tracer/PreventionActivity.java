@@ -138,19 +138,43 @@ public class PreventionActivity extends AppCompatActivity implements View.OnClic
                 break;
 
             case R.id.prevention_dont_touch_face:
-
+                showPreventionDetails(R.string.avoid_touching_face_prevention_name,R.drawable.dont_touch_your_face,
+                        R.string.avoid_touching_face_prevention_data, R.string.avoid_touching_face_prevention_details_topic1,
+                        R.string.avoid_touching_face_prevention_details_ans1, R.string.avoid_touching_face_prevention_details_topic2,
+                        R.string.avoid_touching_face_prevention_details_ans2, R.string.avoid_touching_face_prevention_details_topic3,
+                        R.string.avoid_touching_face_prevention_details_ans3);
             break;
 
             case R.id.prevention_stay_at_home:
-
+                showPreventionDetails(R.string.stay_home_stay_safe_prevention_name,R.drawable.stay_at_home,
+                        R.string.stay_home_stay_safe_prevention_data, R.string.stay_home_stay_safe_prevention_details_topic1,
+                        R.string.stay_home_stay_safe_prevention_details_ans1, R.string.stay_home_stay_safe_prevention_details_topic2,
+                        R.string.stay_home_stay_safe_prevention_details_ans2, R.string.stay_home_stay_safe_prevention_details_topic3,
+                        R.string.stay_home_stay_safe_prevention_details_ans3);
                 break;
 
             case R.id.prevention_do_some_exercise:
-
+                showPreventionDetails(R.string.do_some_exercise_prevention_name,R.drawable.do_some_exercise,
+                        R.string.do_some_exercise_prevention_data, R.string.do_some_exercise_prevention_details_topic1,
+                        R.string.do_some_exercise_prevention_details_ans1, R.string.do_some_exercise_prevention_details_topic2,
+                        R.string.do_some_exercise_prevention_details_ans2, R.string.do_some_exercise_prevention_details_topic3,
+                        R.string.do_some_exercise_prevention_details_ans3);
                 break;
 
             case R.id.preventions_eat_healthy:
+                showPreventionDetails(R.string.stay_hygiene_eat_healthy_prevention_name,R.drawable.stay_at_home,
+                        R.string.stay_hygiene_eat_healthy_prevention_data, R.string.stay_hygiene_eat_healthy_prevention_details_topic1,
+                        R.string.stay_hygiene_eat_healthy_prevention_details_ans1, R.string.stay_hygiene_eat_healthy_prevention_details_topic2,
+                        R.string.stay_hygiene_eat_healthy_prevention_details_ans2, R.string.stay_hygiene_eat_healthy_prevention_details_topic3,
+                        R.string.stay_hygiene_eat_healthy_prevention_details_ans3);
+                break;
 
+            case R.id.prevention_clean_and_disinfect:
+                showPreventionDetails(R.string.clean_and_disinfect_prevention_name,R.drawable.clean_and_disinfect,
+                        R.string.clean_and_disinfect_prevention_data, R.string.clean_and_disinfect_prevention_details_topic1,
+                        R.string.clean_and_disinfect_prevention_details_ans1, R.string.clean_and_disinfect_prevention_details_topic2,
+                        R.string.clean_and_disinfect_prevention_details_ans2, R.string.clean_and_disinfect_prevention_details_topic3,
+                        R.string.clean_and_disinfect_prevention_details_ans3);
                 break;
 
             default:
