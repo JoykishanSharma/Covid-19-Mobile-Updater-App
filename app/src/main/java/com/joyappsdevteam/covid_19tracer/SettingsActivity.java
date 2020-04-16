@@ -202,18 +202,22 @@ public class SettingsActivity extends AppCompatActivity {
         privacy_policy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SettingsActivity.this,WebViewActivity.class);
-                intent.putExtra("content_to_show","privacy_policy");
-                startActivity(intent);
+                if (isConnected()) {
+                    Intent intent = new Intent(SettingsActivity.this, WebViewActivity.class);
+                    intent.putExtra("content_to_show", "privacy_policy");
+                    startActivity(intent);
+                }else Toast.makeText(SettingsActivity.this,"No Internet Connection",Toast.LENGTH_SHORT).show();
             }
         });
 
         terms_and_conditions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SettingsActivity.this,WebViewActivity.class);
-                intent.putExtra("content_to_show","terms_and_conditions");
-                startActivity(intent);
+                if (isConnected()) {
+                    Intent intent = new Intent(SettingsActivity.this, WebViewActivity.class);
+                    intent.putExtra("content_to_show", "terms_and_conditions");
+                    startActivity(intent);
+                }else Toast.makeText(SettingsActivity.this,"No Internet Connection",Toast.LENGTH_SHORT).show();
             }
         });
     }

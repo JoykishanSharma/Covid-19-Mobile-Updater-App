@@ -7,10 +7,13 @@ import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -114,8 +117,10 @@ public class HomeActivity extends AppCompatActivity {
         homeToMapCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(HomeActivity.this, WebViewWorldActivity.class));
-                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                if (isConnected()) {
+                    startActivity(new Intent(HomeActivity.this, WebViewWorldActivity.class));
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                }else Toast.makeText(HomeActivity.this,"No Internet Connection",Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -138,8 +143,12 @@ public class HomeActivity extends AppCompatActivity {
         see_detail_map.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(HomeActivity.this, MapsActivity.class));
-                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+
+                if (isConnected()){
+                    startActivity(new Intent(HomeActivity.this, MapsActivity.class));
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                } else Toast.makeText(HomeActivity.this,"No Internet Connection",Toast.LENGTH_SHORT).show();
+
             }
         });
 
@@ -423,6 +432,21 @@ public class HomeActivity extends AppCompatActivity {
                 currentUserStateHelpline = "";
                 break;
         }
+    }
+
+    private boolean isConnected() {
+
+        ConnectivityManager cm = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+        assert cm != null;
+        NetworkInfo netinfo = cm.getActiveNetworkInfo();
+
+        if (netinfo != null && netinfo.isConnectedOrConnecting()) {
+            android.net.NetworkInfo wifi = cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+            android.net.NetworkInfo mobile = cm.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+
+            return (mobile != null && mobile.isConnectedOrConnecting()) || (wifi != null && wifi.isConnectedOrConnecting());
+        } else
+            return false;
     }
 
     @Override
