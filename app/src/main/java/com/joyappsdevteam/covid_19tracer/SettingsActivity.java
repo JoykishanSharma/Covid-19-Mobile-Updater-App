@@ -195,7 +195,8 @@ public class SettingsActivity extends AppCompatActivity {
         attributes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                if (isConnected()) startActivity(new Intent(SettingsActivity.this, AttributesActivity.class));
+                else Toast.makeText(SettingsActivity.this,"No Internet Connection",Toast.LENGTH_SHORT).show();
             }
         });
 

@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 public class HelplineNumberActivity extends AppCompatActivity implements View.OnClickListener {
 
-    TextView andhra_pradesh,arunachal_pradesh,assam,call_104_states,haryana,kerala,maharashtra,
+    TextView national_helpline_01,national_helpline_02,andhra_pradesh,arunachal_pradesh,assam,call_104_states,haryana,kerala,maharashtra,
             manipur,meghalaya,mizoram,nagaland,odisha,rajasthan,tamil_nadu,tripura,uttar_pradesh,
             west_bengal_no1,west_bengal_no2,andaman_and_nicobar_islands,chandigarh,call_104_union_territory
             ,delhi,jammu_and_kashmir_no1,jammu_and_kashmir_no2,ladakh;
@@ -28,6 +28,10 @@ public class HelplineNumberActivity extends AppCompatActivity implements View.On
     }
 
     private void callNowCardViewReferencing(){
+        national_helpline_01 = findViewById(R.id.national_helpline_01);
+        national_helpline_01.setOnClickListener(this);
+        national_helpline_02 = findViewById(R.id.national_helpline_02);
+        national_helpline_02.setOnClickListener(this);
         andhra_pradesh = findViewById(R.id.andhra_pradesh);
         andhra_pradesh.setOnClickListener(this);
         arunachal_pradesh = findViewById(R.id.arunachal_pradesh);
