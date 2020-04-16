@@ -33,6 +33,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
+
+import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
 public class PhoneVerificationActivity extends AppCompatActivity {
@@ -75,10 +77,8 @@ public class PhoneVerificationActivity extends AppCompatActivity {
                     reg_mobile_no_editText.setError("Valid Number is required");
                 } else {
                     if (isConnected()) {
-                        //ask permission -- Internet -- User Location -- Phone Call --
+                        //ask permission -- Phone Call
                         if (ContextCompat.checkSelfPermission(getApplicationContext(),
-                                Manifest.permission.WRITE_EXTERNAL_STORAGE) +
-                                ContextCompat.checkSelfPermission(getApplicationContext(),
                                         Manifest.permission.CALL_PHONE) +
                                 ContextCompat.checkSelfPermission(getApplicationContext(),
                                 Manifest.permission.INTERNET)
@@ -111,14 +111,6 @@ public class PhoneVerificationActivity extends AppCompatActivity {
                         else {
                             requestRuntimePermission();
                         }
-
-                        //also fetch current state he is living in
-                        //Register
-                        //registerAccount(reg_name,reg_mobile_no);
-                        //Store user phone no, Name, state to database via Firebase
-
-                        //For Now
-                        //startActivity(new Intent(PhoneVerificationActivity.this,HomeActivity.class));
                     } else {
                         Toast.makeText(PhoneVerificationActivity.this, "No Internet Connection", Toast.LENGTH_SHORT).show();
                     }
@@ -165,7 +157,7 @@ public class PhoneVerificationActivity extends AppCompatActivity {
 
     private void requestRuntimePermission() {
         if (ActivityCompat.shouldShowRequestPermissionRationale(this,
-                Manifest.permission.READ_EXTERNAL_STORAGE)) {
+                Manifest.permission.CALL_PHONE)) {
 
             new AlertDialog.Builder(PhoneVerificationActivity.this)
                     .setTitle("Permission needed")
@@ -174,8 +166,7 @@ public class PhoneVerificationActivity extends AppCompatActivity {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             ActivityCompat.requestPermissions(PhoneVerificationActivity.this,
-                                    new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                                            Manifest.permission.CALL_PHONE,
+                                    new String[] {Manifest.permission.CALL_PHONE,
                                             Manifest.permission.INTERNET},
                                     MULTIPLE_PERMISSION_CODE);
                         }
@@ -186,8 +177,7 @@ public class PhoneVerificationActivity extends AppCompatActivity {
 
         } else {
             ActivityCompat.requestPermissions(this,
-                    new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                            Manifest.permission.CALL_PHONE,
+                    new String[] {Manifest.permission.CALL_PHONE,
                             Manifest.permission.INTERNET},
                     MULTIPLE_PERMISSION_CODE);
         }
@@ -197,8 +187,7 @@ public class PhoneVerificationActivity extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         if (requestCode == MULTIPLE_PERMISSION_CODE)  {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED &&
-                    grantResults[1] == PackageManager.PERMISSION_GRANTED &&
-                    grantResults[2] == PackageManager.PERMISSION_GRANTED) {
+                    grantResults[1] == PackageManager.PERMISSION_GRANTED) {
                 Toast.makeText(this, "Permission GRANTED", Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(this, "Permission DENIED", Toast.LENGTH_SHORT).show();

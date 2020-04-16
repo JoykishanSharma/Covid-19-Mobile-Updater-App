@@ -425,13 +425,14 @@
                 android:layout_height="wrap_content"
                 android:alignmentMode="alignMargins"
                 android:columnCount="2"
-                android:columnOrderPreserved="false"
+                android:columnOrderPreserved="true"
+                android:rowOrderPreserved="true"
                 android:rowCount="1">
 
                 <com.google.android.material.circularreveal.cardview.CircularRevealCardView
                     android:id="@+id/all_symptoms"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
                     android:layout_margin="12dp"
@@ -444,13 +445,13 @@
 
                     <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="wrap_content">
 
                         <ImageView
                             android:id="@+id/symptom_cardview_image"
                             android:layout_width="60dp"
                             android:layout_height="60dp"
-                            android:src="@drawable/virus"
+                            android:src="@mipmap/ic_launcher"
                             android:layout_marginTop="16dp"
                             android:layout_marginEnd="16dp"
                             android:layout_alignParentEnd="true"
@@ -487,13 +488,13 @@
 
                     <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="wrap_content">
 
                         <ImageView
                             android:id="@+id/prevention_cardview_image"
                             android:layout_width="60dp"
                             android:layout_height="60dp"
-                            android:src="@drawable/shield"
+                            android:src="@mipmap/ic_launcher"
                             android:layout_marginTop="16dp"
                             android:layout_marginEnd="16dp"
                             android:layout_alignParentEnd="true"

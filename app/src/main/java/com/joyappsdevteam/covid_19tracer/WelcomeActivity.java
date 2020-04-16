@@ -36,6 +36,14 @@ public class WelcomeActivity extends AppCompatActivity {
                     SharedPreferences sharedPref = getSharedPreferences("UserDetails", MODE_PRIVATE);
                     boolean IsUserDetailsSaved = sharedPref.getBoolean("user_details", false);
 
+                    //For testing
+                    isPhoneVerificationComplete = true;
+                    SharedPreferences sp = getSharedPreferences("phoneVerified", MODE_PRIVATE);
+                    SharedPreferences.Editor et = sp.edit();
+                    et.putBoolean("phoneVerifiedComplete", true);
+                    et.putString("mobile_no","1234567890");
+                    et.apply();
+
                     if (isPhoneVerificationComplete && IsUserDetailsSaved){
                         Intent intent = new Intent(WelcomeActivity.this,HomeActivity.class);
                         startActivity(intent);
