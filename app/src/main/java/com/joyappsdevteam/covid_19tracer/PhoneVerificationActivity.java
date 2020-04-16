@@ -1,10 +1,12 @@
 package com.joyappsdevteam.covid_19tracer;
 
-import android.app.AlertDialog;
+import android.Manifest;
+import androidx.appcompat.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
@@ -12,6 +14,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -20,6 +23,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskExecutors;
@@ -40,6 +45,7 @@ public class PhoneVerificationActivity extends AppCompatActivity {
     private Boolean verificationError = false;
     private ProgressBar progress_circular;
     private String userPhoneNumber;
+    private int MULTIPLE_PERMISSION_CODE = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,25 +76,40 @@ public class PhoneVerificationActivity extends AppCompatActivity {
                 } else {
                     if (isConnected()) {
                         //ask permission -- Internet -- User Location -- Phone Call --
-                        //check registration and send OTP
-                        //custom enter OTP activity
+                        if (ContextCompat.checkSelfPermission(getApplicationContext(),
+                                Manifest.permission.WRITE_EXTERNAL_STORAGE) +
+                                ContextCompat.checkSelfPermission(getApplicationContext(),
+                                        Manifest.permission.CALL_PHONE) +
+                                ContextCompat.checkSelfPermission(getApplicationContext(),
+                                Manifest.permission.INTERNET)
+                                == PackageManager.PERMISSION_GRANTED) {
+                            Toast.makeText(PhoneVerificationActivity.this, "You have already granted this permission!", Toast.LENGTH_SHORT).show();
 
-                        progress_circular.setVisibility(View.VISIBLE);
-                        sendVerificationCode(reg_mobile_no);
 
-                        if (!verificationError) {
+                            //check registration and send OTP
+                            //custom enter OTP activity
 
-                            send_otp_text.setText("Enter the OTP code sent at +91" + reg_mobile_no);
 
-                            reg_mobile_no_editText.setVisibility(View.INVISIBLE);
-                            otp_verification_EditText.setVisibility(View.VISIBLE);
+                            progress_circular.setVisibility(View.VISIBLE);
+                            sendVerificationCode(reg_mobile_no);
 
-                            reg_send_otp.setVisibility(View.INVISIBLE);
-                            verify_otp_cardView.setVisibility(View.VISIBLE);
+                            if (!verificationError) {
 
-                            resend_otp_linearLayout.setVisibility(View.VISIBLE);
+                                send_otp_text.setText("Enter the OTP code sent at +91" + reg_mobile_no);
 
-                            userPhoneNumber = reg_mobile_no;
+                                reg_mobile_no_editText.setVisibility(View.INVISIBLE);
+                                otp_verification_EditText.setVisibility(View.VISIBLE);
+
+                                reg_send_otp.setVisibility(View.INVISIBLE);
+                                verify_otp_cardView.setVisibility(View.VISIBLE);
+
+                                resend_otp_linearLayout.setVisibility(View.VISIBLE);
+
+                                userPhoneNumber = reg_mobile_no;
+                            }
+                        }
+                        else {
+                            requestRuntimePermission();
                         }
 
                         //also fetch current state he is living in
@@ -141,6 +162,50 @@ public class PhoneVerificationActivity extends AppCompatActivity {
             }
         });
     }
+
+    private void requestRuntimePermission() {
+        if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+                Manifest.permission.READ_EXTERNAL_STORAGE)) {
+
+            new AlertDialog.Builder(PhoneVerificationActivity.this)
+                    .setTitle("Permission needed")
+                    .setMessage("These permissions are needed for the app to work properly.")
+                    .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            ActivityCompat.requestPermissions(PhoneVerificationActivity.this,
+                                    new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                                            Manifest.permission.CALL_PHONE,
+                                            Manifest.permission.INTERNET},
+                                    MULTIPLE_PERMISSION_CODE);
+                        }
+                    })
+                    .setNegativeButton(android.R.string.cancel, null)
+                    .show();
+
+
+        } else {
+            ActivityCompat.requestPermissions(this,
+                    new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                            Manifest.permission.CALL_PHONE,
+                            Manifest.permission.INTERNET},
+                    MULTIPLE_PERMISSION_CODE);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        if (requestCode == MULTIPLE_PERMISSION_CODE)  {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED &&
+                    grantResults[1] == PackageManager.PERMISSION_GRANTED &&
+                    grantResults[2] == PackageManager.PERMISSION_GRANTED) {
+                Toast.makeText(this, "Permission GRANTED", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, "Permission DENIED", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
 
     private void sendVerificationCode(String reg_mobile_no) {
 
@@ -231,18 +296,18 @@ public class PhoneVerificationActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        new AlertDialog.Builder(this)
+        new AlertDialog.Builder(PhoneVerificationActivity.this)
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .setTitle("Exit Application")
                 .setMessage("Are you sure you want to exit?")
-                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         endTask();
                         onDestroy();
                     }
                 })
-                .setNegativeButton("No", null)
+                .setNegativeButton(android.R.string.no, null)
                 .show();
     }
 
