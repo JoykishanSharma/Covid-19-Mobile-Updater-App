@@ -16,29 +16,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <activity android:name=".NewsActivity" />
+        <activity android:name=".FeelingGoodActivity" />
+        <activity android:name=".FeelingBadActivity" />
+        <activity android:name=".InfoActivity" />
+        <activity android:name=".WebViewWorldActivity" />
+        <activity android:name=".PreventionActivity" />
+        <activity android:name=".SymptomsActivity" />
+        <activity android:name=".HelplineNumberActivity" />
+        <activity android:name=".MapsActivity" />
         <activity android:name=".WebViewActivity"/>
         <activity android:name=".AttributesActivity" />
         <activity android:name=".AboutUsActivity" />
-        <activity android:name=".PreventionActivity" />
         <activity android:name=".SettingsActivity" />
-        <activity android:name=".TakeUsernameAndLocationActivity" />
-        <activity android:name=".SymptomsActivity" />
-        <activity android:name=".HelplineNumberActivity" />
-        <activity android:name=".FeelingBadActivity" />
-        <activity android:name=".FeelingGoodActivity" />
-        <activity android:name=".NewsActivity" />
-        <activity android:name=".InfoActivity" />
-        <activity android:name=".MapsActivity" />
         <activity android:name=".HomeActivity" />
-        <activity android:name=".WebViewWorldActivity" />
+        <activity android:name=".TakeUsernameAndLocationActivity" />
+        <activity android:name=".PhoneVerificationActivity" />
         <activity android:name=".WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PhoneVerificationActivity" />
     </application>
 
 </manifest>
