@@ -6,12 +6,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class NewsActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
+    TextView mail_temp1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +24,7 @@ public class NewsActivity extends AppCompatActivity {
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.news);
+        mail_temp1 = findViewById(R.id.mail_temp1);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -44,6 +49,25 @@ public class NewsActivity extends AppCompatActivity {
                         return true;
                 }
                 return false;
+            }
+        });
+
+        //Email the Developer using Intent
+        mail_temp1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent i = new Intent(Intent.ACTION_SEND);
+                i.setType("message/rfc822");
+                i.putExtra(Intent.EXTRA_EMAIL,new String[] {"joyappsdevteam@gmail.com"});
+                i.putExtra(Intent.EXTRA_SUBJECT,"Query Related to \"Covid-19 Tracer App\"");
+                i.putExtra(Intent.EXTRA_TEXT, "Email message here...");
+                try {
+                    startActivity(Intent.createChooser(i,"Send mail..."));
+                }
+                catch (android.content.ActivityNotFoundException ex) {
+                    Toast.makeText(NewsActivity.this, "There is no email client installed.", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

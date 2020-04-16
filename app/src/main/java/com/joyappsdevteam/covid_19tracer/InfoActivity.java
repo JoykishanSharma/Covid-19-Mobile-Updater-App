@@ -5,11 +5,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import org.w3c.dom.Text;
 
 public class InfoActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
+    TextView mail_temp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +25,7 @@ public class InfoActivity extends AppCompatActivity {
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.info);
+        mail_temp = findViewById(R.id.mail_temp);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -42,6 +50,25 @@ public class InfoActivity extends AppCompatActivity {
                         return true;
                 }
                 return false;
+            }
+        });
+
+        //Email the Developer using Intent
+        mail_temp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                        Intent i = new Intent(Intent.ACTION_SEND);
+                        i.setType("message/rfc822");
+                        i.putExtra(Intent.EXTRA_EMAIL,new String[] {"joyappsdevteam@gmail.com"});
+                        i.putExtra(Intent.EXTRA_SUBJECT,"Query Related to \"Covid-19 Tracer App\"");
+                        i.putExtra(Intent.EXTRA_TEXT, "Email message here...");
+                        try {
+                            startActivity(Intent.createChooser(i,"Send mail..."));
+                        }
+                        catch (android.content.ActivityNotFoundException ex) {
+                            Toast.makeText(InfoActivity.this, "There is no email client installed.", Toast.LENGTH_SHORT).show();
+                        }
             }
         });
     }

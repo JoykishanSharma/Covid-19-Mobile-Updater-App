@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_view"
     tools:context=".InfoActivity">
 
     <ScrollView
@@ -13,188 +14,40 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="16dp">
 
-            <RelativeLayout
-                android:layout_marginTop="32dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/businessman_with_laptop"
+                android:contentDescription="@string/todo"/>
 
-                <TextView
-                    android:id="@+id/txt_hello"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Hello!"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp"/>
-
-                <TextView
-                    android:id="@+id/text_username"
-                    android:layout_below="@+id/txt_hello"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Your Name"
-                    android:layout_marginTop="6dp"
-                    android:textColor="#52BAFF"
-                    android:textSize="16sp"/>
-
-
-
-            </RelativeLayout>
-
-            <com.google.android.material.circularreveal.cardview.CircularRevealCardView
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                android:clickable="true"
-                android:focusable="true"
-                app:cardElevation="6dp"
-                app:strokeColor="#FFFFFF"
-                app:strokeWidth="1dp"
-                app:cardCornerRadius="12dp"
-                android:layout_margin="12dp">
+                android:layout_marginTop="18dp"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:textColor="#FFFFFF"
+                android:textStyle="italic"
+                android:text="@string/temporary_text"/>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:background="@drawable/card_gradient"
-                    android:padding="16dp">
+            <TextView
+                android:id="@+id/mail_temp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:textColor="#00FF0A"
+                android:textStyle="italic"
+                android:text="@string/mail_us_temporary"/>
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="How are you feeling at this moment?"
-                        android:gravity="center"
-                        android:fontFamily="@font/roboto_bold"
-                        android:textSize="28sp"
-                        android:textColor="@android:color/white"/>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center">
-
-                        <Button
-                            android:id="@+id/feeling_good"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="GOOD"
-
-                            android:fontFamily="@font/roboto_bold"
-                            android:paddingTop="14dp"
-                            android:paddingBottom="14dp"
-                            android:paddingStart="28dp"
-                            android:paddingEnd="28dp"
-                            android:textColor="@android:color/holo_green_light"/>
-
-                        <Button
-                            android:id="@+id/feeling_bad"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Bad"
-
-                            android:fontFamily="@font/roboto_bold"
-                            android:paddingTop="14dp"
-                            android:paddingBottom="14dp"
-                            android:paddingStart="28dp"
-                            android:paddingEnd="28dp"
-                            android:textColor="@android:color/holo_green_light"/>
-
-                    </LinearLayout>
-
-
-
-                </LinearLayout>
-
-            </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
-
-            <GridLayout
-                android:alignmentMode="alignMargins"
-                android:rowCount="3"
-                android:columnCount="2"
-                android:columnOrderPreserved="false"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
-                    android:clickable="true"
-                    android:focusable="true"
-                    app:cardElevation="6dp"
-                    app:strokeColor="#FF5722"
-                    app:strokeWidth="1dp"
-                    app:cardCornerRadius="12dp"
-                    android:layout_margin="12dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:padding="16dp"
-                        android:gravity="center">
-
-                        <ImageView
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
-                            android:src="@drawable/bookmark"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Calender"
-                            android:textSize="18sp"
-                            android:textColor="#6f6f6f"
-                            android:layout_marginTop="12dp"/>
-                    </LinearLayout>
-
-                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
-
-                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
-                    app:cardElevation="6dp"
-                    android:clickable="true"
-                    app:strokeColor="#FF5722"
-                    app:strokeWidth="1dp"
-                    app:cardCornerRadius="12dp"
-                    android:layout_margin="12dp"
-                    android:focusable="true">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:padding="16dp"
-                        android:gravity="center">
-
-                        <ImageView
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
-                            android:src="@drawable/bookmark"
-                            android:contentDescription="TODO" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Calender"
-                            android:textSize="18sp"
-                            android:textColor="#6f6f6f"
-                            android:layout_marginTop="12dp"/>
-                    </LinearLayout>
-
-                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
-
-            </GridLayout>
 
         </LinearLayout>
 

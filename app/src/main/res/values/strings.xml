@@ -287,6 +287,7 @@
         keep germs from traveling, some experts suggest it is better than using your hands</string>
     <string name="cover_your_mouth_prevention_details_topic2">If you feel like you got symptoms</string>
     <string name="cover_your_mouth_prevention_details_ans2">\t\t• Wear clean facemask
+
         \n\n\t• Self-Isolate yourself
         \n\n\t• Call your doctor or call helpline number
         \n\n\t• avoid touching stuffs around you
@@ -446,5 +447,9 @@
     <string name="_104">Bihar / Chhattisgarh / Goa / Gujarat / Himachal Pradesh / Jharkhand / Karnataka / Madhya Pradesh / Punjab / Sikkim / Telangana / Uttarakhand</string>
     <string name="about_us_text">Thank you very much for downloading this App. If you have any Suggestion or Query, Feel free to mail us. You can mail us at</string>
     <string name="team_name">Joy Apps Developers Team</string>
+    <string name="temporary_text">Hi, It Looks like this Page is not ready yet.\nWe are Sorry for that.\n\nOur Developer Team is
+        constantly working. We will fix this Page very soon in the Upcoming Updates.\n\nThank you for understanding.\n\n
+        <![CDATA[You can reach out to us through this mail —> ]]></string>
+    <string name="mail_us_temporary"><u>joyappsdevteam@gmail.com</u></string>
 
 </resources>
