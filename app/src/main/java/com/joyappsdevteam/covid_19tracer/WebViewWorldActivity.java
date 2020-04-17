@@ -55,7 +55,7 @@ public class WebViewWorldActivity extends FragmentActivity {
             }
         });
 
-        webView .loadUrl("https://www.trackcorona.live/");
+        webView.loadUrl("https://www.trackcorona.live/");
         setContentView(webView);
     }
 }

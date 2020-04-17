@@ -91,7 +91,7 @@ public class MapsActivity extends AppCompatActivity {
             }
         });
 
-        webView .loadUrl("https://www.covid19india.org/");
+        webView.loadUrl("https://www.covid19india.org/");
 
     }
 
