@@ -97,499 +97,578 @@
                 android:textColor="#FAFAFA"
                 android:textSize="18sp" />
 
-            <GridLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:alignmentMode="alignMargins"
-                android:columnCount="2"
-                android:rowCount="3">
+                android:orientation="vertical">
 
-                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
-                    android:id="@+id/prevention_wash_hand"
-                    android:layout_width="0dp"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    app:cardCornerRadius="12dp">
+                    android:orientation="horizontal">
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
+                    <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                        android:id="@+id/prevention_wash_hand"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_gravity="center_vertical"
-                        android:padding="16dp">
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:cardCornerRadius="12dp">
 
-                        <TextView
-                            android:id="@+id/handwashing_title"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:gravity="start"
-                            android:text="Wash your hands frequently"
-                            android:textColor="#1F36B8"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:id="@+id/handwashing_text"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/handwashing_title"
-                            android:gravity="start"
-                            android:text="@string/handwashing_text_prevention_cardview"
-                            android:textColor="#8A8989"
-                            android:textSize="12sp" />
-
-                        <ImageView
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
-                            android:layout_below="@id/handwashing_text"
-                            android:layout_alignParentEnd="true"
-                            android:layout_alignParentBottom="true"
-                            android:layout_marginTop="16dp"
-                            android:contentDescription="@string/todo"
-                            android:src="@drawable/clean_your_hands_often" />
-
-                    </RelativeLayout>
-
-                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
-
-                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
-                    android:id="@+id/prevention_social_distance"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
-                    android:layout_gravity="bottom"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    app:cardCornerRadius="12dp">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:padding="16dp">
-
-                        <TextView
-                            android:id="@+id/social_distancing_title"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:gravity="start"
-                            android:text="Take social distancing seriously"
-                            android:textColor="#1F36B8"
-                            android:textSize="16sp" />
-
-
-                        <TextView
-                            android:id="@+id/social_distancing_text"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/social_distancing_title"
-                            android:gravity="start"
-                            android:text="@string/social_distancing_text_prevention_cardview"
-                            android:textColor="#8A8989"
-                            android:textSize="12sp" />
-
-
-                        <ImageView
-                            android:id="@+id/social_distacing_image"
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
-                            android:layout_below="@+id/social_distancing_text"
-                            android:layout_alignParentEnd="true"
-                            android:layout_centerVertical="true"
-                            android:layout_gravity="end"
-                            android:layout_marginTop="16dp"
-                            android:contentDescription="@string/todo"
-                            android:src="@drawable/avoid_close_contact" />
-
-                    </RelativeLayout>
-
-                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
-
-                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
-                    android:id="@+id/prevention_cover_mouth_when_sneeze"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    app:cardCornerRadius="12dp">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:padding="16dp">
-
-                        <TextView
-                            android:id="@+id/cough_and_sneeze_title"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:gravity="start"
-                            android:text="Cover your mouth and nose when you cough and sneeze"
-                            android:textColor="#1F36B8"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:id="@+id/cough_and_sneeze_text"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/cough_and_sneeze_title"
-                            android:gravity="start"
-                            android:text="@string/cough_and_sneeze_text_prevention_cardview"
-                            android:textColor="#8A8989"
-                            android:textSize="12sp" />
-
-                        <ImageView
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
-                            android:layout_below="@id/cough_and_sneeze_text"
-                            android:layout_alignParentEnd="true"
-                            android:layout_alignParentBottom="true"
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
                             android:layout_gravity="center_vertical"
-                            android:layout_marginTop="16dp"
-                            android:contentDescription="@string/todo"
-                            android:src="@drawable/cover_coughs_and_sneezes" />
+                            android:padding="16dp">
 
-                    </RelativeLayout>
+                            <TextView
+                                android:id="@+id/handwashing_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:gravity="start"
+                                android:text="Wash your hands frequently"
+                                android:textColor="#1F36B8"
+                                android:textSize="16sp" />
 
-                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+                            <TextView
+                                android:id="@+id/handwashing_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/handwashing_title"
+                                android:gravity="start"
+                                android:text="@string/handwashing_text_prevention_cardview"
+                                android:textColor="#8A8989"
+                                android:textSize="12sp" />
 
-                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
-                    android:id="@+id/prevention_wear_facemask"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
-                    android:layout_gravity="bottom"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    app:cardCornerRadius="12dp">
+                            <ImageView
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_below="@id/handwashing_text"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentBottom="true"
+                                android:layout_marginTop="16dp"
+                                android:contentDescription="@string/todo"
+                                android:src="@drawable/clean_your_hands_often" />
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
+                        </RelativeLayout>
+
+                    </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+                    <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                        android:id="@+id/prevention_social_distance"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:padding="16dp">
+                        android:layout_gravity="bottom"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:cardCornerRadius="12dp">
 
-                        <TextView
-                            android:id="@+id/wear_facemask_title"
+                        <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:gravity="start"
-                            android:text="Wear facemask when getting into crowded place"
-                            android:textColor="#1F36B8"
-                            android:textSize="16sp" />
+                            android:layout_height="match_parent"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:id="@+id/social_distancing_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:gravity="start"
+                                android:text="Take social distancing seriously"
+                                android:textColor="#1F36B8"
+                                android:textSize="16sp" />
 
 
-                        <TextView
-                            android:id="@+id/wear_facemask_text"
+                            <TextView
+                                android:id="@+id/social_distancing_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/social_distancing_title"
+                                android:gravity="start"
+                                android:text="@string/social_distancing_text_prevention_cardview"
+                                android:textColor="#8A8989"
+                                android:textSize="12sp" />
+
+
+                            <ImageView
+                                android:id="@+id/social_distacing_image"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_below="@+id/social_distancing_text"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="end"
+                                android:layout_marginTop="16dp"
+                                android:contentDescription="@string/todo"
+                                android:src="@drawable/avoid_close_contact" />
+
+                        </RelativeLayout>
+
+                    </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                        android:id="@+id/prevention_cover_mouth_when_sneeze"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:cardCornerRadius="12dp">
+
+                        <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/wear_facemask_title"
-                            android:gravity="start"
-                            android:text="@string/wear_facemask_text_prevention_cardview"
-                            android:textColor="#8A8989"
-                            android:textSize="12sp" />
+                            android:layout_height="match_parent"
+                            android:padding="16dp">
 
-                        <ImageView
-                            android:id="@+id/wear_a_facemask_image"
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
-                            android:layout_below="@+id/wear_facemask_text"
-                            android:layout_alignParentEnd="true"
-                            android:layout_gravity="end"
-                            android:layout_marginTop="16dp"
-                            android:contentDescription="@string/todo"
-                            android:src="@drawable/wear_a_facemask_if_you_are_sick" />
+                            <TextView
+                                android:id="@+id/cough_and_sneeze_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:gravity="start"
+                                android:text="Cover your mouth and nose when you cough and sneeze"
+                                android:textColor="#1F36B8"
+                                android:textSize="16sp" />
 
-                    </RelativeLayout>
+                            <TextView
+                                android:id="@+id/cough_and_sneeze_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/cough_and_sneeze_title"
+                                android:gravity="start"
+                                android:text="@string/cough_and_sneeze_text_prevention_cardview"
+                                android:textColor="#8A8989"
+                                android:textSize="12sp" />
 
-                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+                            <ImageView
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_below="@id/cough_and_sneeze_text"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentBottom="true"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginTop="16dp"
+                                android:contentDescription="@string/todo"
+                                android:src="@drawable/cover_coughs_and_sneezes" />
 
-                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
-                    android:id="@+id/prevention_dont_touch_face"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    app:cardCornerRadius="12dp">
+                        </RelativeLayout>
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
+                    </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+                    <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                        android:id="@+id/prevention_wear_facemask"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:padding="16dp">
+                        android:layout_gravity="bottom"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:cardCornerRadius="12dp">
 
-                        <TextView
-                            android:id="@+id/dont_touch_face_title"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:gravity="start"
-                            android:text="Avoid touching your face"
-                            android:textColor="#1F36B8"
-                            android:textSize="16sp" />
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:id="@+id/wear_facemask_title"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:gravity="start"
+                                android:text="Wear facemask when getting into crowded place"
+                                android:textColor="#1F36B8"
+                                android:textSize="16sp" />
 
 
-                        <TextView
-                            android:id="@+id/dont_touch_face_text"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/dont_touch_face_title"
-                            android:gravity="start"
-                            android:text="@string/dont_touch_face_text_prevention_cardview"
-                            android:textColor="#8A8989"
-                            android:textSize="12sp" />
+                            <TextView
+                                android:id="@+id/wear_facemask_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/wear_facemask_title"
+                                android:gravity="start"
+                                android:text="@string/wear_facemask_text_prevention_cardview"
+                                android:textColor="#8A8989"
+                                android:textSize="12sp" />
 
-                        <ImageView
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
-                            android:layout_below="@+id/dont_touch_face_text"
-                            android:layout_alignParentEnd="true"
-                            android:layout_marginTop="16dp"
-                            android:contentDescription="@string/todo"
-                            android:src="@drawable/dont_touch_your_face" />
+                            <ImageView
+                                android:id="@+id/wear_a_facemask_image"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_below="@+id/wear_facemask_text"
+                                android:layout_alignParentEnd="true"
+                                android:layout_gravity="end"
+                                android:layout_marginTop="16dp"
+                                android:contentDescription="@string/todo"
+                                android:src="@drawable/wear_a_facemask_if_you_are_sick" />
 
-                    </RelativeLayout>
+                        </RelativeLayout>
 
-                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+                    </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
 
-                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
-                    android:id="@+id/prevention_stay_at_home"
-                    android:layout_width="0dp"
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    app:cardCornerRadius="12dp">
+                    android:orientation="horizontal">
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
+                    <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                        android:id="@+id/prevention_dont_touch_face"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:padding="16dp">
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:cardCornerRadius="12dp">
 
-                        <TextView
-                            android:id="@+id/stay_at_home_title"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:gravity="start"
-                            android:text="Stay Home, Stay Safe"
-                            android:textColor="#1F36B8"
-                            android:textSize="16sp" />
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="16dp">
 
-                        <TextView
-                            android:id="@+id/stay_at_home_text"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/stay_at_home_title"
-                            android:gravity="start"
-                            android:text="@string/stay_at_home_text_prevention_cardview"
-                            android:textColor="#8A8989"
-                            android:textSize="12sp" />
+                            <TextView
+                                android:id="@+id/dont_touch_face_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:gravity="start"
+                                android:text="Avoid touching your face"
+                                android:textColor="#1F36B8"
+                                android:textSize="16sp" />
 
-                        <ImageView
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
-                            android:layout_below="@+id/stay_at_home_text"
-                            android:layout_alignParentEnd="true"
-                            android:layout_gravity="end"
-                            android:layout_marginTop="16dp"
 
-                            android:contentDescription="@string/todo"
-                            android:src="@drawable/stay_at_home" />
+                            <TextView
+                                android:id="@+id/dont_touch_face_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/dont_touch_face_title"
+                                android:gravity="start"
+                                android:text="@string/dont_touch_face_text_prevention_cardview"
+                                android:textColor="#8A8989"
+                                android:textSize="12sp" />
 
-                    </RelativeLayout>
+                            <ImageView
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_below="@+id/dont_touch_face_text"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginTop="16dp"
+                                android:contentDescription="@string/todo"
+                                android:src="@drawable/dont_touch_your_face" />
 
-                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+                        </RelativeLayout>
 
-                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
-                    android:id="@+id/prevention_do_some_exercise"
-                    android:layout_width="0dp"
+                    </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+                    <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                        android:id="@+id/prevention_stay_at_home"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:cardCornerRadius="12dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:id="@+id/stay_at_home_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:gravity="start"
+                                android:text="Stay Home, Stay Safe"
+                                android:textColor="#1F36B8"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:id="@+id/stay_at_home_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/stay_at_home_title"
+                                android:gravity="start"
+                                android:text="@string/stay_at_home_text_prevention_cardview"
+                                android:textColor="#8A8989"
+                                android:textSize="12sp" />
+
+                            <ImageView
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_below="@+id/stay_at_home_text"
+                                android:layout_alignParentEnd="true"
+                                android:layout_gravity="end"
+                                android:layout_marginTop="16dp"
+
+                                android:contentDescription="@string/todo"
+                                android:src="@drawable/stay_at_home" />
+
+                        </RelativeLayout>
+
+                    </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_rowWeight="1"
-                    android:layout_columnWeight="1"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    app:cardCornerRadius="12dp">
+                    android:orientation="horizontal">
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
+                    <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                        android:id="@+id/prevention_do_some_exercise"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:padding="16dp">
+                        android:layout_marginTop="8dp"
 
-                        <TextView
-                            android:id="@+id/do_some_exercise_title"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:gravity="start"
-                            android:text="Do Some Exercise"
-                            android:textColor="#1F36B8"
-                            android:textSize="16sp" />
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:cardCornerRadius="12dp">
 
-                        <TextView
-                            android:id="@+id/do_some_exercise_text"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/do_some_exercise_title"
-                            android:gravity="start"
-                            android:text="@string/do_some_exercise_text_prevention_cardview"
-                            android:textColor="#8A8989"
-                            android:textSize="12sp" />
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="16dp">
 
-                        <ImageView
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
-                            android:layout_below="@+id/do_some_exercise_text"
-                            android:layout_alignParentEnd="true"
-                            android:layout_alignParentBottom="true"
-                            android:layout_marginTop="16dp"
-                            android:contentDescription="@string/todo"
-                            android:src="@drawable/do_some_exercise" />
+                            <TextView
+                                android:id="@+id/do_some_exercise_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:gravity="start"
+                                android:text="Do Some Exercise"
+                                android:textColor="#1F36B8"
+                                android:textSize="16sp" />
 
-                    </RelativeLayout>
+                            <TextView
+                                android:id="@+id/do_some_exercise_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/do_some_exercise_title"
+                                android:gravity="start"
+                                android:text="@string/do_some_exercise_text_prevention_cardview"
+                                android:textColor="#8A8989"
+                                android:textSize="12sp" />
 
-                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+                            <ImageView
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_below="@+id/do_some_exercise_text"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentBottom="true"
+                                android:layout_marginTop="16dp"
+                                android:contentDescription="@string/todo"
+                                android:src="@drawable/do_some_exercise" />
 
-                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
-                    android:id="@+id/preventions_eat_healthy"
-                    android:layout_width="0dp"
+                        </RelativeLayout>
+
+                    </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+                    <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                        android:id="@+id/preventions_eat_healthy"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:cardCornerRadius="12dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="16dp">
+
+
+                            <TextView
+                                android:id="@+id/eat_healthy_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:gravity="start"
+                                android:text="Stay hygiene, eat healthy"
+                                android:textColor="#1F36B8"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:id="@+id/eat_healthy_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/eat_healthy_title"
+                                android:gravity="start"
+                                android:text="@string/eat_healthy_text_prevention_cardview"
+                                android:textColor="#8A8989"
+                                android:textSize="12sp" />
+
+                            <ImageView
+                                android:id="@+id/eat_healthy_image"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_below="@+id/eat_healthy_text"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentBottom="true"
+                                android:layout_gravity="end"
+                                android:layout_marginTop="16dp"
+                                android:contentDescription="@string/todo"
+                                android:src="@drawable/eat_healthy" />
+
+                        </RelativeLayout>
+
+                    </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_rowWeight="1"
-                    android:layout_columnWeight="1"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    app:cardCornerRadius="12dp">
+                    android:orientation="horizontal">
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
+                    <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                        android:id="@+id/prevention_clean_and_disinfect"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:padding="16dp">
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:cardCornerRadius="12dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:id="@+id/clean_and_disinfect_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:gravity="start"
+                                android:text="Clean and disinfect"
+                                android:textColor="#1F36B8"
+                                android:textSize="16sp" />
 
 
-                        <TextView
-                            android:id="@+id/eat_healthy_title"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:gravity="start"
-                            android:text="Stay hygiene, eat healthy"
-                            android:textColor="#1F36B8"
-                            android:textSize="16sp" />
+                            <TextView
+                                android:id="@+id/clean_and_disinfect_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/clean_and_disinfect_title"
+                                android:gravity="start"
+                                android:text="@string/clean_and_disinfect_text_prevention_cardview"
+                                android:textColor="#8A8989"
+                                android:textSize="12sp" />
 
-                        <TextView
-                            android:id="@+id/eat_healthy_text"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/eat_healthy_title"
-                            android:gravity="start"
-                            android:text="@string/eat_healthy_text_prevention_cardview"
-                            android:textColor="#8A8989"
-                            android:textSize="12sp"/>
+                            <ImageView
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_below="@+id/clean_and_disinfect_text"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentBottom="true"
+                                android:layout_marginTop="16dp"
+                                android:contentDescription="@string/todo"
+                                android:gravity="bottom"
+                                android:src="@drawable/clean_and_disinfect" />
 
-                        <ImageView
-                            android:id="@+id/eat_healthy_image"
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
-                            android:layout_below="@+id/eat_healthy_text"
-                            android:layout_alignParentEnd="true"
-                            android:layout_alignParentBottom="true"
-                            android:layout_gravity="end"
-                            android:layout_marginTop="16dp"
-                            android:contentDescription="@string/todo"
-                            android:src="@drawable/eat_healthy" />
+                        </RelativeLayout>
 
-                    </RelativeLayout>
+                    </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
 
-                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
-
-                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
-                    android:id="@+id/prevention_clean_and_disinfect"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    app:cardCornerRadius="12dp">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
+                    <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                        android:id="@+id/prevention_clean_and_disinfect_temp"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:padding="16dp">
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:visibility="invisible"
+                        app:cardCornerRadius="12dp">
 
-                        <TextView
-                            android:id="@+id/clean_and_disinfect_title"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:gravity="start"
-                            android:text="Clean and disinfect"
-                            android:textColor="#1F36B8"
-                            android:textSize="16sp" />
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:id="@+id/clean_and_disinfect_title_temp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:gravity="start"
+                                android:text="Clean and disinfect"
+                                android:textColor="#1F36B8"
+                                android:textSize="16sp" />
 
 
-                        <TextView
-                            android:id="@+id/clean_and_disinfect_text"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/clean_and_disinfect_title"
-                            android:gravity="start"
-                            android:text="@string/clean_and_disinfect_text_prevention_cardview"
-                            android:textColor="#8A8989"
-                            android:textSize="12sp" />
+                            <TextView
+                                android:id="@+id/clean_and_disinfect_text_temp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/clean_and_disinfect_title_temp"
+                                android:gravity="start"
+                                android:text="@string/clean_and_disinfect_text_prevention_cardview"
+                                android:textColor="#8A8989"
+                                android:textSize="12sp" />
 
-                        <ImageView
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
-                            android:layout_below="@+id/clean_and_disinfect_text"
-                            android:layout_alignParentEnd="true"
-                            android:layout_alignParentBottom="true"
-                            android:layout_marginTop="16dp"
-                            android:contentDescription="@string/todo"
-                            android:gravity="bottom"
-                            android:src="@drawable/clean_and_disinfect" />
+                            <ImageView
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_below="@+id/clean_and_disinfect_text_temp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentBottom="true"
+                                android:layout_marginTop="16dp"
+                                android:contentDescription="@string/todo"
+                                android:gravity="bottom"
+                                android:src="@drawable/clean_and_disinfect" />
 
-                    </RelativeLayout>
+                        </RelativeLayout>
 
-                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+                    </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
 
-            </GridLayout>
+                </LinearLayout>
+
+            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>

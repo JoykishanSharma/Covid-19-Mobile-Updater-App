@@ -420,22 +420,20 @@
 
             </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
 
-            <GridLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:alignmentMode="alignMargins"
-                android:columnCount="2"
-                android:columnOrderPreserved="true"
-                android:rowOrderPreserved="true"
-                android:rowCount="1">
+                android:orientation="horizontal">
 
                 <com.google.android.material.circularreveal.cardview.CircularRevealCardView
                     android:id="@+id/all_symptoms"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_rowWeight="1"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="12dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:layout_marginEnd="6dp"
                     android:clickable="true"
                     android:focusable="true"
                     app:cardCornerRadius="12dp"
@@ -444,14 +442,14 @@
                     app:strokeWidth="1dp">
 
                     <RelativeLayout
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content">
 
                         <ImageView
                             android:id="@+id/symptom_cardview_image"
                             android:layout_width="60dp"
                             android:layout_height="60dp"
-                            android:src="@mipmap/ic_launcher"
+                            android:src="@drawable/cough"
                             android:layout_marginTop="16dp"
                             android:layout_marginEnd="16dp"
                             android:layout_alignParentEnd="true"
@@ -474,11 +472,13 @@
 
                 <com.google.android.material.circularreveal.cardview.CircularRevealCardView
                     android:id="@+id/all_preventions"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_rowWeight="1"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="12dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginBottom="12dp"
+                    android:layout_marginEnd="12dp"
                     android:clickable="true"
                     android:focusable="true"
                     app:cardCornerRadius="12dp"
@@ -487,14 +487,14 @@
                     app:strokeWidth="1dp">
 
                     <RelativeLayout
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content">
 
                         <ImageView
                             android:id="@+id/prevention_cardview_image"
                             android:layout_width="60dp"
                             android:layout_height="60dp"
-                            android:src="@mipmap/ic_launcher"
+                            android:src="@drawable/prevention"
                             android:layout_marginTop="16dp"
                             android:layout_marginEnd="16dp"
                             android:layout_alignParentEnd="true"
@@ -512,7 +512,6 @@
                             android:textSize="16sp" />
 
                     </RelativeLayout>
-
 
                 </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
 
@@ -602,7 +601,7 @@
 
                 </com.google.android.material.circularreveal.cardview.CircularRevealCardView>-->
 
-            </GridLayout>
+            </LinearLayout>
 
             <com.google.android.material.circularreveal.cardview.CircularRevealCardView
                 android:id="@+id/home_to_map_cardview"
@@ -643,7 +642,7 @@
                         android:layout_centerVertical="true"
                         android:layout_marginEnd="8dp"
                         android:gravity="center_horizontal"
-                        android:src="@drawable/spread"
+                        android:src="@drawable/pandemic"
                         android:contentDescription="@string/todo" />
 
                 </RelativeLayout>

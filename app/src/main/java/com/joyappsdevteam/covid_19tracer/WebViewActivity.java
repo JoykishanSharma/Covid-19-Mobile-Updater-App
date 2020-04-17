@@ -1,23 +1,11 @@
 package com.joyappsdevteam.covid_19tracer;
 
 import android.annotation.SuppressLint;
-import android.annotation.TargetApi;
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.webkit.WebResourceError;
-import android.webkit.WebResourceRequest;
-import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.ProgressBar;
-import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-
-import java.util.Objects;
 
 public class WebViewActivity extends AppCompatActivity {
 
@@ -42,12 +30,12 @@ public class WebViewActivity extends AppCompatActivity {
             url = null;
         }
 
-        startWebview(url);
+        startWebView(url);
 
     }
 
     @SuppressLint("SetJavaScriptEnabled")
-    private void startWebview(String url) {
+    private void startWebView(String url) {
 
         webView.setWebViewClient(new WebViewClient(){
             ProgressDialog progressDialog;
