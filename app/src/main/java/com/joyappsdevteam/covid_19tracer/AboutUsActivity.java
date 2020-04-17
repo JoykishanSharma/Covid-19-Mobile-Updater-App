@@ -3,6 +3,7 @@ package com.joyappsdevteam.covid_19tracer;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,6 +17,14 @@ public class AboutUsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_about_us);
 
         TextView email_developer = findViewById(R.id.email_developer);
+        ImageView back_button = findViewById(R.id.back_arrow8);
+
+        back_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         //Email the Developer using Intent
         email_developer.setOnClickListener(new View.OnClickListener() {

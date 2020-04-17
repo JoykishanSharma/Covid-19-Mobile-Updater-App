@@ -83,7 +83,7 @@ public class PhoneVerificationActivity extends AppCompatActivity {
                                 ContextCompat.checkSelfPermission(getApplicationContext(),
                                 Manifest.permission.INTERNET)
                                 == PackageManager.PERMISSION_GRANTED) {
-                            Toast.makeText(PhoneVerificationActivity.this, "You have already granted this permission!", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(PhoneVerificationActivity.this, "You have already granted this permission!", Toast.LENGTH_SHORT).show();
 
 
                             //check registration and send OTP
@@ -188,7 +188,7 @@ public class PhoneVerificationActivity extends AppCompatActivity {
         if (requestCode == MULTIPLE_PERMISSION_CODE)  {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED &&
                     grantResults[1] == PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(this, "Permission GRANTED", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, "Permission GRANTED", Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(this, "Permission DENIED", Toast.LENGTH_SHORT).show();
             }
