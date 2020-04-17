@@ -5,7 +5,6 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
-
 import android.Manifest;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -276,7 +275,7 @@ public class HomeActivity extends AppCompatActivity {
                         }
 
                         if (state.equals(currentState)){
-                            your_state_name.setText(currentState.toUpperCase());
+                            your_state_name.setText(toTitleCase(currentState));
                             last_update_state_level.setText("Last Update : " + lastUpdatedTime);
                             confirm_cases_state_level.setText(confirmedCases);
                             recover_cases_state_level.setText(recoveredCases);

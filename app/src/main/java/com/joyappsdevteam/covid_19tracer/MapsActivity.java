@@ -1,12 +1,18 @@
 package com.joyappsdevteam.covid_19tracer;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.ProgressDialog;
+import android.content.ActivityNotFoundException;
+import android.content.ComponentName;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.webkit.WebResourceError;
@@ -63,14 +69,46 @@ public class MapsActivity extends AppCompatActivity {
 
         WebSettings settings = webView.getSettings();
         settings.setDomStorageEnabled(true);
+        settings.setAllowContentAccess(true);
+        settings.setUseWideViewPort(true);
         settings.setJavaScriptEnabled(true);// enable javascript
+        settings.setLoadWithOverviewMode(true);
+        settings.setBuiltInZoomControls(true);
+
+        if(Build.VERSION.SDK_INT <= Build.VERSION_CODES.N) {
+            new AlertDialog.Builder(this)
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .setTitle("Open Chrome")
+                    .setMessage("Press OK to open in Chrome Browser.")
+                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            String url = "https://www.covid19india.org/";
+                            try {
+                                Intent i = new Intent("android.intent.action.MAIN");
+                                i.setComponent(ComponentName.unflattenFromString("com.android.chrome/com.android.chrome.Main"));
+                                i.addCategory("android.intent.category.LAUNCHER");
+                                i.setData(Uri.parse(url));
+                                startActivity(i);
+                            }
+                            catch(ActivityNotFoundException e) {
+                                // Chrome is not installed
+                                e.printStackTrace();
+                                Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                                startActivity(i);
+                            }
+                        }
+                    })
+                    .setNegativeButton("Cancel", null)
+                    .show();
+        }
 
         webView.setWebViewClient(new WebViewClient() {
             @Override
             public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
                 Toast.makeText(MapsActivity.this, "Oh no! " + description, Toast.LENGTH_SHORT).show();
             }
-            @TargetApi(android.os.Build.VERSION_CODES.M)
+            @TargetApi(android.os.Build.VERSION_CODES.N)
             @Override
             public void onReceivedError(WebView view, WebResourceRequest req, WebResourceError rerr) {
                 // Redirect to deprecated method, so you can use it in all SDK versions

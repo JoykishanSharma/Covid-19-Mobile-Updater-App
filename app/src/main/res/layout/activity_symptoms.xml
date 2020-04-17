@@ -28,7 +28,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginEnd="40dp"
-            android:fontFamily="@font/roboto_bold"
+            android:fontFamily="@font/cherry_swash"
+            android:textStyle="bold"
             android:gravity="center_horizontal"
             android:text="Symptoms"
             android:textColor="#FFFF"
@@ -171,6 +172,7 @@
                         android:layout_gravity="center"
                         android:layout_marginStart="16dp"
                         android:gravity="center"
+                        android:fontFamily="@font/cherry_swash"
                         android:text="The symptoms may appear 2-14 days after exposure"
                         android:textColor="#fafafa"
                         android:textSize="14sp"
@@ -185,7 +187,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
-                android:fontFamily="@font/roboto_bold"
+                android:fontFamily="@font/cherry_swash"
+                android:textStyle="bold"
                 android:text="Main Symptoms"
                 android:textColor="#FAFAFA"
                 android:textSize="18sp" />
@@ -224,6 +227,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="8dp"
                                 android:text="Fever"
+                                android:fontFamily="@font/cherry_swash"
                                 android:textColor="#008EFF"
                                 android:textSize="16sp" />
 
@@ -235,6 +239,7 @@
                                 android:gravity="start"
                                 android:text="@string/fever_des"
                                 android:textColor="#8A8989"
+                                android:fontFamily="@font/cherry_swash"
                                 android:textSize="12sp" />
 
                             <ImageView
@@ -279,6 +284,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="8dp"
                                 android:text="Dry Cough"
+                                android:fontFamily="@font/cherry_swash"
                                 android:textColor="#008EFF"
                                 android:textSize="16sp" />
 
@@ -290,6 +296,7 @@
                                 android:gravity="start"
                                 android:text="@string/cough_des"
                                 android:textColor="#8A8989"
+                                android:fontFamily="@font/cherry_swash"
                                 android:textSize="12sp" />
 
                             <ImageView
@@ -340,6 +347,7 @@
                                 android:layout_marginBottom="8dp"
                                 android:text="@string/shortness_of_breath"
                                 android:textColor="#008EFF"
+                                android:fontFamily="@font/cherry_swash"
                                 android:textSize="16sp" />
 
                             <TextView
@@ -348,6 +356,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_below="@+id/shortnessOfBreath_title"
                                 android:gravity="start"
+                                android:fontFamily="@font/cherry_swash"
                                 android:text="@string/shortnessOfBreath_des"
                                 android:textColor="#8A8989"
                                 android:textSize="12sp" />
@@ -393,6 +402,7 @@
                                 android:layout_marginBottom="8dp"
                                 android:text="@string/aches_and_pains_symptom_name"
                                 android:textColor="#008EFF"
+                                android:fontFamily="@font/cherry_swash"
                                 android:textSize="16sp" />
 
                             <TextView
@@ -403,6 +413,7 @@
                                 android:gravity="start"
                                 android:text="@string/achesAndPains_des"
                                 android:textColor="#8A8989"
+                                android:fontFamily="@font/cherry_swash"
                                 android:textSize="12sp" />
 
                             <ImageView
@@ -430,7 +441,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
-                android:fontFamily="@font/roboto_bold"
+                android:fontFamily="@font/cherry_swash"
+                android:textStyle="bold"
                 android:text="Other Symptoms"
                 android:textColor="#FAFAFA"
                 android:textSize="18sp" />
@@ -472,6 +484,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="8dp"
                                 android:text="Headache"
+                                android:fontFamily="@font/cherry_swash"
                                 android:textColor="#008EFF"
                                 android:textSize="16sp" />
 
@@ -481,6 +494,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_below="@id/headache_title"
                                 android:gravity="start"
+                                android:fontFamily="@font/cherry_swash"
                                 android:text="@string/headache_des"
                                 android:textColor="#8A8989"
                                 android:textSize="12sp" />
@@ -527,6 +541,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="8dp"
                                 android:text="Running Nose"
+                                android:fontFamily="@font/cherry_swash"
                                 android:textColor="#008EFF"
                                 android:textSize="16sp" />
 
@@ -536,6 +551,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_below="@id/running_nose_title"
                                 android:gravity="start"
+                                android:fontFamily="@font/cherry_swash"
                                 android:text="@string/cough_des"
                                 android:textColor="#8A8989"
                                 android:textSize="12sp" />
@@ -588,6 +604,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="8dp"
                                 android:text="Diarrhea"
+                                android:fontFamily="@font/cherry_swash"
                                 android:textColor="#008EFF"
                                 android:textSize="16sp" />
 
@@ -597,6 +614,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_below="@+id/diarrhea_title"
                                 android:gravity="start"
+                                android:fontFamily="@font/cherry_swash"
                                 android:text="@string/diarrhea_des"
                                 android:textColor="#8A8989"
                                 android:textSize="12sp" />
@@ -641,6 +659,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="8dp"
                                 android:text="Sore Throat"
+                                android:fontFamily="@font/cherry_swash"
                                 android:textColor="#008EFF"
                                 android:textSize="16sp" />
 
@@ -650,6 +669,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_below="@+id/sore_throat_title"
                                 android:gravity="start"
+                                android:fontFamily="@font/cherry_swash"
                                 android:text="@string/sore_throat_des"
                                 android:textColor="#8A8989"
                                 android:textSize="12sp" />

@@ -32,7 +32,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/imageView1"
                 android:layout_marginTop="12dp"
-                android:fontFamily="@font/roboto_bold"
+                android:fontFamily="@font/cherry_swash"
+                android:textStyle="bold"
                 android:gravity="center_horizontal"
                 android:text="Hey there! What's your name?"
                 android:textColor="#FAFAFA"
@@ -52,6 +53,7 @@
                 android:autofillHints=""
                 android:drawableStart="@drawable/ic_person_black_24dp"
                 android:ems="12"
+                android:fontFamily="@font/cherry_swash"
                 android:gravity="center_horizontal"
                 android:hint="Full name"
                 android:inputType="textPersonName"
@@ -75,6 +77,7 @@
                 android:autofillHints=""
                 android:drawableStart="@drawable/ic_email_black_24dp"
                 android:ems="12"
+                android:fontFamily="@font/cherry_swash"
                 android:gravity="center_horizontal"
                 android:hint="Email address"
                 android:inputType="textEmailAddress"
@@ -96,6 +99,7 @@
                 android:layout_marginEnd="36dp"
                 android:layout_marginBottom="36dp"
                 android:gravity="start"
+                android:fontFamily="@font/cherry_swash"
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp" />
 
@@ -118,8 +122,9 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:layout_gravity="center"
-                    android:fontFamily="@font/roboto_bold"
+                    android:textStyle="bold"
                     android:text="Let's Go"
+                    android:fontFamily="@font/cherry_swash"
                     android:textColor="#fff"
                     android:textSize="18sp" />
 

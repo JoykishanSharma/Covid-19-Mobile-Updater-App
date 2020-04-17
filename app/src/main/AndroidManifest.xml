@@ -10,7 +10,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/app_logo"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -20,12 +20,15 @@
         <activity android:name=".FeelingGoodActivity" />
         <activity android:name=".FeelingBadActivity" />
         <activity android:name=".InfoActivity" />
-        <activity android:name=".WebViewWorldActivity" />
+        <activity android:name=".WebViewWorldActivity"
+            android:hardwareAccelerated="true" />
         <activity android:name=".PreventionActivity" />
         <activity android:name=".SymptomsActivity" />
         <activity android:name=".HelplineNumberActivity" />
-        <activity android:name=".MapsActivity" />
-        <activity android:name=".WebViewActivity"/>
+        <activity android:name=".MapsActivity"
+            android:hardwareAccelerated="true" />
+        <activity android:name=".WebViewActivity"
+            android:hardwareAccelerated="true" />
         <activity android:name=".AttributesActivity" />
         <activity android:name=".AboutUsActivity" />
         <activity android:name=".SettingsActivity" />
@@ -38,6 +41,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

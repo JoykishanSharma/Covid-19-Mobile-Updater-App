@@ -10,6 +10,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class HelplineNumberActivity extends AppCompatActivity implements View.OnClickListener {
@@ -18,6 +19,7 @@ public class HelplineNumberActivity extends AppCompatActivity implements View.On
             manipur,meghalaya,mizoram,nagaland,odisha,rajasthan,tamil_nadu,tripura,uttar_pradesh,
             west_bengal_no1,west_bengal_no2,andaman_and_nicobar_islands,chandigarh,call_104_union_territory
             ,delhi,jammu_and_kashmir_no1,jammu_and_kashmir_no2,ladakh;
+    ImageView back_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +30,8 @@ public class HelplineNumberActivity extends AppCompatActivity implements View.On
     }
 
     private void callNowCardViewReferencing(){
+        back_button = findViewById(R.id.back_arrow7);
+        back_button.setOnClickListener(this);
         national_helpline_01 = findViewById(R.id.national_helpline_01);
         national_helpline_01.setOnClickListener(this);
         national_helpline_02 = findViewById(R.id.national_helpline_02);
@@ -87,6 +91,10 @@ public class HelplineNumberActivity extends AppCompatActivity implements View.On
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+
+            case R.id.back_button:
+                finish();
+                break;
 
             case R.id.national_helpline_01:
                 directCall("01123978046");

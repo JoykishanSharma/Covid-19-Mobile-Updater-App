@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginEnd="40dp"
-            android:fontFamily="@font/roboto_bold"
+            android:fontFamily="@font/cherry_swash"
             android:gravity="center_horizontal"
             android:text="Preventions"
             android:textColor="#FFFF"
@@ -77,6 +77,7 @@
                         android:layout_gravity="center"
                         android:layout_marginStart="16dp"
                         android:gravity="center"
+                        android:fontFamily="@font/cherry_swash"
                         android:text="@string/prevention_des_text"
                         android:textColor="#FFFFFF"
                         android:textSize="14sp"
@@ -92,8 +93,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
-                android:fontFamily="@font/roboto_bold"
                 android:text="Preventive Steps"
+                android:textStyle="bold"
+                android:fontFamily="@font/cherry_swash"
                 android:textColor="#FAFAFA"
                 android:textSize="18sp" />
 
@@ -132,6 +134,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="8dp"
                                 android:gravity="start"
+                                android:fontFamily="@font/cherry_swash"
                                 android:text="Wash your hands frequently"
                                 android:textColor="#1F36B8"
                                 android:textSize="16sp" />
@@ -142,6 +145,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_below="@id/handwashing_title"
                                 android:gravity="start"
+                                android:fontFamily="@font/cherry_swash"
                                 android:text="@string/handwashing_text_prevention_cardview"
                                 android:textColor="#8A8989"
                                 android:textSize="12sp" />
@@ -184,6 +188,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="8dp"
                                 android:gravity="start"
+                                android:fontFamily="@font/cherry_swash"
                                 android:text="Take social distancing seriously"
                                 android:textColor="#1F36B8"
                                 android:textSize="16sp" />
@@ -197,6 +202,7 @@
                                 android:gravity="start"
                                 android:text="@string/social_distancing_text_prevention_cardview"
                                 android:textColor="#8A8989"
+                                android:fontFamily="@font/cherry_swash"
                                 android:textSize="12sp" />
 
 
@@ -248,6 +254,7 @@
                                 android:gravity="start"
                                 android:text="Cover your mouth and nose when you cough and sneeze"
                                 android:textColor="#1F36B8"
+                                android:fontFamily="@font/cherry_swash"
                                 android:textSize="16sp" />
 
                             <TextView
@@ -256,6 +263,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_below="@id/cough_and_sneeze_title"
                                 android:gravity="start"
+                                android:fontFamily="@font/cherry_swash"
                                 android:text="@string/cough_and_sneeze_text_prevention_cardview"
                                 android:textColor="#8A8989"
                                 android:textSize="12sp" />
@@ -301,6 +309,7 @@
                                 android:gravity="start"
                                 android:text="Wear facemask when getting into crowded place"
                                 android:textColor="#1F36B8"
+                                android:fontFamily="@font/cherry_swash"
                                 android:textSize="16sp" />
 
 
@@ -310,6 +319,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_below="@+id/wear_facemask_title"
                                 android:gravity="start"
+                                android:fontFamily="@font/cherry_swash"
                                 android:text="@string/wear_facemask_text_prevention_cardview"
                                 android:textColor="#8A8989"
                                 android:textSize="12sp" />
@@ -359,6 +369,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="8dp"
                                 android:gravity="start"
+                                android:fontFamily="@font/cherry_swash"
                                 android:text="Avoid touching your face"
                                 android:textColor="#1F36B8"
                                 android:textSize="16sp" />
@@ -372,6 +383,7 @@
                                 android:gravity="start"
                                 android:text="@string/dont_touch_face_text_prevention_cardview"
                                 android:textColor="#8A8989"
+                                android:fontFamily="@font/cherry_swash"
                                 android:textSize="12sp" />
 
                             <ImageView
@@ -410,6 +422,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="8dp"
                                 android:gravity="start"
+                                android:fontFamily="@font/cherry_swash"
                                 android:text="Stay Home, Stay Safe"
                                 android:textColor="#1F36B8"
                                 android:textSize="16sp" />
@@ -420,6 +433,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_below="@+id/stay_at_home_title"
                                 android:gravity="start"
+                                android:fontFamily="@font/cherry_swash"
                                 android:text="@string/stay_at_home_text_prevention_cardview"
                                 android:textColor="#8A8989"
                                 android:textSize="12sp" />
@@ -470,6 +484,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="8dp"
                                 android:gravity="start"
+                                android:fontFamily="@font/cherry_swash"
                                 android:text="Do Some Exercise"
                                 android:textColor="#1F36B8"
                                 android:textSize="16sp" />
@@ -480,6 +495,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_below="@+id/do_some_exercise_title"
                                 android:gravity="start"
+                                android:fontFamily="@font/cherry_swash"
                                 android:text="@string/do_some_exercise_text_prevention_cardview"
                                 android:textColor="#8A8989"
                                 android:textSize="12sp" />
@@ -522,6 +538,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="8dp"
                                 android:gravity="start"
+                                android:fontFamily="@font/cherry_swash"
                                 android:text="Stay hygiene, eat healthy"
                                 android:textColor="#1F36B8"
                                 android:textSize="16sp" />
@@ -532,6 +549,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_below="@+id/eat_healthy_title"
                                 android:gravity="start"
+                                android:fontFamily="@font/cherry_swash"
                                 android:text="@string/eat_healthy_text_prevention_cardview"
                                 android:textColor="#8A8989"
                                 android:textSize="12sp" />
@@ -582,6 +600,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="8dp"
                                 android:gravity="start"
+                                android:fontFamily="@font/cherry_swash"
                                 android:text="Clean and disinfect"
                                 android:textColor="#1F36B8"
                                 android:textSize="16sp" />
@@ -593,6 +612,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_below="@+id/clean_and_disinfect_title"
                                 android:gravity="start"
+                                android:fontFamily="@font/cherry_swash"
                                 android:text="@string/clean_and_disinfect_text_prevention_cardview"
                                 android:textColor="#8A8989"
                                 android:textSize="12sp" />
@@ -636,6 +656,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="8dp"
                                 android:gravity="start"
+                                android:fontFamily="@font/cherry_swash"
                                 android:text="Clean and disinfect"
                                 android:textColor="#1F36B8"
                                 android:textSize="16sp" />
@@ -647,6 +668,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_below="@+id/clean_and_disinfect_title_temp"
                                 android:gravity="start"
+                                android:fontFamily="@font/cherry_swash"
                                 android:text="@string/clean_and_disinfect_text_prevention_cardview"
                                 android:textColor="#8A8989"
                                 android:textSize="12sp" />

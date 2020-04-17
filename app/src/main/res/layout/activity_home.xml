@@ -35,6 +35,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/cherry_swash"
                         android:text="@string/hello"
                         android:textColor="#FFFFFF"
                         android:textSize="24sp" />
@@ -43,6 +44,7 @@
                         android:id="@+id/text_username"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/cherry_swash"
                         android:text="@string/your_name"
                         android:textColor="#94D4FF"
                         android:textSize="18sp" />
@@ -54,11 +56,11 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
                     android:layout_gravity="end"
                     android:layout_marginEnd="16dp"
-                    android:layout_centerVertical="true"
-                    android:src="@drawable/settings_icon"
-                    android:contentDescription="@string/todo" />
+                    android:contentDescription="@string/todo"
+                    android:src="@drawable/settings_icon" />
 
             </RelativeLayout>
 
@@ -87,15 +89,17 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/roboto_bold"
+                            android:fontFamily="@font/cherry_swash"
                             android:text="@string/update_cases"
                             android:textColor="#ff23729a"
-                            android:textSize="20sp" />
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/see_detail_map"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/cherry_swash"
                             android:gravity="end"
                             android:text="@string/see_details"
                             android:textSize="12sp" />
@@ -106,16 +110,18 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:fontFamily="@font/roboto_bold"
+                        android:fontFamily="@font/cherry_swash"
                         android:text="@string/india"
                         android:textColor="@android:color/holo_purple"
-                        android:textSize="18sp" />
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/last_update_india_textView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="12dp"
+                        android:fontFamily="@font/cherry_swash"
                         android:text="@string/last_updated_06_march_2020"
                         android:textSize="12sp" />
 
@@ -144,10 +150,11 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:fontFamily="@font/roboto_bold"
+                                android:fontFamily="@font/cherry_swash"
                                 android:text="@string/confirmed"
                                 android:textColor="@android:color/holo_red_light"
-                                android:textSize="14sp" />
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
 
                         </LinearLayout>
 
@@ -176,10 +183,11 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:fontFamily="@font/roboto_bold"
+                                android:fontFamily="@font/cherry_swash"
                                 android:text="@string/recovered"
                                 android:textColor="@android:color/holo_green_light"
-                                android:textSize="14sp" />
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
 
                         </LinearLayout>
 
@@ -207,9 +215,10 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:fontFamily="@font/roboto_bold"
+                                android:fontFamily="@font/cherry_swash"
                                 android:text="@string/dead"
-                                android:textSize="14sp" />
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
 
                         </LinearLayout>
 
@@ -229,16 +238,18 @@
                         android:id="@+id/your_state_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/roboto_bold"
+                        android:fontFamily="@font/cherry_swash"
                         android:text="@string/your_state"
                         android:textColor="@android:color/holo_purple"
-                        android:textSize="18sp" />
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/last_update_state_textView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="12dp"
+                        android:fontFamily="@font/cherry_swash"
                         android:text="@string/last_updated_06_march_2020"
                         android:textSize="12sp" />
 
@@ -267,10 +278,11 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:fontFamily="@font/roboto_bold"
+                                android:fontFamily="@font/cherry_swash"
                                 android:text="@string/confirmed"
                                 android:textColor="@android:color/holo_red_light"
-                                android:textSize="14sp" />
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
 
                         </LinearLayout>
 
@@ -299,10 +311,11 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:fontFamily="@font/roboto_bold"
+                                android:fontFamily="@font/cherry_swash"
                                 android:text="@string/recovered"
                                 android:textColor="@android:color/holo_green_light"
-                                android:textSize="14sp" />
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
 
                         </LinearLayout>
 
@@ -331,9 +344,10 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:fontFamily="@font/roboto_bold"
+                                android:fontFamily="@font/cherry_swash"
                                 android:text="@string/dead"
-                                android:textSize="14sp" />
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
 
                         </LinearLayout>
 
@@ -366,19 +380,20 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
-                        android:layout_toStartOf="@id/call_helpline_no"
                         android:layout_gravity="center_vertical"
+                        android:layout_toStartOf="@id/call_helpline_no"
                         android:orientation="vertical">
 
                         <TextView
                             android:id="@+id/state_helpline_text"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/roboto_bold"
+                            android:fontFamily="@font/cherry_swash"
                             android:gravity="start"
                             android:text="@string/helpline_numbers"
                             android:textColor="#ff23729a"
-                            android:textSize="18sp" />
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/state_helpline_number"
@@ -393,8 +408,9 @@
                             android:id="@+id/more_helpline_nos"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:gravity="end"
                             android:layout_marginStart="4dp"
+                            android:fontFamily="@font/cherry_swash"
+                            android:gravity="end"
                             android:paddingTop="8dp"
                             android:text="@string/more_helpline_no"
                             android:textSize="13sp" />
@@ -405,11 +421,12 @@
                         android:id="@+id/call_helpline_no"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="end"
-                        android:layout_centerVertical="true"
                         android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="end"
                         android:layout_marginEnd="16dp"
                         android:drawableTop="@drawable/ic_call_black_24dp"
+                        android:fontFamily="@font/cherry_swash"
                         android:gravity="center"
                         android:text="@string/call_now"
                         android:textColor="#008EFF"
@@ -429,11 +446,11 @@
                     android:id="@+id/all_symptoms"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginTop="12dp"
                     android:layout_marginStart="12dp"
-                    android:layout_marginBottom="12dp"
+                    android:layout_marginTop="12dp"
                     android:layout_marginEnd="6dp"
+                    android:layout_marginBottom="12dp"
+                    android:layout_weight="1"
                     android:clickable="true"
                     android:focusable="true"
                     app:cardCornerRadius="12dp"
@@ -449,22 +466,23 @@
                             android:id="@+id/symptom_cardview_image"
                             android:layout_width="60dp"
                             android:layout_height="60dp"
-                            android:src="@drawable/cough"
+                            android:layout_alignParentEnd="true"
                             android:layout_marginTop="16dp"
                             android:layout_marginEnd="16dp"
-                            android:layout_alignParentEnd="true"
-                            android:contentDescription="@string/todo" />
+                            android:contentDescription="@string/todo"
+                            android:src="@drawable/cough" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/roboto_bold"
-                            android:text="@string/symptoms"
                             android:layout_below="@id/symptom_cardview_image"
                             android:layout_gravity="center"
+                            android:fontFamily="@font/cherry_swash"
                             android:padding="16dp"
+                            android:text="@string/symptoms"
                             android:textColor="#ff23729a"
-                            android:textSize="16sp" />
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
 
                     </RelativeLayout>
 
@@ -474,11 +492,11 @@
                     android:id="@+id/all_preventions"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginTop="12dp"
                     android:layout_marginStart="6dp"
-                    android:layout_marginBottom="12dp"
+                    android:layout_marginTop="12dp"
                     android:layout_marginEnd="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:layout_weight="1"
                     android:clickable="true"
                     android:focusable="true"
                     app:cardCornerRadius="12dp"
@@ -494,22 +512,23 @@
                             android:id="@+id/prevention_cardview_image"
                             android:layout_width="60dp"
                             android:layout_height="60dp"
-                            android:src="@drawable/prevention"
+                            android:layout_alignParentEnd="true"
                             android:layout_marginTop="16dp"
                             android:layout_marginEnd="16dp"
-                            android:layout_alignParentEnd="true"
-                            android:contentDescription="@string/todo" />
+                            android:contentDescription="@string/todo"
+                            android:src="@drawable/prevention" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/roboto_bold"
-                            android:text="@string/prevention"
                             android:layout_below="@id/prevention_cardview_image"
                             android:layout_gravity="center"
+                            android:fontFamily="@font/cherry_swash"
                             android:padding="16dp"
+                            android:text="@string/prevention"
                             android:textColor="#ff23729a"
-                            android:textSize="16sp" />
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
 
                     </RelativeLayout>
 
@@ -628,11 +647,12 @@
                         android:layout_centerVertical="true"
                         android:layout_marginEnd="16dp"
                         android:layout_toStartOf="@+id/map_image"
-                        android:fontFamily="@font/roboto_bold"
+                        android:fontFamily="@font/cherry_swash"
                         android:gravity="start|center_vertical"
                         android:text="@string/covid_19_realtime_spreading_in_map_view"
                         android:textColor="#ff23729a"
-                        android:textSize="15sp" />
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
 
                     <ImageView
                         android:id="@+id/map_image"
@@ -641,9 +661,9 @@
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
                         android:layout_marginEnd="8dp"
+                        android:contentDescription="@string/todo"
                         android:gravity="center_horizontal"
-                        android:src="@drawable/pandemic"
-                        android:contentDescription="@string/todo" />
+                        android:src="@drawable/pandemic" />
 
                 </RelativeLayout>
 
@@ -674,11 +694,12 @@
                         android:layout_centerVertical="true"
                         android:layout_marginEnd="16dp"
                         android:layout_toStartOf="@+id/info_image"
-                        android:fontFamily="@font/roboto_bold"
+                        android:fontFamily="@font/cherry_swash"
                         android:gravity="start|center_vertical"
                         android:text="@string/everything_you_need_to_know_about_covid_19"
                         android:textColor="#ff23729a"
-                        android:textSize="15sp" />
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
 
                     <ImageView
                         android:id="@+id/info_image"
@@ -687,9 +708,9 @@
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
                         android:layout_marginEnd="8dp"
+                        android:contentDescription="@string/todo"
                         android:gravity="center_horizontal"
-                        android:src="@drawable/man"
-                        android:contentDescription="@string/todo" />
+                        android:src="@drawable/man" />
 
                 </RelativeLayout>
 
@@ -721,11 +742,12 @@
                         android:layout_centerVertical="true"
                         android:layout_marginEnd="16dp"
                         android:layout_toStartOf="@+id/news_image"
-                        android:fontFamily="@font/roboto_bold"
+                        android:fontFamily="@font/cherry_swash"
                         android:gravity="start|center_vertical"
                         android:text="@string/stay_upto_date_with_latest_news_on_covid_19"
                         android:textColor="#ff23729a"
-                        android:textSize="15sp" />
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
 
                     <ImageView
                         android:id="@+id/news_image"
@@ -734,9 +756,9 @@
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
                         android:layout_marginEnd="8dp"
+                        android:contentDescription="@string/todo"
                         android:gravity="center_horizontal"
-                        android:src="@drawable/news"
-                        android:contentDescription="@string/todo" />
+                        android:src="@drawable/news" />
 
                 </RelativeLayout>
 
@@ -747,19 +769,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:paddingStart="30dp"
-                android:background="#4E535353"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
                 android:layout_marginTop="30dp"
-                android:paddingEnd="30dp"
-                android:visibility="gone"
                 android:layout_marginBottom="30dp"
+                android:background="#4E535353"
                 android:gravity="center"
+                android:paddingStart="30dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="30dp"
+                android:paddingBottom="8dp"
                 android:text="@string/helpful_text_quoted"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="15sp"
-                android:textStyle="bold|italic" />
+                android:textStyle="bold|italic"
+                android:visibility="gone" />
 
         </LinearLayout>
 

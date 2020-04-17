@@ -3,8 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="30dp"
-    android:background="@drawable/alertdialog_symptom_detail_background"
     android:layout_marginBottom="30dp"
+    android:background="@drawable/alertdialog_symptom_detail_background"
     android:padding="16dp">
 
     <RelativeLayout
@@ -16,14 +16,15 @@
             android:id="@+id/symptoms_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_bold"
-            android:gravity="center"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/cherry_swash"
+            android:gravity="center"
             android:text="@string/fever_symptom_name"
             android:textColor="#E91E63"
-            android:textSize="22sp" />
+            android:textSize="22sp"
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/closeAlertDialog"
@@ -31,7 +32,7 @@
             android:layout_height="30dp"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="8dp"
-            android:src="@drawable/ic_close_black_24dp"/>
+            android:src="@drawable/ic_close_black_24dp" />
 
     </RelativeLayout>
 
@@ -52,8 +53,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/line_symptoms"
         android:layout_marginBottom="12dp"
-        android:paddingEnd="8dp"
-        android:paddingStart="8dp">
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -64,71 +65,76 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_centerHorizontal="true"
-                android:src="@drawable/fever_image"
-                android:layout_marginBottom="12dp"/>
+                android:layout_marginBottom="12dp"
+                android:src="@drawable/fever_image" />
 
-        <TextView
-            android:id="@+id/fever_overview"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_bold"
-            android:gravity="start"
-            android:layout_below="@id/symptom_detail_large_image"
-            android:justificationMode="inter_word"
-            android:text="@string/fever_data_overview"
-            android:textColor="#3F51B5"
-            android:textSize="14sp"
-            android:layout_marginBottom="16dp"/>
+            <TextView
+                android:id="@+id/fever_overview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/symptom_detail_large_image"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="@font/cherry_swash"
+                android:gravity="start"
+                android:justificationMode="inter_word"
+                android:text="@string/fever_data_overview"
+                android:textColor="#3F51B5"
+                android:textSize="14sp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/symptoms_what_to_look_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_bold"
-            android:gravity="center"
-            android:layout_below="@id/fever_overview"
-            android:text="What to look for ?"
-            android:textColor="#009688"
-            android:textSize="18sp"
-            android:layout_marginBottom="12dp"/>
+            <TextView
+                android:id="@+id/symptoms_what_to_look_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/fever_overview"
+                android:layout_marginBottom="12dp"
+                android:fontFamily="@font/cherry_swash"
+                android:gravity="center"
+                android:text="What to look for ?"
+                android:textColor="#009688"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/symptom_what_to_look"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_bold"
-            android:gravity="start"
-            android:layout_below="@id/symptoms_what_to_look_title"
-            android:justificationMode="inter_word"
-            android:text="@string/fever_data_what_to_look"
-            android:textColor="#3F51B5"
-            android:textSize="14sp"
-            android:layout_marginBottom="16dp"/>
+            <TextView
+                android:id="@+id/symptom_what_to_look"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/symptoms_what_to_look_title"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="@font/cherry_swash"
+                android:gravity="start"
+                android:justificationMode="inter_word"
+                android:text="@string/fever_data_what_to_look"
+                android:textColor="#3F51B5"
+                android:textSize="14sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/symptom_when_to_see_a_doctor_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_bold"
-                android:gravity="center"
                 android:layout_below="@id/symptom_what_to_look"
+                android:layout_marginBottom="12dp"
+                android:fontFamily="@font/cherry_swash"
+                android:gravity="center"
                 android:text="When to see a doctor ?"
                 android:textColor="#009688"
                 android:textSize="18sp"
-                android:layout_marginBottom="12dp"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/symptom_what_to_see_a_doctor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_bold"
-                android:gravity="start"
                 android:layout_below="@id/symptom_when_to_see_a_doctor_title"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="@font/cherry_swash"
+                android:gravity="start"
                 android:justificationMode="inter_word"
                 android:text="@string/fever_data_when_to_see_a_doctor"
                 android:textColor="#3F51B5"
                 android:textSize="14sp"
-                android:layout_marginBottom="16dp"/>
+                android:textStyle="bold" />
 
         </RelativeLayout>
 

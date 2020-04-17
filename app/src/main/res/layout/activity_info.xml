@@ -31,6 +31,7 @@
                 android:layout_marginTop="18dp"
                 android:layout_gravity="center_horizontal"
                 android:gravity="center"
+                android:fontFamily="@font/cherry_swash"
                 android:textSize="18sp"
                 android:textColor="#FFFFFF"
                 android:textStyle="italic"
@@ -44,6 +45,7 @@
                 android:layout_gravity="center_horizontal"
                 android:gravity="center"
                 android:textSize="18sp"
+                android:fontFamily="@font/cherry_swash"
                 android:textColor="#00FF0A"
                 android:textStyle="italic"
                 android:text="@string/mail_us_temporary"/>
