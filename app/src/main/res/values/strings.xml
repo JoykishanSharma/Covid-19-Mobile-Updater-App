@@ -396,7 +396,7 @@
         eating a healthy and varied diet. It can also potentially lead to an increased consumption of highly processed foods, which tend
         to be high in fats, sugars and salt. Nonetheless, even with few and limited ingredients, one can continue eating a diet that
         supports good health.</string>
-    <string name="stay_hygiene_eat_healthy_prevention_details_topic1">Tips to keep healthy</string>
+    <string name="stay_hygiene_eat_healthy_prevention_details_topic1">Tips to stay healthy</string>
     <string name="stay_hygiene_eat_healthy_prevention_details_ans1">Whether you are in quarantine or self-isolation due to COVID-19,
         you will inevitably be spending more time at home. Following general healthy living advice are the best recommendation for
         staying healthy during quarantine or self-isolation.
@@ -451,5 +451,7 @@
         constantly working. We will fix this Page very soon in the Upcoming Updates.\n\nThank you for understanding.\n\n
         <![CDATA[You can reach out to us through this mail —> ]]></string>
     <string name="mail_us_temporary"><u>joyappsdevteam@gmail.com</u></string>
+    <string name="symptom_top_cardview_text">The symptoms may appear between 2–14 days after exposure.\n\nStay home,
+        get in touch with your doctor or call helpline if you catch any symptom</string>
 
 </resources>

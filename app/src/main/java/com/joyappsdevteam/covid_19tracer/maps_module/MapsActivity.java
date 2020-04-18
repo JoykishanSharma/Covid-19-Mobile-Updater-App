@@ -76,7 +76,7 @@ public class MapsActivity extends AppCompatActivity {
         settings.setUseWideViewPort(true);
         settings.setJavaScriptEnabled(true);// enable javascript
         settings.setLoadWithOverviewMode(true);
-        settings.setBuiltInZoomControls(true);
+        settings.setBuiltInZoomControls(false);
 
         if(Build.VERSION.SDK_INT <= Build.VERSION_CODES.N) {
             new AlertDialog.Builder(this)
