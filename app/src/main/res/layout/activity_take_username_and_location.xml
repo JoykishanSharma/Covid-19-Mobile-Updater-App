@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg_view"
     android:padding="16dp"
-    tools:context=".TakeUsernameAndLocationActivity">
+    tools:context=".authentication_module.TakeUsernameAndLocationActivity">
 
     <ScrollView
         android:layout_width="match_parent"

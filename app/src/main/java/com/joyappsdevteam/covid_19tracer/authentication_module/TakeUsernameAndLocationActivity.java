@@ -1,4 +1,4 @@
-package com.joyappsdevteam.covid_19tracer;
+package com.joyappsdevteam.covid_19tracer.authentication_module;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -10,7 +10,6 @@ import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.view.WindowManager;
@@ -29,10 +28,11 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.joyappsdevteam.covid_19tracer.home_module.HomeActivity;
+import com.joyappsdevteam.covid_19tracer.R;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class TakeUsernameAndLocationActivity extends AppCompatActivity {
 
@@ -131,7 +131,7 @@ public class TakeUsernameAndLocationActivity extends AppCompatActivity {
                 } else {
                     if (isConnected()) {
                         savedUserDetail(userName,userEmail,selectedItem);
-                        startActivity(new Intent(TakeUsernameAndLocationActivity.this,HomeActivity.class));
+                        startActivity(new Intent(TakeUsernameAndLocationActivity.this, HomeActivity.class));
                     } else
                         Toast.makeText(TakeUsernameAndLocationActivity.this, "No Internet Connection", Toast.LENGTH_SHORT).show();
                 }

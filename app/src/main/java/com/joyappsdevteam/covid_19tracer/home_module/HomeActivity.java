@@ -1,4 +1,4 @@
-package com.joyappsdevteam.covid_19tracer;
+package com.joyappsdevteam.covid_19tracer.home_module;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -30,6 +30,12 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.joyappsdevteam.covid_19tracer.info_module.InfoActivity;
+import com.joyappsdevteam.covid_19tracer.maps_module.MapsActivity;
+import com.joyappsdevteam.covid_19tracer.news_module.NewsActivity;
+import com.joyappsdevteam.covid_19tracer.R;
+import com.joyappsdevteam.covid_19tracer.maps_module.WebViewWorldActivity;
+import com.joyappsdevteam.covid_19tracer.settings_module.SettingsActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -220,7 +226,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //open settings activity
-                startActivity(new Intent(HomeActivity.this,SettingsActivity.class));
+                startActivity(new Intent(HomeActivity.this, SettingsActivity.class));
 
                 //terms and conditions
                 //privacy policies

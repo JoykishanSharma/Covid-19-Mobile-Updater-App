@@ -1,4 +1,4 @@
-package com.joyappsdevteam.covid_19tracer;
+package com.joyappsdevteam.covid_19tracer.settings_module;
 
 import android.content.Context;
 import android.content.Intent;
@@ -28,6 +28,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.joyappsdevteam.covid_19tracer.R;
+import com.joyappsdevteam.covid_19tracer.authentication_module.UserDetails;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -188,7 +190,7 @@ public class SettingsActivity extends AppCompatActivity {
         aboutUs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SettingsActivity.this,AboutUsActivity.class));
+                startActivity(new Intent(SettingsActivity.this, AboutUsActivity.class));
             }
         });
 

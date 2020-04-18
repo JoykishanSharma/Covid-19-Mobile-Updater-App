@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_view"
-    tools:context=".PreventionActivity">
+    tools:context=".home_module.PreventionActivity">
 
     <LinearLayout
         android:id="@+id/preventions_title"

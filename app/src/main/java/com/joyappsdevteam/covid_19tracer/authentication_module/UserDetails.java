@@ -1,4 +1,4 @@
-package com.joyappsdevteam.covid_19tracer;
+package com.joyappsdevteam.covid_19tracer.authentication_module;
 
 public class UserDetails {
 
@@ -7,7 +7,7 @@ public class UserDetails {
     private String location;
     private String mobile;
 
-    UserDetails() {
+    public UserDetails() {
     }
 
     public String getName() {

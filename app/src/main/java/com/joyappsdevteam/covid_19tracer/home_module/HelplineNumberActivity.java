@@ -1,4 +1,4 @@
-package com.joyappsdevteam.covid_19tracer;
+package com.joyappsdevteam.covid_19tracer.home_module;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +12,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.joyappsdevteam.covid_19tracer.R;
 
 public class HelplineNumberActivity extends AppCompatActivity implements View.OnClickListener {
 

@@ -1,4 +1,4 @@
-package com.joyappsdevteam.covid_19tracer;
+package com.joyappsdevteam.covid_19tracer.info_module;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,8 +10,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import org.w3c.dom.Text;
+import com.joyappsdevteam.covid_19tracer.R;
+import com.joyappsdevteam.covid_19tracer.home_module.HomeActivity;
+import com.joyappsdevteam.covid_19tracer.maps_module.MapsActivity;
+import com.joyappsdevteam.covid_19tracer.news_module.NewsActivity;
 
 public class InfoActivity extends AppCompatActivity {
 
@@ -32,12 +34,12 @@ public class InfoActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.home:
-                        startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+                        startActivity(new Intent(getApplicationContext(), HomeActivity.class));
                         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                         return true;
 
                     case R.id.map:
-                        startActivity(new Intent(getApplicationContext(),MapsActivity.class));
+                        startActivity(new Intent(getApplicationContext(), MapsActivity.class));
                         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                         return true;
 
@@ -45,7 +47,7 @@ public class InfoActivity extends AppCompatActivity {
                         return true;
 
                     case R.id.news:
-                        startActivity(new Intent(getApplicationContext(),NewsActivity.class));
+                        startActivity(new Intent(getApplicationContext(), NewsActivity.class));
                         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                         return true;
                 }

@@ -1,4 +1,4 @@
-package com.joyappsdevteam.covid_19tracer;
+package com.joyappsdevteam.covid_19tracer.home_module;
 
 import android.app.Dialog;
 import android.graphics.Color;
@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+
+import com.joyappsdevteam.covid_19tracer.R;
 
 import java.util.Objects;
 

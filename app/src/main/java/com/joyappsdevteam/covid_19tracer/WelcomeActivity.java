@@ -7,6 +7,10 @@ import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.joyappsdevteam.covid_19tracer.authentication_module.PhoneVerificationActivity;
+import com.joyappsdevteam.covid_19tracer.authentication_module.TakeUsernameAndLocationActivity;
+import com.joyappsdevteam.covid_19tracer.home_module.HomeActivity;
+
 public class WelcomeActivity extends AppCompatActivity {
 
     private Handler mWaitHandler = new Handler();
@@ -38,17 +42,17 @@ public class WelcomeActivity extends AppCompatActivity {
 
 
                     if (isPhoneVerificationComplete && IsUserDetailsSaved){
-                        Intent intent = new Intent(WelcomeActivity.this,HomeActivity.class);
+                        Intent intent = new Intent(WelcomeActivity.this, HomeActivity.class);
                         startActivity(intent);
                         overridePendingTransition(R.anim.custom_slide_in_right,R.anim.custom_slide_out_left);
                     }
                     else if(isPhoneVerificationComplete && !IsUserDetailsSaved){
-                        Intent intent = new Intent(WelcomeActivity.this,TakeUsernameAndLocationActivity.class);
+                        Intent intent = new Intent(WelcomeActivity.this, TakeUsernameAndLocationActivity.class);
                         startActivity(intent);
                         overridePendingTransition(R.anim.custom_slide_in_right,R.anim.custom_slide_out_left);
                     }
                     else {
-                        Intent intent = new Intent(WelcomeActivity.this,PhoneVerificationActivity.class);
+                        Intent intent = new Intent(WelcomeActivity.this, PhoneVerificationActivity.class);
                         startActivity(intent);
                         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                     }

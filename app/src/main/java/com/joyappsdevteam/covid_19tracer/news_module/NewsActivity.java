@@ -1,4 +1,4 @@
-package com.joyappsdevteam.covid_19tracer;
+package com.joyappsdevteam.covid_19tracer.news_module;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +11,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.joyappsdevteam.covid_19tracer.info_module.InfoActivity;
+import com.joyappsdevteam.covid_19tracer.R;
+import com.joyappsdevteam.covid_19tracer.home_module.HomeActivity;
+import com.joyappsdevteam.covid_19tracer.maps_module.MapsActivity;
 
 public class NewsActivity extends AppCompatActivity {
 
@@ -31,17 +35,17 @@ public class NewsActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.home:
-                        startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+                        startActivity(new Intent(getApplicationContext(), HomeActivity.class));
                         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                         return true;
 
                     case R.id.map:
-                        startActivity(new Intent(getApplicationContext(),MapsActivity.class));
+                        startActivity(new Intent(getApplicationContext(), MapsActivity.class));
                         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                         return true;
 
                     case R.id.info:
-                        startActivity(new Intent(getApplicationContext(),InfoActivity.class));
+                        startActivity(new Intent(getApplicationContext(), InfoActivity.class));
                         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                         return true;
 

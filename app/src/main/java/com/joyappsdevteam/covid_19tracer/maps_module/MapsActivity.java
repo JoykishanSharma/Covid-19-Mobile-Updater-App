@@ -1,7 +1,6 @@
-package com.joyappsdevteam.covid_19tracer;
+package com.joyappsdevteam.covid_19tracer.maps_module;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
@@ -22,6 +21,10 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.joyappsdevteam.covid_19tracer.info_module.InfoActivity;
+import com.joyappsdevteam.covid_19tracer.news_module.NewsActivity;
+import com.joyappsdevteam.covid_19tracer.R;
+import com.joyappsdevteam.covid_19tracer.home_module.HomeActivity;
 
 public class MapsActivity extends AppCompatActivity {
 
@@ -46,7 +49,7 @@ public class MapsActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.home:
-                        startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+                        startActivity(new Intent(getApplicationContext(), HomeActivity.class));
                         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                         return true;
 
@@ -54,12 +57,12 @@ public class MapsActivity extends AppCompatActivity {
                         return true;
 
                     case R.id.info:
-                        startActivity(new Intent(getApplicationContext(),InfoActivity.class));
+                        startActivity(new Intent(getApplicationContext(), InfoActivity.class));
                         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                         return true;
 
                     case R.id.news:
-                        startActivity(new Intent(getApplicationContext(),NewsActivity.class));
+                        startActivity(new Intent(getApplicationContext(), NewsActivity.class));
                         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                         return true;
                 }

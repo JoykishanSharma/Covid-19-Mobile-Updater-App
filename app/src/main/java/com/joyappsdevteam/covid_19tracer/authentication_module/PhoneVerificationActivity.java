@@ -1,4 +1,4 @@
-package com.joyappsdevteam.covid_19tracer;
+package com.joyappsdevteam.covid_19tracer.authentication_module;
 
 import android.Manifest;
 import androidx.appcompat.app.AlertDialog;
@@ -14,7 +14,6 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -33,8 +32,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.joyappsdevteam.covid_19tracer.R;
 
-import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
 public class PhoneVerificationActivity extends AppCompatActivity {

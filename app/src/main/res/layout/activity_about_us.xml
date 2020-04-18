@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_view"
-    tools:context=".AboutUsActivity">
+    tools:context=".settings_module.AboutUsActivity">
 
     <ImageView
         android:id="@+id/back_arrow8"

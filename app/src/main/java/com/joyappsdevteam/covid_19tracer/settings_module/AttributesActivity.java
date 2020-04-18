@@ -1,37 +1,39 @@
-package com.joyappsdevteam.covid_19tracer;
+package com.joyappsdevteam.covid_19tracer.settings_module;
 
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.ImageView;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-public class WebViewActivity extends AppCompatActivity {
+import com.joyappsdevteam.covid_19tracer.R;
+
+public class AttributesActivity extends AppCompatActivity {
 
     private WebView webView;
-    private String url;
 
-    @SuppressLint("SetJavaScriptEnabled")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_web_view);
+        setContentView(R.layout.activity_attributes);
 
-        webView = findViewById(R.id.policy_terms_webView);
+        ImageView back_arrow6 = findViewById(R.id.back_arrow6);
+        webView = findViewById(R.id.attributes_webView);
 
-        String contentToView = getIntent().getStringExtra("content_to_show");
+        String url = "https://drive.google.com/file/d/1yHo_1BIfpOch4NluogmD-XRa9_6Ls9sN/view?usp=sharing";
 
-        if (contentToView.equals("privacy_policy")){
-            url = "https://drive.google.com/file/d/1d6gE7nDblE25AV-0yjB5OW6W0OF-VY0q/view?usp=sharing";
-        }else if (contentToView.equals("terms_and_conditions")){
-            url = "https://drive.google.com/file/d/14sQNmZLyVBBCB0MMr37Ms1PBOj5Nup-7/view?usp=sharing";
-        }else {
-            url = null;
-        }
+        back_arrow6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         startWebView(url);
-
     }
 
     @SuppressLint("SetJavaScriptEnabled")
@@ -47,7 +49,7 @@ public class WebViewActivity extends AppCompatActivity {
 
             public void onLoadResource (WebView view,String url){
                 if(progressDialog == null){
-                    progressDialog = new ProgressDialog(WebViewActivity.this);
+                    progressDialog = new ProgressDialog(AttributesActivity.this);
                     progressDialog.setMessage("Loading...");
                     progressDialog.show();
                 }
@@ -76,4 +78,5 @@ public class WebViewActivity extends AppCompatActivity {
         //Load url in webview
         webView.loadUrl(url);
     }
+
 }
