@@ -17,6 +17,8 @@
         android:theme="@style/AppTheme">
 
         <activity android:name=".news_module.NewsActivity" />
+        <activity android:name=".news_module.NewsDetailActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".FeelingGoodActivity" />
         <activity android:name=".FeelingBadActivity" />
         <activity android:name=".info_module.InfoActivity" />

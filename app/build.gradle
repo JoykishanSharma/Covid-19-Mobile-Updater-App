@@ -49,4 +49,22 @@ dependencies {
     implementation 'com.android.volley:volley:1.1.1'
     implementation "androidx.gridlayout:gridlayout:1.0.0"
 
+    implementation "androidx.coordinatorlayout:coordinatorlayout:1.1.0"
+    implementation "androidx.recyclerview:recyclerview:1.1.0"
+    implementation "com.google.android.material:material:1.2.0-alpha06"
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
+
+    //Image
+    implementation 'com.github.bumptech.glide:glide:4.7.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
+
+    //Network
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.2.0'
+
+    //Times Formater
+    implementation 'org.ocpsoft.prettytime:prettytime:4.0.1.Final'
+
+
 }
