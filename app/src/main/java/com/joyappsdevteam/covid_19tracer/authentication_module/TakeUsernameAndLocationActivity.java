@@ -17,12 +17,10 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatSpinner;
 import androidx.cardview.widget.CardView;
-
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -30,12 +28,12 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.joyappsdevteam.covid_19tracer.home_module.HomeActivity;
 import com.joyappsdevteam.covid_19tracer.R;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class TakeUsernameAndLocationActivity extends AppCompatActivity {
 
+    //Variable Declaration
     private AppCompatSpinner spinner;
     private EditText regName,regEmail;
     private CardView lets_go_cardView;
@@ -50,11 +48,13 @@ public class TakeUsernameAndLocationActivity extends AppCompatActivity {
         //hide keyboard
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
+        //Attaching variables with xml "activity_take_username_and_location.xml" views
         spinner = findViewById(R.id.spinner);
         regName = findViewById(R.id.reg_name);
         regEmail = findViewById(R.id.reg_email);
         lets_go_cardView = findViewById(R.id.lets_go_cardView);
 
+        //Creating A ArrayList of type String to store the names of Indian State and Union Territories
         List<String> categories = new ArrayList<>();
         categories.add(0,"Select your state");
         categories.add("Andhra Pradesh");
@@ -95,7 +95,7 @@ public class TakeUsernameAndLocationActivity extends AppCompatActivity {
         categories.add("Lakshadweep");
         categories.add("Puducherry");
 
-        //Style and populate spinner
+        //Creating ArrayAdapter for given ArrayList with each item having the attributes of "spinner_item.xml"
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(this,R.layout.spinner_item,categories);
 
         //Dropdown layout style
@@ -107,7 +107,9 @@ public class TakeUsernameAndLocationActivity extends AppCompatActivity {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    selectedItem = parent.getItemAtPosition(position).toString();
+
+                //taking selected item name to "selectedItem" variable
+                selectedItem = parent.getItemAtPosition(position).toString();
             }
 
             @Override
@@ -116,21 +118,33 @@ public class TakeUsernameAndLocationActivity extends AppCompatActivity {
             }
         });
 
+        //setting up onClickListener on the Let's Go CardView
         lets_go_cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                //retrieving typed Username and Email Address from editText to a String variables
                 String userName = regName.getText().toString().trim();
                 String userEmail = regEmail.getText().toString().trim();
 
+                //Checking if the Email Address is empty or not
                 if (TextUtils.isEmpty(userName)) {
                     regName.setError("empty");
-                } else if (TextUtils.isEmpty(userEmail) || !Patterns.EMAIL_ADDRESS.matcher(userEmail).matches()) {
+                }
+                //Checking if the Email Address is empty or not OR Email Address is a proper mail address or not
+                else if (TextUtils.isEmpty(userEmail) || !Patterns.EMAIL_ADDRESS.matcher(userEmail).matches()) {
                     regEmail.setError("Invalid Email Address");
-                }else if (selectedItem.equals("Select your state")) {
+                }
+
+                else if (selectedItem.equals("Select your state")) {
                     Toast.makeText(TakeUsernameAndLocationActivity.this,"Select your location",Toast.LENGTH_SHORT).show();
                 } else {
+                    //Checking if the App is connected to internet of not
                     if (isConnected()) {
+                        //We Save the Username, Email Address and User Location(current state) for displaying it in Settings module
                         savedUserDetail(userName,userEmail,selectedItem);
+
+                        //starting "HomeActivity" using implicit Intent
                         startActivity(new Intent(TakeUsernameAndLocationActivity.this, HomeActivity.class));
                     } else
                         Toast.makeText(TakeUsernameAndLocationActivity.this, "No Internet Connection", Toast.LENGTH_SHORT).show();
@@ -140,26 +154,40 @@ public class TakeUsernameAndLocationActivity extends AppCompatActivity {
 
     }
 
+    //This Method checks the Connectivity state of app in real-time
+    //For more details, Go to https://developer.android.com/reference/android/net/ConnectivityManager
     private boolean isConnected() {
-
+        //here "cm" object is pointing to the Connective service of the phone
         ConnectivityManager cm = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        //checks if "cm" is null or not.
+        //if "cm" is null, this method will terminate and continue with outer methods
+        //else continue as it is.
         assert cm != null;
+
+        //here "netinfo" store the information about the active Connected Network.
         NetworkInfo netinfo = cm.getActiveNetworkInfo();
 
+        //checks if "netinfo" is null or not and also Checks the state of connectivity
         if (netinfo != null && netinfo.isConnectedOrConnecting()) {
+
+            //determines and checks for type of connectivity from where the network is stable
             android.net.NetworkInfo wifi = cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
             android.net.NetworkInfo mobile = cm.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
 
-            return (mobile != null && mobile.isConnectedOrConnecting()) || (wifi != null && wifi.isConnectedOrConnecting()); // is equal true
+            //returns true if connection is available and false if connection is not available
+            return (mobile != null && mobile.isConnectedOrConnecting()) || (wifi != null && wifi.isConnectedOrConnecting());
         } else
             return false;
     }
 
     private void savedUserDetail(String name, String email, String location) {
 
+        //Retrieving the values from SharedPreference objects.
         SharedPreferences sharedPreferences = getSharedPreferences("phoneVerified", MODE_PRIVATE);
         final String mobileNo = sharedPreferences.getString("mobile_no",null);
 
+        //Storing data in App directory using SharedPreference
         SharedPreferences sp = getSharedPreferences("UserDetails", MODE_PRIVATE);
         SharedPreferences.Editor et = sp.edit();
         et.putBoolean("user_details", true);
@@ -168,7 +196,7 @@ public class TakeUsernameAndLocationActivity extends AppCompatActivity {
         et.putString("location",location);
         et.apply();
 
-        //creating UserDetails Object
+        //creating UserDetails Object and putting values into it
         userDetails = new UserDetails();
         userDetails.setName(name);
         userDetails.setEmail(email);
@@ -180,6 +208,7 @@ public class TakeUsernameAndLocationActivity extends AppCompatActivity {
         availReff.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                //"userDetails" object is pushed of stored into firebase database
                  availReff.push().setValue(userDetails);
             }
 

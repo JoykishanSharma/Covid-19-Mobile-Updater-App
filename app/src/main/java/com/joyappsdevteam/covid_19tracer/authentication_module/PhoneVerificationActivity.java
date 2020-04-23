@@ -56,7 +56,7 @@ public class PhoneVerificationActivity extends AppCompatActivity {
         //Hide Keyboard
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
-        //Attaching variables with xml "phone_verify_activity" views
+        //Attaching variables with xml "phone_verify_activity.xml" views
         reg_mobile_no_editText = findViewById(R.id.reg_phone);
         reg_send_otp = findViewById(R.id.send_otp_cardView);
         resend_otp = findViewById(R.id.resend_otp);
