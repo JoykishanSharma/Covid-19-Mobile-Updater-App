@@ -17,7 +17,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.joyappsdevteam.covid_19tracer.info_module.InfoActivity;
 import com.joyappsdevteam.covid_19tracer.R;
@@ -27,10 +26,8 @@ import com.joyappsdevteam.covid_19tracer.news_module.api.ApiClient;
 import com.joyappsdevteam.covid_19tracer.news_module.api.ApiInterface;
 import com.joyappsdevteam.covid_19tracer.news_module.models.Article;
 import com.joyappsdevteam.covid_19tracer.news_module.models.News;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
