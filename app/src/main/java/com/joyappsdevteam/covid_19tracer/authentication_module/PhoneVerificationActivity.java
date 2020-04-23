@@ -244,7 +244,9 @@ public class PhoneVerificationActivity extends AppCompatActivity {
 
 
     private void sendVerificationCode(String reg_mobile_no) {
-        //
+        //PhoneAuthProvider is a Class which represents phone number authentication mechanism.
+        //here we are using this "PhoneAuthProvider" class to send OTP to the given Mobile Number
+        //This task is performed on MAIN THREAD to get instant result.
         PhoneAuthProvider.getInstance().verifyPhoneNumber(
                 "+91" + reg_mobile_no,
                 60,
@@ -253,6 +255,8 @@ public class PhoneVerificationActivity extends AppCompatActivity {
                 mCallBack);
     }
 
+    // mCallBack is a Object of "PhoneAuthProvider.OnVerificationStateChangedCallbacks" abstract class
+    // it has three abstract methods
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallBack
             = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
         @Override
@@ -267,7 +271,7 @@ public class PhoneVerificationActivity extends AppCompatActivity {
 
             String code = phoneAuthCredential.getSmsCode();
             if (code != null) {
-
+                //Calling this method to verify the code typed by User (which he/she got from SMS)
                 verifyCode(code);
             }
         }
@@ -280,8 +284,9 @@ public class PhoneVerificationActivity extends AppCompatActivity {
     };
 
     private void verifyCode(String codeByUser) {
-
+        //"PhoneAuthCredential" class, object credential, wraps phone number and verification information for authentication purposes.
         PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationCodeBySystem, codeByUser);
+        //This method takes "credential" as parameter and checks if the data inside "credential" object is correct or not.
         signInTheUserByCredentials(credential);
         otp_verification_EditText.setText("******");
 
@@ -289,34 +294,60 @@ public class PhoneVerificationActivity extends AppCompatActivity {
 
     private void signInTheUserByCredentials(PhoneAuthCredential credential) {
 
+        //To check if the data inside "credential" object is correct or not.
+        //We take help from "FirebaseAuth" Class and pass that "credential" into it as parameter
+        //It Checks this data and adds them into Authorized User List.
         FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
         firebaseAuth.signInWithCredential(credential)
                 .addOnCompleteListener(PhoneVerificationActivity.this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+                        //if All the Checking verification and Authentication task is successful, this code will execute
                         if (task.isSuccessful()) {
+
+                            //We Save the User Phone no. for displaying it in Settings module
                             savedVerifyState(userPhoneNumber);
+
+                            //making progress bar Invisible to User
                             progress_circular.setVisibility(View.INVISIBLE);
+
+                            //starting "TakeUsernameAndLocationActivity" using implicit Intent
                             startActivity(new Intent(PhoneVerificationActivity.this, TakeUsernameAndLocationActivity.class));
                         } else {
+                            //if All the Checking verification and Authentication task is Unsuccessful, this code will execute
+
+                            //Setting "verificationError" to true
                             verificationError = true;
+
+                            //Showing Toast message, briefly explaining what went wrong.
                             Toast.makeText(PhoneVerificationActivity.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
                         }
                     }
                 });
-
     }
 
+    //This Method checks the Connectivity state of app in real-time
+    //For more details, Go to https://developer.android.com/reference/android/net/ConnectivityManager
     private boolean isConnected() {
-
+        //here "cm" object is pointing to the Connective service of the phone
         ConnectivityManager cm = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        //checks if "cm" is null or not.
+        //if "cm" is null, this method will terminate and continue with outer methods
+        //else continue as it is.
         assert cm != null;
+
+        //here "netinfo" store the information about the active Connected Network.
         NetworkInfo netinfo = cm.getActiveNetworkInfo();
 
+        //checks if "netinfo" is null or not and also Checks the state of connectivity
         if (netinfo != null && netinfo.isConnectedOrConnecting()) {
+
+            //determines and checks for type of connectivity from where the network is stable
             android.net.NetworkInfo wifi = cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
             android.net.NetworkInfo mobile = cm.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
 
+            //returns true if connection is available and false if connection is not available
             return (mobile != null && mobile.isConnectedOrConnecting()) || (wifi != null && wifi.isConnectedOrConnecting());
         } else
             return false;
