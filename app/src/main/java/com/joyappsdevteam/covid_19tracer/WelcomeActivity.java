@@ -13,6 +13,8 @@ import com.joyappsdevteam.covid_19tracer.home_module.HomeActivity;
 
 public class WelcomeActivity extends AppCompatActivity {
 
+    //A handle class mainly deal with the task which need to be executed on a single thread
+    //For more Detail, Go to https://developer.android.com/reference/android/os/Handler
     private Handler mWaitHandler = new Handler();
 
     @Override
@@ -29,21 +31,23 @@ public class WelcomeActivity extends AppCompatActivity {
             @Override
             public void run() {
 
-                //The following code will execute after the 5 seconds.
+                //The following code will execute after the 2 seconds.
                 try {
 
-                    //Go to next page i.e, start the next activity.
+                    //Retrieving the values from SharedPreference objects.
                     SharedPreferences sharedPreferences = getSharedPreferences("phoneVerified", MODE_PRIVATE);
                     boolean isPhoneVerificationComplete = sharedPreferences.getBoolean("phoneVerifiedComplete", false);
 
-                    //Go to next page i.e, start the next activity.
                     SharedPreferences sharedPref = getSharedPreferences("UserDetails", MODE_PRIVATE);
                     boolean IsUserDetailsSaved = sharedPref.getBoolean("user_details", false);
 
-
+                    //Checking if PhoneVerification is Done and User Details is also taken from user or not or Vice Versa
                     if (isPhoneVerificationComplete && IsUserDetailsSaved){
                         Intent intent = new Intent(WelcomeActivity.this, HomeActivity.class);
                         startActivity(intent);
+
+                        //This is Optional
+                        //This is a small piece of code to give a animation affect when moving from one Activity to another
                         overridePendingTransition(R.anim.custom_slide_in_right,R.anim.custom_slide_out_left);
                     }
                     else if(isPhoneVerificationComplete && !IsUserDetailsSaved){

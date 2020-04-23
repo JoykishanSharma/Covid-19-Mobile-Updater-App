@@ -242,7 +242,6 @@ public class PhoneVerificationActivity extends AppCompatActivity {
         }
     }
 
-
     private void sendVerificationCode(String reg_mobile_no) {
         //PhoneAuthProvider is a Class which represents phone number authentication mechanism.
         //here we are using this "PhoneAuthProvider" class to send OTP to the given Mobile Number
@@ -396,4 +395,3 @@ public class PhoneVerificationActivity extends AppCompatActivity {
         finish();
     }
 }
-
