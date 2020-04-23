@@ -354,6 +354,9 @@ public class PhoneVerificationActivity extends AppCompatActivity {
     }
 
     private void savedVerifyState(String UserNumber) {
+        //Saving the Phone Number and Verification State of User in the App only (for other Module reference)
+        //SharedPreference saves or stores small size data in the App directory permanently
+        // unless the App is Uninstalled or App Data is erased from Android Phone Settings
         SharedPreferences sp = getSharedPreferences("phoneVerified", MODE_PRIVATE);
         SharedPreferences.Editor et = sp.edit();
         et.putBoolean("phoneVerifiedComplete", true);
@@ -363,6 +366,7 @@ public class PhoneVerificationActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+        //when the User presses Back Button, this Code is executed.
         new AlertDialog.Builder(PhoneVerificationActivity.this)
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .setTitle("Exit Application")
@@ -370,7 +374,9 @@ public class PhoneVerificationActivity extends AppCompatActivity {
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+                        //Closing the App and Ends all foreground and background task
                         endTask();
+                        //destroys the instance of the App Activity from Android temporarily to save memory space
                         onDestroy();
                     }
                 })
