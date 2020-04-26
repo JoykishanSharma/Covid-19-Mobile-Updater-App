@@ -534,13 +534,22 @@
 
                 </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
 
-                <!--<com.google.android.material.circularreveal.cardview.CircularRevealCardView
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
                     android:id="@+id/all_nearby_covid19_hospital"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_rowWeight="1"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="12dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="6dp"
+                    android:layout_marginBottom="12dp"
                     android:clickable="true"
                     android:focusable="true"
                     app:cardCornerRadius="12dp"
@@ -565,7 +574,8 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/roboto_bold"
+                            android:fontFamily="@font/cherry_swash"
+                            android:textStyle="bold"
                             android:text="@string/hospitals"
                             android:layout_below="@id/hospital_cardview_image"
                             android:layout_gravity="center"
@@ -579,11 +589,13 @@
 
                 <com.google.android.material.circularreveal.cardview.CircularRevealCardView
                     android:id="@+id/report_patient"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_rowWeight="1"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="12dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:layout_weight="1"
                     android:clickable="true"
                     android:focusable="true"
                     app:cardCornerRadius="12dp"
@@ -608,8 +620,9 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/roboto_bold"
-                            android:text="@string/report"
+                            android:fontFamily="@font/cherry_swash"
+                            android:textStyle="bold"
+                            android:text="@string/report_suspicion"
                             android:layout_below="@id/report_cardview_image"
                             android:layout_gravity="center"
                             android:padding="16dp"
@@ -618,7 +631,7 @@
 
                     </RelativeLayout>
 
-                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>-->
+                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
 
             </LinearLayout>
 
@@ -780,8 +793,7 @@
                 android:text="@string/helpful_text_quoted"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="15sp"
-                android:textStyle="bold|italic"
-                android:visibility="gone" />
+                android:textStyle="bold|italic" />
 
         </LinearLayout>
 

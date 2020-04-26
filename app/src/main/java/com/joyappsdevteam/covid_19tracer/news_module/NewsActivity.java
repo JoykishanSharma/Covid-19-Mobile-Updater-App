@@ -34,9 +34,9 @@ import retrofit2.Response;
 
 public class NewsActivity extends AppCompatActivity implements  SwipeRefreshLayout.OnRefreshListener{
 
-    //API KEY --  149d5555e79142409fba8d001d624b9e
+    //API KEY -- your_api_key_here
 
-    public static final String API_KEY = "your_api_key_here";
+    public static final String API_KEY = "149d5555e79142409fba8d001d624b9e";
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
     private List<Article> articles = new ArrayList<>();
@@ -113,7 +113,7 @@ public class NewsActivity extends AppCompatActivity implements  SwipeRefreshLayo
 
         ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
 
-        String country = Utils.getCountry();
+
 
         Call<News> call;
 

@@ -41,6 +41,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Random;
+
 public class HomeActivity extends AppCompatActivity {
 
     //Global Variables reference
@@ -117,7 +119,35 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        final String[] updateText = {
+                "A",
+                "B",
+                "C",
+                "D",
+                "E",
+                "F",
+                "G",
+                "H",
+                "I",
+                "J"
+        };
+        final Handler handler = new Handler();
+        handler.post(new Runnable() {
 
+            int randomNumber = new Random().nextInt(10);
+
+            @Override
+            public void run() {
+                helpful_text.setText(updateText[randomNumber]);
+                randomNumber = new Random().nextInt(10);
+                /*if (i == updateText.length) {
+                    handler.removeCallbacks(this);
+                } else {*/
+                    //10 sec
+                    handler.postDelayed(this, 1000 * 10);
+
+            }
+        });
 
         homeToMapCardView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -239,7 +269,8 @@ public class HomeActivity extends AppCompatActivity {
         helpful_text.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                int randomNumber = new Random().nextInt(10);
+                helpful_text.setText(updateText[randomNumber]);
             }
         });
 

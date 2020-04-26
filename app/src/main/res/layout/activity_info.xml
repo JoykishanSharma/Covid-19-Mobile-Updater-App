@@ -7,49 +7,48 @@
     android:background="@drawable/bg_view"
     tools:context=".info_module.InfoActivity">
 
+    <LinearLayout
+        android:id="@+id/info_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="4dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/cherry_swash"
+            android:textStyle="bold"
+            android:gravity="center_horizontal"
+            android:text="Information"
+            android:textColor="#FFFF"
+            android:textSize="22sp" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/line4"
+        android:layout_width="200dp"
+        android:layout_height="1dp"
+        android:background="#FFFFFF"
+        android:layout_marginBottom="8dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/info_title"/>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="70dp">
+        android:layout_below="@id/line4">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:orientation="vertical">
 
-            <ImageView
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="30dp"
-                android:src="@drawable/businessman_with_laptop"
-                android:contentDescription="@string/todo"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="18dp"
-                android:layout_gravity="center_horizontal"
-                android:gravity="center"
-                android:fontFamily="@font/cherry_swash"
-                android:textSize="18sp"
-                android:textColor="#FFFFFF"
-                android:textStyle="italic"
-                android:text="@string/temporary_text"/>
 
-            <TextView
-                android:id="@+id/mail_temp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:layout_gravity="center_horizontal"
-                android:gravity="center"
-                android:textSize="18sp"
-                android:fontFamily="@font/cherry_swash"
-                android:textColor="#00FF0A"
-                android:textStyle="italic"
-                android:text="@string/mail_us_temporary"/>
 
 
         </LinearLayout>
