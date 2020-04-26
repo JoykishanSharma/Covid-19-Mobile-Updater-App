@@ -13,7 +13,6 @@ public interface ApiInterface {
             @Query("country") String country,
             @Query("category") String category,
             @Query("apiKey") String apiKey
-
     );
 
     @GET("everything")
