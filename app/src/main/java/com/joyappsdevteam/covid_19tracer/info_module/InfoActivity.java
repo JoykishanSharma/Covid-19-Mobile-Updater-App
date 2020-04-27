@@ -23,7 +23,7 @@ public class InfoActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
     CardView myth_busters_cardview,related_videos_cardview,faqs_cardView,healthy_parenting_cardview,gov_website_cardView,
-            covid19_history_cardview,info_res_by_google_cardView,service_before_self_cardview,eConsult_cardView;
+            covid19_history_cardview,info_res_by_google_cardView,service_before_self_cardview,info_youtube_channels_cardView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,16 +38,15 @@ public class InfoActivity extends AppCompatActivity {
         covid19_history_cardview = findViewById(R.id.covid19_history_cardview);
         info_res_by_google_cardView = findViewById(R.id.info_res_by_google_cardView);
         service_before_self_cardview = findViewById(R.id.service_before_self_cardview);
-        eConsult_cardView = findViewById(R.id.eConsult_cardView);
+        info_youtube_channels_cardView = findViewById(R.id.info_youtube_channels_cardView);
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.info);
 
-        eConsult_cardView.setOnClickListener(new View.OnClickListener() {
+        info_youtube_channels_cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (isConnected()) {
-                    Intent i = new Intent(InfoActivity.this,InfoWebViewActivity.class);
-                    i.putExtra("WhichWebViewToShow","eConsult");
+                    Intent i = new Intent(InfoActivity.this,InformativeYoutubeChannels.class);
                     startActivity(i);
                 }
                 else Toast.makeText(InfoActivity.this,"No Internet Connection",Toast.LENGTH_SHORT).show();

@@ -49,7 +49,7 @@ public class HomeActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     private Handler mWaitHandler = new Handler();
     private CardView homeToMapCardView, homeToInfoCardView, homeToNewsCardView,
-            all_symptoms, all_preventions;
+            all_symptoms, all_preventions,hospitalCardView;
     private ImageView settings_image;
     private TextView see_detail_map, more_helpline_nos, call_helpline_no, helpful_text,
             confirm_cases_india, recover_cases_india, death_cases_india, last_update_india_textView,
@@ -87,7 +87,7 @@ public class HomeActivity extends AppCompatActivity {
         text_username = findViewById(R.id.text_username);
         state_helpline_text = findViewById(R.id.state_helpline_text);
         state_helpline_number = findViewById(R.id.state_helpline_number);
-
+        hospitalCardView = findViewById(R.id.all_nearby_covid19_hospital);
 
         requestQueue = Volley.newRequestQueue(this);
 
@@ -129,7 +129,8 @@ public class HomeActivity extends AppCompatActivity {
                 "The virus does not discriminate. Why do you? DO NOT DISCRIMINATE. We are all Indians!",
                 "Help the medical fraternity by staying at home!",
                 "Get in touch with your local NGO's and district administration to volunteer for this cause.",
-                "If you have symptoms and suspect you have coronavirus - reach out to your doctor or call state helplines. Get help."
+                "If you have symptoms and suspect you have coronavirus - reach out to your doctor or call state helplines. Get help.",
+                "This will pass too. Enjoy your time at home and spend quality time with your family! Things will be normal soon."
         };
         final Handler handler = new Handler();
         handler.post(new Runnable() {
@@ -155,7 +156,8 @@ public class HomeActivity extends AppCompatActivity {
                 if (isConnected()) {
                     startActivity(new Intent(HomeActivity.this, WebViewWorldActivity.class));
                     overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-                }else Toast.makeText(HomeActivity.this,"No Internet Connection",Toast.LENGTH_SHORT).show();
+                }
+                else Toast.makeText(HomeActivity.this,"No Internet Connection",Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -190,10 +192,6 @@ public class HomeActivity extends AppCompatActivity {
         more_helpline_nos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Nearest Police Station number with address and all necessary contact list
-                //List of Helpline numbers of all start
-                //with direct call phone
-
                 startActivity(new Intent(HomeActivity.this, HelplineNumberActivity.class));
                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             }
@@ -257,12 +255,6 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //open settings activity
                 startActivity(new Intent(HomeActivity.this, SettingsActivity.class));
-
-                //terms and conditions
-                //privacy policies
-                //dark mode if possible
-                //contributions and attributes to sites and links
-                //about us
             }
         });
 
@@ -271,6 +263,13 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 int randomNumber = new Random().nextInt(10);
                 helpful_text.setText(updateText[randomNumber]);
+            }
+        });
+
+        hospitalCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
         });
 
