@@ -106,7 +106,8 @@ public class PreventionActivity extends AppCompatActivity implements View.OnClic
         preventionsEatHealthy.setOnClickListener(this);
         preventionCleanAndDisinfect = findViewById(R.id.prevention_clean_and_disinfect);
         preventionCleanAndDisinfect.setOnClickListener(this);
-
+        who_webview_cardview = findViewById(R.id.who_webview_cardview);
+        who_webview_cardview.setOnClickListener(this);
 
     }
 

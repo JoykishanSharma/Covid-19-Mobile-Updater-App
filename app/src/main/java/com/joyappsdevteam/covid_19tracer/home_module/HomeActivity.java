@@ -120,16 +120,16 @@ public class HomeActivity extends AppCompatActivity {
         });
 
         final String[] updateText = {
-                "A",
-                "B",
-                "C",
-                "D",
-                "E",
-                "F",
-                "G",
-                "H",
-                "I",
-                "J"
+                "Help out the elderly by bringing them their groceries and other essentials.",
+                "Stand against FAKE news and illegit WhatsApp forwards! Do NOT forward a message until you verify the content it contains.",
+                "There is no evidence that hot weather will stop the virus! You can! Stay home, stay safe.",
+                "Our brothers from the North-East are just as Indian as you! Help everyone during this crisis.",
+                "Plan ahead! Take a minute and check how much supplies you have at home. Planning lets you buy exactly what you need. ",
+                "If you have any medical queries, reach out to your state helpline, district administration or trusted doctors!",
+                "The virus does not discriminate. Why do you? DO NOT DISCRIMINATE. We are all Indians!",
+                "Help the medical fraternity by staying at home!",
+                "Get in touch with your local NGO's and district administration to volunteer for this cause.",
+                "If you have symptoms and suspect you have coronavirus - reach out to your doctor or call state helplines. Get help."
         };
         final Handler handler = new Handler();
         handler.post(new Runnable() {

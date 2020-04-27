@@ -637,11 +637,12 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginTop="8dp"
-                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
                         android:clickable="true"
                         android:focusable="true"
+                        app:cardBackgroundColor="#A57DFF"
                         app:cardCornerRadius="12dp">
 
                         <RelativeLayout
@@ -657,7 +658,7 @@
                                 android:gravity="start"
                                 android:fontFamily="@font/cherry_swash"
                                 android:text="Public advice from WHO"
-                                android:textColor="#1F36B8"
+                                android:textColor="#FFFFFF"
                                 android:textSize="16sp" />
 
 
@@ -669,7 +670,7 @@
                                 android:gravity="start"
                                 android:fontFamily="@font/cherry_swash"
                                 android:text="@string/clean_and_disinfect_text_prevention_cardview"
-                                android:textColor="#8A8989"
+                                android:textColor="#FFFFFF"
                                 android:textSize="12sp" />
 
                             <ImageView
