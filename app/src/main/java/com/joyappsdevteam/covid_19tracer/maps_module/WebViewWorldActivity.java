@@ -26,6 +26,11 @@ public class WebViewWorldActivity extends FragmentActivity {
         WebSettings settings = webView.getSettings();
         settings.setDomStorageEnabled(true);
         settings.setJavaScriptEnabled(true);// enable javascript
+        settings.setSupportMultipleWindows(true);
+        settings.setAllowContentAccess(true);
+        settings.setUseWideViewPort(true);
+        settings.setLoadWithOverviewMode(true);
+        settings.setBuiltInZoomControls(false);
 
         progressBar = ProgressDialog.show(WebViewWorldActivity.this, "Showing Covid-19 World Report", "Loading...");
 
@@ -56,5 +61,13 @@ public class WebViewWorldActivity extends FragmentActivity {
 
         webView.loadUrl("https://www.trackcorona.live/");
         setContentView(webView);
+    }
+    @Override
+    public void onBackPressed() {
+        if (webView.isFocused() && webView.canGoBack()) {
+            webView.goBack();
+        } else {
+            super.onBackPressed();
+        }
     }
 }

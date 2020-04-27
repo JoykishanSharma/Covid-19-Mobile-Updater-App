@@ -77,6 +77,7 @@ public class MapsActivity extends AppCompatActivity {
         settings.setJavaScriptEnabled(true);// enable javascript
         settings.setLoadWithOverviewMode(true);
         settings.setBuiltInZoomControls(false);
+        webView.getSettings().setSupportMultipleWindows(true);
 
         if(Build.VERSION.SDK_INT <= Build.VERSION_CODES.N) {
             new AlertDialog.Builder(this)
@@ -138,9 +139,13 @@ public class MapsActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        finish();
-        startActivity(new Intent(MapsActivity.this,HomeActivity.class));
-        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+        if (webView.isFocused() && webView.canGoBack()) {
+            webView.goBack();
+        } else {
+            finish();
+            startActivity(new Intent(MapsActivity.this, HomeActivity.class));
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+        }
 
     }
 

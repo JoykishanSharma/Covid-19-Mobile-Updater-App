@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.joyappsdevteam.covid_19tracer">
-
     <!-- For getting internet access permission from the Android to the App -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-
-    <!-- For getting direct phone call access permission from the Android to the App -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- For getting direct phone call access permission from the Android to the App -->
     <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
@@ -17,39 +14,40 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity android:name=".info_module.InfoWebViewActivity"></activity>
         <!-- These are the list of activities used in the whole App -->
         <activity android:name=".news_module.NewsActivity" />
-        <activity android:name=".news_module.NewsDetailActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".news_module.NewsDetailActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".FeelingGoodActivity" />
         <activity android:name=".FeelingBadActivity" />
         <activity android:name=".info_module.InfoActivity" />
-        <activity android:name=".maps_module.WebViewWorldActivity"
+        <activity
+            android:name=".maps_module.WebViewWorldActivity"
             android:hardwareAccelerated="true" />
         <activity android:name=".home_module.PreventionActivity" />
         <activity android:name=".home_module.SymptomsActivity" />
         <activity android:name=".home_module.HelplineNumberActivity" />
-        <activity android:name=".maps_module.MapsActivity"
+        <activity
+            android:name=".maps_module.MapsActivity"
             android:hardwareAccelerated="true" />
-        <activity android:name=".settings_module.WebViewActivity"
+        <activity
+            android:name=".settings_module.WebViewActivity"
             android:hardwareAccelerated="true" />
         <activity android:name=".settings_module.AttributesActivity" />
         <activity android:name=".settings_module.AboutUsActivity" />
         <activity android:name=".settings_module.SettingsActivity" />
         <activity android:name=".home_module.HomeActivity" />
         <activity android:name=".authentication_module.TakeUsernameAndLocationActivity" />
-        <activity android:name=".authentication_module.PhoneVerificationActivity" />
-
-        <!-- This is the welcome screen activity. This Activity will launch first when the user Opens the App-->
+        <activity android:name=".authentication_module.PhoneVerificationActivity" /> <!-- This is the welcome screen activity. This Activity will launch first when the user Opens the App -->
         <activity android:name=".WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!-- If the custom font takes longer time to load...this font will get loaded otherwise -->
+        </activity> <!-- If the custom font takes longer time to load...this font will get loaded otherwise -->
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

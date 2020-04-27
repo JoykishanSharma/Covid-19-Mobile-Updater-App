@@ -453,5 +453,8 @@
     <string name="mail_us_temporary"><u>joyappsdevteam@gmail.com</u></string>
     <string name="symptom_top_cardview_text">The symptoms may appear between 2–14 days after exposure.\n\nStay home,
         get in touch with your doctor or call helpline if you catch any symptom</string>
+    <string name="myth_busters">Myth Busters</string>
+    <string name="related_videos">Related Videos</string>
+    <string name="healthy_parenting">Healthy Parenting</string>
 
 </resources>

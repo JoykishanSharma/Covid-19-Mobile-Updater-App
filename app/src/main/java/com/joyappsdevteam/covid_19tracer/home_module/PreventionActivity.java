@@ -1,18 +1,25 @@
 package com.joyappsdevteam.covid_19tracer.home_module;
 
 import android.app.Dialog;
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import com.joyappsdevteam.covid_19tracer.R;
+import com.joyappsdevteam.covid_19tracer.info_module.InfoActivity;
+import com.joyappsdevteam.covid_19tracer.info_module.InfoWebViewActivity;
 
 import java.util.Objects;
 
@@ -20,7 +27,8 @@ public class PreventionActivity extends AppCompatActivity implements View.OnClic
 
     private ImageView backButton;
     private CardView preventionWashHand,preventionSocialDistance,preventionCoverMouthWhenSneeze,preventionWearFacemask,
-        preventionDontTouchFace,preventionStayAtHome,preventionDoSomeExercise,preventionsEatHealthy,preventionCleanAndDisinfect;
+        preventionDontTouchFace,preventionStayAtHome,preventionDoSomeExercise,preventionsEatHealthy,preventionCleanAndDisinfect,
+            who_webview_cardview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -179,10 +187,33 @@ public class PreventionActivity extends AppCompatActivity implements View.OnClic
                         R.string.clean_and_disinfect_prevention_details_ans3);
                 break;
 
+            case R.id.who_webview_cardview:
+                if (isConnected()) {
+                    Intent i = new Intent(PreventionActivity.this, InfoWebViewActivity.class);
+                    i.putExtra("WhichWebViewToShow","public_advice");
+                    startActivity(i);
+                }
+                else Toast.makeText(PreventionActivity.this,"No Internet Connection",Toast.LENGTH_SHORT).show();
+                break;
+
             default:
                 break;
         }
     }
 
+    private boolean isConnected() {
+
+        ConnectivityManager cm = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+        assert cm != null;
+        NetworkInfo netinfo = cm.getActiveNetworkInfo();
+
+        if (netinfo != null && netinfo.isConnectedOrConnecting()) {
+            android.net.NetworkInfo wifi = cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+            android.net.NetworkInfo mobile = cm.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+
+            return (mobile != null && mobile.isConnectedOrConnecting()) || (wifi != null && wifi.isConnectedOrConnecting());
+        } else
+            return false;
+    }
 
 }

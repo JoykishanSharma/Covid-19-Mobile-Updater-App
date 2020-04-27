@@ -633,7 +633,7 @@
                     </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
 
                     <com.google.android.material.circularreveal.cardview.CircularRevealCardView
-                        android:id="@+id/prevention_clean_and_disinfect_temp"
+                        android:id="@+id/who_webview_cardview"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginTop="8dp"
@@ -642,7 +642,6 @@
                         android:layout_weight="1"
                         android:clickable="true"
                         android:focusable="true"
-                        android:visibility="invisible"
                         app:cardCornerRadius="12dp">
 
                         <RelativeLayout
@@ -651,22 +650,22 @@
                             android:padding="16dp">
 
                             <TextView
-                                android:id="@+id/clean_and_disinfect_title_temp"
+                                android:id="@+id/who_webview_cardview_text_title"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="8dp"
                                 android:gravity="start"
                                 android:fontFamily="@font/cherry_swash"
-                                android:text="Clean and disinfect"
+                                android:text="Public advice from WHO"
                                 android:textColor="#1F36B8"
                                 android:textSize="16sp" />
 
 
                             <TextView
-                                android:id="@+id/clean_and_disinfect_text_temp"
+                                android:id="@+id/who_webview_cardview_text"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_below="@+id/clean_and_disinfect_title_temp"
+                                android:layout_below="@+id/who_webview_cardview_text_title"
                                 android:gravity="start"
                                 android:fontFamily="@font/cherry_swash"
                                 android:text="@string/clean_and_disinfect_text_prevention_cardview"
@@ -676,7 +675,7 @@
                             <ImageView
                                 android:layout_width="70dp"
                                 android:layout_height="70dp"
-                                android:layout_below="@+id/clean_and_disinfect_text_temp"
+                                android:layout_below="@+id/who_webview_cardview_text"
                                 android:layout_alignParentEnd="true"
                                 android:layout_alignParentBottom="true"
                                 android:layout_marginTop="16dp"
