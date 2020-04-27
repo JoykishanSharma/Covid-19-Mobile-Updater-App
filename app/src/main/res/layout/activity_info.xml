@@ -40,7 +40,8 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/line4">
+        android:layout_below="@id/line4"
+        android:layout_marginBottom="72dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -53,12 +54,111 @@
                 android:orientation="horizontal">
 
                 <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                    android:id="@+id/gov_website_cardView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="6dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="6dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp"
+                    app:strokeColor="#2196F3"
+                    app:strokeWidth="1dp">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/gov_website_cardView_image"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:contentDescription="@string/todo"
+                            android:src="@drawable/gov_cardview_image" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/gov_website_cardView_image"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/cherry_swash"
+                            android:padding="16dp"
+                            android:text="Government Site"
+                            android:textColor="#ff23729a"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                    android:id="@+id/covid19_history_cardview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="6dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp"
+                    app:strokeColor="#2196F3"
+                    app:strokeWidth="1dp">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/covid19_history_cardview_image"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:contentDescription="@string/todo"
+                            android:src="@drawable/virus" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/covid19_history_cardview_image"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/cherry_swash"
+                            android:padding="16dp"
+                            android:text="Covid-19 History"
+                            android:textColor="#ff23729a"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
                     android:id="@+id/myth_busters_cardview"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
-                    android:layout_marginTop="12dp"
                     android:layout_marginEnd="6dp"
+                    android:layout_marginTop="6dp"
                     android:layout_marginBottom="6dp"
                     android:layout_weight="1"
                     android:clickable="true"
@@ -80,7 +180,7 @@
                             android:layout_marginTop="16dp"
                             android:layout_marginEnd="16dp"
                             android:contentDescription="@string/todo"
-                            android:src="@drawable/cough" />
+                            android:src="@drawable/myth_cardview_image" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -103,8 +203,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="6dp"
-                    android:layout_marginTop="12dp"
                     android:layout_marginEnd="12dp"
+                    android:layout_marginTop="6dp"
                     android:layout_marginBottom="6dp"
                     android:layout_weight="1"
                     android:clickable="true"
@@ -126,7 +226,7 @@
                             android:layout_marginTop="16dp"
                             android:layout_marginEnd="16dp"
                             android:contentDescription="@string/todo"
-                            android:src="@drawable/prevention" />
+                            android:src="@drawable/related_video_cardview" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -156,9 +256,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginStart="12dp"
-                    android:layout_marginTop="6dp"
                     android:layout_marginEnd="6dp"
-                    android:layout_marginBottom="12dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginBottom="6dp"
                     android:layout_weight="1"
 
                     android:clickable="true"
@@ -180,7 +280,7 @@
                             android:layout_marginTop="16dp"
                             android:layout_marginEnd="16dp"
                             android:contentDescription="@string/todo"
-                            android:src="@drawable/cough" />
+                            android:src="@drawable/faqs_cardview_image" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -203,9 +303,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginStart="6dp"
-                    android:layout_marginTop="6dp"
                     android:layout_marginEnd="12dp"
-                    android:layout_marginBottom="12dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginBottom="6dp"
                     android:layout_weight="1"
                     android:clickable="true"
                     android:focusable="true"
@@ -226,7 +326,7 @@
                             android:layout_marginTop="16dp"
                             android:layout_marginEnd="16dp"
                             android:contentDescription="@string/todo"
-                            android:src="@drawable/prevention" />
+                            android:src="@drawable/parenting_cardview_image" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -243,6 +343,162 @@
                     </RelativeLayout>
 
                 </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                    android:id="@+id/info_res_by_google_cardView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="6dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginBottom="6dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp"
+                    app:strokeColor="#2196F3"
+                    app:strokeWidth="1dp">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/info_res_by_google_cardView_image"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="10dp"
+                            android:contentDescription="@string/todo"
+                            android:src="@drawable/info_from_google_cardview_image" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/info_res_by_google_cardView_image"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/cherry_swash"
+                            android:padding="16dp"
+                            android:text="Info By Google"
+                            android:textColor="#ff23729a"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                    android:id="@+id/service_before_self_cardview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginBottom="6dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp"
+                    app:strokeColor="#2196F3"
+                    app:strokeWidth="1dp">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/service_before_self_cardview_image"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:contentDescription="@string/todo"
+                            android:src="@drawable/service_before_self_cardview_image" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/service_before_self_cardview_image"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/cherry_swash"
+                            android:padding="16dp"
+                            android:text="Service Before Self"
+                            android:textColor="#ff23729a"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                    android:id="@+id/eConsult_cardView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="6dp"
+                    android:layout_marginBottom="12dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp"
+                    app:strokeColor="#2196F3"
+                    app:strokeWidth="1dp">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/eConsult_cardView_image"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_margin="16dp"
+                            android:contentDescription="@string/todo"
+                            android:src="@drawable/e_consult_cardview_image" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:fontFamily="@font/cherry_swash"
+                            android:gravity="center"
+                            android:layout_marginStart="16dp"
+                            android:padding="16dp"
+                            android:text="e-Consult Site"
+                            android:textColor="#ff23729a"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+
 
             </LinearLayout>
 

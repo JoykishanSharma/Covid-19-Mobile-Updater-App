@@ -784,14 +784,13 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="30dp"
-                android:background="#4E535353"
                 android:gravity="center"
                 android:paddingStart="30dp"
                 android:paddingTop="8dp"
                 android:paddingEnd="30dp"
                 android:paddingBottom="8dp"
                 android:text="@string/helpful_text_quoted"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="@color/colorBackground"
                 android:textSize="15sp"
                 android:textStyle="bold|italic" />
 

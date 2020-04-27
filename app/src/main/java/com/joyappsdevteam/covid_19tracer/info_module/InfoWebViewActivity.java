@@ -53,6 +53,26 @@ public class InfoWebViewActivity extends AppCompatActivity {
             title.setText("Public advice from WHO");
             url = "https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public";
         }
+        else if (whichWebViewToShow.equals("gov_india")){
+            title.setText("Ministry of Health and Family Welfare");
+            url = "https://www.mohfw.gov.in/";
+        }
+        else if (whichWebViewToShow.equals("coronavirus_history")){
+            title.setText("History of Coronavirus");
+            url = "https://en.wikipedia.org/wiki/Coronavirus";
+        }
+        else if (whichWebViewToShow.equals("info_by_google")){
+            title.setText("Info By Google");
+            url = "https://www.google.com/intl/en_in/covid19/";
+        }
+        else if (whichWebViewToShow.equals("service_before_self")){
+            title.setText("Service Before Self");
+            url = "https://www.covid19india.org/essentials";
+        }
+        else if (whichWebViewToShow.equals("eConsult")){
+            title.setText("eConsult");
+            url = "https://econsult-website-three.now.sh/consult";
+        }
 
         BackButton.setOnClickListener(new View.OnClickListener() {
             @Override

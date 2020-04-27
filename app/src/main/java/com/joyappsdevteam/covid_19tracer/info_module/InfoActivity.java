@@ -22,7 +22,8 @@ import com.joyappsdevteam.covid_19tracer.news_module.NewsActivity;
 public class InfoActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
-    CardView myth_busters_cardview,related_videos_cardview,faqs_cardView,healthy_parenting_cardview;
+    CardView myth_busters_cardview,related_videos_cardview,faqs_cardView,healthy_parenting_cardview,gov_website_cardView,
+            covid19_history_cardview,info_res_by_google_cardView,service_before_self_cardview,eConsult_cardView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +34,49 @@ public class InfoActivity extends AppCompatActivity {
         related_videos_cardview = findViewById(R.id.related_videos_cardview);
         faqs_cardView = findViewById(R.id.faqs_cardView);
         healthy_parenting_cardview = findViewById(R.id.healthy_parenting_cardview);
+        gov_website_cardView = findViewById(R.id.gov_website_cardView);
+        covid19_history_cardview = findViewById(R.id.covid19_history_cardview);
+        info_res_by_google_cardView = findViewById(R.id.info_res_by_google_cardView);
+        service_before_self_cardview = findViewById(R.id.service_before_self_cardview);
+        eConsult_cardView = findViewById(R.id.eConsult_cardView);
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.info);
+
+        eConsult_cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (isConnected()) {
+                    Intent i = new Intent(InfoActivity.this,InfoWebViewActivity.class);
+                    i.putExtra("WhichWebViewToShow","eConsult");
+                    startActivity(i);
+                }
+                else Toast.makeText(InfoActivity.this,"No Internet Connection",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        service_before_self_cardview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (isConnected()) {
+                    Intent i = new Intent(InfoActivity.this,InfoWebViewActivity.class);
+                    i.putExtra("WhichWebViewToShow","service_before_self");
+                    startActivity(i);
+                }
+                else Toast.makeText(InfoActivity.this,"No Internet Connection",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        info_res_by_google_cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (isConnected()) {
+                    Intent i = new Intent(InfoActivity.this,InfoWebViewActivity.class);
+                    i.putExtra("WhichWebViewToShow","info_by_google");
+                    startActivity(i);
+                }
+                else Toast.makeText(InfoActivity.this,"No Internet Connection",Toast.LENGTH_SHORT).show();
+            }
+        });
 
         related_videos_cardview.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,6 +120,30 @@ public class InfoActivity extends AppCompatActivity {
                 if (isConnected()) {
                     Intent i = new Intent(InfoActivity.this,InfoWebViewActivity.class);
                     i.putExtra("WhichWebViewToShow","healthy_parenting");
+                    startActivity(i);
+                }
+                else Toast.makeText(InfoActivity.this,"No Internet Connection",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        gov_website_cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (isConnected()) {
+                    Intent i = new Intent(InfoActivity.this,InfoWebViewActivity.class);
+                    i.putExtra("WhichWebViewToShow","gov_india");
+                    startActivity(i);
+                }
+                else Toast.makeText(InfoActivity.this,"No Internet Connection",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        covid19_history_cardview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (isConnected()) {
+                    Intent i = new Intent(InfoActivity.this,InfoWebViewActivity.class);
+                    i.putExtra("WhichWebViewToShow","coronavirus_history");
                     startActivity(i);
                 }
                 else Toast.makeText(InfoActivity.this,"No Internet Connection",Toast.LENGTH_SHORT).show();
