@@ -22,10 +22,10 @@ public class WelcomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
 
-        welcomeScreen5Seconds();
+        welcomeScreen2Seconds();
     }
 
-    private void welcomeScreen5Seconds(){
+    private void welcomeScreen2Seconds(){
         mWaitHandler.postDelayed(new Runnable() {
 
             @Override
@@ -44,8 +44,8 @@ public class WelcomeActivity extends AppCompatActivity {
                     //Checking if PhoneVerification is Done and User Details is also taken from user or not or Vice Versa
                     if (isPhoneVerificationComplete && IsUserDetailsSaved){
 
-                        Intent intent = new Intent(WelcomeActivity.this, HomeActivity.class);
-                        startActivity(intent);
+                        Intent i = new Intent(WelcomeActivity.this, HomeActivity.class);
+                        startActivity(i);
 
                         //This is Optional
                         //This is a small piece of code to give a animation affect when moving from one Activity to another
@@ -70,8 +70,6 @@ public class WelcomeActivity extends AppCompatActivity {
             }
         }, 2000);  // Give a 2 seconds delay.
     }
-
-
 
     @Override
     public void onDestroy() {
