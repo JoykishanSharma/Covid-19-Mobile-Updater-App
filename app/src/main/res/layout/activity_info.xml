@@ -440,13 +440,13 @@
                 android:layout_marginBottom="32dp">
 
                 <com.google.android.material.circularreveal.cardview.CircularRevealCardView
-                    android:id="@+id/some_cardView"
+                    android:id="@+id/report_patient"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="12dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="6dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginBottom="12dp"
                     android:layout_weight="1"
                     android:clickable="true"
                     android:focusable="true"
@@ -454,32 +454,30 @@
                     app:cardElevation="6dp">
 
                     <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
                         <ImageView
-                            android:id="@+id/some_cardView_image"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:layout_alignParentEnd="true"
+                            android:id="@+id/report_cardview_image"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:src="@drawable/sick"
                             android:layout_marginTop="16dp"
                             android:layout_marginEnd="16dp"
-                            android:layout_marginBottom="10dp"
-                            android:contentDescription="@string/todo"
-                            android:src="@drawable/info_from_google_cardview_image" />
+                            android:layout_alignParentEnd="true"
+                            android:contentDescription="@string/todo" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@id/some_cardView_image"
-                            android:layout_gravity="center"
                             android:fontFamily="@font/cherry_swash"
-                            android:gravity="start"
+                            android:textStyle="bold"
+                            android:text="@string/report_suspicion"
+                            android:layout_below="@id/report_cardview_image"
+                            android:layout_gravity="center"
                             android:padding="16dp"
-                            android:text="Covid-19 Info By Google"
                             android:textColor="#ff23729a"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
+                            android:textSize="16sp" />
 
                     </RelativeLayout>
 
@@ -497,6 +495,7 @@
                     android:clickable="true"
                     android:focusable="true"
                     app:cardCornerRadius="12dp"
+                    android:visibility="invisible"
                     app:cardElevation="6dp">
 
                     <RelativeLayout

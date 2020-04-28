@@ -532,7 +532,7 @@
 
             </LinearLayout>
 
-            <LinearLayout
+            <!--<LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -626,7 +626,7 @@
 
                 </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
 
-            </LinearLayout>
+            </LinearLayout>-->
 
             <com.google.android.material.circularreveal.cardview.CircularRevealCardView
                 android:id="@+id/home_to_map_cardview"

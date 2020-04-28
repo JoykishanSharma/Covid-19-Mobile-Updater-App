@@ -14,7 +14,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".home_module.HospitalListActivity"></activity>
         <activity android:name=".info_module.InformativeYoutubeChannels" />
         <activity android:name=".info_module.InfoWebViewActivity" /> <!-- These are the list of activities used in the whole App -->
         <activity android:name=".news_module.NewsActivity" />

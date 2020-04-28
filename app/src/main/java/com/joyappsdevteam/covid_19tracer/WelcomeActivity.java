@@ -43,6 +43,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
                     //Checking if PhoneVerification is Done and User Details is also taken from user or not or Vice Versa
                     if (isPhoneVerificationComplete && IsUserDetailsSaved){
+
                         Intent intent = new Intent(WelcomeActivity.this, HomeActivity.class);
                         startActivity(intent);
 
@@ -69,6 +70,8 @@ public class WelcomeActivity extends AppCompatActivity {
             }
         }, 2000);  // Give a 2 seconds delay.
     }
+
+
 
     @Override
     public void onDestroy() {

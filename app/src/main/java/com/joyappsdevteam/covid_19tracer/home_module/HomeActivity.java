@@ -30,6 +30,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.joyappsdevteam.covid_19tracer.WelcomeActivity;
 import com.joyappsdevteam.covid_19tracer.info_module.InfoActivity;
 import com.joyappsdevteam.covid_19tracer.maps_module.MapsActivity;
 import com.joyappsdevteam.covid_19tracer.news_module.NewsActivity;
@@ -49,7 +50,7 @@ public class HomeActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     private Handler mWaitHandler = new Handler();
     private CardView homeToMapCardView, homeToInfoCardView, homeToNewsCardView,
-            all_symptoms, all_preventions,hospitalCardView;
+            all_symptoms, all_preventions;
     private ImageView settings_image;
     private TextView see_detail_map, more_helpline_nos, call_helpline_no, helpful_text,
             confirm_cases_india, recover_cases_india, death_cases_india, last_update_india_textView,
@@ -87,7 +88,21 @@ public class HomeActivity extends AppCompatActivity {
         text_username = findViewById(R.id.text_username);
         state_helpline_text = findViewById(R.id.state_helpline_text);
         state_helpline_number = findViewById(R.id.state_helpline_number);
-        hospitalCardView = findViewById(R.id.all_nearby_covid19_hospital);
+
+        if (!isConnected()){
+            new AlertDialog.Builder(this)
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .setTitle("No Internet Connection")
+                    .setMessage("Please connect to Internet and Relaunch the App")
+                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            endTask();
+                            onDestroy();
+                        }
+                    })
+                    .show();
+        }
 
         requestQueue = Volley.newRequestQueue(this);
 
@@ -263,13 +278,6 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 int randomNumber = new Random().nextInt(10);
                 helpful_text.setText(updateText[randomNumber]);
-            }
-        });
-
-        hospitalCardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(HomeActivity.this, HospitalListActivity.class));
             }
         });
 
@@ -542,7 +550,23 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     public void onResume(){
         super.onResume();
-        updateData();
+
+        if (!isConnected()){
+            new AlertDialog.Builder(this)
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .setTitle("No Internet Connection")
+                    .setMessage("Please connect to Internet and Relaunch the App")
+                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            endTask();
+                            onDestroy();
+                        }
+                    })
+                    .show();
+        }
+        else updateData();
+
 
     }
 
