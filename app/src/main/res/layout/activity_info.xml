@@ -339,7 +339,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginBottom="40dp">
 
                 <com.google.android.material.circularreveal.cardview.CircularRevealCardView
                     android:id="@+id/info_res_by_google_cardView"
@@ -437,7 +438,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginBottom="32dp">
+                android:layout_marginBottom="32dp"
+                android:visibility="gone">
 
                 <com.google.android.material.circularreveal.cardview.CircularRevealCardView
                     android:id="@+id/report_patient"
