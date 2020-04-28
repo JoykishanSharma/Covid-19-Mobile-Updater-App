@@ -2,6 +2,7 @@ package com.joyappsdevteam.covid_19tracer.news_module;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityOptionsCompat;
 import androidx.core.util.Pair;
 import androidx.core.view.ViewCompat;
@@ -9,7 +10,11 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,10 +22,13 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.joyappsdevteam.covid_19tracer.info_module.InfoActivity;
 import com.joyappsdevteam.covid_19tracer.R;
 import com.joyappsdevteam.covid_19tracer.home_module.HomeActivity;
+import com.joyappsdevteam.covid_19tracer.info_module.InfoWebViewActivity;
 import com.joyappsdevteam.covid_19tracer.maps_module.MapsActivity;
 import com.joyappsdevteam.covid_19tracer.news_module.api.ApiClient;
 import com.joyappsdevteam.covid_19tracer.news_module.api.ApiInterface;
@@ -49,12 +57,15 @@ public class NewsActivity extends AppCompatActivity implements  SwipeRefreshLayo
     private TextView errorTitle, errorMessage;
     private Button btnRetry;
     BottomNavigationView bottomNavigationView;
+    private CardView latestNewsCardview,fakeNewsCardview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news);
 
+        latestNewsCardview = findViewById(R.id.latest_news_cardview);
+        fakeNewsCardview = findViewById(R.id.fake_news_cardview);
         swipeRefreshLayout = findViewById(R.id.swipe_refresh_layout);
         swipeRefreshLayout.setOnRefreshListener(this);
         swipeRefreshLayout.setColorSchemeResources(R.color.colorAccent);
@@ -103,7 +114,29 @@ public class NewsActivity extends AppCompatActivity implements  SwipeRefreshLayo
             }
         });
 
+        latestNewsCardview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (isConnected()) {
+                    Intent i = new Intent(NewsActivity.this, InfoWebViewActivity.class);
+                    i.putExtra("WhichWebViewToShow","latest_news");
+                    startActivity(i);
+                }
+                else Toast.makeText(NewsActivity.this,"No Internet Connection",Toast.LENGTH_SHORT).show();
+            }
+        });
 
+        fakeNewsCardview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (isConnected()) {
+                    Intent i = new Intent(NewsActivity.this,InfoWebViewActivity.class);
+                    i.putExtra("WhichWebViewToShow","fake_news");
+                    startActivity(i);
+                }
+                else Toast.makeText(NewsActivity.this,"No Internet Connection",Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     public void LoadJson(){
@@ -253,5 +286,20 @@ public class NewsActivity extends AppCompatActivity implements  SwipeRefreshLayo
         startActivity(new Intent(NewsActivity.this,HomeActivity.class));
         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
 
+    }
+
+    private boolean isConnected() {
+
+        ConnectivityManager cm = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+        assert cm != null;
+        NetworkInfo netinfo = cm.getActiveNetworkInfo();
+
+        if (netinfo != null && netinfo.isConnectedOrConnecting()) {
+            android.net.NetworkInfo wifi = cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+            android.net.NetworkInfo mobile = cm.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+
+            return (mobile != null && mobile.isConnectedOrConnecting()) || (wifi != null && wifi.isConnectedOrConnecting());
+        } else
+            return false;
     }
 }

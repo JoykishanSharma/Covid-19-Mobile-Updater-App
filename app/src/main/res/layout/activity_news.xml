@@ -5,6 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_view"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
     tools:context=".news_module.NewsActivity">
 
     <LinearLayout
@@ -20,27 +22,98 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:fontFamily="@font/cherry_swash"
-            android:textStyle="bold"
             android:gravity="center_horizontal"
-            android:text="News"
+            android:text="Global Covid-19 News"
             android:textColor="#FFFF"
-            android:textSize="22sp" />
+            android:textSize="22sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
     <View
-        android:layout_width="200dp"
+        android:id="@+id/line6"
+        android:layout_width="280dp"
         android:layout_height="1dp"
         android:background="#FFFFFF"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/news_title"/>
+
+    <LinearLayout
+        android:id="@+id/fake_and_latest_news_linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        android:layout_below="@id/line6">
+
+        <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+            android:id="@+id/latest_news_cardview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="6dp"
+            android:layout_marginBottom="12dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="6dp"
+            >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/cherry_swash"
+                    android:padding="16dp"
+                    android:gravity="center"
+                    android:text="Latest News"
+                    android:textColor="#ff23729a"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+
+
+        </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+        <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+            android:id="@+id/fake_news_cardview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="12dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="6dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/cherry_swash"
+                    android:padding="16dp"
+                    android:gravity="center"
+                    android:text="Fake News"
+                    android:textColor="#ff23729a"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+
+        </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+    </LinearLayout>
 
 <androidx.coordinatorlayout.widget.CoordinatorLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginBottom="48dp"
     android:paddingBottom="20dp"
-    android:layout_below="@id/news_title"
+    android:layout_below="@id/fake_and_latest_news_linearLayout"
     android:layout_marginTop="8dp">
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -50,7 +123,8 @@
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
 
             <LinearLayout
                 android:orientation="vertical"

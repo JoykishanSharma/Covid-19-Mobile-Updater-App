@@ -59,7 +59,9 @@ public class WebViewWorldActivity extends FragmentActivity {
             }
         });
 
-        webView.loadUrl("https://www.trackcorona.live/");
+        // https://www.trackcorona.live/
+
+        webView.loadUrl("https://covid19.who.int/");
         setContentView(webView);
     }
     @Override

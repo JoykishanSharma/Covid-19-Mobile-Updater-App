@@ -73,6 +73,14 @@ public class InfoWebViewActivity extends AppCompatActivity {
             title.setText("eConsult");
             url = "https://econsult-website-three.now.sh/consult";
         }
+        else if (whichWebViewToShow.equals("latest_news")){
+            title.setText("Latest News");
+            url = "https://news.google.com/topics/CAAqIggKIhxDQkFTRHdvSkwyMHZNREZqY0hsNUVnSmxiaWdBUAE?hl=en-IN&gl=IN&ceid=IN%3Aen";
+        }
+        else if (whichWebViewToShow.equals("fake_news")){
+            title.setText("Fake News");
+            url = "https://www.altnews.in/?s=coronavirus";
+        }
 
         BackButton.setOnClickListener(new View.OnClickListener() {
             @Override
