@@ -101,6 +101,7 @@ public class HomeActivity extends AppCompatActivity {
                             onDestroy();
                         }
                     })
+                    .setCancelable(false)
                     .show();
         }
 
@@ -563,6 +564,7 @@ public class HomeActivity extends AppCompatActivity {
                             onDestroy();
                         }
                     })
+                    .setCancelable(false)
                     .show();
         }
         else updateData();
