@@ -12,8 +12,8 @@
         android:id="@+id/hospital_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
         android:orientation="horizontal">
 
         <ImageView
@@ -70,20 +70,22 @@
                             android:padding="16dp">
 
                             <ImageView
-                                android:layout_width="130dp"
-                                android:layout_height="120dp"
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
                                 android:layout_gravity="start"
+                                android:layout_marginStart="24dp"
                                 android:contentDescription="@string/todo"
-                                android:src="@drawable/prevention_doctor_image" />
+                                android:src="@drawable/hospitals" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:layout_marginStart="16dp"
+                                android:layout_marginEnd="24dp"
                                 android:gravity="center"
                                 android:fontFamily="@font/cherry_swash"
-                                android:text="@string/prevention_des_text"
+                                android:text="@string/hospital_list_cardview_text"
                                 android:textColor="#FFFFFF"
                                 android:textSize="14sp"
                                 android:textStyle="italic|bold" />
@@ -111,101 +113,118 @@
                             android:textColor="#FFFF"
                             android:textSize="18sp" />
 
-                        <LinearLayout
+                        <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
                             android:orientation="horizontal"
-                            android:layout_marginTop="8dp"
-                            android:layout_marginStart="8dp"
-                            android:layout_marginEnd="8dp"
-
-                            android:layout_marginBottom="8dp">
+                            android:layout_margin="8dp">
 
                             <TextView
+                                android:id="@+id/state_title"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="State : "
+                                android:layout_alignParentStart="true"
+                                android:layout_toStartOf="@id/state_spinner"
                                 android:textSize="16sp"
                                 android:textColor="#FAFAFA"
                                 android:layout_marginStart="8dp"
-                                android:layout_marginEnd="14dp"
-                                android:fontFamily="@font/cherry_swash"
-                                android:layout_gravity="center_vertical|start"/>
+                                android:layout_marginEnd="8dp"
+                                android:layout_centerVertical="true"
+                                android:fontFamily="@font/cherry_swash" />
 
                             <androidx.appcompat.widget.AppCompatSpinner
                                 android:id="@+id/state_spinner"
-                                android:layout_width="match_parent"
+                                android:layout_width="230dp"
                                 android:layout_height="40dp"
-                                android:layout_gravity="start"
-                                android:layout_marginStart="16dp"
+                                android:layout_gravity="end"
                                 android:layout_marginEnd="16dp"
                                 android:background="#2DFAFAFA"
                                 android:fontFamily="@font/cherry_swash"
                                 android:layout_marginTop="8dp"
-                                android:gravity="center_vertical|start"
-                                android:paddingStart="16dp"
+                                android:layout_alignParentEnd="true"
+                                android:paddingStart="4dp"
                                 android:paddingEnd="16dp" />
 
-                        </LinearLayout>
+                        </RelativeLayout>
 
-                        <LinearLayout
+                        <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
                             android:orientation="horizontal"
-                            android:layout_marginTop="8dp"
-                            android:layout_marginStart="8dp"
-                            android:layout_marginEnd="8dp"
-
-                            android:layout_marginBottom="8dp">
+                            android:layout_margin="8dp">
 
                             <TextView
+                                android:id="@+id/city_title"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="City : "
+                                android:layout_centerVertical="true"
                                 android:textSize="16sp"
                                 android:textColor="#FAFAFA"
+                                android:layout_alignParentStart="true"
+                                android:layout_toStartOf="@id/city_spinner"
                                 android:layout_marginStart="8dp"
-                                android:layout_marginEnd="14dp"
-                                android:fontFamily="@font/cherry_swash"
-                                android:layout_gravity="center_vertical|start"/>
+                                android:layout_marginEnd="8dp"
+                                android:fontFamily="@font/cherry_swash" />
 
                             <androidx.appcompat.widget.AppCompatSpinner
                                 android:id="@+id/city_spinner"
-                                android:layout_width="match_parent"
+                                android:layout_width="230dp"
                                 android:layout_height="40dp"
-                                android:layout_gravity="start"
+                                android:layout_gravity="end"
                                 android:layout_marginEnd="16dp"
                                 android:background="#2DFAFAFA"
                                 android:fontFamily="@font/cherry_swash"
                                 android:layout_marginTop="8dp"
-                                android:gravity="center_vertical|start"
-                                android:paddingStart="16dp"
+                                android:layout_alignParentEnd="true"
+                                android:paddingStart="4dp"
                                 android:paddingEnd="16dp" />
 
-                        </LinearLayout>
+                        </RelativeLayout>
+
+                        <Button
+                            android:id="@+id/search_hospitals"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Search"
+                            android:textAllCaps="false"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginBottom="16dp"
+                            android:textColor="#FAFAFA"
+                            android:fontFamily="@font/cherry_swash"
+                            android:background="#FAFAFA" />
+
+                        <View
+                            android:layout_width="300dp"
+                            android:layout_height="2dp"
+                            android:layout_gravity="center_horizontal"
+                            android:background="#FFFFFF" />
 
 
                     </LinearLayout>
 
                     <TextView
                         android:id="@+id/avail_hospitals_title"
-                        android:textColor="@color/colorBackground"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textStyle="bold"
                         android:text="Available Hospitals"
                         android:fontFamily="@font/cherry_swash"
-                        android:textSize="17sp"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginRight="16dp"
-                        android:layout_marginTop="10dp"
-                        android:visibility="invisible"/>
+                        android:layout_gravity="center"
+                        android:gravity="start"
+                        android:textColor="#FFFF"
+                        android:textSize="18sp"
+                        android:layout_marginTop="16dp" />
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/recyclerView_hospitals"
                         android:scrollbars="vertical"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp">
                     </androidx.recyclerview.widget.RecyclerView>
 
                 </LinearLayout>

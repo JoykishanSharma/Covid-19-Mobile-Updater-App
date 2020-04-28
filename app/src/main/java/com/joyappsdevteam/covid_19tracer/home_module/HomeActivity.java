@@ -269,7 +269,7 @@ public class HomeActivity extends AppCompatActivity {
         hospitalCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                startActivity(new Intent(HomeActivity.this, HospitalListActivity.class));
             }
         });
 

@@ -155,6 +155,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_gravity="start"
+                    android:background="#2DFAFAFA"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
                     android:fontFamily="@font/cherry_swash"
@@ -212,9 +213,9 @@
 
             <View
                 android:layout_width="300dp"
-                android:layout_height="1dp"
-                android:background="#FFFFFF"
-                android:layout_gravity="center_horizontal"/>
+                android:layout_height="4dp"
+                android:layout_gravity="center_horizontal"
+                android:background="#FFFFFF" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -244,6 +245,7 @@
                     android:padding="8dp"
                     android:textSize="12sp"
                     android:gravity="center"
+                    android:visibility="gone"
                     android:fontFamily="@font/cherry_swash"
                     android:text="Attributes"/>
 

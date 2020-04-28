@@ -20,28 +20,30 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:fontFamily="@font/cherry_swash"
-            android:textStyle="bold"
             android:gravity="center_horizontal"
             android:text="Information"
             android:textColor="#FFFF"
-            android:textSize="22sp" />
+            android:textSize="22sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
     <View
         android:id="@+id/line4"
-        android:layout_width="200dp"
+        android:layout_width="280dp"
         android:layout_height="1dp"
-        android:background="#FFFFFF"
-        android:layout_marginBottom="8dp"
+        android:layout_below="@id/info_title"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/info_title"/>
+        android:background="#FFFFFF" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/line4"
-        android:layout_marginBottom="72dp">
+        android:layout_marginBottom="42dp"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:scrollbars="none">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -58,16 +60,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginStart="12dp"
-                    android:layout_marginEnd="6dp"
                     android:layout_marginTop="12dp"
+                    android:layout_marginEnd="8dp"
                     android:layout_marginBottom="6dp"
                     android:layout_weight="1"
                     android:clickable="true"
                     android:focusable="true"
                     app:cardCornerRadius="12dp"
-                    app:cardElevation="6dp"
-                    app:strokeColor="#2196F3"
-                    app:strokeWidth="1dp">
+                    app:cardElevation="6dp">
 
                     <RelativeLayout
                         android:layout_width="wrap_content"
@@ -92,7 +92,7 @@
                             android:padding="16dp"
                             android:text="Government Site"
                             android:textColor="#ff23729a"
-                            android:textSize="16sp"
+                            android:textSize="14sp"
                             android:textStyle="bold" />
 
                     </RelativeLayout>
@@ -103,17 +103,15 @@
                     android:id="@+id/covid19_history_cardview"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="6dp"
-                    android:layout_marginEnd="12dp"
+                    android:layout_marginStart="8dp"
                     android:layout_marginTop="12dp"
+                    android:layout_marginEnd="12dp"
                     android:layout_marginBottom="6dp"
                     android:layout_weight="1"
                     android:clickable="true"
                     android:focusable="true"
                     app:cardCornerRadius="12dp"
-                    app:cardElevation="6dp"
-                    app:strokeColor="#2196F3"
-                    app:strokeWidth="1dp">
+                    app:cardElevation="6dp">
 
                     <RelativeLayout
                         android:layout_width="wrap_content"
@@ -138,7 +136,7 @@
                             android:padding="16dp"
                             android:text="Covid-19 History"
                             android:textColor="#ff23729a"
-                            android:textSize="16sp"
+                            android:textSize="14sp"
                             android:textStyle="bold" />
 
                     </RelativeLayout>
@@ -155,22 +153,20 @@
                 <com.google.android.material.circularreveal.cardview.CircularRevealCardView
                     android:id="@+id/myth_busters_cardview"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_marginStart="12dp"
-                    android:layout_marginEnd="6dp"
-                    android:layout_marginTop="6dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
                     android:layout_marginBottom="6dp"
                     android:layout_weight="1"
                     android:clickable="true"
                     android:focusable="true"
                     app:cardCornerRadius="12dp"
-                    app:cardElevation="6dp"
-                    app:strokeColor="#2196F3"
-                    app:strokeWidth="1dp">
+                    app:cardElevation="6dp">
 
                     <RelativeLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                        android:layout_height="match_parent">
 
                         <ImageView
                             android:id="@+id/myth_busters_cardview_image"
@@ -186,87 +182,31 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@id/myth_busters_cardview_image"
-                            android:layout_gravity="center"
+                            android:layout_gravity="start|bottom"
                             android:fontFamily="@font/cherry_swash"
                             android:padding="16dp"
                             android:text="@string/myth_busters"
                             android:textColor="#ff23729a"
-                            android:textSize="16sp"
+                            android:textSize="14sp"
                             android:textStyle="bold" />
 
                     </RelativeLayout>
 
                 </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
-
-                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
-                    android:id="@+id/related_videos_cardview"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="6dp"
-                    android:layout_marginEnd="12dp"
-                    android:layout_marginTop="6dp"
-                    android:layout_marginBottom="6dp"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    android:focusable="true"
-                    app:cardCornerRadius="12dp"
-                    app:cardElevation="6dp"
-                    app:strokeColor="#2196F3"
-                    app:strokeWidth="1dp">
-
-                    <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-
-                        <ImageView
-                            android:id="@+id/related_videos_cardview_image"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:layout_alignParentEnd="true"
-                            android:layout_marginTop="16dp"
-                            android:layout_marginEnd="16dp"
-                            android:contentDescription="@string/todo"
-                            android:src="@drawable/related_video_cardview" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/related_videos_cardview_image"
-                            android:layout_gravity="center"
-                            android:fontFamily="@font/cherry_swash"
-                            android:padding="16dp"
-                            android:text="@string/related_videos"
-                            android:textColor="#ff23729a"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
-
-                    </RelativeLayout>
-
-                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
 
                 <com.google.android.material.circularreveal.cardview.CircularRevealCardView
                     android:id="@+id/faqs_cardView"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="12dp"
-                    android:layout_marginEnd="6dp"
-                    android:layout_marginTop="6dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="12dp"
                     android:layout_marginBottom="6dp"
                     android:layout_weight="1"
-
                     android:clickable="true"
                     android:focusable="true"
                     app:cardCornerRadius="12dp"
-                    app:cardElevation="6dp"
-                    app:strokeColor="#2196F3"
-                    app:strokeWidth="1dp">
+                    app:cardElevation="6dp">
 
                     <RelativeLayout
                         android:layout_width="wrap_content"
@@ -288,57 +228,11 @@
                             android:layout_below="@id/faqs_cardview_image"
                             android:layout_gravity="center"
                             android:fontFamily="@font/cherry_swash"
+                            android:gravity="start"
                             android:padding="16dp"
-                            android:gravity="center"
-                            android:text="FAQs"
+                            android:text="Frequently Asked Questions"
                             android:textColor="#ff23729a"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
-
-                    </RelativeLayout>
-
-                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
-
-                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
-                    android:id="@+id/healthy_parenting_cardview"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="6dp"
-                    android:layout_marginEnd="12dp"
-                    android:layout_marginTop="6dp"
-                    android:layout_marginBottom="6dp"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    android:focusable="true"
-                    app:cardCornerRadius="12dp"
-                    app:cardElevation="6dp"
-                    app:strokeColor="#2196F3"
-                    app:strokeWidth="1dp">
-
-                    <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-
-                        <ImageView
-                            android:id="@+id/parenting_cardview_image"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:layout_alignParentEnd="true"
-                            android:layout_marginTop="16dp"
-                            android:layout_marginEnd="16dp"
-                            android:contentDescription="@string/todo"
-                            android:src="@drawable/parenting_cardview_image" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/parenting_cardview_image"
-                            android:layout_gravity="center"
-                            android:fontFamily="@font/cherry_swash"
-                            android:padding="16dp"
-                            android:text="@string/healthy_parenting"
-                            android:textColor="#ff23729a"
-                            android:textSize="16sp"
+                            android:textSize="14sp"
                             android:textStyle="bold" />
 
                     </RelativeLayout>
@@ -353,68 +247,18 @@
                 android:orientation="horizontal">
 
                 <com.google.android.material.circularreveal.cardview.CircularRevealCardView
-                    android:id="@+id/info_res_by_google_cardView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="12dp"
-                    android:layout_marginEnd="6dp"
-                    android:layout_marginTop="6dp"
-                    android:layout_marginBottom="6dp"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    android:focusable="true"
-                    app:cardCornerRadius="12dp"
-                    app:cardElevation="6dp"
-                    app:strokeColor="#2196F3"
-                    app:strokeWidth="1dp">
-
-                    <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-
-                        <ImageView
-                            android:id="@+id/info_res_by_google_cardView_image"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:layout_alignParentEnd="true"
-                            android:layout_marginTop="16dp"
-                            android:layout_marginEnd="16dp"
-                            android:layout_marginBottom="10dp"
-                            android:contentDescription="@string/todo"
-                            android:src="@drawable/info_from_google_cardview_image" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/info_res_by_google_cardView_image"
-                            android:layout_gravity="center"
-                            android:fontFamily="@font/cherry_swash"
-                            android:padding="16dp"
-                            android:gravity="center"
-                            android:text="Info By Google"
-                            android:textColor="#ff23729a"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
-
-                    </RelativeLayout>
-
-                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
-
-                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
                     android:id="@+id/service_before_self_cardview"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="6dp"
-                    android:layout_marginEnd="12dp"
-                    android:layout_marginTop="6dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
                     android:layout_marginBottom="6dp"
                     android:layout_weight="1"
                     android:clickable="true"
                     android:focusable="true"
                     app:cardCornerRadius="12dp"
-                    app:cardElevation="6dp"
-                    app:strokeColor="#2196F3"
-                    app:strokeWidth="1dp">
+                    app:cardElevation="6dp">
 
                     <RelativeLayout
                         android:layout_width="wrap_content"
@@ -439,7 +283,148 @@
                             android:padding="16dp"
                             android:text="Service Before Self"
                             android:textColor="#ff23729a"
-                            android:textSize="16sp"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                    android:id="@+id/healthy_parenting_cardview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginBottom="6dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/parenting_cardview_image"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:contentDescription="@string/todo"
+                            android:src="@drawable/parenting_cardview_image" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/parenting_cardview_image"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/cherry_swash"
+                            android:padding="16dp"
+                            android:text="@string/healthy_parenting"
+                            android:textColor="#ff23729a"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                    android:id="@+id/info_res_by_google_cardView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="6dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/info_res_by_google_cardView_image"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="10dp"
+                            android:contentDescription="@string/todo"
+                            android:src="@drawable/info_from_google_cardview_image" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_below="@id/info_res_by_google_cardView_image"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/cherry_swash"
+                            android:gravity="start"
+                            android:padding="16dp"
+                            android:text="Covid-19 Info By Google"
+                            android:textColor="#ff23729a"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                    android:id="@+id/related_videos_cardview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginBottom="6dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/related_videos_cardview_image"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:contentDescription="@string/todo"
+                            android:src="@drawable/related_video_cardview" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/related_videos_cardview_image"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/cherry_swash"
+                            android:padding="16dp"
+                            android:text="@string/related_videos"
+                            android:textColor="#ff23729a"
+                            android:textSize="14sp"
                             android:textStyle="bold" />
 
                     </RelativeLayout>
@@ -452,49 +437,92 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:visibility="gone">
+                android:layout_marginBottom="32dp">
 
                 <com.google.android.material.circularreveal.cardview.CircularRevealCardView
-                    android:id="@+id/info_youtube_channels_cardView"
-                    android:layout_width="0dp"
+                    android:id="@+id/some_cardView"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginStart="12dp"
-                    android:layout_marginTop="6dp"
-                    android:layout_marginEnd="12dp"
-                    android:layout_marginBottom="12dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="6dp"
                     android:layout_weight="1"
                     android:clickable="true"
                     android:focusable="true"
                     app:cardCornerRadius="12dp"
-                    app:cardElevation="6dp"
-                    app:strokeColor="#2196F3"
-                    app:strokeWidth="1dp">
+                    app:cardElevation="6dp">
 
                     <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:id="@+id/info_youtube_channels_cardView_image"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
+                            android:id="@+id/some_cardView_image"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
                             android:layout_alignParentEnd="true"
-                            android:layout_margin="16dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="10dp"
                             android:contentDescription="@string/todo"
-                            android:src="@drawable/youtube_cardview_image" />
+                            android:src="@drawable/info_from_google_cardview_image" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentStart="true"
-                            android:layout_centerVertical="true"
+                            android:layout_below="@id/some_cardView_image"
+                            android:layout_gravity="center"
                             android:fontFamily="@font/cherry_swash"
-                            android:gravity="center"
-                            android:layout_marginStart="16dp"
+                            android:gravity="start"
                             android:padding="16dp"
-                            android:text="Informative Youtube Channels"
+                            android:text="Covid-19 Info By Google"
                             android:textColor="#ff23729a"
-                            android:textSize="16sp"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                    android:id="@+id/some1_cardview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginBottom="6dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/some1_cardview_image"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:contentDescription="@string/todo"
+                            android:src="@drawable/related_video_cardview" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/some1_cardview_image"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/cherry_swash"
+                            android:padding="16dp"
+                            android:text="@string/related_videos"
+                            android:textColor="#ff23729a"
+                            android:textSize="14sp"
                             android:textStyle="bold" />
 
                     </RelativeLayout>
@@ -508,13 +536,13 @@
     </ScrollView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:id="@+id/bottom_navigation"
+        android:layout_alignParentBottom="true"
         android:background="@drawable/navigationbar"
-        app:itemTextColor="@drawable/selector"
         app:itemIconTint="@drawable/selector"
-        app:menu="@menu/menu_bottom_navigation"
-        android:layout_alignParentBottom="true"/>
+        app:itemTextColor="@drawable/selector"
+        app:menu="@menu/menu_bottom_navigation" />
 
 </RelativeLayout>

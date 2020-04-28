@@ -11,8 +11,8 @@
         android:id="@+id/maps_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
         android:orientation="horizontal">
 
         <TextView
@@ -30,10 +30,9 @@
 
     <View
         android:id="@+id/line5"
-        android:layout_width="200dp"
+        android:layout_width="280dp"
         android:layout_height="1dp"
         android:background="#FFFFFF"
-        android:layout_marginBottom="8dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/maps_title"/>
 

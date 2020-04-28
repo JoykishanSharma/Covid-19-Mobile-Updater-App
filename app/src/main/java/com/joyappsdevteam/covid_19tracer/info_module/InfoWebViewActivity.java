@@ -42,7 +42,7 @@ public class InfoWebViewActivity extends AppCompatActivity {
             url = "https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public/videos";
         }
         else if (whichWebViewToShow.equals("faqs")){
-            title.setText("FAQs");
+            title.setText("Frequently Asked Questions");
             url = "https://www.who.int/news-room/q-a-detail/q-a-coronaviruses";
         }
         else if (whichWebViewToShow.equals("healthy_parenting")){

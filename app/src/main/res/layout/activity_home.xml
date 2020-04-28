@@ -10,7 +10,9 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="35dp">
+        android:layout_marginBottom="35dp"
+        android:layout_margin="8dp"
+        android:scrollbars="none">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -71,9 +73,7 @@
                 android:clickable="false"
                 android:focusable="false"
                 app:cardCornerRadius="12dp"
-                app:cardElevation="6dp"
-                app:strokeColor="#2196F3"
-                app:strokeWidth="1dp">
+                app:cardElevation="6dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -365,9 +365,7 @@
                 android:clickable="false"
                 android:focusable="false"
                 app:cardCornerRadius="12dp"
-                app:cardElevation="6dp"
-                app:strokeColor="#2196F3"
-                app:strokeWidth="1dp">
+                app:cardElevation="6dp">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -455,8 +453,7 @@
                     android:focusable="true"
                     app:cardCornerRadius="12dp"
                     app:cardElevation="6dp"
-                    app:strokeColor="#2196F3"
-                    app:strokeWidth="1dp">
+                    >
 
                     <RelativeLayout
                         android:layout_width="wrap_content"
@@ -501,8 +498,7 @@
                     android:focusable="true"
                     app:cardCornerRadius="12dp"
                     app:cardElevation="6dp"
-                    app:strokeColor="#2196F3"
-                    app:strokeWidth="1dp">
+                    >
 
                     <RelativeLayout
                         android:layout_width="wrap_content"
@@ -539,7 +535,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:visibility="gone">
 
                 <com.google.android.material.circularreveal.cardview.CircularRevealCardView
                     android:id="@+id/all_nearby_covid19_hospital"
@@ -553,9 +550,7 @@
                     android:clickable="true"
                     android:focusable="true"
                     app:cardCornerRadius="12dp"
-                    app:cardElevation="6dp"
-                    app:strokeColor="#2196F3"
-                    app:strokeWidth="1dp">
+                    app:cardElevation="6dp">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -599,9 +594,7 @@
                     android:clickable="true"
                     android:focusable="true"
                     app:cardCornerRadius="12dp"
-                    app:cardElevation="6dp"
-                    app:strokeColor="#2196F3"
-                    app:strokeWidth="1dp">
+                    app:cardElevation="6dp">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -643,9 +636,7 @@
                 android:clickable="true"
                 android:focusable="true"
                 app:cardCornerRadius="12dp"
-                app:cardElevation="6dp"
-                app:strokeColor="#2196F3"
-                app:strokeWidth="1dp">
+                app:cardElevation="6dp">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -690,9 +681,7 @@
                 android:clickable="true"
                 android:focusable="true"
                 app:cardCornerRadius="12dp"
-                app:cardElevation="6dp"
-                app:strokeColor="#2196F3"
-                app:strokeWidth="1dp">
+                app:cardElevation="6dp">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -739,8 +728,7 @@
                 android:focusable="true"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="6dp"
-                app:strokeColor="#2196F3"
-                app:strokeWidth="1dp">
+                >
 
                 <RelativeLayout
                     android:layout_width="match_parent"
