@@ -81,6 +81,10 @@ public class InfoWebViewActivity extends AppCompatActivity {
             title.setText("Fake News");
             url = "https://www.altnews.in/?s=coronavirus";
         }
+        else if (whichWebViewToShow.equals("online_scams_buster")){
+            title.setText("Online Scams");
+            url = "https://safety.google/intl/en_in/securitytips-covid19/?utm_source=GoogleUK&utm_medium=Desktop&utm_campaign=SafetyCenter&utm_term=Scams&utm_content=Everyone";
+        }
 
         BackButton.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -64,6 +64,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        //Attaching variables with xml "phone_verify_activity.xml" views
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.home);
         homeToMapCardView = findViewById(R.id.home_to_map_cardview);
@@ -89,6 +90,10 @@ public class HomeActivity extends AppCompatActivity {
         state_helpline_text = findViewById(R.id.state_helpline_text);
         state_helpline_number = findViewById(R.id.state_helpline_number);
 
+
+        //When this Activity is called, we check for internet connect so that we can update the Covid-19 cases
+        //If there is no internet connection, a AlertDialog will be displayed
+        //If there is a active internet connection, this Activity will continue to execute as it is
         if (!isConnected()){
             new AlertDialog.Builder(this)
                     .setIcon(android.R.drawable.ic_dialog_alert)
@@ -97,6 +102,7 @@ public class HomeActivity extends AppCompatActivity {
                     .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
+                            //closing the app and destroying all background process
                             endTask();
                             onDestroy();
                         }

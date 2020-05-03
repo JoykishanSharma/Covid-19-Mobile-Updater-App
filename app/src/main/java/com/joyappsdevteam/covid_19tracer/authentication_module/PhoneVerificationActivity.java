@@ -99,7 +99,6 @@ public class PhoneVerificationActivity extends AppCompatActivity {
                             if (!verificationError) {
 
                                 // We are reusing the same xml layout for OTP input by making few Views Visible and Invisible
-
                                 //Changing title text
                                 send_otp_text.setText("Enter the OTP code sent at +91" + reg_mobile_no);
 
@@ -123,7 +122,8 @@ public class PhoneVerificationActivity extends AppCompatActivity {
                             requestRuntimePermission();
                         }
                     //if the App is not Connected with Internet, it will display this Toast message
-                    } else {
+                    }
+                    else {
                         Toast.makeText(PhoneVerificationActivity.this, "No Internet Connection", Toast.LENGTH_SHORT).show();
                     }
                 }

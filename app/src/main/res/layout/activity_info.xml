@@ -340,7 +340,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginBottom="40dp">
+                >
 
                 <com.google.android.material.circularreveal.cardview.CircularRevealCardView
                     android:id="@+id/info_res_by_google_cardView"
@@ -438,17 +438,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginBottom="32dp"
-                android:visibility="gone">
+                android:layout_marginBottom="40dp">
 
                 <com.google.android.material.circularreveal.cardview.CircularRevealCardView
-                    android:id="@+id/report_patient"
+                    android:id="@+id/online_scams"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="6dp"
-                    android:layout_marginTop="6dp"
-                    android:layout_marginEnd="12dp"
-                    android:layout_marginBottom="12dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="6dp"
                     android:layout_weight="1"
                     android:clickable="true"
                     android:focusable="true"
@@ -460,7 +459,7 @@
                         android:layout_height="match_parent">
 
                         <ImageView
-                            android:id="@+id/report_cardview_image"
+                            android:id="@+id/online_scams_cardview_image"
                             android:layout_width="60dp"
                             android:layout_height="60dp"
                             android:src="@drawable/sick"
@@ -474,8 +473,8 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/cherry_swash"
                             android:textStyle="bold"
-                            android:text="@string/report_suspicion"
-                            android:layout_below="@id/report_cardview_image"
+                            android:text="@string/online_scams"
+                            android:layout_below="@id/online_scams_cardview_image"
                             android:layout_gravity="center"
                             android:padding="16dp"
                             android:textColor="#ff23729a"
