@@ -50,6 +50,10 @@
         <activity
             android:name=".authentication_module.UserSignInSignUpActivity"
             android:theme="@style/AppThemeWithNoActionBar" />
+        <activity
+            android:name=".settings_module.ExitActivity"
+            android:theme="@android:style/Theme.NoDisplay"
+            android:autoRemoveFromRecents="true"/>
         <activity android:name=".WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

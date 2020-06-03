@@ -21,6 +21,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatSpinner;
+import androidx.cardview.widget.CardView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -41,7 +42,7 @@ public class SettingsActivity extends AppCompatActivity {
     private AppCompatSpinner spinner;
     private String newLocation_settings;
     private TextView mobileNumberSettings,aboutUs,attributes,privacy_policy,terms_and_conditions;
-    private Button saveChanges,signOut;
+    private CardView saveChanges,signOut;
     private FirebaseAuth mAuth;
     private String userId;
     private ArrayAdapter<String> dataAdapter;
@@ -94,6 +95,15 @@ public class SettingsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 finish();
+            }
+        });
+
+        signOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mAuth.signOut();
+                ExitActivity.exitApplication(getApplicationContext());
+                endTask();
             }
         });
 
@@ -299,5 +309,15 @@ public class SettingsActivity extends AppCompatActivity {
             return (mobile != null && mobile.isConnectedOrConnecting()) || (wifi != null && wifi.isConnectedOrConnecting());
         } else
             return false;
+    }
+
+    public void endTask() {
+        Intent homeIntent = new Intent(Intent.ACTION_MAIN);
+        homeIntent.addCategory(Intent.CATEGORY_HOME);
+        homeIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(homeIntent);
+
+        finishAndRemoveTask();
+        finish();
     }
 }
