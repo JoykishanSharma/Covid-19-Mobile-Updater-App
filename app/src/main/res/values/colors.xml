@@ -7,4 +7,15 @@
     <color name="colorBackground">#f9f9fa</color>
     <color name="colorTextSubtitle">#4e4e4e</color>
     <color name="colorTextTitle">#262626</color>
+
+    <color name="backgroundColor">#C5C5C5</color>
+    <color name="whiteColor">#FAFAFA</color>
+
+    <color name="GrayTextColor">#636363</color>
+    <color name="BlackTextColor">#000000</color>
+
+    <color name="colorRed">#AA0000</color>
+    <color name="colorRedLight">#C52121</color>
+
+    <color name="fewSecondHighlightColor">#6A50B354</color>
 </resources>

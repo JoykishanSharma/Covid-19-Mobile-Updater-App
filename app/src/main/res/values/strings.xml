@@ -6,6 +6,7 @@
     <string name="good">GOOD&#160;</string>
     <string name="hello">Hello!</string>
     <string name="your_name">Your Name</string>
+    <string name="sign_in_heading_below_text"><![CDATA[Enter email & password to continue]]></string>
     <string name="how_are_you_feeling_at_this_moment">How are you feeling at this moment?</string>
     <string name="update_cases">Update Cases</string>
     <string name="see_details"><u>see details</u></string>

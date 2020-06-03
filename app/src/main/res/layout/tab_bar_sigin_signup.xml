@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:background="@color/whiteColor"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/sign_in_tabBar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Sign In"
+        android:textSize="20sp"
+        android:layout_weight="1"
+        android:fontFamily="sans-serif-medium"
+        android:paddingTop="16dp"
+        android:paddingStart="16dp"
+        android:paddingBottom="12dp"
+        android:paddingEnd="16dp"
+        android:gravity="start"
+        android:textColor="@color/colorPrimaryDark" />
+
+    <TextView
+        android:id="@+id/sign_up_tabBar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Sign Up"
+        android:layout_weight="1"
+        android:textSize="18sp"
+        android:fontFamily="sans-serif-medium"
+        android:paddingTop="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="12dp"
+        android:paddingStart="16dp"
+        android:gravity="end"
+        />
+
+</LinearLayout>

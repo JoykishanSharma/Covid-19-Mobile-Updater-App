@@ -6,8 +6,14 @@ public class UserDetails {
     private String email;
     private String location;
     private String mobile;
+    private String userID;
 
-    public UserDetails() {
+    public UserDetails(String name, String email, String location, String mobile, String userID) {
+        this.name = name;
+        this.email = email;
+        this.location = location;
+        this.mobile = mobile;
+        this.userID = userID;
     }
 
     public String getName() {
@@ -40,5 +46,13 @@ public class UserDetails {
 
     public void setMobile(String mobile) {
         this.mobile = mobile;
+    }
+
+    public String getUserID() {
+        return userID;
+    }
+
+    public void setUserID(String userID) {
+        this.userID = userID;
     }
 }

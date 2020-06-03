@@ -197,19 +197,44 @@
 
             </LinearLayout>
 
-            <Button
-                android:id="@+id/save_changes"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Save"
-                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
                 android:layout_marginTop="16dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginBottom="16dp"
-                android:textColor="#FAFAFA"
-                android:fontFamily="@font/cherry_swash"
-                android:background="#FAFAFA" />
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal">
+
+                <Button
+                    android:id="@+id/signOut"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sign Out"
+                    android:textAllCaps="false"
+                    android:layout_marginEnd="24dp"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="#FAFAFA"
+                    android:fontFamily="@font/cherry_swash"
+                    android:background="#FAFAFA" />
+
+                <Button
+                    android:id="@+id/save_changes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Save"
+                    android:textAllCaps="false"
+                    android:layout_marginStart="24dp"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="#FAFAFA"
+                    android:fontFamily="@font/cherry_swash"
+                    android:background="#FAFAFA" />
+
+            </LinearLayout>
+
+
 
             <View
                 android:layout_width="300dp"

@@ -21,6 +21,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatSpinner;
+
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -39,8 +41,10 @@ public class SettingsActivity extends AppCompatActivity {
     private AppCompatSpinner spinner;
     private String newLocation_settings;
     private TextView mobileNumberSettings,aboutUs,attributes,privacy_policy,terms_and_conditions;
-    private Button saveChanges;
-    private String mobileNo;
+    private Button saveChanges,signOut;
+    private FirebaseAuth mAuth;
+    private String userId;
+    private ArrayAdapter<String> dataAdapter;
 
     public static String toTitleCase(String input) {
         StringBuilder titleCase = new StringBuilder(input.length());
@@ -78,82 +82,13 @@ public class SettingsActivity extends AppCompatActivity {
         attributes = findViewById(R.id.attributes);
         privacy_policy = findViewById(R.id.privacy_policy);
         terms_and_conditions = findViewById(R.id.terms_and_conditions);
+        signOut = findViewById(R.id.signOut);
 
-        SharedPreferences sharedPref = getSharedPreferences("UserDetails", MODE_PRIVATE);
-        String oldName = sharedPref.getString("username", null);
-        String oldEmail = sharedPref.getString("emailAddress", null);
-        String oldLocation = sharedPref.getString("location", null);
+        mAuth = FirebaseAuth.getInstance();
+        userId = mAuth.getUid();
 
-        SharedPreferences sharedPreferences = getSharedPreferences("phoneVerified", MODE_PRIVATE);
-        mobileNo = sharedPreferences.getString("mobile_no", null);
-
-        assert oldName != null;
-        newName.setText(toTitleCase(oldName));
-        newEmail.setText(oldEmail);
-        mobileNumberSettings.setText("+91-" + mobileNo + "  ");
-
-        List<String> categories = new ArrayList<>();
-        categories.add(0, "Select your state");
-        categories.add("Andhra Pradesh");
-        categories.add("Arunachal Pradesh");
-        categories.add("Assam");
-        categories.add("Bihar");
-        categories.add("Chhattisgarh");
-        categories.add("Goa");
-        categories.add("Gujarat");
-        categories.add("Haryana");
-        categories.add("Himachal Pradesh");
-        categories.add("Jharkhand");
-        categories.add("Karnataka");
-        categories.add("Kerala");
-        categories.add("Madhya Pradesh");
-        categories.add("Maharashtra");
-        categories.add("Manipur");
-        categories.add("Meghalaya");
-        categories.add("Mizoram");
-        categories.add("Nagaland");
-        categories.add("Odisha");
-        categories.add("Punjab");
-        categories.add("Rajasthan");
-        categories.add("Sikkim");
-        categories.add("Tamil Nadu");
-        categories.add("Telangana");
-        categories.add("Tripura");
-        categories.add("Uttarakhand");
-        categories.add("Uttar Pradesh");
-        categories.add("West Bengal");
-        categories.add("Andaman and Nicobar Islands");
-        categories.add("Chandigarh");
-        categories.add("Dadra and Nagar Haveli");
-        categories.add("Daman and Diu");
-        categories.add("Delhi");
-        categories.add("Jammu and Kashmir");
-        categories.add("Ladakh");
-        categories.add("Lakshadweep");
-        categories.add("Puducherry");
-
-        //Style and populate spinner
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(this, R.layout.spinner_item, categories);
-
-        //Dropdown layout style
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        //attaching data adapter to spinner
-        spinner.setAdapter(dataAdapter);
-
-        spinner.setSelection(dataAdapter.getPosition(oldLocation));
-
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    newLocation_settings = parent.getItemAtPosition(position).toString();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
+        updateData(userId);
+        loadSpinnerData();
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -176,7 +111,7 @@ public class SettingsActivity extends AppCompatActivity {
                     Toast.makeText(SettingsActivity.this, "Select your location", Toast.LENGTH_SHORT).show();
                 } else {
                     if (isConnected()) {
-                        savedUserDetailsNew(newNameToSave, newEmailToSave, newLocation_settings);
+                        savedUserDetailsNew(userId, newNameToSave, newEmailToSave, newLocation_settings);
                         Toast.makeText(getApplicationContext(), "Changes Saved", Toast.LENGTH_SHORT).show();
                     } else
                         Toast.makeText(SettingsActivity.this, "No Internet Connection", Toast.LENGTH_SHORT).show();
@@ -222,37 +157,133 @@ public class SettingsActivity extends AppCompatActivity {
         });
     }
 
-    private void savedUserDetailsNew(String name, String email, String location) {
-        SharedPreferences sp = getSharedPreferences("UserDetails", MODE_PRIVATE);
-        SharedPreferences.Editor et = sp.edit();
-        et.putBoolean("user_details", true);
-        et.putString("username", name);
-        et.putString("emailAddress", email);
-        et.putString("location", location);
-        et.apply();
+    private void updateData(String userID){
 
-        //creating UserDetails Object
-        userDetails = new UserDetails();
-        userDetails.setName(name);
-        userDetails.setEmail(email);
-        userDetails.setLocation(location);
-        userDetails.setMobile(mobileNo);
+        try {
+            //store credential to firebase Database
+            final DatabaseReference availReff = FirebaseDatabase.getInstance().getReference().child("UserDetails").child(userID);
+            availReff.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    try {
+                    String username = dataSnapshot.child("name").getValue(String.class);
+                    String emailAddress = dataSnapshot.child("email").getValue(String.class);
+                    String mobileNo = dataSnapshot.child("mobile").getValue(String.class);
+                    String currentLocation = dataSnapshot.child("location").getValue(String.class);
 
-        // storing data to firebase database
-        final DatabaseReference availReff = FirebaseDatabase.getInstance().getReference().child("UserDetails");
-        availReff.addListenerForSingleValueEvent(new ValueEventListener() {
+                    assert username != null;
+                    assert currentLocation != null;
+
+                    newName.setText(toTitleCase(username));
+                    newEmail.setText(emailAddress);
+                    mobileNumberSettings.setText("+91-" + mobileNo + "  ");
+                    spinner.setSelection(dataAdapter.getPosition(currentLocation));
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+                    databaseError.toException().printStackTrace();
+                }
+            });
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    private void loadSpinnerData(){
+        List<String> categories = new ArrayList<>();
+        categories.add(0, "Select your state");
+        categories.add("Andhra Pradesh");
+        categories.add("Arunachal Pradesh");
+        categories.add("Assam");
+        categories.add("Bihar");
+        categories.add("Chhattisgarh");
+        categories.add("Goa");
+        categories.add("Gujarat");
+        categories.add("Haryana");
+        categories.add("Himachal Pradesh");
+        categories.add("Jharkhand");
+        categories.add("Karnataka");
+        categories.add("Kerala");
+        categories.add("Madhya Pradesh");
+        categories.add("Maharashtra");
+        categories.add("Manipur");
+        categories.add("Meghalaya");
+        categories.add("Mizoram");
+        categories.add("Nagaland");
+        categories.add("Odisha");
+        categories.add("Punjab");
+        categories.add("Rajasthan");
+        categories.add("Sikkim");
+        categories.add("Tamil Nadu");
+        categories.add("Telangana");
+        categories.add("Tripura");
+        categories.add("Uttarakhand");
+        categories.add("Uttar Pradesh");
+        categories.add("West Bengal");
+        categories.add("Andaman and Nicobar Islands");
+        categories.add("Chandigarh");
+        categories.add("Dadra and Nagar Haveli");
+        categories.add("Daman and Diu");
+        categories.add("Delhi");
+        categories.add("Jammu and Kashmir");
+        categories.add("Ladakh");
+        categories.add("Lakshadweep");
+        categories.add("Puducherry");
+
+        //Style and populate spinner
+        dataAdapter = new ArrayAdapter<>(this, R.layout.spinner_item, categories);
+
+        //Dropdown layout style
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        //attaching data adapter to spinner
+        spinner.setAdapter(dataAdapter);
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                availReff.push().setValue(userDetails);
-                Log.i("data Saved to ", "Firebase Database");
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                newLocation_settings = parent.getItemAtPosition(position).toString();
             }
 
             @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                //Do nothing
+            public void onNothingSelected(AdapterView<?> parent) {
+
             }
         });
+    }
+
+    private void savedUserDetailsNew(String userID, final String name, final String email, final String location) {
+
+        try {
+            //store credential to firebase Database
+            final DatabaseReference availReff = FirebaseDatabase.getInstance().getReference().child("UserDetails").child(userID);
+            availReff.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    try {
+
+                        dataSnapshot.getRef().child("name").setValue(name);
+                        dataSnapshot.getRef().child("email").setValue(email);
+                        dataSnapshot.getRef().child("location").setValue(location);
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+                    databaseError.toException().printStackTrace();
+                }
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private boolean isConnected() {

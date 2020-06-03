@@ -30,6 +30,12 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.joyappsdevteam.covid_19tracer.WelcomeActivity;
 import com.joyappsdevteam.covid_19tracer.info_module.InfoActivity;
 import com.joyappsdevteam.covid_19tracer.maps_module.MapsActivity;
@@ -42,6 +48,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Objects;
 import java.util.Random;
 
 public class HomeActivity extends AppCompatActivity {
@@ -58,6 +65,8 @@ public class HomeActivity extends AppCompatActivity {
             your_state_name, text_username,state_helpline_text,state_helpline_number;
     private RequestQueue requestQueue;
     private String currentUserStateHelpline;
+    private FirebaseAuth mAuth;
+    String userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -116,8 +125,11 @@ public class HomeActivity extends AppCompatActivity {
         //here we are initalizing a requestQueue with the help Volley.
         requestQueue = Volley.newRequestQueue(this);
 
+        mAuth = FirebaseAuth.getInstance();
+        userId = mAuth.getUid();
+
         //udating covid cases
-        updateData();
+        updateData(userId);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -353,18 +365,37 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     //retrieving user details from shared Preference and setting them to username and State name TextViews
-    private void updateData(){
-        SharedPreferences sp = getSharedPreferences("UserDetails", MODE_PRIVATE);
-        String username = sp.getString("username", null);
-        String currentLocation = sp.getString("location", null);
+    private void updateData(String userID){
 
-        if (username.equals(null)) username = "Your Name";
-        if (currentLocation.equals(null)) currentLocation = "Your State";
+        try {
+            //store credential to firebase Database
+            final DatabaseReference availReff = FirebaseDatabase.getInstance().getReference().child("UserDetails").child(userID);
+            availReff.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-        text_username.setText(toTitleCase(username));
-        state_helpline_text.setText(currentLocation + " helpline");
-        showStateHelplineNumber(currentLocation);
-        parseJsonData(currentLocation);
+                    String username = dataSnapshot.child("name").getValue(String.class);
+                    String currentLocation = dataSnapshot.child("location").getValue(String.class);
+
+                    assert username != null;
+                    assert currentLocation != null;
+
+                    text_username.setText(toTitleCase(username));
+                    state_helpline_text.setText(currentLocation + " helpline");
+                    showStateHelplineNumber(currentLocation);
+                    parseJsonData(currentLocation);
+
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+                    databaseError.toException().printStackTrace();
+                }
+            });
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     private void showStateHelplineNumber(String stateName){
@@ -519,7 +550,9 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        updateData();
+        mAuth = FirebaseAuth.getInstance();
+        String userId = mAuth.getUid();
+        updateData(userId);
         bottomNavigationView.setSelectedItemId(R.id.home);
     }
 
@@ -564,6 +597,9 @@ public class HomeActivity extends AppCompatActivity {
     public void onResume(){
         super.onResume();
 
+        mAuth = FirebaseAuth.getInstance();
+        String userId = mAuth.getUid();
+
         if (!isConnected()){
             new AlertDialog.Builder(this)
                     .setIcon(android.R.drawable.ic_dialog_alert)
@@ -579,7 +615,7 @@ public class HomeActivity extends AppCompatActivity {
                     .setCancelable(false)
                     .show();
         }
-        else updateData();
+        else updateData(userId);
 
 
     }

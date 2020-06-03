@@ -39,8 +39,17 @@
         <activity android:name=".settings_module.AboutUsActivity" />
         <activity android:name=".settings_module.SettingsActivity" />
         <activity android:name=".home_module.HomeActivity" />
-        <activity android:name=".authentication_module.TakeUsernameAndLocationActivity" />
-        <activity android:name=".authentication_module.PhoneVerificationActivity" /> <!-- This is the welcome screen activity. This Activity will launch first when the user Opens the App -->
+        <activity
+            android:name=".authentication_module.user_signin_module.ForgotPasswordActivity"
+            android:label="Forgot password"
+            android:theme="@style/AppThemeWithActionBar" />
+        <activity
+            android:name=".authentication_module.user_signup_module.PhoneVerificationActivity"
+            android:label="Mobile Number Verification"
+            android:theme="@style/AppThemeWithActionBar" />
+        <activity
+            android:name=".authentication_module.UserSignInSignUpActivity"
+            android:theme="@style/AppThemeWithNoActionBar" />
         <activity android:name=".WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
