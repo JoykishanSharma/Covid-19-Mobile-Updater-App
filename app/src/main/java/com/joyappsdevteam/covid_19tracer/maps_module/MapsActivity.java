@@ -14,6 +14,8 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.webkit.GeolocationPermissions;
+import android.webkit.WebChromeClient;
 import android.webkit.WebResourceError;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
@@ -70,14 +72,16 @@ public class MapsActivity extends AppCompatActivity {
             }
         });
 
-        WebSettings settings = webView.getSettings();
-        settings.setDomStorageEnabled(true);
-        settings.setAllowContentAccess(true);
-        settings.setUseWideViewPort(true);
-        settings.setJavaScriptEnabled(true);// enable javascript
-        settings.setLoadWithOverviewMode(true);
-        settings.setBuiltInZoomControls(false);
+        webView.getSettings().setDomStorageEnabled(true);
+        webView.getSettings().setAllowContentAccess(true);
+        webView.getSettings().setUseWideViewPort(true);
+        webView.getSettings().setJavaScriptEnabled(true);// enable javascript
+        webView.getSettings().setLoadWithOverviewMode(true);
+        webView.getSettings().setBuiltInZoomControls(false);
         webView.getSettings().setSupportMultipleWindows(true);
+        webView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
+        webView.getSettings().setGeolocationEnabled(true);
+        webView.getSettings().setGeolocationDatabasePath( getApplicationContext().getFilesDir().getPath() );
 
         if(Build.VERSION.SDK_INT <= Build.VERSION_CODES.N) {
             new AlertDialog.Builder(this)
@@ -109,25 +113,21 @@ public class MapsActivity extends AppCompatActivity {
 
         webView.setWebViewClient(new WebViewClient() {
             @Override
-            public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
-                Toast.makeText(MapsActivity.this, "Oh no! " + description, Toast.LENGTH_SHORT).show();
-            }
-            @TargetApi(android.os.Build.VERSION_CODES.N)
-            @Override
-            public void onReceivedError(WebView view, WebResourceRequest req, WebResourceError rerr) {
-                // Redirect to deprecated method, so you can use it in all SDK versions
-                onReceivedError(view, rerr.getErrorCode(), rerr.getDescription().toString(), req.getUrl().toString());
-            }
-            @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                // When user clicks a hyperlink, load in the existing WebView
                 view.loadUrl(url);
                 return true;
             }
+        });
+
+        webView.setWebChromeClient(new WebChromeClient() {
+            public void onGeolocationPermissionsShowPrompt(String origin, GeolocationPermissions.Callback callback) {
+                callback.invoke(origin, true, false);
+            }
 
             @Override
-            public void onPageFinished(WebView view, String url) {
-                super.onPageFinished(view, url);
-                if (progressBar.isShowing()) {
+            public void onProgressChanged(WebView view, int newProgress) {
+                if (progressBar.isShowing()){
                     progressBar.dismiss();
                 }
             }

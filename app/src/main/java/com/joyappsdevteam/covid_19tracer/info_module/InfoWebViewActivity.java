@@ -7,6 +7,8 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.GeolocationPermissions;
+import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ImageView;
@@ -131,7 +133,13 @@ public class InfoWebViewActivity extends AppCompatActivity {
             }
         });
 
-        //Javascript enabled on webview
+        webView.setWebChromeClient(new WebChromeClient() {
+            public void onGeolocationPermissionsShowPrompt(String origin, GeolocationPermissions.Callback callback) {
+                callback.invoke(origin, true, false);
+            }
+        });
+
+            //Javascript enabled on webview
         webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setDomStorageEnabled(true);
         webView.getSettings().setAllowContentAccess(true);
@@ -140,6 +148,9 @@ public class InfoWebViewActivity extends AppCompatActivity {
         webView.getSettings().setLoadWithOverviewMode(true);
         webView.getSettings().setBuiltInZoomControls(false);
         webView.getSettings().setSupportMultipleWindows(true);
+        webView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
+        webView.getSettings().setGeolocationEnabled(true);
+        webView.getSettings().setGeolocationDatabasePath( getApplicationContext().getFilesDir().getPath() );
 
         //Load url in webview
         webView.loadUrl(url);

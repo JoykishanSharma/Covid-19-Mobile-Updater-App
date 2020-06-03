@@ -111,8 +111,12 @@ public class HomeActivity extends AppCompatActivity {
                     .show();
         }
 
+        //Volley is an HTTP library that makes networking for Android apps easier to connect.
+        //For More Go to --> https://developer.android.com/training/volley
+        //here we are initalizing a requestQueue with the help Volley.
         requestQueue = Volley.newRequestQueue(this);
 
+        //udating covid cases
         updateData();
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -206,7 +210,8 @@ public class HomeActivity extends AppCompatActivity {
                 if (isConnected()){
                     startActivity(new Intent(HomeActivity.this, MapsActivity.class));
                     overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-                } else Toast.makeText(HomeActivity.this,"No Internet Connection",Toast.LENGTH_SHORT).show();
+                }
+                else Toast.makeText(HomeActivity.this,"No Internet Connection",Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -347,6 +352,7 @@ public class HomeActivity extends AppCompatActivity {
         requestQueue.add(request);
     }
 
+    //retrieving user details from shared Preference and setting them to username and State name TextViews
     private void updateData(){
         SharedPreferences sp = getSharedPreferences("UserDetails", MODE_PRIVATE);
         String username = sp.getString("username", null);
@@ -527,7 +533,7 @@ public class HomeActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                             endTask();
-                            onDestroy();
+                            //onDestroy();
                     }
                 })
                 .setNegativeButton("No", null)
