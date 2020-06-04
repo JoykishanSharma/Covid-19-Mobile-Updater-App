@@ -7,39 +7,10 @@
     android:background="@drawable/bg_view"
     tools:context=".info_module.InfoActivity">
 
-    <LinearLayout
-        android:id="@+id/info_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="4dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:fontFamily="@font/cherry_swash"
-            android:gravity="center_horizontal"
-            android:text="Information"
-            android:textColor="#FFFF"
-            android:textSize="22sp"
-            android:textStyle="bold" />
-
-    </LinearLayout>
-
-    <View
-        android:id="@+id/line4"
-        android:layout_width="280dp"
-        android:layout_height="1dp"
-        android:layout_below="@id/info_title"
-        android:layout_centerHorizontal="true"
-        android:background="#FFFFFF" />
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/line4"
+        android:layout_alignParentTop="true"
         android:layout_marginBottom="42dp"
         android:paddingStart="8dp"
         android:paddingEnd="8dp"

@@ -8,40 +8,10 @@
     tools:context=".news_module.NewsActivity">
 
     <LinearLayout
-        android:id="@+id/news_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="4dp"
-
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:fontFamily="@font/cherry_swash"
-            android:gravity="center_horizontal"
-            android:text="Global Covid-19 News"
-            android:textColor="#FFFF"
-            android:textSize="22sp"
-            android:textStyle="bold" />
-
-    </LinearLayout>
-
-    <View
-        android:id="@+id/line6"
-        android:layout_width="280dp"
-        android:layout_height="1dp"
-        android:layout_below="@id/news_title"
-        android:layout_centerHorizontal="true"
-        android:background="#FFFFFF" />
-
-    <LinearLayout
         android:id="@+id/fake_and_latest_news_linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/line6"
+        android:layout_alignParentTop="true"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:paddingStart="16dp"
@@ -121,8 +91,6 @@
         android:layout_height="match_parent"
         android:layout_below="@id/line8"
         android:layout_marginBottom="42dp"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
         android:paddingBottom="24dp">
 
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout

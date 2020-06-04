@@ -16,19 +16,17 @@ import android.widget.TextView;
 
 import com.joyappsdevteam.covid_19tracer.R;
 
+import java.util.Objects;
+
 public class InfoWebViewActivity extends AppCompatActivity {
 
     private WebView webView;
-    private ImageView BackButton;
-    private TextView title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info_webview);
 
-        title = findViewById(R.id.info_webview_title);
-        BackButton = findViewById(R.id.back_arrow9);
         webView = findViewById(R.id.myth_busters_webView);
 
         String whichWebViewToShow = getIntent().getStringExtra("WhichWebViewToShow");
@@ -36,64 +34,57 @@ public class InfoWebViewActivity extends AppCompatActivity {
         String url = null;
 
         if (whichWebViewToShow.equals("myth_busters")){
-            title.setText("Myth Busters");
+            Objects.requireNonNull(getSupportActionBar()).setTitle("Myth Busters");
             url = "https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public/myth-busters";
         }
         else if (whichWebViewToShow.equals("related_videos")){
-            title.setText("Related Videos");
+            Objects.requireNonNull(getSupportActionBar()).setTitle("Related Videos");
             url = "https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public/videos";
         }
         else if (whichWebViewToShow.equals("faqs")){
-            title.setText("Frequently Asked Questions");
+            Objects.requireNonNull(getSupportActionBar()).setTitle("Frequently Asked Questions");
             url = "https://www.who.int/news-room/q-a-detail/q-a-coronaviruses";
         }
         else if (whichWebViewToShow.equals("healthy_parenting")){
-            title.setText("Healthy Parenting");
+            Objects.requireNonNull(getSupportActionBar()).setTitle("Healthy Parenting");
             url = "https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public/healthy-parenting";
         }
         else if (whichWebViewToShow.equals("public_advice")){
-            title.setText("Public advice from WHO");
+            Objects.requireNonNull(getSupportActionBar()).setTitle("Public advice from WHO");
             url = "https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public";
         }
         else if (whichWebViewToShow.equals("gov_india")){
-            title.setText("Ministry of Health and Family Welfare");
+            Objects.requireNonNull(getSupportActionBar()).setTitle("Ministry of Health and Family Welfare");
             url = "https://www.mohfw.gov.in/";
         }
         else if (whichWebViewToShow.equals("coronavirus_history")){
-            title.setText("History of Coronavirus");
+            Objects.requireNonNull(getSupportActionBar()).setTitle("History of Coronavirus");
             url = "https://en.wikipedia.org/wiki/Coronavirus";
         }
         else if (whichWebViewToShow.equals("info_by_google")){
-            title.setText("Info By Google");
+            Objects.requireNonNull(getSupportActionBar()).setTitle("Info By Google");
             url = "https://www.google.com/intl/en_in/covid19/";
         }
         else if (whichWebViewToShow.equals("service_before_self")){
-            title.setText("Service Before Self");
+            Objects.requireNonNull(getSupportActionBar()).setTitle("Service Before Self");
             url = "https://www.covid19india.org/essentials";
         }
         else if (whichWebViewToShow.equals("eConsult")){
-            title.setText("eConsult");
+            Objects.requireNonNull(getSupportActionBar()).setTitle("eConsult");
             url = "https://econsult-website-three.now.sh/consult";
         }
         else if (whichWebViewToShow.equals("latest_news")){
-            title.setText("Latest News");
+            Objects.requireNonNull(getSupportActionBar()).setTitle("Latest News");
             url = "https://news.google.com/topics/CAAqIggKIhxDQkFTRHdvSkwyMHZNREZqY0hsNUVnSmxiaWdBUAE?hl=en-IN&gl=IN&ceid=IN%3Aen";
         }
         else if (whichWebViewToShow.equals("fake_news")){
-            title.setText("Fake News");
+            Objects.requireNonNull(getSupportActionBar()).setTitle("Fake News");
             url = "https://www.altnews.in/?s=coronavirus";
         }
         else if (whichWebViewToShow.equals("online_scams_buster")){
-            title.setText("Online Scams");
+            Objects.requireNonNull(getSupportActionBar()).setTitle("Online Scams");
             url = "https://safety.google/intl/en_in/securitytips-covid19/?utm_source=GoogleUK&utm_medium=Desktop&utm_campaign=SafetyCenter&utm_term=Scams&utm_content=Everyone";
         }
-
-        BackButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
 
         startWebView(url);
     }
@@ -163,6 +154,12 @@ public class InfoWebViewActivity extends AppCompatActivity {
         } else {
             super.onBackPressed();
         }
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return true;
     }
 
 }

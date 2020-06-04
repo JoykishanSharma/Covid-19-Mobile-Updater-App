@@ -114,6 +114,10 @@ public class NewsActivity extends AppCompatActivity implements  SwipeRefreshLayo
             }
         });
 
+        if (!isConnected()){
+            Toast.makeText(NewsActivity.this,"No Internet Connection",Toast.LENGTH_SHORT).show();
+        }
+
         latestNewsCardview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -146,13 +150,8 @@ public class NewsActivity extends AppCompatActivity implements  SwipeRefreshLayo
 
         ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
 
-
-
         Call<News> call;
-
-
         call = apiInterface.getNews("in","health", API_KEY);
-
 
         call.enqueue(new Callback<News>() {
             @Override
@@ -172,7 +171,6 @@ public class NewsActivity extends AppCompatActivity implements  SwipeRefreshLayo
 
                     topHeadline.setVisibility(View.VISIBLE);
                     swipeRefreshLayout.setRefreshing(false);
-
 
                 } else {
 
@@ -197,7 +195,6 @@ public class NewsActivity extends AppCompatActivity implements  SwipeRefreshLayo
                             "No Result",
                             "Please Try Again!\n"+
                                     errorCode);
-
                 }
             }
 
@@ -235,9 +232,11 @@ public class NewsActivity extends AppCompatActivity implements  SwipeRefreshLayo
                 ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(
                         NewsActivity.this, pair);
 
-
-                startActivity(intent, optionsCompat.toBundle());
-
+                if (isConnected()) {
+                    startActivity(intent, optionsCompat.toBundle());
+                } else {
+                    Toast.makeText(NewsActivity.this,"No Internet Connection",Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -301,5 +300,11 @@ public class NewsActivity extends AppCompatActivity implements  SwipeRefreshLayo
             return (mobile != null && mobile.isConnectedOrConnecting()) || (wifi != null && wifi.isConnectedOrConnecting());
         } else
             return false;
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return true;
     }
 }
