@@ -7,40 +7,11 @@
     android:background="@drawable/bg_view"
     tools:context=".maps_module.MapsActivity">
 
-    <LinearLayout
-        android:id="@+id/maps_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:layout_marginBottom="12dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:fontFamily="@font/cherry_swash"
-            android:textStyle="bold"
-            android:gravity="center_horizontal"
-            android:text="India Report Map"
-            android:textColor="#FFFF"
-            android:textSize="22sp" />
-
-    </LinearLayout>
-
-    <View
-        android:id="@+id/line5"
-        android:layout_width="280dp"
-        android:layout_height="1dp"
-        android:background="#FFFFFF"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/maps_title"/>
-
     <WebView
         android:id="@+id/india_webView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/line5"
+        android:layout_alignParentTop="true"
         android:paddingBottom="18dp"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView

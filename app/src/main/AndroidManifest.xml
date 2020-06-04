@@ -26,18 +26,38 @@
         <activity
             android:name=".maps_module.WebViewWorldActivity"
             android:hardwareAccelerated="true" />
-        <activity android:name=".home_module.PreventionActivity" />
-        <activity android:name=".home_module.SymptomsActivity" />
-        <activity android:name=".home_module.HelplineNumberActivity" />
+        <activity android:name=".home_module.PreventionActivity"
+            android:theme="@style/MaterialComponentsWithActionBar"
+            android:label="Preventions"
+            android:parentActivityName=".home_module.HomeActivity"/>
+        <activity android:name=".home_module.SymptomsActivity"
+            android:theme="@style/MaterialComponentsWithActionBar"
+            android:label="Symptoms"
+            android:parentActivityName=".home_module.HomeActivity"/>
+        <activity android:name=".home_module.HelplineNumberActivity"
+            android:theme="@style/MaterialComponentsWithActionBar"
+            android:label="Helpline Numbers"
+            android:parentActivityName=".home_module.HomeActivity"/>
         <activity
             android:name=".maps_module.MapsActivity"
-            android:hardwareAccelerated="true" />
+            android:hardwareAccelerated="true"
+            android:theme="@style/AppThemeWithActionBar"
+            android:label="India Report Map"/>
         <activity
             android:name=".settings_module.WebViewActivity"
-            android:hardwareAccelerated="true" />
+            android:hardwareAccelerated="true"
+            android:theme="@style/AppThemeWithActionBar"
+            android:label="About Us"
+            android:parentActivityName=".settings_module.SettingsActivity"/>
         <activity android:name=".settings_module.AttributesActivity" />
-        <activity android:name=".settings_module.AboutUsActivity" />
-        <activity android:name=".settings_module.SettingsActivity" />
+        <activity android:name=".settings_module.AboutUsActivity"
+            android:theme="@style/AppThemeWithActionBar"
+            android:label="About Us"
+            android:parentActivityName=".settings_module.SettingsActivity"/>
+        <activity android:name=".settings_module.SettingsActivity"
+            android:theme="@style/AppThemeWithActionBar"
+            android:label="Settings"
+            android:parentActivityName=".home_module.HomeActivity"/>
         <activity android:name=".home_module.HomeActivity" />
         <activity
             android:name=".authentication_module.user_signin_module.ForgotPasswordActivity"

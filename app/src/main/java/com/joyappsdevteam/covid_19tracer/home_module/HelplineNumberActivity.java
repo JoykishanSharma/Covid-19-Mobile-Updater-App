@@ -21,7 +21,6 @@ public class HelplineNumberActivity extends AppCompatActivity implements View.On
             manipur,meghalaya,mizoram,nagaland,odisha,rajasthan,tamil_nadu,tripura,uttar_pradesh,
             west_bengal_no1,west_bengal_no2,andaman_and_nicobar_islands,chandigarh,call_104_union_territory
             ,delhi,jammu_and_kashmir_no1,jammu_and_kashmir_no2,ladakh;
-    private ImageView back_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,15 +28,6 @@ public class HelplineNumberActivity extends AppCompatActivity implements View.On
         setContentView(R.layout.activity_helpline_number);
 
         callNowCardViewReferencing();
-
-        back_button = findViewById(R.id.back_arrow7);
-
-        back_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
     }
 
     private void callNowCardViewReferencing(){
@@ -237,6 +227,12 @@ public class HelplineNumberActivity extends AppCompatActivity implements View.On
                 .setNegativeButton(android.R.string.no, null)
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .show();
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return true;
     }
 
 }

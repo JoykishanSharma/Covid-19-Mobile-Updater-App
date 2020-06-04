@@ -37,7 +37,6 @@ import java.util.List;
 public class SettingsActivity extends AppCompatActivity {
 
     UserDetails userDetails;
-    private ImageView backButton;
     private EditText newName, newEmail;
     private AppCompatSpinner spinner;
     private String newLocation_settings;
@@ -73,7 +72,6 @@ public class SettingsActivity extends AppCompatActivity {
         //hide keyboard
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
-        backButton = findViewById(R.id.back_arrow4);
         newName = findViewById(R.id.new_name);
         newEmail = findViewById(R.id.new_email);
         spinner = findViewById(R.id.settings_spinner);
@@ -90,13 +88,6 @@ public class SettingsActivity extends AppCompatActivity {
 
         updateData(userId);
         loadSpinnerData();
-
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
 
         signOut.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -319,5 +310,11 @@ public class SettingsActivity extends AppCompatActivity {
 
         finishAndRemoveTask();
         finish();
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return true;
     }
 }

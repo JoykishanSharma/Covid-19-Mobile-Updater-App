@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
 import android.Manifest;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -20,6 +21,7 @@ import android.os.Handler;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -66,7 +68,8 @@ public class HomeActivity extends AppCompatActivity {
     private RequestQueue requestQueue;
     private String currentUserStateHelpline;
     private FirebaseAuth mAuth;
-    String userId;
+    private String userId;
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,6 +101,9 @@ public class HomeActivity extends AppCompatActivity {
         text_username = findViewById(R.id.text_username);
         state_helpline_text = findViewById(R.id.state_helpline_text);
         state_helpline_number = findViewById(R.id.state_helpline_number);
+        progressBar = findViewById(R.id.progress_bar);
+
+        progressBar.setVisibility(View.VISIBLE);
 
 
         //When this Activity is called, we check for internet connect so that we can update the Covid-19 cases
@@ -172,18 +178,12 @@ public class HomeActivity extends AppCompatActivity {
         };
         final Handler handler = new Handler();
         handler.post(new Runnable() {
-
             int randomNumber = new Random().nextInt(10);
-
             @Override
             public void run() {
                 helpful_text.setText(updateText[randomNumber]);
                 randomNumber = new Random().nextInt(10);
-                /*if (i == updateText.length) {
-                    handler.removeCallbacks(this);
-                } else {*/
-                    //10 sec
-                    handler.postDelayed(this, 1000 * 10);
+                handler.postDelayed(this, 1000 * 10);
 
             }
         });
@@ -305,6 +305,8 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+
+
     }
 
     @Override
@@ -384,6 +386,8 @@ public class HomeActivity extends AppCompatActivity {
                     state_helpline_text.setText(currentLocation + " helpline");
                     showStateHelplineNumber(currentLocation);
                     parseJsonData(currentLocation);
+
+                    progressBar.setVisibility(View.GONE);
 
                 }
 

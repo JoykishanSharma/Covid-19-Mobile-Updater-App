@@ -25,7 +25,6 @@ import java.util.Objects;
 
 public class PreventionActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private ImageView backButton;
     private CardView preventionWashHand,preventionSocialDistance,preventionCoverMouthWhenSneeze,preventionWearFacemask,
         preventionDontTouchFace,preventionStayAtHome,preventionDoSomeExercise,preventionsEatHealthy,preventionCleanAndDisinfect,
             who_webview_cardview;
@@ -35,18 +34,7 @@ public class PreventionActivity extends AppCompatActivity implements View.OnClic
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prevention);
 
-        backButton = findViewById(R.id.back_arrow5);
-
         cardViewReferencing();
-
-
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
-
     }
 
     private void showPreventionDetails(int pName, int pLargeImage, int pData, int pTopic1, int pAns1, int pTopic2, int pAns2, int pTopic3, int pAns3) {
@@ -215,6 +203,12 @@ public class PreventionActivity extends AppCompatActivity implements View.OnClic
             return (mobile != null && mobile.isConnectedOrConnecting()) || (wifi != null && wifi.isConnectedOrConnecting());
         } else
             return false;
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return true;
     }
 
 }

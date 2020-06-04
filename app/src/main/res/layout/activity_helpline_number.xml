@@ -8,20 +8,10 @@
     tools:context=".home_module.HelplineNumberActivity">
 
     <ImageView
-        android:id="@+id/back_arrow7"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_gravity="start"
-        android:layout_marginTop="8dp"
-        android:layout_marginStart="8dp"
-        android:contentDescription="@string/todo"
-        android:src="@drawable/arrow_left_black_24dp" />
-
-    <ImageView
         android:id="@+id/helpline_img"
         android:layout_width="match_parent"
         android:layout_height="160dp"
-        android:layout_below="@+id/back_arrow7"
+        android:layout_alignParentTop="true"
         android:src="@drawable/helpline_image"
         android:contentDescription="@string/todo" />
 

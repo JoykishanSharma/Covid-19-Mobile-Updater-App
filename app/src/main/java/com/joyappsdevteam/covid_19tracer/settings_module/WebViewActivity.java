@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.joyappsdevteam.covid_19tracer.R;
 
+import java.util.Objects;
+
 public class WebViewActivity extends AppCompatActivity {
 
     private WebView webView;
@@ -24,9 +26,12 @@ public class WebViewActivity extends AppCompatActivity {
 
         String contentToView = getIntent().getStringExtra("content_to_show");
 
+        assert contentToView != null;
         if (contentToView.equals("privacy_policy")){
+            Objects.requireNonNull(getSupportActionBar()).setTitle("Privacy Policy");
             url = "https://drive.google.com/file/d/1d6gE7nDblE25AV-0yjB5OW6W0OF-VY0q/view?usp=sharing";
         }else if (contentToView.equals("terms_and_conditions")){
+            Objects.requireNonNull(getSupportActionBar()).setTitle("Terms And Conditions");
             url = "https://drive.google.com/file/d/14sQNmZLyVBBCB0MMr37Ms1PBOj5Nup-7/view?usp=sharing";
         }else {
             url = null;
@@ -77,5 +82,11 @@ public class WebViewActivity extends AppCompatActivity {
 
         //Load url in webview
         webView.loadUrl(url);
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return true;
     }
 }

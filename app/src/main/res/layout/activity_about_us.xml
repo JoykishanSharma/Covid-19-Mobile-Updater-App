@@ -7,23 +7,14 @@
     tools:context=".settings_module.AboutUsActivity">
 
     <ImageView
-        android:id="@+id/back_arrow8"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_gravity="start"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:contentDescription="@string/todo"
-        android:src="@drawable/arrow_left_black_24dp" />
-
-    <ImageView
         android:id="@+id/logo_developer"
         android:layout_width="120dp"
         android:layout_height="100dp"
         android:src="@drawable/joyappslogo"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="40dp"
         android:layout_centerHorizontal="true"
-        android:contentDescription="@string/todo" />
+        android:contentDescription="@string/todo"
+        android:layout_alignParentTop="true"/>
 
     <TextView
         android:id="@+id/title_developer"

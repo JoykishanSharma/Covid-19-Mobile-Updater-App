@@ -18,7 +18,6 @@ import java.util.Objects;
 
 public class SymptomsActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private ImageView back_arrow;
     private CardView symptomsFever,symptomsDryCough,symptomsShortnessOfBreath,symptomsAchesAndPains,
             symptomsHeadache,symptomsRunningNose,symptomsSoreThroat,symptomsDiarrhea;
 
@@ -27,15 +26,7 @@ public class SymptomsActivity extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_symptoms);
 
-        back_arrow = findViewById(R.id.back_arrow3);
         cardViewReferencing();
-
-        back_arrow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
 
     }
 
@@ -141,5 +132,9 @@ public class SymptomsActivity extends AppCompatActivity implements View.OnClickL
         }
     }
 
-
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return true;
+    }
 }
