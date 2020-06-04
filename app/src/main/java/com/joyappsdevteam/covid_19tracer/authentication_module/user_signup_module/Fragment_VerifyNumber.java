@@ -367,7 +367,7 @@ public class Fragment_VerifyNumber extends Fragment {
         //This method takes "credential" as parameter and checks if the data inside "credential" object is correct or not.
         signInWithPhoneAuthCredential(credential);
 
-        otp_number_editText.setText("******");
+        //otp_number_editText.setText("******");
 
     }
 

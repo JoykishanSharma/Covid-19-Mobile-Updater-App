@@ -134,6 +134,10 @@ public class HomeActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         userId = mAuth.getUid();
 
+        if (userId == null){
+            endTask();
+        }
+
         //udating covid cases
         updateData(userId);
 
@@ -304,9 +308,6 @@ public class HomeActivity extends AppCompatActivity {
                 helpful_text.setText(updateText[randomNumber]);
             }
         });
-
-
-
     }
 
     @Override
@@ -376,19 +377,23 @@ public class HomeActivity extends AppCompatActivity {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                    String username = dataSnapshot.child("name").getValue(String.class);
-                    String currentLocation = dataSnapshot.child("location").getValue(String.class);
+                    try {
+                        String username = dataSnapshot.child("name").getValue(String.class);
+                        String currentLocation = dataSnapshot.child("location").getValue(String.class);
 
-                    assert username != null;
-                    assert currentLocation != null;
+                        assert username != null;
+                        assert currentLocation != null;
 
-                    text_username.setText(toTitleCase(username));
-                    state_helpline_text.setText(currentLocation + " helpline");
-                    showStateHelplineNumber(currentLocation);
-                    parseJsonData(currentLocation);
+                        text_username.setText(toTitleCase(username));
+                        state_helpline_text.setText(currentLocation + " helpline");
+                        showStateHelplineNumber(currentLocation);
+                        parseJsonData(currentLocation);
 
-                    progressBar.setVisibility(View.GONE);
+                        progressBar.setVisibility(View.GONE);
 
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
                 }
 
                 @Override
