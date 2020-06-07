@@ -4,7 +4,7 @@ Covid-19 Tracer or Covid-19 Mobile Updater App is a small and simple App designe
 The information provided in this App may get outdated time to time, but I will try to keep it updated to the present knowledge as far as possible. 
 
 ## Covid-19 Mobile Updater App Download link 
-[Click here to Download](https://drive.google.com/file/d/1R2JAWRDdS49eDQoj8sBs653w4PTfXDbJ/view?usp=sharing)
+[Click here to Download](https://drive.google.com/file/d/12zJT7fWdbtIFWEFtrdR__EGJ2AHQWcMA/view?usp=sharing)
 
 ## Getting Started
 You would need to config these before running the app in Android Studio
