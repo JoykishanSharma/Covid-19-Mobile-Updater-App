@@ -30,5 +30,15 @@ The information provided in this App may get outdated time to time, but I will t
 ## Why this App is not on PlayStore
 PlayStore and AppleStore has suspended all the unauthorised Covid-19 related Apps from their platform to minimize the misinformation spread. They only allow App which are affiliated by Government or by any renowned Medical Institute.
 
+## References and Attributions( Many Many thanks to them :-) )
+* [COVID19-India](https://www.covid19india.org/)
+* [News API](https://newsapi.org/)
+* [Ministry of Health and Family Welfare, Government of India](https://www.mohfw.gov.in/)
+* [World Health Organization](https://www.who.int/)
+* [Wikipedia](https://en.wikipedia.org/wiki/Coronavirus)
+* [Google Covid-19](https://www.google.com/intl/en_in/covid19/)
+* [Google News](https://news.google.com/topics/CAAqIggKIhxDQkFTRHdvSkwyMHZNREZqY0hsNUVnSmxiaWdBUAE?hl=en-IN&gl=IN&ceid=IN%3Aen)
+* [Alt News](https://www.altnews.in/)
+
 ## License
 Covid-19-Tracer is released under the [MIT Lisense](https://github.com/JoykishanSharma/Covid-19-Tracer/blob/master/LICENSE)
