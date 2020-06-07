@@ -10,6 +10,9 @@ The information provided in this App may get outdated time to time, but I will t
 You would need to config these before running the app in Android Studio
 * [Fiebase Account](https://firebase.google.com/) for Authentication module(Email and Phone Authentication)
 * [News API](https://newsapi.org/)
+```java
+public static final String API_KEY = "your_news_api_key_here";
+```
 
 ## App Features 
 * Real-time Covid-19 Case Updates ( India and user current State ).
