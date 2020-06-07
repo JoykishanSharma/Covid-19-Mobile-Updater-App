@@ -20,10 +20,10 @@ The information provided in this App may get outdated time to time, but I will t
 ## Few Screenshots
 <table>
   <tr>
-    <td><img src="screenshots/Screenshot_2020-06-07-10-59-49-337_com.joyappsdevteam.covid_19tracer.jpg" width=270 height=380></td>
-    <td><img src="screenshots/Screenshot_2020-06-07-10-59-59-954_com.joyappsdevteam.covid_19tracer.jpg" width=270 height=380></td>
-    <td><img src="screenshots/Screenshot_2020-06-07-11-00-05-942_com.joyappsdevteam.covid_19tracer.jpg" width=270 height=380></td>
-    <td><img src="screenshots/Screenshot_2020-06-07-11-00-16-406_com.joyappsdevteam.covid_19tracer.jpg" width=270 height=380></td>
+    <td><img src="screenshots/Screenshot_2020-06-07-10-59-49-337_com.joyappsdevteam.covid_19tracer.jpg" width=270 height=360></td>
+    <td><img src="screenshots/Screenshot_2020-06-07-10-59-59-954_com.joyappsdevteam.covid_19tracer.jpg" width=270 height=360></td>
+    <td><img src="screenshots/Screenshot_2020-06-07-11-00-05-942_com.joyappsdevteam.covid_19tracer.jpg" width=270 height=360></td>
+    <td><img src="screenshots/Screenshot_2020-06-07-11-00-16-406_com.joyappsdevteam.covid_19tracer.jpg" width=270 height=360></td>
   </tr>
  </table>
 
