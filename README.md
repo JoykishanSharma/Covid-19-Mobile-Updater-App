@@ -18,8 +18,14 @@ The information provided in this App may get outdated time to time, but I will t
 * Verified Fake news for awareness.
 
 ## Few Screenshots
-
-
+<table>
+  <tr>
+    <td><img src="screenshots/Screenshot_2020-06-07-10-59-49-337_com.joyappsdevteam.covid_19tracer.jpg" width=270 height=380></td>
+    <td><img src="screenshots/Screenshot_2020-06-07-10-59-59-954_com.joyappsdevteam.covid_19tracer.jpg" width=270 height=380></td>
+    <td><img src="screenshots/Screenshot_2020-06-07-11-00-05-942_com.joyappsdevteam.covid_19tracer.jpg" width=270 height=380></td>
+    <td><img src="screenshots/Screenshot_2020-06-07-11-00-16-406_com.joyappsdevteam.covid_19tracer.jpg" width=270 height=380></td>
+  </tr>
+ </table>
 
 ## Why this App is not on PlayStore
 PlayStore and AppleStore has suspended all the unauthorised Covid-19 related Apps from their platform to minimize the misinformation spread. They only allow App which are affiliated by Government or by any renowned Medical Institute.
