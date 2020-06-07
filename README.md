@@ -6,6 +6,11 @@ The information provided in this App may get outdated time to time, but I will t
 ## Covid-19 Mobile Updater App Download link 
 [Click here to Download](https://drive.google.com/file/d/1R2JAWRDdS49eDQoj8sBs653w4PTfXDbJ/view?usp=sharing)
 
+## Getting Started
+You would need to config these before running the app in Android Studio
+* [Fiebase Account](https://firebase.google.com/) for Authentication module(Email and Phone Authentication)
+* [News API](https://newsapi.org/)
+
 ## App Features 
 * Real-time Covid-19 Case Updates ( India and user current State ).
 * Direct Call to State Helpline ( on button click ).
@@ -28,7 +33,7 @@ The information provided in this App may get outdated time to time, but I will t
  </table>
 
 ## Why this App is not on PlayStore
-PlayStore and AppleStore has suspended all the unauthorised Covid-19 related Apps from their platform to minimize the misinformation spread. They only allow App which are affiliated by Government or by any renowned Medical Institute.
+PlayStore and AppleStore has suspended all the unauthorised Covid-19 related Apps from their platform to minimize the misinformation spread. They only allow App which are affiliated by Government or by any renowned Medical Institute. My App is not affiliated by Government or Medical Institutions.
 
 ## References and Attributions( Many Many thanks to them :-) )
 * [COVID19-India](https://www.covid19india.org/)
