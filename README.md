@@ -47,6 +47,9 @@ PlayStore and AppleStore has suspended all the unauthorised Covid-19 related App
 * [Google Covid-19](https://www.google.com/intl/en_in/covid19/)
 * [Google News](https://news.google.com/topics/CAAqIggKIhxDQkFTRHdvSkwyMHZNREZqY0hsNUVnSmxiaWdBUAE?hl=en-IN&gl=IN&ceid=IN%3Aen)
 * [Alt News](https://www.altnews.in/)
+* [freepik](https://www.freepik.com/)
+* [unDraw](https://undraw.co/)
+* [Flaticon](https://www.flaticon.com/)
 
 ## License
 Covid-19-Tracer is released under the [MIT Lisense](https://github.com/JoykishanSharma/Covid-19-Tracer/blob/master/LICENSE)
