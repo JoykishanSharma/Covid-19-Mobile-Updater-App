@@ -1,5 +1,5 @@
-# Covid-19-Tracer
-Covid-19 Tracer or Covid-19 Mobile Updater App is a small and simple App designed and developed by Joykishan Sharma, a final year student for his Major Project. This Application was developed to fight against the misinformation and fake news spread during the sentitive moment of pandemic.
+# Covid-19 Mobile Updater App
+Covid-19 Mobile Updater App is a small and simple App designed and developed by Joykishan Sharma, a final year student for his Major Project. This Application was developed to fight against the misinformation and fake news spread during the sentitive moment of pandemic.
 
 The information provided in this App may get outdated time to time, but I will try to keep it updated to the present knowledge as far as possible. 
 
