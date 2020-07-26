@@ -29,16 +29,16 @@ public static final String API_KEY = "your_news_api_key_here";
 <table>
   <tr>
     <td>
-      <img src="screenshots/screenshot1.jpg" width=270 height=360/>
+      <img src="screenshots/Screenshot1.png" width=270 height=360/>
     </td>
     <td>
-      <img src="screenshots/screenshot2.jpg" width=270 height=360/>
+      <img src="screenshots/Screenshot2.png" width=270 height=360/>
     </td>
     <td>
-      <img src="screenshots/screenshot3.jpg" width=270 height=360/>
+      <img src="screenshots/Screenshot3.png" width=270 height=360/>
     </td>
     <td>
-      <img src="screenshots/screenshot4.jpg" width=270 height=360/>
+      <img src="screenshots/Screenshot4.png" width=270 height=360/>
     </td>
   </tr>
  </table>
