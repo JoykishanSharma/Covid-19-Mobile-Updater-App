@@ -29,7 +29,7 @@ public static final String API_KEY = "your_news_api_key_here";
 <table>
   <tr>
     <td>
-      <img src="screenshots/Screenshot1.png" width=270 height=360/>
+      <img src="screenshots/Screenshot1.png" width="270" height="360"/>
     </td>
     <td>
       <img src="screenshots/Screenshot2.png" width=270 height=360/>
