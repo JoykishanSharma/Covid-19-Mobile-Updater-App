@@ -8,7 +8,7 @@ The information provided in this App may get outdated time to time, but I will t
 
 ## Getting Started
 You would need to config these before running the app in Android Studio
-* [Fiebase Account](https://firebase.google.com/) (Email and Phone Authentication)
+* [Firebase Account](https://firebase.google.com/) (Email and Phone Authentication)
 * [News API](https://newsapi.org/)
 ```java
 public static final String API_KEY = "your_news_api_key_here";
@@ -29,16 +29,16 @@ public static final String API_KEY = "your_news_api_key_here";
 <table>
   <tr>
     <td>
-      <img src="screenshots/Screenshot1.png" width="270" height="360"/>
+      <img src="screenshots/Screenshot1.png" width="270"/>
     </td>
     <td>
-      <img src="screenshots/Screenshot2.png" width="270" height="360"/>
+      <img src="screenshots/Screenshot2.png" width="270"/>
     </td>
     <td>
-      <img src="screenshots/Screenshot3.png" width="270" height="360"/>
+      <img src="screenshots/Screenshot3.png" width="270"/>
     </td>
     <td>
-      <img src="screenshots/Screenshot4.png" width="270" height="360"/>
+      <img src="screenshots/Screenshot4.png" width="270"/>
     </td>
   </tr>
  </table>
